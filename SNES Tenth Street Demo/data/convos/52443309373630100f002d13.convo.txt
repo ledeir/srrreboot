@@ -1,0 +1,109 @@
+idRef {
+  id: "52443309373630100f002d13"
+}
+ui_name: "DB_Doorman"
+nodes {
+  idRef {
+    id: "52443344373630100f002d19"
+  }
+  index: 0
+  text: "Hello. The Dark Blade Club. Johan speaking.\n\nWhat can I help you with?"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "52443453373630100f002d43"
+    }
+  }
+  branches {
+    responseText: "Magic Fetish"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "52443456373630100f002d44"
+    }
+  }
+  branches {
+    responseText: "Dark Blade Club"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "52443459373630100f002d45"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Hang Up{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "DBTALK"
+}
+nodes {
+  idRef {
+    id: "524433b1373630100f002d24"
+  }
+  index: 1
+  text: "I\342\200\231m sorry $(l.sir). I think you may have the wrong number!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "DBTALK"
+}
+nodes {
+  idRef {
+    id: "524433af373630100f002d22"
+  }
+  index: 2
+  text: "You say it is an amulet with a bat at its center? My employer might be interested! Could you please drop by the Dark Blade. I\342\200\231ll make sure the gate is left open for you."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "DBTALK"
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DB_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "52443401373630100f002d3f"
+  }
+  index: 3
+  text: "That\342\200\231s right. This is the Dark Blade club. What can I do for you?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "DBTALK"
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

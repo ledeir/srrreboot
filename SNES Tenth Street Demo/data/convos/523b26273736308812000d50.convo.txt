@@ -1,0 +1,547 @@
+idRef {
+  id: "523b26273736308812000d50"
+}
+ui_name: "DTD_Computer"
+nodes {
+  idRef {
+    id: "523b28c33736308812000e66"
+  }
+  index: 0
+  text: "\nConnecting..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523b28c33736308812000e69"
+  }
+  index: 1
+  text: "Matrix Systems Incorporated \342\200\223 Cyberspace Solutions\nSpecialists in intrusion countermeasure electronics\n\n{{GM}}early alpha, this computer system will probably change in future releases{{/GM}}"
+  branches {
+    responseText: "Accounting"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a92883736301010007b49"
+    }
+  }
+  branches {
+    responseText: "Data files"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DTD00_DF_MT_AI"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a93f53736301010007bad"
+    }
+  }
+  branches {
+    responseText: "Data Files"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DTD00_DF_MT_AI"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a93f93736301010007bae"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Log Out{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523b28c33736308812000e75"
+  }
+  index: 2
+  text: "Matrix Account 6345-2276-6376\nBalance: 2000\302\245"
+  branches {
+    responseText: "{{GM}}Transfer money to own account{{/GM}}"
+    actions {
+      ops {
+        functionName: "Add Nuyen"
+        args {
+          int_value: 2000
+        }
+      }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DTD_MoneyInDocksComputer"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 1
+    onlyOnce: true
+    idRef {
+      id: "525a93d23736301010007ba8"
+    }
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523b28c33736308812000e6c"
+  }
+  index: 3
+  text: "Datafile: DF_MT-AI\n \342\200\234Anti-AI program finally complete. Courier is to deliver it to Pushkin. Cortex bomb will be implanted to protect the data. All other copies destroyed. Raitsov.\342\200\235"
+  branches {
+    responseText: "{{GM}}Download data{{/GM}}"
+    actions {
+      ops {
+        functionName: "Add Item to Team"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DTD00_DF_MT_AI"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (string)"
+            args {
+              string_value: "FactionList"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (SceneDimension)"
+            args {
+              string_value: "Default"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 1
+    onlyOnce: true
+    idRef {
+      id: "525fa12237363098130068f7"
+    }
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a93e43736301010007baa"
+  }
+  index: 4
+  text: "No relevant data found."
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a914c3736301010007b01"
+  }
+  index: 5
+  text: "Connecting..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a91663736301010007b1e"
+  }
+  index: 6
+  text: "Matrix Systems Incorporated \342\200\223 Cyberspace Solutions\nSpecialists in intrusion countermeasure electronics\n\n{{GM}}early alpha, this computer system will proberbly change in future releases{{/GM}}"
+  branches {
+    responseText: "Accounting"
+    nextNodeIndex: 7
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a94323736301010007bb0"
+    }
+  }
+  branches {
+    responseText: "Data files"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DTD00_DF_MT_AI"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a943f3736301010007bb1"
+    }
+  }
+  branches {
+    responseText: "Data files"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DTD00_DF_MT_AI"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 9
+  }
+  branches {
+    responseText: "{{GM}}Log Out{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a91a43736301010007b25"
+  }
+  index: 7
+  text: "Matrix Account 6345-2276-6376\nBalance: 0\302\245"
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: 6
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "525a918e3736301010007b23"
+  }
+  index: 8
+  text: "Datafile: DF_MT-AI\n \342\200\234Anti-AI program finally complete. Courier is to deliver it to Pushkin. Cortex bomb will be implanted to protect the data. All other copies destroyed. Raitsov.\342\200\235"
+  branches {
+    responseText: "{{GM}}Download data{{/GM}}"
+    actions {
+      ops {
+        functionName: "Add Item to Team"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DTD00_DF_MT_AI"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (string)"
+            args {
+              string_value: "FactionList"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (SceneDimension)"
+            args {
+              string_value: "Default"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 6
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a944b3736301010007bb3"
+  }
+  index: 9
+  text: "No relevant data found."
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DTD_MoneyInDocksComputer"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 0
+  hideIfUnavailable: true
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DTD_MoneyInDocksComputer"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 5
+  hideIfUnavailable: true
+}

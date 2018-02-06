@@ -1,0 +1,65 @@
+idRef {
+  id: "52f8eb4b373361e016004e0e"
+}
+ui_name: "DT_Maury"
+nodes {
+  idRef {
+    id: "52f8eb60373361e016004e14"
+  }
+  index: 0
+  text: "Hoi Chummer... Heard of  Dr Maplethorpe? Street Doc.. pretty decent at his trade?"
+  branches {
+    responseText: "Yes"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Where can I find him?"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "52184f2e633461b0180017f9"
+  }
+}
+nodes {
+  idRef {
+    id: "53d71db2363935300c0036a7"
+  }
+  index: 1
+  text: "Maury is another satisfied customer!"
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52f8ebf7373361e016004e18"
+  }
+  index: 2
+  text: "Head north across the street and look for Street Doc... Maury reckons you can figure the rest out yerself..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "52f8e7d9373361e016004e02"
+  }
+}
+nodes {
+  idRef {
+    id: "52f8ece8373361e016004e1c"
+  }
+  index: 3
+  text: "Go North!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "52184f2e633461b0180017f9"
+  }
+}
+roots {
+  responseText: "Approach the friendly looking troll"
+  nextNodeIndex: 0
+}

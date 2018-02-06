@@ -1,0 +1,48 @@
+idRef {
+  id: "521063916334619c070018d0"
+}
+ui_name: "OT_SC_HappyCust"
+nodes {
+  idRef {
+    id: "521063a96334619c070018d6"
+  }
+  index: 0
+  text: "How\'s ya doin\' kid? You look like you need refreshments!"
+  branches {
+    responseText: "Talk to happy customer"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "521063c56334619c070018da"
+  }
+  index: 1
+  text: "Looks like it\'s your shout too! I\'ll have whatever you\'re having."
+  branches {
+    responseText: "Shadowrunners?"
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "521064016334619c070018e1"
+  }
+  index: 2
+  text: "Hiring them isn\'t cheap... but if you need the extra muscle or the expertise, they\'re the ones you want."
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

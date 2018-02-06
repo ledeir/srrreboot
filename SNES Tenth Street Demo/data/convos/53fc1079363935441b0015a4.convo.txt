@@ -1,0 +1,170 @@
+idRef {
+  id: "53fc1079363935441b0015a4"
+}
+ui_name: "DT_Center_OfficerKeith"
+nodes {
+  idRef {
+    id: "53fc109c363935441b0015aa"
+  }
+  index: 0
+  text: "Hey! What are you doing?"
+  branches {
+    responseText: "I\'m sorry, I guess I\'m lost. I\'ll leave."
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "My dog ran this way! Can you help me find him? "
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Frag off."
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "53fc1100363935441b0015af"
+  }
+  index: 1
+  text: "Scram!"
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "53fc1136363935441b0015b1"
+  }
+  index: 2
+  text: "{{GM}}The Officer gestures East{{/GM}}\nThere\'s a mutt over that way, get a leash on him! "
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Waypoint on Actor"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "PrimaryOrSecondary"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "521ed518633461cc19003e30"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "53fc11c5363935441b0015b3"
+  }
+  index: 3
+  text: "The officer draws his gun..."
+  nodeType: ConversationNodeType_GM_Voice
+  actions {
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "HelpfulStar"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Seek And Destroy (Team)"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "HelpfulStar"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: "The Lonestar officer calls out to you."
+  nextNodeIndex: 0
+}

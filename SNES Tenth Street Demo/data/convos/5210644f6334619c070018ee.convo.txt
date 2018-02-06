@@ -1,0 +1,79 @@
+idRef {
+  id: "5210644f6334619c070018ee"
+}
+ui_name: "OT_SC_Orc"
+nodes {
+  idRef {
+    id: "521064656334619c070018f4"
+  }
+  index: 0
+  text: "Har har! Show me your wallet and I\'ll show you a man with twenty fingers."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5210647e6334619c070018f8"
+  }
+  index: 1
+  text: "What? You don\'t believe me, just try me!"
+  branches {
+    responseText: "Street Doc"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "559c9219616131b41700610f"
+    }
+  }
+  branches {
+    responseText: "Firearms"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "559c921d616131b417006110"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "521064a86334619c070018fd"
+  }
+  index: 2
+  text: "Don\'t need \'em, except for the doc round the corner who did some work on my face. You like it?"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "521064ab6334619c070018ff"
+  }
+  index: 3
+  text: "If you just want guns there\'s Vivyan\'s around the corner. If you\'re looking for something not quite legal, then you won\'t find \'em around here."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

@@ -1,0 +1,85 @@
+idRef {
+  id: "51c293ce6334613c1a0026d7"
+}
+ui_name: "TS_MORGUE_SAM"
+nodes {
+  idRef {
+    id: "51c295fc6334613c1a0026eb"
+  }
+  index: 0
+  text: "Well that\'s one more file out of the way. You wouldn\'t believe the number of guys fragged today!\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a947633461e824000110"
+  }
+}
+nodes {
+  idRef {
+    id: "51c296316334613c1a0026ee"
+  }
+  index: 1
+  text: "Hey Larry, where\'s the little urn to ship number 8 in?\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a947633461e824000110"
+  }
+}
+nodes {
+  idRef {
+    id: "51c296476334613c1a0026f2"
+  }
+  index: 2
+  text: "I can\'t talk to you and move my pen at the same time. Ask the other guy.\n"
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "Talk to Mortician\n"
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS04_Shades"
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 0
+}

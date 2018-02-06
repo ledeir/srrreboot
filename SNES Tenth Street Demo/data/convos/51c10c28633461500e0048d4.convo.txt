@@ -1,0 +1,48 @@
+idRef {
+  id: "51c10c28633461500e0048d4"
+}
+ui_name: "TS_EXT_BM1"
+nodes {
+  idRef {
+    id: "51c10c43633461500e0048da"
+  }
+  index: 0
+  text: "What do you want? Can\'t you see I\'m busy?\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51c10c6e633461500e0048de"
+  }
+  index: 1
+  text: "Take a hike, bowb. I\'ve got nothing for you.\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51c10c92633461500e0048e2"
+  }
+  index: 2
+  text: "Go buy yourself a new Stim, Wirehead and get out of my life.\n"
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "Talk"
+  nextNodeIndex: 0
+}

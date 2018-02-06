@@ -1,0 +1,89 @@
+idRef {
+  id: "5a319b72616131b82000245f"
+}
+ui_name: "MONORAIL-DEADORK"
+nodes {
+  idRef {
+    id: "5a319b97616131b820002465"
+  }
+  index: 0
+  text: "Drek, you\'ve bought into more trouble than you know. "
+  branches {
+    responseText: "Listen"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Finish him."
+    nextNodeIndex: 2
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5a319bc1616131b820002469"
+  }
+  index: 1
+  text: "The Rust Stilettos always finish a job!"
+  branches {
+    responseText: "Finish him"
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5a319bd7616131b82000246c"
+  }
+  index: 2
+  text: "Aaarrggh, bye sucker!"
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "590cc3bb6161314026007cdc"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: "You loot the dying ork\'s body"
+  nextNodeIndex: 0
+}

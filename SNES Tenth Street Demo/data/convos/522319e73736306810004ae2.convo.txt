@@ -1,0 +1,215 @@
+idRef {
+  id: "522319e73736306810004ae2"
+}
+ui_name: "DT_Doc_Secretary"
+nodes {
+  idRef {
+    id: "52231a153736306810004ae9"
+  }
+  index: 0
+  text: "Welcome! How can I help you?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+}
+nodes {
+  idRef {
+    id: "52231a233736306810004aed"
+  }
+  index: 1
+  text: "Mr. Maplethorpe is quite a busy man. Is there anything specific you need?"
+  branches {
+    responseText: "Street Doc?"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523e031b373630e41200202a"
+    }
+  }
+  branches {
+    responseText: "Cortex Bomb"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CortexBomb"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Nothing special."
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523e0320373630e41200202b"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+}
+nodes {
+  idRef {
+    id: "52231a463736306810004af2"
+  }
+  index: 2
+  text: "This is the office of Mr. Maplethorpe MD. Can I help you?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+}
+nodes {
+  idRef {
+    id: "52231a4a3736306810004af6"
+  }
+  index: 3
+  text: "Oh no! I\342\200\231ll get the doctor right away! He charges 2000 nuyen though."
+  branches {
+    responseText: "{{GM}}2000\302\245{{/GM}} Ok, I\'ll pay!"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 2000
+        }
+      }
+    }
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "I don\'t have that money!"
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+}
+nodes {
+  idRef {
+    id: "52231b273736306810004b0d"
+  }
+  index: 4
+  text: "Thank you.\n\nI\'ll open the door for you."
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+  actions {
+    ops {
+      functionName: "Order Actor to Move To (Region)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5347f8763736304413003b6c"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5347f8763736304413003b71"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        int_value: 2000
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "52231b7d3736306810004b0f"
+  }
+  index: 5
+  text: "Oh well, he is busy anyway."
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+}
+nodes {
+  idRef {
+    id: "52231a473736306810004af4"
+  }
+  index: 6
+  text: "Maybe you should come back later."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "M_SEC"
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

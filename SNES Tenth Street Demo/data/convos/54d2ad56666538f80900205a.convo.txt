@@ -1,0 +1,136 @@
+idRef {
+  id: "54d2ad56666538f80900205a"
+}
+ui_name: "DV_Pushkin"
+nodes {
+  idRef {
+    id: "54d2ad6a666538f809002060"
+  }
+  index: 0
+  text: "Thank you!   Thank you for freeing me.  My name is Professor Puskin."
+  branches {
+    responseText: "{{CC}}Talk{{/CC}}"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "54b1abb7666538c406001918"
+  }
+}
+nodes {
+  idRef {
+    id: "54d2c135666538300600720b"
+  }
+  index: 1
+  text: "$(scene.sPushkinText)"
+  branches {
+    responseText: "{{CC}}Drake{{/CC}}"
+    actions {
+      ops {
+        functionName: "Set Variable (string)"
+        args {
+          call_value {
+            functionName: "Get Variable (string)"
+            args {
+              string_value: "sPushkinText"
+            }
+          }
+        }
+        args {
+          string_value: "Drake is working for Aneki.  Aneki has developed an AI computer that can dominate the whole Matrix.  If they succeed, they will control the world!"
+        }
+      }
+    }
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{CC}}Aneki{{/CC}}"
+    actions {
+      ops {
+        functionName: "Set Variable (string)"
+        args {
+          call_value {
+            functionName: "Get Variable (string)"
+            args {
+              string_value: "sPushkinText"
+            }
+          }
+        }
+        args {
+          string_value: "There is no time to waste!  We must hurry!"
+        }
+      }
+    }
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{CC}}Head-Computer{{/CC}}"
+    actions {
+      ops {
+        functionName: "Set Variable (string)"
+        args {
+          call_value {
+            functionName: "Get Variable (string)"
+            args {
+              string_value: "sPushkinText"
+            }
+          }
+        }
+        args {
+          string_value: "So you\'re the courier!   You\'re head computer must still have the ANTI-AI stored in it.  We must interface it directly into Aneki\'s AI and destroy it!  I have the code to get you in to Aneki!"
+        }
+      }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bLeaveVolcano"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "{{CC}}Leave.{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "54b1abb7666538c406001918"
+  }
+}
+nodes {
+  idRef {
+    id: "54d2c22e6665383006007226"
+  }
+  index: 2
+  text: "So you\'re the courier!   You\'re head computer must still have the ANTI-AI stored in it.  We must interface it directly into Aneki\'s AI and destroy it!  I have the code to get you in to Aneki!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "54b1abb7666538c406001918"
+  }
+}
+roots {
+  nextNodeIndex: 0
+}

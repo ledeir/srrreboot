@@ -1,0 +1,82 @@
+idRef {
+  id: "51e6112263346108070048a4"
+}
+ui_name: "TS_CAGE_MANAGER"
+nodes {
+  idRef {
+    id: "51e6113163346108070048aa"
+  }
+  index: 0
+  text: "Hi, what\'ll it be?"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51c64d9c633461a80b0049b2"
+  }
+}
+nodes {
+  idRef {
+    id: "51e6117263346108070048ad"
+  }
+  index: 1
+  text: "Working here at The Cage hasn\'t done my hearing any good. What was it you wanted?\n"
+  branches {
+    responseText: "Maria?"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Shadowrunners?"
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51c64d9c633461a80b0049b2"
+  }
+}
+nodes {
+  idRef {
+    id: "51e611c963346108070048b3"
+  }
+  index: 2
+  text: "She\'s one talented lady. Just look at her move.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51c64d9c633461a80b0049b2"
+  }
+}
+nodes {
+  idRef {
+    id: "51e611cb63346108070048b5"
+  }
+  index: 3
+  text: "Very few of \'em frequent this joint. The Cage don\'t allow firearms inside and the runners don\'t like leavin\' em at the door in case trouble breaks out. The orc at the door sometimes forgets to check though.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51c64d9c633461a80b0049b2"
+  }
+}
+roots {
+  responseText: "Talk to Club Manager"
+  nextNodeIndex: 0
+}

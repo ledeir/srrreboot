@@ -1,0 +1,73 @@
+idRef {
+  id: "521065816334619c07001951"
+}
+ui_name: "OT_SC_Elf2"
+nodes {
+  idRef {
+    id: "5210659b6334619c07001957"
+  }
+  index: 0
+  text: "You don\'t look too healthy.\n\nYou should maybe see a street doc. You look like you\'ve been through a lot."
+  branches {
+    responseText: "Street Doc"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "534478bb373630f40800483a"
+    }
+  }
+  branches {
+    responseText: "Decker"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "534478b7373630f408004839"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b77936393554190011c5"
+  }
+}
+nodes {
+  idRef {
+    id: "53447814373630f408004827"
+  }
+  index: 1
+  text: "Ed\'s round the corner is OK I guess. He fixed my datajack when I had trouble jacking into the Matrix."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b77936393554190011c5"
+  }
+}
+nodes {
+  idRef {
+    id: "5344782c373630f40800482a"
+  }
+  index: 2
+  text: "I never work alone. If you need someone to spring some doors open, try Wastelands. There\'s plenty of deckers there."
+  branches {
+    responseText: "{{GM}}Wastelands... that rings a bell. You think about that name and then remember the matchbook with the wastelands club logo in your pocket. {{/GM}}"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b77936393554190011c5"
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

@@ -1,0 +1,49 @@
+idRef {
+  id: "53de8be1363935741b0015a2"
+}
+ui_name: "TS_Secret_Waitress1"
+nodes {
+  idRef {
+    id: "53de8c27363935741b0015a9"
+  }
+  index: 0
+  text: "4 Hours = $ 5000 , 20 Karma"
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Add Nuyen"
+      args {
+        int_value: 5000
+      }
+    }
+    ops {
+      functionName: "Add Actor Karma"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 20
+      }
+    }
+  }
+}
+roots {
+  responseText: "Examine"
+  nextNodeIndex: 0
+}
+roots {
+  responseText: "Leave"
+  nextNodeIndex: -1
+}

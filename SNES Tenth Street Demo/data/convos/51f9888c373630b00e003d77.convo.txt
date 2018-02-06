@@ -1,0 +1,138 @@
+idRef {
+  id: "51f9888c373630b00e003d77"
+}
+ui_name: "RS_RATSHAMANSLAIR_JESTERSPIRIT"
+nodes {
+  idRef {
+    id: "5200daca373630940c0072fe"
+  }
+  index: 0
+  text: "{{GM}}Just as the last of your enemies are killed, your eyes catch a shadowy figure materializing from the dead body of the rat shaman.{{/GM}}\nOh, woe is me. The Rat Shaman has been defeated. $(l.name), you are getting good at this! Do you think you are a match for the Jester?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fa1cf2373630d813003d88"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Jester"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "532333d2373630c40f0050d4"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5200dae2373630940c007307"
+  }
+  index: 1
+  text: "Do you like games, little man? How about one where you guess my name! If you return lacking that simple truth, I\'m afraid there are no losers... I\'ll just vaporize you! Ha ha ha ha!!!"
+  branches {
+    responseText: "Is your name \"Jester\"?"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "{{GM}}Say nothing.{{/GM}}"
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fa1cf2373630d813003d88"
+  }
+}
+nodes {
+  idRef {
+    id: "5200ddf6373630940c007330"
+  }
+  index: 2
+  text: "Not so fast! You leave me no time to toy with you... and nevertheless, you are wrong. Do not return as foolish as you are!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fa1cf2373630d813003d88"
+  }
+}
+nodes {
+  idRef {
+    id: "5200de60373630940c007340"
+  }
+  index: 3
+  text: "Run and hide, flesh bag. Time is on your side, but nothing is going to save you! Ha ha ha ha!!!"
+  branches {
+    responseText: "{{GM}}Leave.{{/GM}}"
+    actions {
+      ops {
+        functionName: "Send Event After Delay"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "TalkedToSpirit"
+            }
+          }
+        }
+        args {
+          float_value: 2
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51fa1cf2373630d813003d88"
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

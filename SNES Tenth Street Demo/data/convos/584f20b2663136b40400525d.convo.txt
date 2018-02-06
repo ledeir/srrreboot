@@ -1,0 +1,87 @@
+idRef {
+  id: "584f20b2663136b40400525d"
+}
+ui_name: "DV_PushkinExit"
+nodes {
+  idRef {
+    id: "584f20bc663136b404005263"
+  }
+  index: 0
+  text: "{{GM}}The helicopter will return you to the city.{{/GM}}"
+  branches {
+    responseText: "Return to the Docks"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Continue on to Aneki Towers"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "{{CC}}Stay Here{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
+    id: "584f20fa663136b40400526a"
+  }
+  index: 1
+  text: "Confirm: Return to the docks?"
+  branches {
+    responseText: "Yes"
+    actions {
+      ops {
+        functionName: "Open Scene"
+        args {
+          call_value {
+            functionName: "Get Map Item (Scene)"
+            args {
+              string_value: "DTD_Docks"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "No"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
+    id: "584f2122663136b404005276"
+  }
+  index: 2
+  text: "Confirm: Head to Aneki Towers?"
+  branches {
+    responseText: "Yes"
+    actions {
+      ops {
+        functionName: "Open Scene"
+        args {
+          call_value {
+            functionName: "Get Map Item (Scene)"
+            args {
+              string_value: "Taetzel"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "No"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+roots {
+  nextNodeIndex: 0
+}

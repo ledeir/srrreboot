@@ -1,0 +1,113 @@
+idRef {
+  id: "5207201b6334613c1d00153e"
+}
+ui_name: "OT_WPN_SHOP"
+nodes {
+  idRef {
+    id: "520720626334613c1d001544"
+  }
+  index: 0
+  text: "Guns guns guns! Yar ho hee har har!"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "520720896334613c1d001547"
+  }
+  index: 1
+  text: "You want to buy this gun? Good buy! Only one owner. He\'s no longer around, if ya know what I mean! Yar ho tee har har.\n"
+  branches {
+    responseText: "Firearms?"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "520720d06334613c1d00154c"
+    }
+  }
+  branches {
+    responseText: "Shop"
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "520720d16334613c1d00154e"
+  }
+  index: 2
+  text: "Yar har har. Cost ya good nuyen or two little puppy dogs.\n"
+  branches {
+    responseText: "Shop"
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "520720ef6334613c1d001552"
+  }
+  index: 3
+  text: "Yar ho tee har har! What interests you?"
+  branches {
+    responseText: "Let me see what you got. \n{{GM}}Browse the shop{{/GM}}"
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5344958f373630a010005fbf"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "521c0fc0633461441800175b"
+  }
+  index: 4
+  text: "Guns, guns guns! Good buy! "
+  branches {
+    responseText: "Continue Shopping"
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Erm... Maybe later."
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

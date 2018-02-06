@@ -1,0 +1,48 @@
+idRef {
+  id: "520722016334613c1d00157e"
+}
+ui_name: "OT_WPN_CUSTOMER"
+nodes {
+  idRef {
+    id: "5207221b6334613c1d001584"
+  }
+  index: 0
+  text: "You look like you need some help.\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5207222d6334613c1d001587"
+  }
+  index: 1
+  text: "You\' ve got to be prepared for anything. I\'m upgrading to something that isn\'t slowed down by armor."
+  branches {
+    responseText: "Suggestions?"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "520722586334613c1d00158c"
+  }
+  index: 2
+  text: "Maybe you should try something bigger than a pistol."
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "Talk to the Red Haired Girl"
+  nextNodeIndex: 0
+}

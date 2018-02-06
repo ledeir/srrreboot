@@ -1,0 +1,364 @@
+idRef {
+  id: "52405d4d3736308422002d1d"
+}
+ui_name: "DT_Center_JNBouncer"
+nodes {
+  idRef {
+    id: "52405d593736308422002d23"
+  }
+  index: 0
+  text: "Hoi chummer, always room for a true shadowrunner. You handled that Stilettos gang mighty fine."
+  branches {
+    responseText: "Can I get in now?"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Shadowrunners"
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5240ae58373630600c008168"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405d7f3736308422002d28"
+  }
+  index: 1
+  text: "It\342\200\231s a bit busier than usual tonight. You wanna come in? 50 nuyen."
+  branches {
+    responseText: "{{GM}}50\302\245{{/GM}} Yes"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 50
+        }
+      }
+    }
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "No"
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405dac3736308422002d2e"
+  }
+  index: 2
+  text: "Alright, go right in buddy."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        int_value: 50
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_StilettoProgress"
+          }
+        }
+      }
+      args {
+        int_value: 6
+      }
+    }
+    ops {
+      functionName: "Delete Props by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "JNBarrier"
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "52405dae3736308422002d30"
+  }
+  index: 3
+  text: "Wait in the line then."
+}
+nodes {
+  idRef {
+    id: "52405d9c3736308422002d2c"
+  }
+  index: 4
+  text: "Since that guy who went batty on the dance floor, the Jagged Nails has been exclusively for shadowrunners."
+  branches {
+    responseText: "Hiring"
+    nextNodeIndex: 5
+  }
+  branches {
+    responseText: "Can i get in now?"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: 6
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405dd83736308422002d35"
+  }
+  index: 5
+  text: "As long as you got the money, you won\342\200\231t be disappointed. If you need some magic, try Kitsune."
+  branches {
+    responseText: "Can i get in now?"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405e103736308422002d53"
+  }
+  index: 6
+  text: "I don\342\200\231t know. Anyway, I\342\200\231d better get back to weeding out these pretenders."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405e733736308422002d6e"
+  }
+  index: 7
+  text: "You don\342\200\231t look like a regular, bowb. The Jagged Nail is for shadowrunners only. Come back when you\342\200\231re a little less green."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 8
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405ece3736308422002d9d"
+  }
+  index: 8
+  text: "Sorry, can\342\200\231t help you tonight. You\342\200\231ll need 50 nuyen and a good rep before you\342\200\231ll grace the insides of these walls. Now jet!"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 9
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52405ee13736308422002da0"
+  }
+  index: 9
+  text: "Look bowb, if you don\342\200\231t back off, I\342\200\231m gonna bounce you right out of Seattle!"
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "54e56aad3639352824002368"
+  }
+  index: 10
+  text: "Hoi chummer, always room for a true shadowrunner. You handled that Stilettos gang mighty fine."
+  branches {
+    responseText: "Mind if I skip the line?"
+    nextNodeIndex: 11
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: 12
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "54e56b00363935282400236d"
+  }
+  index: 11
+  text: "Alright, go right in buddy."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Delete Props by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "JNBarrier"
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "54e56b62363935282400236f"
+  }
+  index: 12
+  text: "Night Chummer.  I\342\200\231d better get back to weeding out these pretenders."
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_StilettoProgress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 5
+      }
+    }
+  }
+  nextNodeIndex: 0
+  hideIfUnavailable: true
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_StilettoProgress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 5
+      }
+    }
+  }
+  nextNodeIndex: 7
+  hideIfUnavailable: true
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_StilettoProgress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 5
+      }
+    }
+  }
+  nextNodeIndex: 10
+  hideIfUnavailable: true
+}

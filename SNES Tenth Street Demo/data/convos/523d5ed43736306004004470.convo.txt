@@ -1,0 +1,280 @@
+idRef {
+  id: "523d5ed43736306004004470"
+}
+ui_name: "DT_Hotel_Manager"
+nodes {
+  idRef {
+    id: "523d5ee93736306004004476"
+  }
+  index: 0
+  text: "Darned music! Them shadowrunner types blasting away with that racket at all hours. It\'s no wonder guests don\'t stay long!"
+  branches {
+    responseText: "Do you have a room for rent?"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DT05_MotelKey"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523d5f263736306004004482"
+  }
+  index: 1
+  text: "There\'s only one room left. First on the left! 50 nuyen. You want it?"
+  branches {
+    responseText: "{{GM}}50\302\245{{/GM}} Yes"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 50
+        }
+      }
+    }
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "No"
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523d5f913736306004004489"
+  }
+  index: 2
+  text: "That door knob is a bit tricky sometimes. You\'ll need a bit of muscle."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "DT05_MotelKey"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        int_value: 50
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523d5f6b3736306004004487"
+  }
+  index: 3
+  text: "Can\'t blame you chummer. I don\'t get much sleep myself living here."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523d5ff8373630600400448c"
+  }
+  index: 4
+  text: "You look mighty tired! Sure you don\'t want to take a rest?"
+  branches {
+    responseText: "Do you have a room for rent?"
+    nextNodeIndex: 5
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523d606d3736306004004490"
+  }
+  index: 5
+  text: "There\'s only one room left. First on the left! 50 nuyen. You want it?"
+  branches {
+    responseText: "{{GM}}50\302\245{{/GM}} Yes"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 50
+        }
+      }
+    }
+    nextNodeIndex: 6
+  }
+  branches {
+    responseText: "No"
+    nextNodeIndex: 7
+  }
+}
+nodes {
+  idRef {
+    id: "523d60d337363060040044a6"
+  }
+  index: 6
+  text: "That door knob is a bit tricky sometimes. You\'ll need a bit of muscle."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "DT05_MotelKey"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        int_value: 50
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523d60bd3736306004004497"
+  }
+  index: 7
+  text: "Can\'t blame you chummer. I don\'t get much sleep myself living here."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

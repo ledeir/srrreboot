@@ -1,0 +1,230 @@
+idRef {
+  id: "523ddf0e373630e412001a71"
+}
+ui_name: "DT_Wastelands_Iceman"
+nodes {
+  idRef {
+    id: "523ddf1a373630e412001a77"
+  }
+  index: 0
+  text: "You got a reason for being in my face?\n\nHey I\342\200\231m trying to watch the band \342\200\223 OK?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523ddf3b373630e412001a7a"
+  }
+  index: 1
+  text: "You wanna start pushing daisies, just keep on annoyin\342\200\231 me, joker."
+  branches {
+    responseText: "Ice"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Mermaid"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_Mermaids"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df6d7373630e412001d6b"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523ddf5b373630e412001a7e"
+  }
+  index: 2
+  text: "Sure, I can get you ice. I only deal in it a ton at a time though. Cost you 100 nuyen. You interested?"
+  branches {
+    responseText: "{{GM}}100\302\245{{/GM}} Yes"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 100
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DT_Wastelands_Progress"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 4
+            }
+          }
+        }
+        args {
+          int_value: 3
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "No"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523ddf9a373630e412001a82"
+  }
+  index: 3
+  text: "Give me a place where you want it dumped."
+  branches {
+    responseText: "Docks"
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DT_Wastelands_Progress"
+            }
+          }
+        }
+        args {
+          int_value: 3
+        }
+      }
+    }
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "Bremerton"
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523de07a373630e412001a9e"
+    }
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523de016373630e412001a9a"
+  }
+  index: 4
+  text: "You got it! I\342\200\231ll do it as soon as the band finishes this song."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        int_value: 100
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523de025373630e412001a9d"
+  }
+  index: 5
+  text: "No way! You\342\200\231ll be lucky to find anyone delivering out there. Forget it!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523ddfc2373630e412001a84"
+  }
+  index: 6
+  text: "Mermaid? I suppose you\342\200\231d find them in the water!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

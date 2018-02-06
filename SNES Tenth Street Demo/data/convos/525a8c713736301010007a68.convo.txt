@@ -1,0 +1,104 @@
+idRef {
+  id: "525a8c713736301010007a68"
+}
+ui_name: "DB_Gunshop"
+nodes {
+  idRef {
+    id: "525a8c923736301010007a6e"
+  }
+  index: 0
+  text: "Don\'t touch! Unless you\'re buying of course...\n\nI\'ve got pieces you can\'t even get on the open market. There\'s some more stuff coming soon. I\'m just waiting for the heat to die down."
+  branches {
+    responseText: "Dark Blade"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a8d8e3736301010007ab0"
+    }
+  }
+  branches {
+    responseText: "Firearms"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a8d913736301010007ab1"
+    }
+  }
+  branches {
+    responseText: "Shadowrunners"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525a8db83736301010007ab6"
+    }
+  }
+  branches {
+    responseText: "Shop"
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5259cf6a3733617c0a0045c1"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a8cf33736301010007a75"
+  }
+  index: 1
+  text: "Those lying creeps next door? We had a deal, they\'d handle the cops, and I\'d supply their hardware needs. Lone Star almost busted through here last week."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a8cf73736301010007a78"
+  }
+  index: 2
+  text: "The biggest and the best. I\'ll even give you a good price on any hardware you don\'t see yourself needing anymore."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a8cfa3736301010007a7b"
+  }
+  index: 3
+  text: "I outfit whoever can pay. A few of my clients can be found at Jagged Nails, but I suggest you forget who told you!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

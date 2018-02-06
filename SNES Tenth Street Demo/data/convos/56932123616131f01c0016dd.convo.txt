@@ -1,0 +1,102 @@
+idRef {
+  id: "56932123616131f01c0016dd"
+}
+ui_name: "DT_Aneki_FL2_AccessSafe"
+nodes {
+  idRef {
+    id: "56932133616131f01c0016e3"
+  }
+  index: 0
+  text: "The safe is locked with a simple keypad."
+  branches {
+    responseText: "12345"
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_InputNumpad
+  inputMaxLength: 5
+}
+nodes {
+  idRef {
+    id: "5693218d616131f01c0016ef"
+  }
+  index: 1
+  text: "With a loud click the safe unlocks."
+  branches {
+    responseText: "Open Safe"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Close Safe"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "569321bc616131f01c0016f3"
+  }
+  index: 2
+  text: "On top of various files there is a small box with a key."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "AB03_Key1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "56931ff6616131f01c0016da"
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  nextNodeIndex: 0
+}

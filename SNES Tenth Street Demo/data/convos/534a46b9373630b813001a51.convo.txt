@@ -1,0 +1,258 @@
+idRef {
+  id: "534a46b9373630b813001a51"
+}
+ui_name: "RS_RATSHAMANSLAIR_Kitsune"
+nodes {
+  idRef {
+    id: "534a46ee373630b813001a57"
+  }
+  index: 0
+  text: "We did it! We did it! We make a great team. Don\'t you think?\n\nI better stick with you now. Someone has to look after you (*SIGH*)."
+  branches {
+    responseText: "Dog"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "534a474a373630b813001a59"
+    }
+  }
+  branches {
+    responseText: "Kitsune"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Jester Spirit"
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "Magic Fetish"
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "Dark Blade"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_DarkBlade"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Vampires"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_Vampires"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "534a474b373630b813001a5b"
+  }
+  index: 1
+  text: "His shrine is close. I can feel it. I think he is calling for you. We should seek him out."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "534a476e373630b813001a6c"
+  }
+  index: 2
+  text: "I\342\200\231m a shapeshifter, silly! What\342\200\231s the matter, never snuggled down with a fox?  Wanna try?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "534a479f373630b813001a70"
+  }
+  index: 3
+  text: "I felt that he\342\200\231s very powerful. From what I\342\200\231ve heard, someone at the Dark Blade may know where he haunts."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_DarkBlade"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "534a47cb373630b813001a74"
+  }
+  index: 4
+  text: "Looks interesting\342\200\246 but I\342\200\231ve never seen anything like it before."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "534a4806373630b813001a78"
+  }
+  index: 5
+  text: "Ever see how much those VAMPIRES hate sunlight?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Vampires"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "534a4830373630b813001a7c"
+  }
+  index: 6
+  text: "They\342\200\231re very dangerous. I wouldn\342\200\231t trust them."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  nextNodeIndex: 0
+}

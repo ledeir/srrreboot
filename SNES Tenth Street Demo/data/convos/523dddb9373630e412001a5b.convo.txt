@@ -1,0 +1,56 @@
+idRef {
+  id: "523dddb9373630e412001a5b"
+}
+ui_name: "DT_Wastelands_Barkeeper_2"
+nodes {
+  idRef {
+    id: "523dddcc373630e412001a61"
+  }
+  index: 0
+  text: "Yo $(l.guy)! What\342\200\231s been going down?\n\nThings are like so cool! Especially now that the guy with the ice delivered."
+  branches {
+    responseText: "Ice"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523dde02373630e412001a65"
+  }
+  index: 1
+  text: "The chiller is the dude over there in the corner."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "58abcb39616131d421006dbd"
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

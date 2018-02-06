@@ -1,0 +1,743 @@
+idRef {
+  id: "52943e5c633461bc1f005d3c"
+}
+ui_name: "DTD_DockHack"
+nodes {
+  idRef {
+    id: "5265fefc6334611018006f67"
+  }
+  index: 0
+  text: "You sit down and look for the datajack"
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Force-Use Interactable Object (with Actor)"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "52943ff1633461bc1f005d6b"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5265ff966334611018006f69"
+  }
+  index: 1
+  text: "Hamfist hacks the computer."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "HamfistHack"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "523b26203736308812000d4f"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5265ffa76334611018006f6b"
+  }
+  index: 2
+  text: "Jetboy hacks the computer."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "JetboyHack"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "523b26203736308812000d4f"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5265ffae6334611018006f6d"
+  }
+  index: 3
+  text: "Steelflight hacks the computer."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "SteelflightHack"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "523b26203736308812000d4f"
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: "Sit at the computer"
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "OT_CortexBomb"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Compare Actor Skill"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "BaseOrCurrent"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorSkills"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "OR"
+      args {
+        call_value {
+          functionName: "OR"
+          args {
+            call_value {
+              functionName: "OR"
+              args {
+                call_value {
+                  functionName: "OR"
+                  args {
+                    call_value {
+                      functionName: "OR"
+                      args {
+                        call_value {
+                          functionName: "Evaluate If Actor Has Item"
+                          args {
+                            call_value {
+                              functionName: "Specific Actor"
+                              args {
+                                call_value {
+                                  functionName: "Get Map Item (Player)"
+                                  args {
+                                    int_value: 0
+                                  }
+                                }
+                              }
+                              args {
+                              }
+                            }
+                          }
+                          args {
+                            call_value {
+                              functionName: "Get Preset Value (int)"
+                              args {
+                                string_value: "HasOrHasNot"
+                              }
+                              args {
+                                int_value: 1
+                              }
+                            }
+                          }
+                          args {
+                            call_value {
+                              functionName: "Get Map Item (Item)"
+                              args {
+                                string_value: "Berlin_CyberdeckExcalibur"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Evaluate If Actor Has Item"
+                          args {
+                            call_value {
+                              functionName: "Specific Actor"
+                              args {
+                                call_value {
+                                  functionName: "Get Map Item (Player)"
+                                  args {
+                                    int_value: 0
+                                  }
+                                }
+                              }
+                              args {
+                              }
+                            }
+                          }
+                          args {
+                            call_value {
+                              functionName: "Get Preset Value (int)"
+                              args {
+                                string_value: "HasOrHasNot"
+                              }
+                              args {
+                                int_value: 1
+                              }
+                            }
+                          }
+                          args {
+                            call_value {
+                              functionName: "Get Map Item (Item)"
+                              args {
+                                string_value: "Berlin_CyberdeckKraftwerk1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Evaluate If Actor Has Item"
+                      args {
+                        call_value {
+                          functionName: "Specific Actor"
+                          args {
+                            call_value {
+                              functionName: "Get Map Item (Player)"
+                              args {
+                                int_value: 0
+                              }
+                            }
+                          }
+                          args {
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Get Preset Value (int)"
+                          args {
+                            string_value: "HasOrHasNot"
+                          }
+                          args {
+                            int_value: 1
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Get Map Item (Item)"
+                          args {
+                            string_value: "Berlin_CyberdeckSony"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Evaluate If Actor Has Item"
+                  args {
+                    call_value {
+                      functionName: "Specific Actor"
+                      args {
+                        call_value {
+                          functionName: "Get Map Item (Player)"
+                          args {
+                            int_value: 0
+                          }
+                        }
+                      }
+                      args {
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "HasOrHasNot"
+                      }
+                      args {
+                        int_value: 1
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (Item)"
+                      args {
+                        string_value: "Berlin_CyberdeckVirtuaX"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Evaluate If Actor Has Item"
+              args {
+                call_value {
+                  functionName: "Specific Actor"
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (Player)"
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "HasOrHasNot"
+                  }
+                  args {
+                    int_value: 1
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (Item)"
+                  args {
+                    string_value: "CyberdeckExcalibur"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "OR"
+          args {
+            call_value {
+              functionName: "Evaluate If Actor Has Item"
+              args {
+                call_value {
+                  functionName: "Specific Actor"
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (Player)"
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "HasOrHasNot"
+                  }
+                  args {
+                    int_value: 1
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (Item)"
+                  args {
+                    string_value: "CyberdeckExcalibur (Blitz)"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "OR"
+              args {
+                call_value {
+                  functionName: "Evaluate If Actor Has Item"
+                  args {
+                    call_value {
+                      functionName: "Specific Actor"
+                      args {
+                        call_value {
+                          functionName: "Get Map Item (Player)"
+                          args {
+                            int_value: 0
+                          }
+                        }
+                      }
+                      args {
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "HasOrHasNot"
+                      }
+                      args {
+                        int_value: 1
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (Item)"
+                      args {
+                        string_value: "CyberdeckKraftwerk1"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "OR"
+                  args {
+                    call_value {
+                      functionName: "Evaluate If Actor Has Item"
+                      args {
+                        call_value {
+                          functionName: "Specific Actor"
+                          args {
+                            call_value {
+                              functionName: "Get Map Item (Player)"
+                              args {
+                                int_value: 0
+                              }
+                            }
+                          }
+                          args {
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Get Preset Value (int)"
+                          args {
+                            string_value: "HasOrHasNot"
+                          }
+                          args {
+                            int_value: 1
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Get Map Item (Item)"
+                          args {
+                            string_value: "CyberdeckSony"
+                          }
+                        }
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Evaluate If Actor Has Item"
+                      args {
+                        call_value {
+                          functionName: "Specific Actor"
+                          args {
+                            call_value {
+                              functionName: "Get Map Item (Player)"
+                              args {
+                                int_value: 0
+                              }
+                            }
+                          }
+                          args {
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Get Preset Value (int)"
+                          args {
+                            string_value: "HasOrHasNot"
+                          }
+                          args {
+                            int_value: 1
+                          }
+                        }
+                      }
+                      args {
+                        call_value {
+                          functionName: "Get Map Item (Item)"
+                          args {
+                            string_value: "CyberdeckVirtuaX"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 0
+  hideIfUnavailable: true
+  comment: " PC0 HAS DECK"
+}
+roots {
+  responseText: "Have Hamfist hack the computer."
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Hamfist"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 1
+  hideIfUnavailable: true
+}
+roots {
+  responseText: "Have Jetboy hack the computer."
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Jetboy"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 2
+  hideIfUnavailable: true
+}
+roots {
+  responseText: "Have Steelflight hack the computer."
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Steelflight"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 3
+  hideIfUnavailable: true
+}
+roots {
+  responseText: "Leave the computer"
+  nextNodeIndex: -1
+}

@@ -1,0 +1,156 @@
+idRef {
+  id: "54336bfd3639355c270028b6"
+}
+ui_name: "ABOUT_BEGIN"
+nodes {
+  idRef {
+    id: "54336c253639355c270028bc"
+  }
+  index: 0
+  text: "The module starts through this door..."
+  branches {
+    responseText: "NEW PLAYERS - READ THIS"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "I WANT TO CHEAT!"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Begin Game"
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "Skip Intro Movie"
+    nextNodeIndex: 5
+  }
+  branches {
+    responseText: "I\'m not ready yet"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "54336c7e3639355c270028c1"
+  }
+  index: 1
+  text: "In order to recreate the SNES feel, this module does some things differently.\n* GRINDING: Grinding was an integral part of the original. You may find yourself needing to farm enemies.\n* KARMA: After karma is earned, it needs to be collected. You MUST find a bed before you can redeem and use it.\n* KEYWORD HUNT: You need to learn KEYWORDS before you can advance the plot and you may need to revisit scenes and talk to other people."
+  branches {
+    responseText: "Begin Game"
+    nextNodeIndex: 4
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Skip Intro Movie"
+    nextNodeIndex: 5
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "I\'m not ready yet."
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "590cef8d61613110090008c0"
+  }
+  index: 2
+  text: "Fortunately for you, there is a secret room. You can start there. "
+  branches {
+    responseText: "Take me to the secret room!\n(This skips the intro scene)"
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "Never Mind"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "5a542b976161319022000bff"
+  }
+  index: 3
+  text: "Karma and Nuyen galore!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+  actions {
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "TS_Secret"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "54336c803639355c270028c3"
+  }
+  index: 4
+  text: "Have fun!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+  actions {
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "Prologue"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5a542c256161319022000c05"
+  }
+  index: 5
+  text: "Have fun!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+  actions {
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "Morgue"
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

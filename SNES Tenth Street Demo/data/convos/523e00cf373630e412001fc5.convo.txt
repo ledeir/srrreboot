@@ -1,0 +1,199 @@
+idRef {
+  id: "523e00cf373630e412001fc5"
+}
+ui_name: "DT_Doc_M_2"
+nodes {
+  idRef {
+    id: "523e00da373630e412001fcb"
+  }
+  index: 0
+  text: "$(l.name), I\342\200\231ve managed to remove the cortex bomb. It seems to have been fitted to protect your head computer. Whatever is stored in there must be very valuable.\n\nThe data in your head computer looks like some bio-storage graft. I couldn\342\200\231t access it with my equipment. The maker is Matrix Systems, a little outfit over by the bay."
+  branches {
+    responseText: "Head computer"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5240b13a373630600c00820a"
+    }
+  }
+  branches {
+    responseText: "Matrix Systems"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_MatrixSystems"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "525aa1183736301010007e08"
+    }
+  }
+  branches {
+    responseText: "Health"
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "Cyberware"
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_MatrixSystems"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523e0135373630e412001fd0"
+  }
+  index: 1
+  text: "I\342\200\231m afraid I can\342\200\231t access it. You\342\200\231ll have to find someone who knows what\342\200\231s in there and how to get it out."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523e01c2373630e412001fdb"
+  }
+  index: 2
+  text: "I know very little about them. Except their work mainly revolved around software for the Matrix."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523e02d3373630e412002000"
+  }
+  index: 3
+  text: "Have a look. The prices are very reasonable."
+  branches {
+    responseText: "Ok, let\'s see."
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5347f8763736304413003b85"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "No, thanks!"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525aa04e3736301010007daa"
+  }
+  index: 4
+  text: "Have a look. The prices are very reasonable."
+  branches {
+    responseText: "Ok, let me see what you got."
+    actions {
+      ops {
+        functionName: "Open Cyberware Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5347f8763736304413003b85"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "No, thanks!"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

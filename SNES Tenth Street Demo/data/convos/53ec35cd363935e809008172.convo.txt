@@ -1,0 +1,101 @@
+idRef {
+  id: "53ec35cd363935e809008172"
+}
+ui_name: "ABOUT_CONFIG"
+nodes {
+  idRef {
+    id: "53ec3645363935e8090081ad"
+  }
+  index: 0
+  text: "In the future we plan to allow you to configure various aspects of the module. You will be able to do this anywhere there is a bed."
+  branches {
+    responseText: "CONFIGURE SPAWN RATE"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Return to Menu"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Exit"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "53ec369e363935e809008258"
+  }
+  index: 1
+  text: "On entering specific regions of the outside maps, enemies (Snipers and Hitmen) will spawn.\nThis setting will adjust the likelyhood of them spawning. \nNOT TESTED YET"
+  branches {
+    responseText: "Return to Main Menu"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Low (~50 percent spawn chance)"
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DangerMod"
+            }
+          }
+        }
+        args {
+          int_value: -50
+        }
+      }
+    }
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Normal (~75 percent spawn chance)"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "High (100% spawn chance)"
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DangerMod"
+            }
+          }
+        }
+        args {
+          int_value: 50
+        }
+      }
+    }
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+roots {
+  responseText: "Configuration Menu"
+  nextNodeIndex: 0
+}

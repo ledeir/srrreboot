@@ -1,0 +1,49 @@
+idRef {
+  id: "533feead3736306812004600"
+}
+ui_name: "DT_DrakeEnter"
+nodes {
+  idRef {
+    id: "533feec23736306812004606"
+  }
+  index: 0
+  text: "Drake Corporation\nPlease enter password:"
+  branches {
+    responseText: "DRAKE0065"
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_InputKeyboard
+  inputMaxLength: 9
+}
+nodes {
+  idRef {
+    id: "533fef5a3736306812004609"
+  }
+  index: 1
+  text: "Access granted."
+  branches {
+    responseText: "{{GM}}Enter Drake building{{/GM}}"
+    actions {
+      ops {
+        functionName: "Open Scene"
+        args {
+          call_value {
+            functionName: "Get Map Item (Scene)"
+            args {
+              string_value: "DT_Drake1_2"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  nextNodeIndex: 0
+}

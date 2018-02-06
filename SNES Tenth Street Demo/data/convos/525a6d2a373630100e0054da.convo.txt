@@ -1,0 +1,260 @@
+idRef {
+  id: "525a6d2a373630100e0054da"
+}
+ui_name: "DB_Foyer_Vladimir"
+nodes {
+  idRef {
+    id: "525a6d3b373630100e0054e0"
+  }
+  index: 0
+  text: "Welcome to the Dark Blade. We don\'t often have guests, but when we do they tend to stay.\n\nYou come here on business? I\'d be happy to have you for dinner!"
+  branches {
+    responseText: "Magic Fetish"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a6ddd373630100e0054e8"
+  }
+  index: 1
+  text: "An amulet inscribed with a bat? You have my interest. What do you ask for such a prize?"
+  branches {
+    responseText: "Jester Spirit"
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a6df6373630100e0054eb"
+  }
+  index: 2
+  text: "So you seek to control the Jester Spirit! Even if I gave you his true name, you would never get close enough to utter it to his face. Give me the fetish first, then I shall give you the word that will be your downfall!"
+  branches {
+    responseText: "All right, here you have it!\n{{GM}}Give Fetish{{/GM}}"
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "525a6e3b373630100e0054ef"
+  }
+  index: 3
+  text: "Finally! I have been waiting for this. It brings back memories of Transylvania...\n\nThis holds a spirit of true power... and you want to play with Jesters. Ha!"
+  branches {
+    responseText: "Jester Spirit"
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Remove Item from Team"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS13_MagicFetish"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DB_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_Wastelands_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Bremerton"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "525a6e85373630100e0054f4"
+  }
+  index: 4
+  text: "You are a fool, but nevertheless, I will tell you. To control the Jester\'s power, you must utter his true name in his presence. He can be found in the ship\'s bones at Bremerton. The name you seek is... Nirwanda!"
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    actions {
+      ops {
+        functionName: "Order Actor to Move To (Prop)"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Actor)"
+                args {
+                  string_value: "525a6ce9373630100e0054d9"
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Prop)"
+            args {
+              string_value: "523b95c337336124130045a7"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Set Actor Run Speed"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Actor)"
+                args {
+                  string_value: "525a6ce9373630100e0054d9"
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "RunSpeedMethod"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Send Event After Delay"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "VladThroughWall"
+            }
+          }
+        }
+        args {
+          float_value: 1.5
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

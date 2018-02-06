@@ -1,0 +1,86 @@
+idRef {
+  id: "51fd879e6334619c10001973"
+}
+ui_name: "OT_CY_StreetKid"
+nodes {
+  idRef {
+    id: "51fd87ae6334619c10001979"
+  }
+  index: 0
+  text: "Hey chummer... you a Decker? I used to be a decker.\n\nI used to be the best there was in The Matrix."
+  branches {
+    responseText: "The Matrix?"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "53447d53373630f408004ad4"
+    }
+  }
+  branches {
+    responseText: "Shadowrunners?"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "53447d56373630f408004ad5"
+    }
+  }
+  branches {
+    responseText: "Decker?"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "53447d59373630f408004ad6"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "53447d1f373630f408004aba"
+  }
+  index: 1
+  text: "There\'s a war going on to command the grid! Cyberspace is a dangerous place to be right now... but what I wouldn\'t give to be back in there!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "53447d24373630f408004abd"
+  }
+  index: 2
+  text: "Don\'t judge me on what you see. I used to charge 1000 nuyen per run."
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "53447d3a373630f408004ac0"
+  }
+  index: 3
+  text: "No IC could stop me. My Datajack and my cyberdeck allowed me to do as I wanted in the Matrix. I could open any door or grab any data you needed. I was the best!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

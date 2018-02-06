@@ -1,0 +1,231 @@
+idRef {
+  id: "51ae469a633461541e0067b2"
+}
+ui_name: "TS_CEN_Decker"
+nodes {
+  idRef {
+    id: "51ae4745633461541e0067bd"
+  }
+  index: 0
+  text: "You can\'t be alive! I saw you getting geeked by those hitmen!\nYou\'re crazy showing your face again. You\'d better get smart like me and pack a firearm, or you\'ll wind up dead!\n"
+  branches {
+    responseText: "Firearms?"
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "51f2172c6334617421003e4b"
+    }
+  }
+  branches {
+    responseText: "Hitmen?"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "51f2154f6334617421003e2a"
+    }
+  }
+  branches {
+    responseText: "Ignore the thug."
+    actions {
+      ops {
+        functionName: "Order Actor to Move To (Region)"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Actor)"
+                args {
+                  string_value: "51ae51c9633461541e0067e1"
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Region)"
+            args {
+              string_value: "51ae54a6633461541e0067e3"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 5
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "End Current Actor Turn"
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51ae51c9633461541e0067e1"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "A demo module of the first map in the SNES version"
+          }
+          args {
+            string_value: "DeckerTalk"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "51ae47c0633461541e0067c2"
+  }
+  index: 1
+  text: "I ain\'t got time to talk to a corpse. If those guys find out I was with you, I\'ll be creamed too! "
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Let Decker run off."
+    actions {
+      ops {
+        functionName: "Order Actor to Move To (Region)"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Actor)"
+                args {
+                  string_value: "51ae51c9633461541e0067e1"
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Region)"
+            args {
+              string_value: "51ae54a6633461541e0067e3"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 5
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51ae51c9633461541e0067e1"
+  }
+}
+nodes {
+  idRef {
+    id: "51ae47e8633461541e0067c4"
+  }
+  index: 2
+  text: "They want you DEAD! If I were you, I\'d watch myself!\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Let Decker run off."
+    actions {
+      ops {
+        functionName: "Order Actor to Move To (Region)"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Actor)"
+                args {
+                  string_value: "51ae51c9633461541e0067e1"
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Region)"
+            args {
+              string_value: "51ae54a6633461541e0067e3"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 5
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "End Current Actor Turn"
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51ae51c9633461541e0067e1"
+  }
+}
+roots {
+  responseText: "A street thug recognizes you and approaches."
+  nextNodeIndex: 0
+}

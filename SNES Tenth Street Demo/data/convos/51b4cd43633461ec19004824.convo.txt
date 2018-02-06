@@ -1,0 +1,242 @@
+idRef {
+  id: "51b4cd43633461ec19004824"
+}
+ui_name: "MorticianSettingTalk"
+nodes {
+  idRef {
+    id: "51b4db4c633461ec190049a7"
+  }
+  index: 0
+  text: "You hear muffled voices."
+  branches {
+    responseText: "Listen"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Skip"
+    actions {
+      ops {
+        functionName: "Teleport Actor"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Center of Region"
+            args {
+              call_value {
+                functionName: "Get Map Item (Region)"
+                args {
+                  string_value: "51c290dd6334613c1a0026ad"
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TeleportMethod"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Teleport Camera To Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Player)"
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51b4db8a633461ec190049bc"
+  }
+  index: 1
+  text: "Brain burnt. They say some gang geeked $(l.him).\n\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a952633461e824000111"
+  }
+}
+nodes {
+  idRef {
+    id: "51b4db8a633461ec190049bf"
+  }
+  index: 2
+  text: "Yeah? $(l.he) don\'t look so dead.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a947633461e824000110"
+  }
+}
+nodes {
+  idRef {
+    id: "51b4db8a633461ec190049c2"
+  }
+  index: 3
+  text: "Ahhh, $(l.he)\'s flatlined out.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a952633461e824000111"
+  }
+}
+nodes {
+  idRef {
+    id: "51b4db8a633461ec190049c5"
+  }
+  index: 4
+  text: "We\'ll take care of $(l.him)... yeah, in the morning.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a947633461e824000110"
+  }
+}
+nodes {
+  idRef {
+    id: "51b4db8a633461ec190049c8"
+  }
+  index: 5
+  text: "Yeah, Sam.\n"
+  branches {
+    responseText: "You push the slab out of the wall and fall to the floor.\n"
+    actions {
+      ops {
+        functionName: "Teleport Actor"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Center of Region"
+            args {
+              call_value {
+                functionName: "Get Map Item (Region)"
+                args {
+                  string_value: "51c290dd6334613c1a0026ad"
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TeleportMethod"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Teleport Camera To Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Player)"
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a952633461e824000111"
+  }
+}
+nodes {
+  idRef {
+    id: "51b4db8a633461ec190049cb"
+  }
+  index: 6
+  text: "Oh, Ooooh my head.\nMy brain feels burnt...\nWhere am I? Who am I?\n"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51a9a8f9633461e82400010d"
+  }
+}
+roots {
+  responseText: "You wake up in darkness."
+  nextNodeIndex: 0
+}

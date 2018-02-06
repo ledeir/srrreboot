@@ -1,0 +1,237 @@
+idRef {
+  id: "51bbef776334616c1d004892"
+}
+ui_name: "TS_GR_RetiredDoc"
+nodes {
+  idRef {
+    id: "51bbefbc6334616c1d004898"
+  }
+  index: 0
+  text: "You\'d best be prepared. I\'ve had to heal enough people who thought they were safe running the shadows.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51b55c8763346120190048b6"
+  }
+}
+nodes {
+  idRef {
+    id: "51bbf1176334616c1d0048af"
+  }
+  index: 1
+  text: "You look troubled, young $(l.man). Is something wrong?\n"
+  branches {
+    responseText: "Heal?"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "52fc1c77633461c812001e3f"
+    }
+  }
+  branches {
+    responseText: "Street Doc?"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "51bc05d36334616c1d004c12"
+    }
+  }
+  branches {
+    responseText: "Shadowrunners?"
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "51bc05d76334616c1d004c13"
+    }
+  }
+  branches {
+    responseText: "Datajack?"
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "51bc05dc6334616c1d004c14"
+    }
+  }
+  branches {
+    responseText: "Prepared?"
+    nextNodeIndex: 6
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51b55c8763346120190048b6"
+  }
+}
+nodes {
+  idRef {
+    id: "51bbf1506334616c1d0048b7"
+  }
+  index: 2
+  text: "Forget all that talk of magic, you\'re better off leaving yourself in the hands of a skilled street doc."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51b55c8763346120190048b6"
+  }
+}
+nodes {
+  idRef {
+    id: "51bbf15b6334616c1d0048bd"
+  }
+  index: 3
+  text: "Pity I\'m retired, but there are some good ones around. Most can handle tech like that datajack of yours."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51b55c8763346120190048b6"
+  }
+}
+nodes {
+  idRef {
+    id: "51bbf1626334616c1d0048c3"
+  }
+  index: 4
+  text: "Soldiers of fortune! They hire out their skills to whoever can afford it! The corporations use them to do their dirty work."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51b55c8763346120190048b6"
+  }
+}
+nodes {
+  idRef {
+    id: "51bbf1686334616c1d0048c9"
+  }
+  index: 5
+  text: "You\'re asking for trouble if you jack into the Matrix direct. Use a cyberdeck, $(l.guy)."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51b55c8763346120190048b6"
+  }
+}
+nodes {
+  idRef {
+    id: "52fc1cb2633461c812001e42"
+  }
+  index: 6
+  text: "It\'s always good to be prepared, I probably have a couple medkits I could sell you."
+  branches {
+    responseText: "(100 Nuyen) Buy Medkit"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 100
+        }
+      }
+    }
+    nextNodeIndex: 7
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "I\'ll keep that in mind."
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "52fc1d3c633461c812001e49"
+  }
+  index: 7
+  text: "Here you go. Hopefully you won\'t need it."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        int_value: 100
+      }
+    }
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "HealthPack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

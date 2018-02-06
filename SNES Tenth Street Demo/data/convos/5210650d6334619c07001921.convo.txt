@@ -1,0 +1,92 @@
+idRef {
+  id: "5210650d6334619c07001921"
+}
+ui_name: "OT_SC_Elf1"
+nodes {
+  idRef {
+    id: "521065186334619c07001927"
+  }
+  index: 0
+  text: "I\'m not for hire! If you\'re looking for a decker, look somewhere else!"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b65d3639355419001167"
+  }
+}
+nodes {
+  idRef {
+    id: "521065326334619c0700192b"
+  }
+  index: 1
+  text: "My price is not even worth discussing, chummer."
+  branches {
+    responseText: "Matrix"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "534478e4373630f40800487d"
+    }
+  }
+  branches {
+    responseText: "Decker"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "534478e9373630f40800487e"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b65d3639355419001167"
+  }
+}
+nodes {
+  idRef {
+    id: "521065436334619c07001930"
+  }
+  index: 2
+  text: "It\'s where all the information is. It\'s where the power is. Control the Matrix, and you control the world."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b65d3639355419001167"
+  }
+}
+nodes {
+  idRef {
+    id: "521065586334619c07001932"
+  }
+  index: 3
+  text: " Unless you do it yourself, a good decker can get into the Matrix and grab the information you need."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53d5b65d3639355419001167"
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

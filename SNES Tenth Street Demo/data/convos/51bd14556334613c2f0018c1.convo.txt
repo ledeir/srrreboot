@@ -1,0 +1,330 @@
+idRef {
+  id: "51bd14556334613c2f0018c1"
+}
+ui_name: "TS_OB_GLUTSEC"
+nodes {
+  idRef {
+    id: "51bd149b6334613c2f0018c7"
+  }
+  index: 0
+  text: "I\'m afraid my boss is out.\nI\'m sure I didn\'t have you scheduled in anyway!"
+  branches {
+    responseText: "Glutman?"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_Glutman"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "TS_GlutmenProgress"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "51c5ec7d633461a80b004744"
+    }
+  }
+  branches {
+    responseText: "Glutman?"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "TS_GlutmenProgress"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "559c8dae616131b417005f5b"
+    }
+  }
+  branches {
+    responseText: "Business?"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CortexBomb"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 5
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "577048cf616131381e002385"
+    }
+  }
+  branches {
+    responseText: "Business?"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CortexBomb"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "559c8e08616131b417005f6c"
+    }
+  }
+  branches {
+    responseText: "Goodbye"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+}
+nodes {
+  idRef {
+    id: "51bd14c56334613c2f0018cb"
+  }
+  index: 1
+  text: "Mr Glutman is out at the moment. He was going to The Cage club. Maybe you can find him there..."
+  branches {
+    responseText: "The Cage?"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Goodbye"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "GlutmanAtCage"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "TS_GlutmenProgress"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "51c5ec29633461a80b00473d"
+  }
+  index: 2
+  text: "It\'s a club at the edge of town. Mr Glutman spends a lot of time there."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 0
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "559c8dff616131b417005f6b"
+    }
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+}
+nodes {
+  idRef {
+    id: "55161d32363935ac2a005fa0"
+  }
+  index: 3
+  text: "Mr. Glutman is currently on vacation. You can try calling next week."
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+}
+nodes {
+  idRef {
+    id: "552abc2e363935b01700605a"
+  }
+  index: 4
+  text: "We are primarily a Matrix solution company though we also have an on-site cyberdeck dealer. He\'s currently on vacation but you should check back later."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+}
+nodes {
+  idRef {
+    id: "552abc9d363935b01700605d"
+  }
+  index: 5
+  text: "Our repairman Gunther is in the office. You should talk to him if you have any cyberdeck needs."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

@@ -1,0 +1,97 @@
+idRef {
+  id: "53ec31f4363935e809008136"
+}
+ui_name: "ABOUT_SCENES"
+nodes {
+  idRef {
+    id: "53ec3242363935e80900813f"
+  }
+  index: 0
+  text: "Optional Scenes"
+  branches {
+    responseText: "Prologue"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Secret Room"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Exit"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "53ec327d363935e809008144"
+  }
+  index: 1
+  text: "On the original SNES game if you waited long enough you got to see Jake being gunned down by gangers. If you wish to experience that yourself you can view the prologue. \nThe game will begin after this prologue completes, so make sure you are done in here first!"
+  branches {
+    responseText: "Load Prologue"
+    actions {
+      ops {
+        functionName: "Open Scene"
+        args {
+          call_value {
+            functionName: "Get Map Item (Scene)"
+            args {
+              string_value: "Prologue"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Return to menu"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "53ec32fe363935e809008152"
+  }
+  index: 2
+  text: "A secret debugging room was recently discovered in the original game. You can jump directly to our version of it. This will likely result in all sorts of weird things happening, but in the future it will be updated to deal with the various issues that arise from skipping chunks of the game. Alternatively you can get to the room in game."
+  branches {
+    responseText: "Load Secret Room"
+    actions {
+      ops {
+        functionName: "Open Scene"
+        args {
+          call_value {
+            functionName: "Get Map Item (Scene)"
+            args {
+              string_value: "TS_Secret"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Return to menu"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 0
+}

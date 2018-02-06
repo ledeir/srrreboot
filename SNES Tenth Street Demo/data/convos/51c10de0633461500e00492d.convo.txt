@@ -1,0 +1,48 @@
+idRef {
+  id: "51c10de0633461500e00492d"
+}
+ui_name: "TS_EXT_BM4"
+nodes {
+  idRef {
+    id: "51c10def633461500e004933"
+  }
+  index: 0
+  text: "Would you like to buy a copy of the \'New Luddite\'?\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51c10e04633461500e004937"
+  }
+  index: 1
+  text: "We are opposed to the introduction of new technology! The corps are building computers with immense power. We aim to stop them!\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51c10e1c633461500e00493b"
+  }
+  index: 2
+  text: "We must hurry before they control the world!\n"
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "Talk to A Busy Man\n"
+  nextNodeIndex: 0
+}

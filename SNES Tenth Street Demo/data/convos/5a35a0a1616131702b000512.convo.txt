@@ -1,0 +1,52 @@
+idRef {
+  id: "5a35a0a1616131702b000512"
+}
+ui_name: "BR-JR-LeaveConv"
+nodes {
+  idRef {
+    id: "5a35a0c0616131702b000518"
+  }
+  index: 0
+  text: "It appears to be a portal to the docks."
+  branches {
+    responseText: "Teleport to the docks"
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "HIRELING_CHECK"
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Open Scene"
+        args {
+          call_value {
+            functionName: "Get Map Item (Scene)"
+            args {
+              string_value: "DTD_Docks"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Stay"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "Examine"
+  nextNodeIndex: 0
+}
+roots {
+  responseText: "Ignore"
+  nextNodeIndex: -1
+}

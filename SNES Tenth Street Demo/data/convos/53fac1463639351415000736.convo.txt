@@ -1,0 +1,95 @@
+idRef {
+  id: "53fac1463639351415000736"
+}
+ui_name: "DR_FL2_CPU"
+nodes {
+  idRef {
+    id: "53fac18e3639351415000740"
+  }
+  index: 0
+  text: "Hey! You shouldn\'t be touching that!"
+  branches {
+    responseText: "{{CC}}[Intelligence]{{/CC}} It\'s cool, I\'m with IT.   Installing some new anti-hacking protocols."
+    conditions {
+      ops {
+        functionName: "Compare Actor Attribute"
+        args {
+          call_value {
+            functionName: "Get Map Item (Player)"
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "BaseOrCurrent"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "ActorAttributes"
+            }
+            args {
+              int_value: 4
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 2
+        }
+      }
+    }
+    nextNodeIndex: 1
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "I\'m here to kill Drake and frag up anyone who gets in my way."
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "StealthFail"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "59a6f0f730353980050063a4"
+  }
+  index: 1
+  text: "Well... Make it quick."
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "The security guard calls out to you."
+  nextNodeIndex: 0
+}

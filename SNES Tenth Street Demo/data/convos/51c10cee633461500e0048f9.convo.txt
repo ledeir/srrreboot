@@ -1,0 +1,48 @@
+idRef {
+  id: "51c10cee633461500e0048f9"
+}
+ui_name: "TS_EXT_BM2"
+nodes {
+  idRef {
+    id: "51c10cff633461500e0048ff"
+  }
+  index: 0
+  text: "Why don\'t you get yourself a job. A real job!\n"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51c10d16633461500e004903"
+  }
+  index: 1
+  text: "The company has been good to me, chum. They look after everything."
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51c10d2d633461500e004907"
+  }
+  index: 2
+  text: "I\'d better be going. They don\'t like it when I\'m late...\n"
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  responseText: "Talk to A Busy Man\n"
+  nextNodeIndex: 0
+}
