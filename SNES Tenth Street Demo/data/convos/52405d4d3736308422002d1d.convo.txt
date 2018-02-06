@@ -77,6 +77,31 @@ nodes {
       }
     }
     ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_JaggedNailsOpen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Set Variable (int)"
       args {
         call_value {
@@ -132,7 +157,7 @@ nodes {
     nextNodeIndex: 5
   }
   branches {
-    responseText: "Can i get in now?"
+    responseText: "Can I get in now?"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
@@ -150,7 +175,7 @@ nodes {
   index: 5
   text: "As long as you got the money, you won\342\200\231t be disappointed. If you need some magic, try Kitsune."
   branches {
-    responseText: "Can i get in now?"
+    responseText: "Can I get in now?"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
@@ -261,15 +286,15 @@ roots {
   responseText: ""
   conditions {
     ops {
-      functionName: "Comparison (int)"
+      functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
             string_value: "51a9844d633461e82400002a"
           }
           args {
-            string_value: "DT_StilettoProgress"
+            string_value: "DT_ClearedStilettos"
           }
         }
       }
@@ -277,15 +302,23 @@ roots {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "Comparison Ops"
+            string_value: "IsOrIsNot"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
       args {
-        int_value: 5
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
@@ -296,15 +329,15 @@ roots {
   responseText: ""
   conditions {
     ops {
-      functionName: "Comparison (int)"
+      functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
             string_value: "51a9844d633461e82400002a"
           }
           args {
-            string_value: "DT_StilettoProgress"
+            string_value: "DT_ClearedStilettos"
           }
         }
       }
@@ -312,15 +345,23 @@ roots {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "Comparison Ops"
+            string_value: "IsOrIsNot"
           }
           args {
-            int_value: 4
+            int_value: 1
           }
         }
       }
       args {
-        int_value: 5
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
       }
     }
   }
@@ -331,15 +372,15 @@ roots {
   responseText: ""
   conditions {
     ops {
-      functionName: "Comparison (int)"
+      functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
             string_value: "51a9844d633461e82400002a"
           }
           args {
-            string_value: "DT_StilettoProgress"
+            string_value: "DT_JaggedNailsOpen"
           }
         }
       }
@@ -347,15 +388,23 @@ roots {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "Comparison Ops"
+            string_value: "IsOrIsNot"
           }
           args {
-            int_value: 2
+            int_value: 1
           }
         }
       }
       args {
-        int_value: 5
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
