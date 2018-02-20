@@ -120,6 +120,33 @@ nodes {
           int_value: 0
         }
       }
+      ops {
+        functionName: "Comparison (string)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (string)"
+            args {
+            }
+            args {
+              string_value: "SpawnPoint"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          string_value: "OT_SPUTNIK"
+        }
+      }
     }
     nextNodeIndex: 5
     hideIfUnavailable: true
