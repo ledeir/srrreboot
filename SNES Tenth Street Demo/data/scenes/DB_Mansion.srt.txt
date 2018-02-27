@@ -2165,6 +2165,90 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Kitchen"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Actor In Passive Mode"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Kitchen"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -18300,6 +18384,90 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "onlyInCrypt"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Actor In Passive Mode"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "onlyInCrypt"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -20406,97 +20574,6 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Add To Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "unspentKarma"
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-    }
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Gained 2 Karma"
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "user_interface"
-          }
-          args {
-            string_value: "GotKarma"
-          }
-        }
-      }
-      args {
-        float_value: 5
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Add Nuyen"
       args {
         call_value {
@@ -20557,92 +20634,15 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Add Nuyen"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Random (int)"
           args {
-            string_value: "51a9844d633461e82400002a"
+            int_value: 70
           }
           args {
-            string_value: "unspentKarma"
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-    }
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Gained 2 Karma"
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "user_interface"
-          }
-          args {
-            string_value: "GotKarma"
-          }
-        }
-      }
-      args {
-        float_value: 5
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
+            int_value: 100
           }
         }
       }
@@ -23600,6 +23600,9 @@ characters {
     z: 6
   }
   orientation: ORIENTATION_S
+  GeneralTags: "3XP"
+  GeneralTags: "isCryptRespawn4"
+  GeneralTags: "isCryptGrind"
   displayName: "Crypt_Spawn4N"
   idRef {
     id: "5345494d373630500e0035c5"
@@ -23674,6 +23677,8 @@ characters {
     team_id: "Gangers"
     char_name: "Ghoul"
     GeneralTags: "3XP"
+    GeneralTags: "isCryptRespawn4"
+    GeneralTags: "isCryptGrind"
     enabled_at_start: false
     pc_spawn_number: -1
     hiring_type: HiringType_None
@@ -24441,6 +24446,9 @@ characters {
     z: -3
   }
   orientation: ORIENTATION_E
+  GeneralTags: "3XP"
+  GeneralTags: "isCryptRespawn5"
+  GeneralTags: "isCryptGrind"
   displayName: "Crypt_Spawn5W"
   idRef {
     id: "5345494d373630500e0036aa"
@@ -24515,6 +24523,8 @@ characters {
     team_id: "Gangers"
     char_name: "Ghoul"
     GeneralTags: "3XP"
+    GeneralTags: "isCryptRespawn5"
+    GeneralTags: "isCryptGrind"
     enabled_at_start: false
     pc_spawn_number: -1
     hiring_type: HiringType_None
@@ -24718,6 +24728,9 @@ characters {
     z: 2
   }
   orientation: ORIENTATION_S
+  GeneralTags: "5XP"
+  GeneralTags: "isCryptRespawn5"
+  GeneralTags: "isCryptGrind"
   displayName: "Crypt_ScaryGhoul"
   idRef {
     id: "5345494d373630500e0036f2"
@@ -24803,6 +24816,9 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Scary Ghoul"
+    GeneralTags: "5XP"
+    GeneralTags: "isCryptRespawn5"
+    GeneralTags: "isCryptGrind"
     enabled_at_start: false
     pc_spawn_number: -1
     hiring_type: HiringType_None
@@ -25006,6 +25022,8 @@ characters {
     z: -27
   }
   orientation: ORIENTATION_S
+  GeneralTags: "5XP"
+  GeneralTags: "onlyInCrypt"
   displayName: "Crypt_Butcher"
   idRef {
     id: "5345494d373630500e00378c"
@@ -25036,6 +25054,8 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Butcher"
+    GeneralTags: "5XP"
+    GeneralTags: "onlyInCrypt"
     enabled_at_start: false
     pc_spawn_number: -1
     portrait {
