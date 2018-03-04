@@ -7,9 +7,47 @@ nodes {
     id: "584f1ef5663136640f00221e"
   }
   index: 0
-  text: "The locker contains a scattering of various sized scientist smocks.   \n\nTake the disguises?"
+  text: "The locker contains a scattering of various sized scientist smocks.{{/GM}}\n\n{{GM}}Take the disguises?"
   branches {
     responseText: "Yes"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DV_ScienceDisguiseUsed"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Enable/Disable Interactable Object"
@@ -88,12 +126,39 @@ nodes {
                 functionName: "Arithmetic (int)"
                 args {
                   call_value {
-                    functionName: "Get Actor Attribute"
+                    functionName: "Arithmetic (int)"
                     args {
                       call_value {
-                        functionName: "Get Map Item (Player)"
+                        functionName: "Get Actor Attribute"
                         args {
-                          int_value: 0
+                          call_value {
+                            functionName: "Get Map Item (Player)"
+                            args {
+                              int_value: 0
+                            }
+                          }
+                        }
+                        args {
+                          call_value {
+                            functionName: "Get Preset Value (int)"
+                            args {
+                              string_value: "BaseOrCurrent"
+                            }
+                            args {
+                              int_value: 1
+                            }
+                          }
+                        }
+                        args {
+                          call_value {
+                            functionName: "Get Preset Value (int)"
+                            args {
+                              string_value: "ActorAttributes"
+                            }
+                            args {
+                              int_value: 3
+                            }
+                          }
                         }
                       }
                     }
@@ -101,23 +166,15 @@ nodes {
                       call_value {
                         functionName: "Get Preset Value (int)"
                         args {
-                          string_value: "BaseOrCurrent"
-                        }
-                        args {
-                          int_value: 1
-                        }
-                      }
-                    }
-                    args {
-                      call_value {
-                        functionName: "Get Preset Value (int)"
-                        args {
-                          string_value: "ActorAttributes"
+                          string_value: "Arithmetic Ops"
                         }
                         args {
                           int_value: 3
                         }
                       }
+                    }
+                    args {
+                      int_value: 2
                     }
                   }
                 }
@@ -134,12 +191,39 @@ nodes {
                 }
                 args {
                   call_value {
-                    functionName: "Get Actor Attribute"
+                    functionName: "Arithmetic (int)"
                     args {
                       call_value {
-                        functionName: "Get Map Item (Player)"
+                        functionName: "Get Actor Attribute"
                         args {
-                          int_value: 0
+                          call_value {
+                            functionName: "Get Map Item (Player)"
+                            args {
+                              int_value: 0
+                            }
+                          }
+                        }
+                        args {
+                          call_value {
+                            functionName: "Get Preset Value (int)"
+                            args {
+                              string_value: "BaseOrCurrent"
+                            }
+                            args {
+                              int_value: 1
+                            }
+                          }
+                        }
+                        args {
+                          call_value {
+                            functionName: "Get Preset Value (int)"
+                            args {
+                              string_value: "ActorAttributes"
+                            }
+                            args {
+                              int_value: 4
+                            }
+                          }
                         }
                       }
                     }
@@ -147,23 +231,15 @@ nodes {
                       call_value {
                         functionName: "Get Preset Value (int)"
                         args {
-                          string_value: "BaseOrCurrent"
+                          string_value: "Arithmetic Ops"
                         }
                         args {
-                          int_value: 1
+                          int_value: 3
                         }
                       }
                     }
                     args {
-                      call_value {
-                        functionName: "Get Preset Value (int)"
-                        args {
-                          string_value: "ActorAttributes"
-                        }
-                        args {
-                          int_value: 4
-                        }
-                      }
+                      int_value: 2
                     }
                   }
                 }
@@ -187,7 +263,7 @@ nodes {
                   int_value: 5
                 }
                 args {
-                  int_value: 15
+                  int_value: 10
                 }
               }
             }
@@ -224,8 +300,77 @@ nodes {
           }
         }
       }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DV_ScienceDisguiseUsed"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 1
+    comment: "Unused"
+  }
+  branches {
+    responseText: "Yes"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DV_ScienceDisguiseUsed"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 2
+    comment: "Used"
   }
   branches {
     responseText: "No"
@@ -238,8 +383,16 @@ nodes {
     id: "584f1f41663136640f002222"
   }
   index: 1
-  text: "You find various sizes of Scientist smocks in the locker. Quickly, you and your team dress in the stolen disguises.\n\nPerhaps this will make sneaking though the volcano a little easier.\n\nBut be careful, Other employees may recognize that you don\'t belong."
+  text: "You find various sizes of Scientist smocks in the locker. Quickly, you and your team dress in the stolen disguises.\n\nPerhaps this will make sneaking though the volcano a little easier.\n\nBut be careful, Other employees will start to recognize that you don\'t belong here."
   nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
+    id: "5a9c4788343831b40f004e07"
+  }
+  index: 2
+  text: "{{GM}}They\'re not real likely to fall for the wandering scientist routine again.{{/GM}}"
+  nodeType: ConversationNodeType_Simple
 }
 roots {
   nextNodeIndex: 0
