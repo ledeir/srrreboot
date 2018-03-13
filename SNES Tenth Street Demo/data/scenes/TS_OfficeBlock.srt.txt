@@ -6769,7 +6769,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "GotoGRClub"
+  name: "GotoGRClub.OLD"
   events {
     ops {
       functionName: "On Item Interaction"
@@ -7239,13 +7239,13 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "58940120616131f846001cf6"
   }
   elseActions {
   }
-  is_oneshot: false
+  is_oneshot: true
 }
 triggers {
   name: "GR-JangaDance"
@@ -18413,7 +18413,7 @@ triggers {
         }
       }
       args {
-        string_value: "Akimi DIED"
+        string_value: "Akimi has died!"
       }
       args {
         float_value: 0
@@ -18576,7 +18576,7 @@ triggers {
         }
       }
       args {
-        string_value: "ANDERS DIED"
+        string_value: "Anders has died!"
       }
       args {
         float_value: 0
@@ -18739,7 +18739,7 @@ triggers {
         }
       }
       args {
-        string_value: "Dances DIED"
+        string_value: "Dances with Clams has died!"
       }
       args {
         float_value: 0
@@ -18902,7 +18902,7 @@ triggers {
         }
       }
       args {
-        string_value: "Frog DIED"
+        string_value: "Frogtongue has died!"
       }
       args {
         float_value: 0
@@ -19065,7 +19065,7 @@ triggers {
         }
       }
       args {
-        string_value: "Hamfist DIED"
+        string_value: "Hamfist has died!"
       }
       args {
         float_value: 0
@@ -19228,7 +19228,7 @@ triggers {
         }
       }
       args {
-        string_value: "JANGA DIED"
+        string_value: "Jangadance has died!"
       }
       args {
         float_value: 0
@@ -19391,7 +19391,7 @@ triggers {
         }
       }
       args {
-        string_value: "Jetboy DIED"
+        string_value: "Jetboy has died!"
       }
       args {
         float_value: 0
@@ -19554,7 +19554,7 @@ triggers {
         }
       }
       args {
-        string_value: "Kitsune DIED"
+        string_value: "Kitsune has died!"
       }
       args {
         float_value: 0
@@ -19767,7 +19767,7 @@ triggers {
         }
       }
       args {
-        string_value: "Norbert DIED"
+        string_value: "Norbert has died!"
       }
       args {
         float_value: 0
@@ -19930,7 +19930,7 @@ triggers {
         }
       }
       args {
-        string_value: "Orifice DIED"
+        string_value: "Orifice has died!"
       }
       args {
         float_value: 0
@@ -20093,7 +20093,7 @@ triggers {
         }
       }
       args {
-        string_value: "Splatter DIED"
+        string_value: "Splatter has died!"
       }
       args {
         float_value: 0
@@ -20256,7 +20256,7 @@ triggers {
         }
       }
       args {
-        string_value: "Steel DIED"
+        string_value: "Steelflight has died!"
       }
       args {
         float_value: 0
@@ -23952,6 +23952,398 @@ triggers {
   isActive: true
   idRef {
     id: "5a346801616131e40d005e49"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "GotoGRClub"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "520ef4b6633461382b0072af"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eGR_RunnerCheck"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "A demo module of the first map in the SNES version"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "TS_OB_GR_DOOR"
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Random Point Within Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5894020f616131f846001cfa"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Clear Actor Orders"
+      args {
+        call_value {
+          functionName: "All Actors"
+          args {
+            call_value {
+              functionName: "Nothing Selected"
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors Within Area"
+          args {
+            call_value {
+              functionName: "Area: Region"
+              args {
+                call_value {
+                  functionName: "Get Map Item (Region)"
+                  args {
+                    string_value: "51b2d413633461080f0019bf"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors Within Area"
+          args {
+            call_value {
+              functionName: "Area: Region"
+              args {
+                call_value {
+                  functionName: "Get Map Item (Region)"
+                  args {
+                    string_value: "51fd5cb66334617c1f0067e2"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to become a Non-Combatant"
+      args {
+        call_value {
+          functionName: "All Actors Within Area"
+          args {
+            call_value {
+              functionName: "Area: Region"
+              args {
+                call_value {
+                  functionName: "Get Map Item (Region)"
+                  args {
+                    string_value: "51b2d413633461080f0019bf"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to become a Non-Combatant"
+      args {
+        call_value {
+          functionName: "All Actors Within Area"
+          args {
+            call_value {
+              functionName: "Area: Region"
+              args {
+                call_value {
+                  functionName: "Get Map Item (Region)"
+                  args {
+                    string_value: "51fd5cb66334617c1f0067e2"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Team\'s Turn"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Manual Turn Mode"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aa761dd616131a811007858"
   }
   elseActions {
   }
