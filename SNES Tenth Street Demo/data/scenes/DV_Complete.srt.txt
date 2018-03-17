@@ -5793,8 +5793,91 @@ triggers {
     }
   }
   conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DV_ArmorLooted"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
   }
   actions {
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "54b1f9e6666538ec0900193b"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DV_ArmorLooted"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
     ops {
       functionName: "Add Item to Actor"
       args {
@@ -5832,6 +5915,12 @@ triggers {
         }
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "54b1fdd4666538ec09001943"
+  }
+  elseActions {
     ops {
       functionName: "Enable/Disable Interactable Object"
       args {
@@ -5854,12 +5943,52 @@ triggers {
         }
       }
     }
-  }
-  isActive: true
-  idRef {
-    id: "54b1fdd4666538ec09001943"
-  }
-  elseActions {
+    ops {
+      functionName: "Display Text over Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "54b1f9e6666538ec0900193b"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "This elaborate chest contained what appears to be a suit of armor, someone has already taken it though."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 10
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
   }
   is_oneshot: false
 }
@@ -24717,292 +24846,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "Sub4.Drake [Activate].BKUP"
-  events {
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Region Enabled"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "561f1aa6663136d0060012c7"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text over Prop"
-      args {
-        call_value {
-          functionName: "Get Map Item (Prop)"
-          args {
-            string_value: "561f18a1663136d0060012c3"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        string_value: "Welcome, $(l.name)... I\'ve been expecting you.   You didn\'t really think you were going to ambush me, did you?   In my own home?"
-      }
-      args {
-        float_value: 255
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 128
-      }
-      args {
-        float_value: 16
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Add Camera Point of Interest (Actors)"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "54d9505e66653874090049c3"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        float_value: 4
-      }
-    }
-    ops {
-      functionName: "Suspend Team\'s Turn"
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Change Actor Team"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "54d9505e66653874090049c3"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "eSummonJester"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "551a2e7e363935441b003493"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "bDrakeFight"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Force-Use Interactable Object (Basic)"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "54ab58ed666538180f0091c2"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Ambient Light Color"
-      args {
-        float_value: 208
-      }
-      args {
-        float_value: 146
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (CameraRegion)"
-          args {
-            string_value: "5242289b3733615c0c002ee7"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "587db1e4616131c82d001906"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
   name: ""
   events {
   }
@@ -38301,6 +38144,605 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5aad523f6631366817002aac"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "---===== Hacking Damage Party  =====---"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5aad523f6631366817002aad"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Hacking.Hamfist"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eHack_Hamfist"
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 5
+          }
+          args {
+            int_value: 20
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "Damage_MatrixHack"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "HackMod_Hamfist"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Cause Damage"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Hamfist"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aad52516631366817002aae"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Hacking.Jetboy"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eHack_Jetboy"
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 5
+          }
+          args {
+            int_value: 20
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "Damage_MatrixHack"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "HackMod_Jetboy"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Cause Damage"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Jetboy"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aad53926631366817002ab2"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Hacking.Steelflight"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eHack_Steelflight"
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 5
+          }
+          args {
+            int_value: 20
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "Damage_MatrixHack"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "HackMod_Steelflight"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Cause Damage"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Steelflight"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aad53946631366817002ab3"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Hacking.Player"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eHack_Player"
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 5
+          }
+          args {
+            int_value: 20
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "Damage_MatrixHack"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "HackMod_Player"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Cause Damage"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Damage_MatrixHack"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aad53966631366817002ab4"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
 regions {
   name: "cHeliPad"
   position {
@@ -46156,6 +46598,46 @@ variables {
     typeName: "int"
   }
 }
+variables {
+  int_value: 0
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "Damage_MatrixHack"
+    typeName: "int"
+  }
+}
+variables {
+  int_value: 1
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "HackMod_Hamfist"
+    typeName: "int"
+  }
+}
+variables {
+  int_value: 2
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "HackMod_Jetboy"
+    typeName: "int"
+  }
+}
+variables {
+  int_value: 3
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "HackMod_Steelflight"
+    typeName: "int"
+  }
+}
+variables {
+  int_value: 2
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "HackMod_Player"
+    typeName: "int"
+  }
+}
 mapEvents: "eTravel"
 mapEvents: "eElevatorUp"
 mapEvents: "eElevatorDown"
@@ -46191,6 +46673,10 @@ mapEvents: "CHK_SPAWN"
 mapEvents: "ENDWAIT"
 mapEvents: "eSpawnNaga"
 mapEvents: "eSpawnDrake"
+mapEvents: "eHack_Hamfist"
+mapEvents: "eHack_Jetboy"
+mapEvents: "eHack_Steelflight"
+mapEvents: "eHack_Player"
 senseTags: "isDrake"
 senseTags: "isLVL1Turret"
 senseTags: "isLVL2Turret"
