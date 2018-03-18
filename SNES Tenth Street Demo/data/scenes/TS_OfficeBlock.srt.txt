@@ -153,9 +153,6 @@ triggers {
       }
     }
     ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
       functionName: "Order Actor to Move To (Region)"
       args {
         call_value {
@@ -193,26 +190,65 @@ triggers {
       }
     }
     ops {
-      functionName: "Set Variable (bool)"
+      functionName: "Suspend Team\'s Turn"
       args {
         call_value {
-          functionName: "Get Story Variable (bool)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "51a9844d633461e82400002a"
+            string_value: "FactionList"
           }
           args {
-            string_value: "PursueDecker"
+            int_value: 0
           }
         }
       }
       args {
+        int_value: 1
+      }
+      args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Map Item (SceneDimension)"
           args {
-            string_value: "bool"
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Suspend Team\'s Turn"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
           }
           args {
             int_value: 1
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Wait for Rounds"
+      args {
+        int_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -1484,45 +1520,8 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Order Actor to Move To (Region)"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "51cfbc2f633461ac1e00495b"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe07633461ac1e00495c"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "51fd75a96334619c1000192f"
   }
@@ -1894,7 +1893,30 @@ triggers {
   }
   actions {
     ops {
-      functionName: "End Current Actor Turn"
+      functionName: "Order Actor to Patrol"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (PatrolRoute)"
+          args {
+            string_value: "-1"
+          }
+        }
+      }
     }
   }
   isActive: true
@@ -1954,7 +1976,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Step1"
+  name: "StartWalking"
   events {
     ops {
       functionName: "On Region Enter"
@@ -1962,7 +1984,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Region)"
           args {
-            string_value: "51cfbe07633461ac1e00495c"
+            string_value: "51fd5cb66334617c1f0067e2"
           }
         }
       }
@@ -1989,43 +2011,7 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "51cfbc2f633461ac1e00495b"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Order Actor to Move To (Region)"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe30633461ac1e00495e"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
+          functionName: "Get Map Item (Player)"
           args {
             int_value: 0
           }
@@ -2033,67 +2019,18 @@ triggers {
       }
     }
   }
-  isActive: true
-  idRef {
-    id: "51cfbea7633461ac1e004962"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Step2"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe1d633461ac1e00495d"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "51cfbc2f633461ac1e00495b"
-          }
-        }
-      }
-    }
-  }
   actions {
     ops {
-      functionName: "Order Actor to Move To (Region)"
+      functionName: "Set Actor Wander Range"
       args {
         call_value {
           functionName: "Specific Actor"
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
             }
           }
           args {
@@ -2101,268 +2038,11 @@ triggers {
         }
       }
       args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe30633461ac1e00495e"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51cfbeee633461ac1e004963"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Step3"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe30633461ac1e00495e"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "51cfbc2f633461ac1e00495b"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Order Actor to Move To (Region)"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe4c633461ac1e00495f"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51cfbef1633461ac1e004964"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Step4"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe4c633461ac1e00495f"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "51cfbc2f633461ac1e00495b"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Order Actor to Move To (Region)"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51cfbe07633461ac1e00495c"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51cfbef3633461ac1e004965"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "HideNPC"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "55b9b743616131481500443e"
-          }
-        }
+        int_value: 2
       }
     }
     ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "57706438616131381e0023ef"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "51cfbc2f633461ac1e00495b"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Animation Stance"
+      functionName: "Order Actor to Patrol"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -2380,9 +2060,351 @@ triggers {
       }
       args {
         call_value {
+          functionName: "Get Map Item (PatrolRoute)"
+          args {
+            string_value: "5aaee8f36631362c13001166"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51cfbea7633461ac1e004962"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "StopWalking"
+  events {
+    ops {
+      functionName: "On Region Exit"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51fd5cb66334617c1f0067e2"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "StanceType"
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Order Actor to Patrol"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (PatrolRoute)"
+          args {
+            string_value: "-1"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aaee9b16631362c13001167"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Combat.WalkerStart"
+  events {
+    ops {
+      functionName: "On Combat Exited"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor is Inside Region"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "AreOrAreNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51fd5cb66334617c1f0067e2"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Actor Wander Range"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+    ops {
+      functionName: "Order Actor to Patrol"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (PatrolRoute)"
+          args {
+            string_value: "5aaee8f36631362c13001166"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Detain Actor"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DetainMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51cfbef1633461ac1e004964"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Combat.WalkerStop"
+  events {
+    ops {
+      functionName: "On Combat Entered"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Order Actor to Patrol"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (PatrolRoute)"
+          args {
+            string_value: "-1"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play Animation From Manifest"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51cfbc2f633461ac1e00495b"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Animation)"
+          args {
+            string_value: "Seattle:General/standing_idle_cower"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Detain Actor"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DetainMethod"
           }
           args {
             int_value: 1
@@ -2390,16 +2412,37 @@ triggers {
         }
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "51cfbeee633461ac1e004963"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Citizen.PostConvo"
+  events {
     ops {
-      functionName: "Enable/Disable Team\'s Turn"
+      functionName: "On Conversation Complete"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor is Inside Region"
       args {
         call_value {
-          functionName: "Get Preset Value (string)"
+          functionName: "Specific Actor"
           args {
-            string_value: "FactionList"
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
           }
           args {
-            int_value: 3
           }
         }
       }
@@ -2407,7 +2450,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "EnableOrDisable"
+            string_value: "AreOrAreNot"
           }
           args {
             int_value: 1
@@ -2416,9 +2459,37 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (SceneDimension)"
+          functionName: "Get Map Item (Region)"
           args {
-            string_value: "Default"
+            string_value: "51fd5cb66334617c1f0067e2"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Order Actor to Patrol"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51cfbc2f633461ac1e00495b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (PatrolRoute)"
+          args {
+            string_value: "5aaee8f36631362c13001166"
           }
         }
       }
@@ -3297,7 +3368,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 4
+            int_value: 1
           }
         }
       }
@@ -3311,7 +3382,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -3322,7 +3393,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 4
+                int_value: 1
               }
             }
           }
@@ -3349,12 +3420,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -3457,7 +3536,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 4
+            int_value: 1
           }
         }
       }
@@ -3471,7 +3550,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -3482,7 +3561,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 4
+                int_value: 1
               }
             }
           }
@@ -3509,12 +3588,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -3617,7 +3704,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 4
+            int_value: 1
           }
         }
       }
@@ -3631,7 +3718,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -3642,7 +3729,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 4
+                int_value: 1
               }
             }
           }
@@ -3669,12 +3756,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -3777,7 +3872,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 5
+            int_value: 1
           }
         }
       }
@@ -3791,7 +3886,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -3802,7 +3897,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 5
+                int_value: 1
               }
             }
           }
@@ -3829,12 +3924,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -3937,7 +4040,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 5
+            int_value: 1
           }
         }
       }
@@ -3951,7 +4054,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -3962,7 +4065,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 5
+                int_value: 1
               }
             }
           }
@@ -3989,12 +4092,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -4081,7 +4192,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 4
+            int_value: 1
           }
         }
       }
@@ -4095,7 +4206,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -4106,7 +4217,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 4
+                int_value: 1
               }
             }
           }
@@ -4133,12 +4244,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -4237,7 +4356,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 5
+            int_value: 1
           }
         }
       }
@@ -4251,7 +4370,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -4262,7 +4381,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 5
+                int_value: 1
               }
             }
           }
@@ -4289,12 +4408,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -4381,7 +4508,7 @@ triggers {
             string_value: "FactionList"
           }
           args {
-            int_value: 4
+            int_value: 1
           }
         }
       }
@@ -4395,7 +4522,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (ThreatType)"
+      functionName: "Order Actor to Seek And Destroy (Team)"
       args {
         call_value {
           functionName: "All Actors on Team"
@@ -4406,7 +4533,7 @@ triggers {
                 string_value: "FactionList"
               }
               args {
-                int_value: 4
+                int_value: 1
               }
             }
           }
@@ -4433,12 +4560,20 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "ThreatType"
+            string_value: "FactionList"
           }
           args {
-            int_value: 3
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -5924,7 +6059,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "57705738616131381e0023e7"
   }
@@ -6044,7 +6179,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "57705823616131381e0023eb"
   }
@@ -24742,196 +24877,12 @@ regions {
   no_fow_in_region: false
 }
 regions {
-  name: "step1"
-  position {
-    x: -140
-    y: -16
-    width: 3
-    height: 2
-  }
-  enabledAtStart: true
-  is_camera_region: false
-  idRef {
-    id: "51cfbe07633461ac1e00495c"
-  }
-  highlight_color {
-    r: 0
-    g: 0
-    b: 0
-    a: 1
-  }
-  visible_at_start: false
-  is_closet: false
-  is_teleporter_region: false
-  directional_light_dir {
-    x: -0.5
-    y: -1
-    z: -0.75
-  }
-  directional_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambient_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambience_template: ""
-  combat_music: ""
-  default_music: ""
-  loop_combat_music: true
-  loop_default_music: false
-  no_fow_in_region: false
-}
-regions {
-  name: "step2"
-  position {
-    x: -140
-    y: -30
-    width: 1
-    height: -2
-  }
-  enabledAtStart: true
-  is_camera_region: false
-  idRef {
-    id: "51cfbe1d633461ac1e00495d"
-  }
-  highlight_color {
-    r: 0
-    g: 0
-    b: 0
-    a: 1
-  }
-  visible_at_start: false
-  is_closet: false
-  is_teleporter_region: false
-  directional_light_dir {
-    x: -0.5
-    y: -1
-    z: -0.75
-  }
-  directional_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambient_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambience_template: ""
-  combat_music: ""
-  default_music: ""
-  loop_combat_music: true
-  loop_default_music: false
-  no_fow_in_region: false
-}
-regions {
-  name: "step3"
-  position {
-    x: -121
-    y: -35
-    width: 2
-    height: 3
-  }
-  enabledAtStart: true
-  is_camera_region: false
-  idRef {
-    id: "51cfbe30633461ac1e00495e"
-  }
-  highlight_color {
-    r: 0
-    g: 0
-    b: 0
-    a: 1
-  }
-  visible_at_start: false
-  is_closet: false
-  is_teleporter_region: false
-  directional_light_dir {
-    x: -0.5
-    y: -1
-    z: -0.75
-  }
-  directional_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambient_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambience_template: ""
-  combat_music: ""
-  default_music: ""
-  loop_combat_music: true
-  loop_default_music: false
-  no_fow_in_region: false
-}
-regions {
-  name: "step4"
-  position {
-    x: -132
-    y: -26
-    width: 3
-    height: 2
-  }
-  enabledAtStart: true
-  is_camera_region: false
-  idRef {
-    id: "51cfbe4c633461ac1e00495f"
-  }
-  highlight_color {
-    r: 0
-    g: 0
-    b: 0
-    a: 1
-  }
-  visible_at_start: false
-  is_closet: false
-  is_teleporter_region: false
-  directional_light_dir {
-    x: -0.5
-    y: -1
-    z: -0.75
-  }
-  directional_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambient_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
-    a: 1
-  }
-  ambience_template: ""
-  combat_music: ""
-  default_music: ""
-  loop_combat_music: true
-  loop_default_music: false
-  no_fow_in_region: false
-}
-regions {
   name: "Spawn1"
   position {
     x: -21
     y: 17
     width: 15
-    height: 9
+    height: 12
   }
   enabledAtStart: true
   is_camera_region: false
@@ -24976,8 +24927,8 @@ regions {
   position {
     x: -8
     y: 9
-    width: 11
-    height: -18
+    width: 14
+    height: -19
   }
   enabledAtStart: true
   is_camera_region: false
@@ -25068,8 +25019,8 @@ regions {
   position {
     x: -141
     y: -27
-    width: 9
-    height: 16
+    width: 12
+    height: 15
   }
   enabledAtStart: true
   is_camera_region: false
@@ -25204,10 +25155,10 @@ regions {
 regions {
   name: "GotoB"
   position {
-    x: -34
-    y: -18
+    x: -31
+    y: -14
     width: 6
-    height: 19
+    height: 12
   }
   enabledAtStart: true
   is_camera_region: false
@@ -25344,8 +25295,8 @@ regions {
   position {
     x: -7
     y: 10
-    width: 10
-    height: 8
+    width: 14
+    height: 9
   }
   enabledAtStart: true
   is_camera_region: false
@@ -25573,9 +25524,9 @@ regions {
   name: "ClubCamera"
   position {
     x: -46
-    y: -61
+    y: -84
     width: 24
-    height: -23
+    height: 24
   }
   enabledAtStart: true
   is_camera_region: true
@@ -25603,9 +25554,9 @@ regions {
     a: 1
   }
   ambient_light_color {
-    r: 0.10196079
-    g: 0.10196079
-    b: 0.10196079
+    r: 0.41568628
+    g: 0.41568628
+    b: 0.41568628
     a: 1
   }
   ambience_template: ""
@@ -26121,6 +26072,63 @@ regions {
   loop_default_music: false
   no_fow_in_region: false
 }
+patrolRoutes {
+  name: "Loyal_Wander"
+  pathType: 0
+  nodes {
+    position {
+      x: -140
+      z: -16
+    }
+    index: 0
+  }
+  nodes {
+    position {
+      x: -137
+      z: -29
+    }
+    index: 1
+  }
+  nodes {
+    position {
+      x: -121
+      z: -34
+    }
+    index: 2
+  }
+  nodes {
+    position {
+      x: -122
+      z: -26
+    }
+    index: 3
+  }
+  nodes {
+    position {
+      x: -131
+      z: -24
+    }
+    index: 4
+  }
+  nodes {
+    position {
+      x: -131
+      z: -16
+    }
+    index: 5
+  }
+  nodes {
+    position {
+      x: -140
+      z: -16
+    }
+    index: 6
+  }
+  can_move_beyond_node: true
+  idRef {
+    id: "5aaee8f36631362c13001166"
+  }
+}
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
@@ -26222,7 +26230,7 @@ characters {
   }
   interactionRoot {
     isEnabled: true
-    interactionRadius: 1
+    interactionRadius: 4
     prerequisites {
       ops {
         functionName: "Evaluate Turn Mode"
@@ -26243,7 +26251,7 @@ characters {
       conversationID: "51cfbf29633461ac1e004966"
       turnToFace: true
     }
-    interaction_info_text: ""
+    interaction_info_text: "Talk to citizen"
   }
   lod: 0
   character_instance {
@@ -26284,6 +26292,7 @@ characters {
     }
     karma: 6
     is_prop_character: false
+    has_fist: false
   }
 }
 characters {
@@ -28541,6 +28550,8 @@ mapEvents: "DeadRunner"
 mapEvents: "ENDWAIT"
 mapEvents: "CHK_SPAWN"
 mapEvents: "eGR_RunnerCheck"
+mapEvents: "eWalkerStart"
+mapEvents: "eWalkerStop"
 senseTags: "Akimi"
 goals {
   name: "Survive"
@@ -28634,8 +28645,6 @@ team_affiliations {
 }
 scene_dimensions {
   dimension_name: "Default"
-}
-character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
