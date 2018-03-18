@@ -501,28 +501,82 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Suspend Team\'s Turn"
+      functionName: "Apply Attribute Status Effect to Actor"
       args {
         call_value {
-          functionName: "Get Preset Value (string)"
+          functionName: "All Actors With Tag"
           args {
-            string_value: "FactionList"
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Story Variable (int)"
+                          args {
+                            string_value: "51a9844d633461e82400002a"
+                          }
+                          args {
+                            string_value: "ArenaLevel"
+                          }
+                        }
+                      }
+                    }
+                  }
+                  args {
+                    string_value: "isFight"
+                  }
+                }
+              }
+            }
           }
           args {
-            int_value: 1
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        int_value: -2
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorAttributes"
+          }
+          args {
+            int_value: 9
+          }
+        }
+      }
+      args {
+        string_value: "Init_Slow"
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "BuffDebuffType"
+          }
+          args {
+            int_value: 0
           }
         }
       }
       args {
         int_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
       }
     }
   }
@@ -3838,6 +3892,198 @@ triggers {
       }
     }
     ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "524397a56334617c1c0016f8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "The nice thing about me..."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 8
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eArmClones"
+          }
+        }
+      }
+      args {
+        float_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "52439b6d6334617c1c001701"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "     Mage.Clone"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eArmClones"
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Play Animation From Manifest"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "524397a56334617c1c0016f8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Animation)"
+          args {
+            string_value: "Seattle:General/standing_cast_buff_matrix"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "decker"
+          }
+          args {
+            string_value: "Matrix_SummonESP"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eArmClones"
+          }
+        }
+      }
+      args {
+        float_value: 2.25
+      }
+    }
+    ops {
+      functionName: "Trigger: Wait Until Triggered Again"
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "524397a56334617c1c0016f8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "...Is that there are SO MANY of me!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 8
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
       functionName: "Teleport Actor"
       args {
         call_value {
@@ -4050,6 +4296,82 @@ triggers {
       }
     }
     ops {
+      functionName: "Play FX at Point"
+      args {
+        string_value: "JessicaDummyBuffHitReaction"
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "524398c16334617c1c0016fa"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX at Point"
+      args {
+        string_value: "JessicaDummyBuffHitReaction"
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "524399196334617c1c0016fc"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX at Point"
+      args {
+        string_value: "JessicaDummyBuffHitReaction"
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "524399176334617c1c0016fb"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX at Point"
+      args {
+        string_value: "JessicaDummyBuffHitReaction"
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5243991b6334617c1c0016fd"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Send Event"
       args {
         call_value {
@@ -4060,10 +4382,68 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Apply Attribute Status Effect to Actor"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isClone"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        int_value: -2
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorAttributes"
+          }
+          args {
+            int_value: 9
+          }
+        }
+      }
+      args {
+        string_value: "Summoned"
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "BuffDebuffType"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
   }
   isActive: true
   idRef {
-    id: "52439b6d6334617c1c001701"
+    id: "5aaed6606631360813001201"
   }
   elseActions {
   }
@@ -4216,6 +4596,132 @@ triggers {
   isActive: true
   idRef {
     id: "52439b196334617c1c001700"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "     CloneHit"
+  events {
+    ops {
+      functionName: "On Actor Damage"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "On Actor Damage"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Tag for Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Target Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isClone"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Target Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aaecca76631367809005054"
   }
   elseActions {
   }
@@ -6047,7 +6553,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Goal)"
           args {
-            string_value: "Survive"
+            string_value: "Survive The Arena"
           }
         }
       }
@@ -8038,7 +8544,7 @@ characters {
       }
       archetypeName: "Guard - Seek And Destroy"
       attitude: AttitudeBoss
-      attackRandom: AttackStyle_AllEqual
+      attackRandom: AttackStyle_BestOnly
       vulnerabilities {
       }
     }
@@ -8046,10 +8552,7 @@ characters {
       prefab_name: "Player_MageRedRidingHood"
     }
     equipment {
-      prefab_name: "Pi 1 Ceska Black Scorpion"
-    }
-    equipment {
-      prefab_name: "Spell Powerbolt 2"
+      prefab_name: "Berlin_Spell Powerbolt 1"
     }
     team_id: "Civilians"
     char_name: "Mage"
@@ -8063,6 +8566,7 @@ characters {
     }
     karma: 62
     hiring_cost_override: 50
+    has_fist: false
   }
 }
 characters {
@@ -8139,7 +8643,7 @@ characters {
       }
       archetypeName: "Guard - Seek And Destroy"
       attitude: AttitudeBoss
-      attackRandom: AttackStyle_AllEqual
+      attackRandom: AttackStyle_BestOnly
       vulnerabilities {
       }
     }
@@ -8147,10 +8651,7 @@ characters {
       prefab_name: "Player_MageRedRidingHood"
     }
     equipment {
-      prefab_name: "Pi 1 Ceska Black Scorpion"
-    }
-    equipment {
-      prefab_name: "Spell Powerbolt 2"
+      prefab_name: "Berlin_Spell Powerbolt 1"
     }
     team_id: "Civilians"
     char_name: "Mage"
@@ -8164,6 +8665,7 @@ characters {
     }
     karma: 62
     hiring_cost_override: 50
+    has_fist: false
   }
 }
 characters {
@@ -8240,7 +8742,7 @@ characters {
       }
       archetypeName: "Guard - Seek And Destroy"
       attitude: AttitudeBoss
-      attackRandom: AttackStyle_AllEqual
+      attackRandom: AttackStyle_BestOnly
       vulnerabilities {
       }
     }
@@ -8248,10 +8750,7 @@ characters {
       prefab_name: "Player_MageRedRidingHood"
     }
     equipment {
-      prefab_name: "Pi 1 Ceska Black Scorpion"
-    }
-    equipment {
-      prefab_name: "Spell Powerbolt 2"
+      prefab_name: "Berlin_Spell Powerbolt 1"
     }
     team_id: "Civilians"
     char_name: "Mage"
@@ -8265,6 +8764,7 @@ characters {
     }
     karma: 62
     hiring_cost_override: 50
+    has_fist: false
   }
 }
 characters {
@@ -8341,7 +8841,7 @@ characters {
       }
       archetypeName: "Guard - Seek And Destroy"
       attitude: AttitudeBoss
-      attackRandom: AttackStyle_AllEqual
+      attackRandom: AttackStyle_BestOnly
       vulnerabilities {
       }
     }
@@ -8349,10 +8849,7 @@ characters {
       prefab_name: "Player_MageRedRidingHood"
     }
     equipment {
-      prefab_name: "Pi 1 Ceska Black Scorpion"
-    }
-    equipment {
-      prefab_name: "Spell Powerbolt 2"
+      prefab_name: "Berlin_Spell Powerbolt 1"
     }
     team_id: "Civilians"
     char_name: "Mage"
@@ -8366,6 +8863,7 @@ characters {
     }
     karma: 62
     hiring_cost_override: 50
+    has_fist: false
   }
 }
 characters {
@@ -8578,6 +9076,14 @@ variables {
     typeName: "bool"
   }
 }
+variables {
+  int_value: 0
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "Difficulty"
+    typeName: "int"
+  }
+}
 mapEvents: "ReceiveReward"
 mapEvents: "KarmaCheck"
 mapEvents: "CloneSpawn"
@@ -8588,6 +9094,7 @@ mapEvents: "eSpawnFighter"
 mapEvents: "eEnableFighter"
 mapEvents: "eInititive"
 mapEvents: "eModifyCover"
+mapEvents: "eArmClones"
 goals {
   name: "Survive The Arena"
   type: GoalType_Primary
