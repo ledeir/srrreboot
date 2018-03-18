@@ -7834,6 +7834,52 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "BADGUY"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -24121,7 +24167,13 @@ triggers {
           functionName: "All Actors"
           args {
             call_value {
-              functionName: "Nothing Selected"
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -24131,17 +24183,12 @@ triggers {
       functionName: "Change Actor Team"
       args {
         call_value {
-          functionName: "All Actors Within Area"
+          functionName: "All Actors With Tag"
           args {
             call_value {
-              functionName: "Area: Region"
+              functionName: "Get Map Item (SenseTagList)"
               args {
-                call_value {
-                  functionName: "Get Map Item (Region)"
-                  args {
-                    string_value: "51b2d413633461080f0019bf"
-                  }
-                }
+                string_value: "BADGUY"
               }
             }
           }
@@ -24174,121 +24221,6 @@ triggers {
           functionName: "Get Map Item (SceneDimension)"
           args {
             string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Change Actor Team"
-      args {
-        call_value {
-          functionName: "All Actors Within Area"
-          args {
-            call_value {
-              functionName: "Area: Region"
-              args {
-                call_value {
-                  functionName: "Get Map Item (Region)"
-                  args {
-                    string_value: "51fd5cb66334617c1f0067e2"
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Order Actor to become a Non-Combatant"
-      args {
-        call_value {
-          functionName: "All Actors Within Area"
-          args {
-            call_value {
-              functionName: "Area: Region"
-              args {
-                call_value {
-                  functionName: "Get Map Item (Region)"
-                  args {
-                    string_value: "51b2d413633461080f0019bf"
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Order Actor to become a Non-Combatant"
-      args {
-        call_value {
-          functionName: "All Actors Within Area"
-          args {
-            call_value {
-              functionName: "Area: Region"
-              args {
-                call_value {
-                  functionName: "Get Map Item (Region)"
-                  args {
-                    string_value: "51fd5cb66334617c1f0067e2"
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
           }
         }
       }
@@ -25641,7 +25573,7 @@ regions {
   name: "ClubCamera"
   position {
     x: -46
-    y: -200
+    y: -61
     width: 24
     height: -23
   }
@@ -25687,7 +25619,7 @@ regions {
   name: "GR-Entrance"
   position {
     x: -31
-    y: -207
+    y: -68
     width: -4
     height: 2
   }
@@ -25732,8 +25664,8 @@ regions {
 regions {
   name: "ALLEY-Camera"
   position {
-    x: 161
-    y: 59
+    x: 74
+    y: 25
     width: -44
     height: -44
   }
@@ -25778,8 +25710,8 @@ regions {
 regions {
   name: "ALLEY-DeckerBody"
   position {
-    x: 149
-    y: 49
+    x: 62
+    y: 15
     width: 1
     height: 1
   }
@@ -25824,8 +25756,8 @@ regions {
 regions {
   name: "ALLEY-Gunshot"
   position {
-    x: 140
-    y: 43.1
+    x: 53
+    y: 9.0999985
     width: 3
     height: 10
   }
@@ -25870,8 +25802,8 @@ regions {
 regions {
   name: "ALLEY-DogTrigger"
   position {
-    x: 154
-    y: 40
+    x: 67
+    y: 6
     width: -11
     height: -3
   }
@@ -25916,8 +25848,8 @@ regions {
 regions {
   name: "ALLEY-Exit"
   position {
-    x: 132
-    y: 44
+    x: 45
+    y: 10
     width: -1
     height: 4
   }
@@ -25962,8 +25894,8 @@ regions {
 regions {
   name: "ALLEY-Hide"
   position {
-    x: 108
-    y: 11
+    x: 21
+    y: -23
     width: 3
     height: 4
   }
@@ -26008,8 +25940,8 @@ regions {
 regions {
   name: "AlleySpawn"
   position {
-    x: 133
-    y: 44
+    x: 46
+    y: 10
     width: 2
     height: 3
   }
@@ -26100,8 +26032,8 @@ regions {
 regions {
   name: "rGR_HoldingPen"
   position {
-    x: -81
-    y: -194
+    x: -70
+    y: -75
     width: 4
     height: 4
   }
@@ -26109,6 +26041,52 @@ regions {
   is_camera_region: false
   idRef {
     id: "5a46f10b303539c02b006a0d"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
+regions {
+  name: "rCrewSpawn"
+  position {
+    x: -8
+    y: -72
+    width: 7
+    height: 11
+  }
+  enabledAtStart: true
+  is_camera_region: true
+  idRef {
+    id: "5aaee6f36631362c13000e7b"
   }
   highlight_color {
     r: 0
@@ -26885,7 +26863,7 @@ characters {
   gridPoint {
     x: -6
     y: 0
-    z: -69
+    z: -68
   }
   orientation: ORIENTATION_S
   GeneralTags: "Hamfist"
@@ -26959,7 +26937,7 @@ characters {
   gridPoint {
     x: -6
     y: 0
-    z: -68
+    z: -67
   }
   orientation: ORIENTATION_S
   GeneralTags: "Jangadance"
@@ -27040,7 +27018,7 @@ characters {
   gridPoint {
     x: -5
     y: 0
-    z: -68
+    z: -67
   }
   orientation: ORIENTATION_S
   GeneralTags: "Orifice"
@@ -27132,7 +27110,7 @@ characters {
   gridPoint {
     x: -5
     y: 0
-    z: -69
+    z: -68
   }
   orientation: ORIENTATION_S
   GeneralTags: "Dances"
@@ -27215,7 +27193,7 @@ characters {
   gridPoint {
     x: -5
     y: 0
-    z: -66
+    z: -65
   }
   orientation: ORIENTATION_S
   GeneralTags: "Jetboy"
@@ -27301,7 +27279,7 @@ characters {
   gridPoint {
     x: -6
     y: 0
-    z: -67
+    z: -66
   }
   orientation: ORIENTATION_S
   GeneralTags: "Anders"
@@ -27384,7 +27362,7 @@ characters {
   gridPoint {
     x: -4.8999996
     y: 0
-    z: -64
+    z: -63
   }
   orientation: ORIENTATION_S
   GeneralTags: "Splatter"
@@ -27464,7 +27442,7 @@ characters {
   gridPoint {
     x: -5
     y: 0
-    z: -65
+    z: -64
   }
   orientation: ORIENTATION_S
   GeneralTags: "Kitsune"
@@ -27566,7 +27544,7 @@ characters {
   gridPoint {
     x: -25.5
     y: 0
-    z: -206
+    z: -67
   }
   orientation: ORIENTATION_N
   displayName: "GR-hamfist"
@@ -27646,7 +27624,7 @@ characters {
   gridPoint {
     x: -25.8
     y: 0
-    z: -214.1
+    z: -75.100006
   }
   orientation: ORIENTATION_E
   displayName: "GR-Club Patron"
@@ -27707,7 +27685,7 @@ characters {
   gridPoint {
     x: -38
     y: 0
-    z: -206
+    z: -67
   }
   orientation: ORIENTATION_S
   displayName: "GR-Doc"
@@ -27768,7 +27746,7 @@ characters {
   gridPoint {
     x: -39
     y: 0
-    z: -213
+    z: -74
   }
   orientation: ORIENTATION_S
   displayName: "GR-Bartender"
@@ -27831,7 +27809,7 @@ characters {
   gridPoint {
     x: -35.7
     y: 0
-    z: -218.4
+    z: -79.399994
   }
   orientation: ORIENTATION_W
   displayName: "GR-Jangadance"
@@ -27913,9 +27891,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 146.8
+    x: 59.800003
     y: 0
-    z: 38.7
+    z: 4.7000008
   }
   orientation: ORIENTATION_S
   displayName: "ALLEY_GANGER"
@@ -28007,9 +27985,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 146
+    x: 59
     y: 0
-    z: 33.8
+    z: -0.20000076
   }
   orientation: ORIENTATION_E
   displayName: "ALLEY_DOG"
@@ -28064,9 +28042,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: 46.9
+    x: -5.0999985
     y: 0
-    z: 37.8
+    z: -71.2
   }
   orientation: ORIENTATION_S
   displayName: "Main"
@@ -28089,7 +28067,7 @@ characters {
   gridPoint {
     x: -5.9999962
     y: 0
-    z: -65
+    z: -64
   }
   orientation: ORIENTATION_S
   GeneralTags: "akimi"
@@ -28213,7 +28191,7 @@ characters {
   gridPoint {
     x: -4
     y: 0
-    z: -67
+    z: -66
   }
   orientation: ORIENTATION_S
   GeneralTags: "Norbert"
@@ -28294,7 +28272,7 @@ characters {
   gridPoint {
     x: -4
     y: 0
-    z: -66
+    z: -65
   }
   orientation: ORIENTATION_S
   GeneralTags: "Frogtongue"
@@ -28373,7 +28351,7 @@ characters {
   gridPoint {
     x: -4.1000061
     y: 0
-    z: -65
+    z: -64
   }
   orientation: ORIENTATION_S
   GeneralTags: "Steelflight"
