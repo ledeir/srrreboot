@@ -14705,6 +14705,31 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: "SpiritRealm.CameraFilter"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Camera Post Process Effect"
+      args {
+        int_value: 4
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aaec6196631367809005053"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
   name: "Cam"
   position {
@@ -15293,7 +15318,7 @@ characters {
   }
   lod: 0
   character_instance {
-    prefab_name: "Seattle:Spirit/SpiritForgottenSouls"
+    prefab_name: "Seattle:Story/Harlequin"
     character_sheet_id: "Spirit Abomination"
     equipment_sheet_id: "Spirit Abomination F6 Gear"
     character_mod {
@@ -15355,13 +15380,17 @@ characters {
       vulnerabilities {
       }
     }
+    equipment {
+      prefab_name: "Spell Powerbolt 2"
+    }
     team_id: "Gangers"
     char_name: "Jester"
     enabled_at_start: false
     pc_spawn_number: -1
     unkillable: true
+    spawn_type: SpawnType_Matrix
     portrait {
-      filename: "Generic_Spirit_Abomination"
+      filename: "custom_geeked_jester"
     }
     karma: 261
     ai_never_use_draining_abilities: true
@@ -17769,6 +17798,8 @@ team_affiliations {
 scene_dimensions {
   dimension_name: "Default"
   initial_alarm_state: 0
+}
+character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
