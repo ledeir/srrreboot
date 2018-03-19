@@ -1,41 +1,12 @@
 triggers {
   name: "MAP START TRIGGERS"
   events {
-    ops {
-      functionName: "On Map Start"
-    }
   }
   conditions {
   }
   actions {
-    ops {
-      functionName: "Set Actor Body Prefab"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "523adf7e373630840a0066c3"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "5a4aa1656631361c05000678"
-          }
-        }
-      }
-    }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "56481b7d616131b42800056f"
   }
@@ -950,31 +921,23 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (bool)"
+      functionName: "Comparison (int)"
       args {
         call_value {
-          functionName: "Comparison (int)"
+          functionName: "Get Story Variable (int)"
           args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51a9844d633461e82400002a"
-              }
-              args {
-                string_value: "DTD_Octopus"
-              }
-            }
+            string_value: "51a9844d633461e82400002a"
           }
           args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Comparison Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
+            string_value: "DTD_Octopus"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
           }
           args {
             int_value: 0
@@ -982,26 +945,7 @@ triggers {
         }
       }
       args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
+        int_value: 0
       }
     }
   }
@@ -1148,34 +1092,15 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (bool)"
+      functionName: "Comparison (int)"
       args {
         call_value {
-          functionName: "Comparison (int)"
+          functionName: "Get Story Variable (int)"
           args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51a9844d633461e82400002a"
-              }
-              args {
-                string_value: "DTD_Octopus"
-              }
-            }
+            string_value: "51a9844d633461e82400002a"
           }
           args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Comparison Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            int_value: 1
+            string_value: "DTD_Octopus"
           }
         }
       }
@@ -1183,45 +1108,41 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "Comparison Ops"
           }
           args {
-            int_value: 1
+            int_value: 0
           }
         }
       }
       args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
+        int_value: 1
       }
     }
   }
   actions {
     ops {
-      functionName: "Activate Actor Spawner"
+      functionName: "Set Actor Body Prefab"
       args {
         call_value {
-          functionName: "Get Map Item (Actor Reference)"
+          functionName: "Specific Actor"
           args {
-            string_value: "523adf7e373630840a0066c3"
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+          args {
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Map Item (Actor Reference)"
           args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
+            string_value: "5a4aa1656631361c05000678"
           }
         }
       }
@@ -1315,6 +1236,106 @@ triggers {
   }
   actions {
     ops {
+      functionName: "Set Actor Body Prefab"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5aaf0d85663136d8080068e6"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Hunt And Destroy (Team)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Teleport Actor near Actor"
       args {
         call_value {
@@ -1332,7 +1353,7 @@ triggers {
         }
       }
       args {
-        int_value: 0
+        int_value: 1
       }
       args {
         call_value {
@@ -1438,6 +1459,30 @@ triggers {
       }
     }
     ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "52a4cc8e633461c4110039b5"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Set Prop Visible by Tag"
       args {
         call_value {
@@ -1479,67 +1524,6 @@ triggers {
       }
     }
     ops {
-      functionName: "Move Prop"
-      args {
-        call_value {
-          functionName: "Get Map Item (Prop)"
-          args {
-            string_value: "52a4cc8e633461c4110039b5"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Current Location of Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "523adf7e373630840a0066c3"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Change Actor Team"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "523adf7e373630840a0066c3"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Display Text over Actor"
       args {
         call_value {
@@ -1573,7 +1557,7 @@ triggers {
         float_value: 0
       }
       args {
-        float_value: 3
+        float_value: 6
       }
       args {
         float_value: 3
@@ -1838,6 +1822,139 @@ triggers {
         float_value: 0
       }
     }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "octo_ForceAttack"
+  events {
+    ops {
+      functionName: "On Actor Start Turn"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (Actor)"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Compare Actor Team"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Attack Actor With Weapon"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "523adf7e373630840a0066c3"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Random Actor on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aaf10a6663136d8080068ec"
+  }
+  elseActions {
   }
   is_oneshot: false
 }
@@ -2152,17 +2269,6 @@ triggers {
       }
       args {
         float_value: 0
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "523ab2f0373630840f002dbd"
-          }
-        }
       }
     }
   }
@@ -23297,9 +23403,9 @@ regions {
     a: 1
   }
   ambience_template: ""
-  combat_music: "Seattle-Set6-Combat"
+  combat_music: "Seattle-Set7-Combat"
   default_music: "Seattle-Set7-Legwork"
-  loop_combat_music: false
+  loop_combat_music: true
   loop_default_music: true
   no_fow_in_region: false
 }
@@ -23434,7 +23540,7 @@ regions {
     b: 0.078431375
     a: 1
   }
-  ambience_template: ""
+  ambience_template: "docks-day"
   combat_music: ""
   default_music: "Seattle-Set10-Legwork"
   loop_combat_music: false
@@ -23481,7 +23587,7 @@ regions {
     a: 1
   }
   ambience_template: "docks-night"
-  combat_music: "Seattle-Set6-Combat"
+  combat_music: "Seattle-Set7-Combat"
   default_music: "Seattle-Set7-Legwork"
   loop_combat_music: true
   loop_default_music: true
@@ -23573,7 +23679,7 @@ regions {
     a: 1
   }
   ambience_template: ""
-  combat_music: "Seattle-Set6-Combat"
+  combat_music: "Seattle-Set7-Combat"
   default_music: "Seattle-Set7-Legwork"
   loop_combat_music: true
   loop_default_music: true
@@ -23676,8 +23782,8 @@ regions {
   position {
     x: 17
     y: -150
-    width: -1
-    height: 5
+    width: 6
+    height: 9
   }
   enabledAtStart: false
   is_camera_region: false
@@ -23720,9 +23826,9 @@ regions {
 regions {
   name: "Transform"
   position {
-    x: 11
+    x: 15
     y: -150
-    width: 1
+    width: 2
     height: 5
   }
   enabledAtStart: false
@@ -24913,6 +25019,52 @@ regions {
   loop_default_music: true
   no_fow_in_region: false
 }
+regions {
+  name: "cHoldingPen_OctoBoss"
+  position {
+    x: -5
+    y: -149
+    width: 3
+    height: 5
+  }
+  enabledAtStart: true
+  is_camera_region: true
+  idRef {
+    id: "5aaf00486631362c130011d3"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
@@ -25034,6 +25186,8 @@ characters {
       }
       specializations {
       }
+      vulnerabilities {
+      }
     }
     team_id: "Civilians"
     char_name: "Sassie"
@@ -25051,6 +25205,7 @@ characters {
     z: -148
   }
   orientation: ORIENTATION_S
+  GeneralTags: "isBoss"
   idRef {
     id: "523adf7e373630840a0066c3"
   }
@@ -25058,40 +25213,41 @@ characters {
   character_instance {
     prefab_name: "Berlin:Creatures/CreatureScorpyrine"
     character_sheet_id: "Basilisk (normal)"
-    equipment_sheet_id: "Spirit Water F2 Gear"
     character_mod {
       stats {
-        body: 0
+        body: 3
         quickness: 0
         strength: 0
         charisma: 0
         intelligence: 0
-        willpower: 0
+        willpower: 5
         essence: 0
         magic: 0
-        hp: 0
-        ap: 0
-        armor: 0
+        hp: 30
+        ap: -1
+        armor: 4
         force: 0
         morale: -1
         discipline: 0
         awareness: 0
-        perception: 0
+        perception: 20
         authority: 0
         protect_tether_range: 0
         move_speed: -6
+        is_fearless: 1
+        is_strict: 0
       }
       skills {
         ranged_combat: 0
         close_combat: 0
         throwing_weapons: 0
-        spellcasting: 0
+        spellcasting: 2
         decking: 0
         conjuring: 0
         spirit_summoning: 0
         drone_control: 0
         biotech: 0
-        dodge: 0
+        dodge: 3
         etiquette_corporate: 0
         etiquette_security: 0
         etiquette_gang: 0
@@ -25112,18 +25268,25 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
-      attackRandom: AttackStyle_CycleAll
+      archetypeName: "Guard - Hunt And Destroy"
+      attitude: AttitudeBoss
+      attackRandom: AttackStyle_BestOnly
       vulnerabilities {
+        fire: VulnerabilityLevel_Default
       }
+    }
+    equipment {
+      prefab_name: "Berlin_Spell Powerbolt 3"
     }
     team_id: "Civilians"
     char_name: "Incubus"
+    GeneralTags: "isBoss"
     enabled_at_start: true
     pc_spawn_number: -1
-    karma: 84
-    is_prop_character: true
+    karma: 153
+    is_prop_character: false
+    ai_never_use_draining_abilities: true
+    has_fist: false
   }
 }
 characters {
@@ -26729,7 +26892,7 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: -17
+    x: -19
     y: 0
     z: 0
   }
@@ -27587,96 +27750,6 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -4
-    y: 0
-    z: -151
-  }
-  orientation: ORIENTATION_S
-  displayName: "InvisibleActor"
-  idRef {
-    id: "5a4aa1656631361c05000678"
-  }
-  lod: 0
-  character_instance {
-    prefab_name: "Seattle:Objects/InvisibleActor"
-    character_sheet_id: "BaseCivilian"
-    equipment_sheet_id: "Spirit Water F2 Gear"
-    character_mod {
-      stats {
-        body: 0
-        quickness: 0
-        strength: 0
-        charisma: 0
-        intelligence: 0
-        willpower: 0
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 0
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-        vision_peripheral_distance: 0
-        vision_cone_distance: 0
-        vision_cone_angle: 0
-      }
-      skills {
-        ranged_combat: 0
-        close_combat: 0
-        throwing_weapons: 0
-        spellcasting: 0
-        decking: 0
-        conjuring: 0
-        spirit_summoning: 0
-        drone_control: 0
-        biotech: 0
-        dodge: 0
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 0
-        rifle: 0
-        shotgun: 0
-        smg: 0
-        edged: 0
-        unarmed: 0
-        spirit_control: 0
-        esp_control: 0
-        drone_combat: 0
-      }
-      archetypeName: "Guard - Protect"
-      attitude: AttitudeAggressive
-      attackRandom: AttackStyle_AllEqual
-      vulnerabilities {
-      }
-    }
-    team_id: "Civilians"
-    char_name: "ModelSwap"
-    enabled_at_start: false
-    pc_spawn_number: -1
-    portrait {
-      filename: ""
-    }
-    karma: 6
-    is_prop_character: true
-  }
-}
-characters {
-  name: "chars_icon_playerIcon"
-  gridPoint {
     x: -19.099998
     y: 0
     z: -111
@@ -27934,6 +28007,109 @@ characters {
     karma: 171
     hiring_cost_override: 4000
     id: "SNES_Steelflight"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -4
+    y: 0
+    z: -147
+  }
+  orientation: ORIENTATION_S
+  displayName: "ModelSwap"
+  idRef {
+    id: "5aaf0d85663136d8080068e6"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Objects/InvisibleActor"
+    character_sheet_id: "Basilisk (normal)"
+    character_mod {
+      stats {
+        body: 2
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 1
+        armor: 2
+        force: 0
+        morale: -1
+        discipline: 0
+        awareness: 0
+        perception: 20
+        authority: 0
+        protect_tether_range: 0
+        move_speed: -6
+        is_fearless: 1
+        is_strict: 1
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 3
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Hunt And Destroy"
+      attitude: AttitudeBoss
+      attackRandom: AttackStyle_BestOnly
+      vulnerabilities {
+        fire: VulnerabilityLevel_Default
+      }
+    }
+    equipment {
+      prefab_name: "Berlin_HealthPack_med"
+    }
+    equipment {
+      prefab_name: "Spell Acid Stream 1"
+    }
+    equipment {
+      prefab_name: "Berlin_Spell Powerbolt 2"
+    }
+    equipment {
+      prefab_name: "Berlin_Spell Heal 2"
+    }
+    equipment {
+      prefab_name: "Berlin_Spell Armor 2"
+    }
+    team_id: "Civilians"
+    char_name: "InvisibleActor"
+    enabled_at_start: true
+    pc_spawn_number: -1
+    karma: 101
+    is_prop_character: false
+    ai_never_use_draining_abilities: true
+    has_fist: false
   }
 }
 variables {
