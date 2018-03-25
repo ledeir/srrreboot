@@ -29490,7 +29490,7 @@ regions {
     height: 6
   }
   enabledAtStart: true
-  is_camera_region: false
+  is_camera_region: true
   idRef {
     id: "51da4922633461401d004834"
   }
@@ -29999,6 +29999,52 @@ regions {
   is_camera_region: false
   idRef {
     id: "52bf09573733615c04006e79"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
+regions {
+  name: "cCrewSpawn"
+  position {
+    x: -25
+    y: -62
+    width: 3
+    height: 6
+  }
+  enabledAtStart: true
+  is_camera_region: true
+  idRef {
+    id: "5ab7ead266313680110012e2"
   }
   highlight_color {
     r: 0
@@ -30766,9 +30812,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -64
+    x: -24
     y: 0
-    z: -86
+    z: -57
   }
   orientation: ORIENTATION_W
   GeneralTags: "Orifice"
@@ -30862,9 +30908,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -64
+    x: -24
     y: 0
-    z: -87
+    z: -58
   }
   orientation: ORIENTATION_W
   GeneralTags: "Dances"
@@ -30950,9 +30996,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -63.9
+    x: -23.900002
     y: 0
-    z: -88
+    z: -59
   }
   orientation: ORIENTATION_W
   GeneralTags: "Splatter"
@@ -31035,9 +31081,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -65
+    x: -25
     y: 0
-    z: -87
+    z: -58
   }
   orientation: ORIENTATION_W
   GeneralTags: "Jangadance"
@@ -31118,9 +31164,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -64
+    x: -24
     y: 0
-    z: -89
+    z: -60
   }
   orientation: ORIENTATION_W
   GeneralTags: "Kitsune"
@@ -31222,9 +31268,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -64
+    x: -24
     y: 0
-    z: -90
+    z: -61
   }
   orientation: ORIENTATION_W
   GeneralTags: "Jetboy"
@@ -31313,9 +31359,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -65
+    x: -25
     y: 0
-    z: -89
+    z: -60
   }
   orientation: ORIENTATION_W
   GeneralTags: "Hamfist"
@@ -31390,9 +31436,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -65
+    x: -25
     y: 0
-    z: -91
+    z: -62
   }
   orientation: ORIENTATION_W
   GeneralTags: "Anders"
@@ -31478,9 +31524,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -65
+    x: -25
     y: 0
-    z: -86
+    z: -57
   }
   orientation: ORIENTATION_W
   GeneralTags: "akimi"
@@ -31602,9 +31648,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -63
+    x: -23
     y: 0
-    z: -90
+    z: -61
   }
   orientation: ORIENTATION_W
   GeneralTags: "Norbert"
@@ -31683,9 +31729,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -63
+    x: -23
     y: 0
-    z: -89
+    z: -60
   }
   orientation: ORIENTATION_W
   GeneralTags: "Frogtongue"
@@ -31762,9 +31808,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -63.100006
+    x: -23.100006
     y: 0
-    z: -88
+    z: -59
   }
   orientation: ORIENTATION_W
   GeneralTags: "Steelflight"
@@ -31965,7 +32011,7 @@ parentStory: ""
 scene_title: "Tenth Street Cemetery"
 scene_subtitle: ""
 scene_synopsis: ""
-scene_image: ""
+scene_image: "loadingimage_default"
 scene_continue_button_skip: true
 scene_restore_runner_health: false
 directional_light_dir {
@@ -32027,8 +32073,6 @@ team_affiliations {
 scene_dimensions {
   dimension_name: "Default"
 }
-character_roster {
-}
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
   prereq_description: ""
@@ -32047,6 +32091,6 @@ override_hiring_average_cost: false
 show_equip_screen_on_scene_load: false
 is_persistant: false
 is_persistant_has_value: false
-can_move_outside_camera_regions: true
+can_move_outside_camera_regions: false
 can_start_before_triggers: true
 can_use_team_advancement: false
