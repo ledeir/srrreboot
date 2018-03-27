@@ -42,9 +42,22 @@ nodes {
         functionName: "Open Store Screen From Actor"
         args {
           call_value {
-            functionName: "Get Map Item (Actor)"
+            functionName: "Nearest Tagged Actor to Actor"
             args {
-              string_value: "5259cf6a3733617c0a0045c1"
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "Merchant"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
             }
           }
         }

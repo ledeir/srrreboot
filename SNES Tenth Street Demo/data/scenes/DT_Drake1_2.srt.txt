@@ -2872,6 +2872,31 @@ triggers {
       }
     }
     ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "STORE_Roof"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Set Screen Label"
       args {
         string_value: "currentfloor"
@@ -40189,6 +40214,8 @@ scene_dimensions {
 }
 combat_music: "Seattle-Set9-Combat"
 matrix_music: "Seattle-Set8-Stealth"
+character_roster {
+}
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
   prereq_description: ""
