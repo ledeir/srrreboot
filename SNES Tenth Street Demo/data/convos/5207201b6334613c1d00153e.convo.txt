@@ -13,6 +13,62 @@ nodes {
     nextNodeIndex: 1
   }
   branches {
+    responseText: "Shop"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_ReturnCustomer"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5344958f373630a010005fbf"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 4
+    auxiliaryLink: true
+  }
+  branches {
     responseText: "{{GM}}Leave{{/GM}}"
     nextNodeIndex: -1
   }
@@ -65,6 +121,31 @@ nodes {
   branches {
     responseText: "Let me see what you got. \n{{GM}}Browse the shop{{/GM}}"
     actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_ReturnCustomer"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
       ops {
         functionName: "Open Store Screen From Actor"
         args {

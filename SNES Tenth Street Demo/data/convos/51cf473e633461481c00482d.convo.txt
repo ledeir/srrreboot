@@ -247,8 +247,50 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Configuration Menu"
+    responseText: "TEMPORARY CHEAT - RESYNC SHOPS"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Drake"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 9
+  }
+  branches {
+    responseText: "Configuration Menu"
+    nextNodeIndex: 10
   }
   branches {
     responseText: "Leave"
@@ -4017,17 +4059,112 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5205cc36633461e803003e43"
+    id: "5ac2eff76161319814000e58"
   }
   index: 9
+  text: "On build V4.0.13 we updated the shop interface. Depending on story progression the items now get upgraded. \nClick the appropriate option if you have already killed Drake or killed Jester"
+  branches {
+    responseText: "Jester is DEAD!"
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Jester"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Drake is DEAD!"
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Drake"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Roof"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5205cc36633461e803003e43"
+  }
+  index: 10
   text: "You can adjust the settings of the game any time you rest."
   branches {
     responseText: "Spawn Rate"
-    nextNodeIndex: 10
+    nextNodeIndex: 11
   }
   branches {
     responseText: "Grind Rate"
-    nextNodeIndex: 11
+    nextNodeIndex: 12
   }
   branches {
     responseText: "Redeem Karma"
@@ -4036,11 +4173,11 @@ nodes {
   }
   branches {
     responseText: "Reset Hire-able Runner Logic\nPeople who have played early versions are reporting difficulty hiring runners. This hopefully resolves that.\nThis will fire, without giving a refund, any runners you currently have."
-    nextNodeIndex: 16
+    nextNodeIndex: 17
   }
   branches {
     responseText: "Enable Non-Plot Monorail Combat\n"
-    nextNodeIndex: 17
+    nextNodeIndex: 18
   }
   branches {
     responseText: "Leave Configuration Menu"
@@ -4053,7 +4190,7 @@ nodes {
   idRef {
     id: "5205cc76633461e803003e88"
   }
-  index: 10
+  index: 11
   text: "Adjust the likelyhood of enemies spawning."
   branches {
     responseText: "Low"
@@ -4076,7 +4213,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   branches {
@@ -4100,7 +4237,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   branches {
@@ -4124,12 +4261,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4138,11 +4275,11 @@ nodes {
   idRef {
     id: "59ff45706631368c16001623"
   }
-  index: 11
+  index: 12
   text: "Modify the rate at which \'Grind\' enemies respawn."
   branches {
     responseText: ""
-    nextNodeIndex: 12
+    nextNodeIndex: 13
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -4150,7 +4287,7 @@ nodes {
   idRef {
     id: "59ff45df6631368c160016b8"
   }
-  index: 12
+  index: 13
   text: "Modify the rate at which \'Grind\' enemies respawn."
   branches {
     responseText: "Low"
@@ -4203,7 +4340,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 13
+    nextNodeIndex: 14
   }
   branches {
     responseText: "Normal"
@@ -4256,7 +4393,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 14
+    nextNodeIndex: 15
   }
   branches {
     responseText: "High"
@@ -4309,7 +4446,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 16
   }
   branches {
     responseText: "Return to Configuration Menu"
@@ -4322,11 +4459,11 @@ nodes {
   idRef {
     id: "59ff477e6631368c16001736"
   }
-  index: 13
+  index: 14
   text: "Grinding enemies will respawn at a {{CC}}LOW{{/CC}} rate."
   branches {
     responseText: ""
-    nextNodeIndex: 12
+    nextNodeIndex: 13
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4335,11 +4472,11 @@ nodes {
   idRef {
     id: "59ff47d76631368c16001741"
   }
-  index: 14
+  index: 15
   text: "Grinding enemies will respawn at a {{CC}}NORMAL{{/CC}} rate."
   branches {
     responseText: ""
-    nextNodeIndex: 12
+    nextNodeIndex: 13
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4348,11 +4485,11 @@ nodes {
   idRef {
     id: "59ff47d96631368c16001743"
   }
-  index: 15
+  index: 16
   text: "Grinding enemies will respawn at a {{CC}}HIGH{{/CC}} rate."
   branches {
     responseText: ""
-    nextNodeIndex: 12
+    nextNodeIndex: 13
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4361,11 +4498,11 @@ nodes {
   idRef {
     id: "524b9d82633461241c0018ce"
   }
-  index: 16
+  index: 17
   text: "Runners Reset!"
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4597,7 +4734,7 @@ nodes {
   idRef {
     id: "58eff5736161319433006b9a"
   }
-  index: 17
+  index: 18
   text: "In the future you will be able to grind in the monorail. This is not yet implemented."
   branches {
     responseText: "Enable"
@@ -4639,7 +4776,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   branches {
@@ -4682,12 +4819,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: 9
+    nextNodeIndex: 10
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple

@@ -65,11 +65,11 @@ nodes {
     }
   }
   branches {
-    responseText: "Health"
+    responseText: "Purchase consumables."
     nextNodeIndex: 3
   }
   branches {
-    responseText: "Cyberware"
+    responseText: "Purchase Cyberware"
     nextNodeIndex: 4
   }
   branches {
@@ -144,9 +144,22 @@ nodes {
         functionName: "Open Store Screen From Actor"
         args {
           call_value {
-            functionName: "Get Map Item (Actor)"
+            functionName: "Nearest Tagged Actor to Actor"
             args {
-              string_value: "5347f8763736304413003b85"
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "DrM"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
             }
           }
         }
@@ -164,7 +177,7 @@ nodes {
 }
 nodes {
   idRef {
-    id: "525aa04e3736301010007daa"
+    id: "523e02d3373630e412002000"
   }
   index: 4
   text: "Have a look. The prices are very reasonable."
@@ -175,9 +188,22 @@ nodes {
         functionName: "Open Cyberware Screen From Actor"
         args {
           call_value {
-            functionName: "Get Map Item (Actor)"
+            functionName: "Nearest Tagged Actor to Actor"
             args {
-              string_value: "5347f8763736304413003b85"
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "DrM"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
             }
           }
         }
@@ -187,7 +213,7 @@ nodes {
     auxiliaryLink: true
   }
   branches {
-    responseText: "No, thanks!"
+    responseText: "Maybe another time."
     nextNodeIndex: 0
     auxiliaryLink: true
   }

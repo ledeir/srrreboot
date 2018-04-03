@@ -26,11 +26,97 @@ nodes {
   }
   branches {
     responseText: "Rigging"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SlimSentMe"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 3
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Rigging"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SlimSentMe"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5ac30055616131981400108a"
+    }
   }
   branches {
     responseText: "Nothing"
-    nextNodeIndex: 6
+    nextNodeIndex: 7
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -41,7 +127,7 @@ nodes {
   index: 2
   text: "Take a look at my stall, you might find it useful."
   branches {
-    responseText: "Look"
+    responseText: "Shop"
     actions {
       ops {
         functionName: "Open Store Screen From Actor"
@@ -61,6 +147,10 @@ nodes {
     responseText: "Talk"
     nextNodeIndex: 1
     auxiliaryLink: true
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -212,6 +302,10 @@ nodes {
     nextNodeIndex: 1
     auxiliaryLink: true
   }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
   nodeType: ConversationNodeType_Simple
 }
 nodes {
@@ -310,9 +404,26 @@ nodes {
 }
 nodes {
   idRef {
-    id: "527ff01c633461c010006e5b"
+    id: "5ac2fef86161319814001020"
   }
   index: 6
+  text: "Did my guy in the cardyards help you out?"
+  branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Leave"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "527ff01c633461c010006e5b"
+  }
+  index: 7
   text: "Then stop wasting my time and scram."
   nodeType: ConversationNodeType_Simple
 }

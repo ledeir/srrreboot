@@ -24,7 +24,7 @@ nodes {
   index: 1
   text: "You don\'t seem to know what I mean! Are you a shadowrunner?"
   branches {
-    responseText: "Firearms?"
+    responseText: "Weapons?"
     nextNodeIndex: 2
   }
   branches {
@@ -291,68 +291,17 @@ nodes {
     id: "51bcaa86633461a01c0018d7"
   }
   index: 2
-  text: "That stuff moves fast. All I\'ve got are some grenades from a munitions dump heist. 100 nuyen. You want one?"
+  text: "That stuff moves fast. All I\'ve got is some basic gear and some grenades from a munitions dump heist"
   branches {
-    responseText: "Yes"
-    conditions {
-      ops {
-        functionName: "Evaluate Nuyen"
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 100
-        }
-      }
-    }
+    responseText: "Shop"
     actions {
       ops {
-        functionName: "Remove Nuyen"
-        args {
-          int_value: 100
-        }
-      }
-      ops {
-        functionName: "Add Item to Actor"
+        functionName: "Open Store Screen From Actor"
         args {
           call_value {
-            functionName: "Get Map Item (Item)"
+            functionName: "Get Map Item (Actor)"
             args {
-              string_value: "Grenade 1 (Frag)"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Specific Actor"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "WithOrWithout"
-            }
-            args {
-              int_value: 1
+              string_value: "51b6affd633461d01e0048ef"
             }
           }
         }

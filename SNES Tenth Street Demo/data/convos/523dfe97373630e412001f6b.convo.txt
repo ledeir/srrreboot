@@ -13,7 +13,7 @@ nodes {
     nextNodeIndex: 1
   }
   branches {
-    responseText: "Health"
+    responseText: "Shop"
     nextNodeIndex: 3
   }
   branches {
@@ -334,9 +334,22 @@ nodes {
         functionName: "Open Store Screen From Actor"
         args {
           call_value {
-            functionName: "Get Map Item (Actor)"
+            functionName: "Nearest Tagged Actor to Actor"
             args {
-              string_value: "5347f8763736304413003b85"
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "DrM"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
             }
           }
         }
