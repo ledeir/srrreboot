@@ -25,6 +25,9 @@ triggers {
   }
   actions {
     ops {
+      functionName: "End Current Team Round"
+    }
+    ops {
       functionName: "Send Event"
       args {
         call_value {
@@ -7620,7 +7623,7 @@ characters {
     character_sheet_id: "BaseCivilian"
     character_mod {
       stats {
-        body: 3
+        body: 2
         quickness: 3
         strength: 1
         charisma: 0
@@ -7693,7 +7696,7 @@ characters {
     portrait {
       filename: "backer_humanmale_alexeykruglyakov"
     }
-    karma: 41
+    karma: 37
     hiring_cost_override: 50
   }
 }
@@ -7716,7 +7719,7 @@ characters {
     character_sheet_id: "BaseCivilian"
     character_mod {
       stats {
-        body: 3
+        body: 2
         quickness: 3
         strength: 1
         charisma: 0
@@ -7726,7 +7729,7 @@ characters {
         magic: 0
         hp: 0
         ap: 0
-        armor: 0
+        armor: 4
         force: 0
         morale: 0
         discipline: 0
@@ -7789,7 +7792,7 @@ characters {
     portrait {
       filename: "backer_humanmale_alexeykruglyakov"
     }
-    karma: 48
+    karma: 44
     hiring_cost_override: 50
   }
 }
@@ -7840,7 +7843,7 @@ characters {
         spellcasting: 0
         decking: 0
         conjuring: 4
-        spirit_summoning: 2
+        spirit_summoning: 0
         drone_control: 0
         biotech: 0
         dodge: 1
@@ -7860,7 +7863,7 @@ characters {
         smg: 0
         edged: 0
         unarmed: 0
-        spirit_control: 2
+        spirit_control: 0
         esp_control: 0
         drone_combat: 0
       }
@@ -7872,12 +7875,6 @@ characters {
     }
     equipment {
       prefab_name: "MageSlick"
-    }
-    equipment {
-      prefab_name: "Berlin_Bound Earth Spirit 1"
-    }
-    equipment {
-      prefab_name: "Berlin_Bound Air Spirit 1"
     }
     equipment {
       prefab_name: "Berlin_Spell Toxic Bolt 1"
@@ -7894,7 +7891,7 @@ characters {
     portrait {
       filename: "backer_elfmale_rthomasallwin"
     }
-    karma: 56
+    karma: 50
     hiring_cost_override: 50
   }
 }
@@ -9171,6 +9168,8 @@ team_affiliations {
 }
 scene_dimensions {
   dimension_name: "Default"
+}
+character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
