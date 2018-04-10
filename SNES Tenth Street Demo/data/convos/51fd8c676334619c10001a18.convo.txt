@@ -676,9 +676,9 @@ nodes {
     id: "54c734c53639359c0d0079c1"
   }
   index: 10
-  text: "Even here you won\'t last long without a weapon! I can help you out!"
+  text: "Even here you won\'t last long without a weapon! For 100 nuyen I can help you out!"
   branches {
-    responseText: "{{GM}}100\302\245{{/GM}} Yes"
+    responseText: "{{GM}}100\302\245{{/GM}} Buy Rebar"
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -699,6 +699,7 @@ nodes {
       }
     }
     nextNodeIndex: 11
+    hideIfUnavailable: true
   }
   branches {
     responseText: "No thanks."

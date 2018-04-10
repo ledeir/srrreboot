@@ -439,7 +439,7 @@ nodes {
   index: 6
   text: "Didja let the ghouls disarm you? I\'ll sell you my patented \"Ghoul Buster\" if you need it."
   branches {
-    responseText: "[100 Nuyen] Yes"
+    responseText: "[100 Nuyen] Buy Rebar"
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -468,6 +468,7 @@ nodes {
       }
     }
     nextNodeIndex: 7
+    hideIfUnavailable: true
   }
   branches {
     responseText: "No"
