@@ -7101,7 +7101,15 @@ triggers {
   name: "ConcedeFight"
   events {
     ops {
-      functionName: "On Actor Clicked"
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "52e70b13373361500e006571"
+          }
+        }
+      }
     }
   }
   conditions {
