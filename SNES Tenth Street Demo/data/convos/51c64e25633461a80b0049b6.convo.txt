@@ -58,12 +58,12 @@ nodes {
     responseText: "Leave"
     actions {
       ops {
-        functionName: "Open Scene"
+        functionName: "Send Event"
         args {
           call_value {
-            functionName: "Get Map Item (Scene)"
+            functionName: "Get Map Item (Event)"
             args {
-              string_value: "TS_OfficeBlock"
+              string_value: "LeaveCage"
             }
           }
         }
@@ -86,12 +86,12 @@ nodes {
     responseText: "Leave"
     actions {
       ops {
-        functionName: "Open Scene"
+        functionName: "Send Event"
         args {
           call_value {
-            functionName: "Get Map Item (Scene)"
+            functionName: "Get Map Item (Event)"
             args {
-              string_value: "TS_OfficeBlock"
+              string_value: "LeaveCage"
             }
           }
         }
@@ -170,6 +170,28 @@ nodes {
           }
           args {
             int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Region Enabled"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5ae94a376161314c10005e77"
           }
         }
       }
