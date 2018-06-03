@@ -4792,64 +4792,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "ProceedApartment"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Proceed"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "Doorway"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "OB_APT"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "TS_OB_APT"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "54d2e1083639356c21006106"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
   name: "ProceedOffice"
   events {
     ops {
@@ -4896,6 +4838,206 @@ triggers {
             string_value: "TS_OFFICE"
           }
         }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "54d2e1083639356c21006106"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "ProceedApartment"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "Proceed"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "Doorway"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "OB_APT"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Fade Camera Out"
+      args {
+        float_value: 0.5
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Proceed"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+    }
+    ops {
+      functionName: "Trigger: Wait Until Triggered Again"
+    }
+    ops {
+      functionName: "Teleport Actor near Point"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b14384d663136240d003871"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Proceed"
+          }
+        }
+      }
+      args {
+        float_value: 0.25
+      }
+    }
+    ops {
+      functionName: "Trigger: Wait Until Triggered Again"
+    }
+    ops {
+      functionName: "Fade Camera In"
+      args {
+        float_value: 0.5
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "Doorway"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -20580,54 +20722,6 @@ triggers {
   }
   isActive: true
   idRef {
-    id: "59b0dded616131b427003f4f"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "WAIT LOGIC"
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: false
-  idRef {
-    id: "59b0dded616131b427003f50"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "-----------------------------"
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: false
-  idRef {
-    id: "59b0dded616131b427003f51"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: ""
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: true
-  idRef {
     id: "59d1c60a616131401c004c67"
   }
   elseActions {
@@ -28221,6 +28315,1358 @@ triggers {
   }
   is_oneshot: false
 }
+triggers {
+  name: " "
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "59f5fd28663136b010001e2a"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "--== Office Block APT Grind Area ==--"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "59f5fd2e663136b010001e2b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Grind_Start"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b143569663136240d0036c7"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eGrind"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b14447e66313614080054ea"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Spawn"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eGrind"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor is Inside Region"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "AreOrAreNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b143569663136240d0036c7"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eGrind"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Global_GrindDelay"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59ff3a1f6631368c160015be"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "SpawnDifficulty"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 0
+          }
+          args {
+            int_value: 99
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "SpawnDifficulty"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DangerMod"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eSpawn"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Spawn1"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eSpawn"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "SpawnDifficulty"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5b143569663136240d0036f6"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b143af466313614080054de"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Spawn2"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eSpawn"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "SpawnDifficulty"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 25
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5b143569663136240d003701"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b143af466313614080054df"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Spawn3"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eSpawn"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "SpawnDifficulty"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 50
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5b143569663136240d0036cb"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b143af466313614080054e0"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Spawn4"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eSpawn"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "SpawnDifficulty"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 75
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5b143569663136240d0036b0"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59ff3f396631368c160015c1"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Retreat_StartCombat"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b143569663136240d00369c"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Evaluate If Actor is Inside Region"
+          args {
+            call_value {
+              functionName: "Specific Actor"
+              args {
+                call_value {
+                  functionName: "Get Map Item (Player)"
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AreOrAreNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b143569663136240d00369c"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate Turn Mode"
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "TurnBasedOrFreeMove"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Actor In Passive Mode"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Seek And Destroy (Team)"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "HIRELING_CHECK"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59f601df663136b010001e2f"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Retreat_EndCombat"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b143569663136240d00369a"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (Actor)"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate Turn Mode"
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "TurnBasedOrFreeMove"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Actor In Passive Mode"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Move To (Point)"
+      args {
+        call_value {
+          functionName: "All Actors With Tag"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Random Point Within Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b143569663136240d00369c"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "521a6b99633461581b00390f"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_ReSpawn"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Evaluate Tag for Actor"
+          args {
+            call_value {
+              functionName: "Specific Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Target Actor"
+                }
+              }
+              args {
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "HasOrHasNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "isGrind"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate If Actor is Inside Region"
+          args {
+            call_value {
+              functionName: "All Actors With Tag"
+              args {
+                call_value {
+                  functionName: "Get Map Item (SenseTagList)"
+                  args {
+                    string_value: "isGrind"
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AreOrAreNot"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b143569663136240d0036c7"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eGrind"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Global_GrindDelay"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59f605cb663136b010001e30"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b143af466313614080054e1"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "--== Office Block APT Grind Area ==--"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b143b8466313614080054e4"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "OB_APT.CameraWarp"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "Proceed"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "Doorway"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "OFFICE_EXIT"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Fade Camera Out"
+      args {
+        float_value: 0.5
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Proceed"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+    }
+    ops {
+      functionName: "Trigger: Wait Until Triggered Again"
+    }
+    ops {
+      functionName: "Teleport Actor near Point"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51b40b7e6334614c1c004825"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Proceed"
+          }
+        }
+      }
+      args {
+        float_value: 0.25
+      }
+    }
+    ops {
+      functionName: "Trigger: Wait Until Triggered Again"
+    }
+    ops {
+      functionName: "Fade Camera In"
+      args {
+        float_value: 0.5
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b143b7866313614080054e2"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OB_APT.EXIT"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b143569663136240d00369b"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "Doorway"
+          }
+        }
+      }
+      args {
+        string_value: "OFFICE_EXIT"
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Proceed"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b143bba66313614080054e5"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
 regions {
   name: "CameraA"
   position {
@@ -28317,9 +29763,9 @@ regions {
   name: "TS_OB_BUILD_DOOR"
   position {
     x: -5
-    y: 6
+    y: 4
     width: 2
-    height: 2
+    height: 4
   }
   enabledAtStart: true
   is_camera_region: false
@@ -28500,8 +29946,8 @@ regions {
 regions {
   name: "TS_OB_CLUB_DOOR"
   position {
-    x: -139
-    y: -23
+    x: -103
+    y: -13
     width: -2
     height: -4
   }
@@ -28546,8 +29992,8 @@ regions {
 regions {
   name: "TS_OB_CEM_DOOR"
   position {
-    x: -131
-    y: -34
+    x: -95
+    y: -24
     width: 2
     height: 2
   }
@@ -28638,8 +30084,8 @@ regions {
 regions {
   name: "Hide"
   position {
-    x: -143
-    y: -84
+    x: -110
+    y: -58
     width: 3
     height: 3
   }
@@ -28730,7 +30176,7 @@ regions {
 regions {
   name: "Spawn2B"
   position {
-    x: -8
+    x: -7
     y: 9
     width: 14
     height: -19
@@ -28776,8 +30222,8 @@ regions {
 regions {
   name: "Spawn3"
   position {
-    x: -141
-    y: -37
+    x: -105
+    y: -27
     width: 12
     height: 15
   }
@@ -28822,8 +30268,8 @@ regions {
 regions {
   name: "Spawn4"
   position {
-    x: -141
-    y: -27
+    x: -105
+    y: -17
     width: 12
     height: 15
   }
@@ -28868,8 +30314,8 @@ regions {
 regions {
   name: "CameraB"
   position {
-    x: -148
-    y: -10
+    x: -112
+    y: 0
     width: 50
     height: -32
   }
@@ -28914,8 +30360,8 @@ regions {
 regions {
   name: "GotoA"
   position {
-    x: -107
-    y: -39
+    x: -71
+    y: -29
     width: 4
     height: 21
   }
@@ -29006,8 +30452,8 @@ regions {
 regions {
   name: "EnterB"
   position {
-    x: -111
-    y: -32
+    x: -75
+    y: -22
     width: 2
     height: 5
   }
@@ -29190,8 +30636,8 @@ regions {
 regions {
   name: "Make3-4Hostile"
   position {
-    x: -129
-    y: -30
+    x: -93
+    y: -20
     width: -12
     height: 13
   }
@@ -29236,8 +30682,8 @@ regions {
 regions {
   name: "NPCHide1"
   position {
-    x: -118
-    y: -25
+    x: -82
+    y: -15
     width: 2
     height: 2
   }
@@ -29282,8 +30728,8 @@ regions {
 regions {
   name: "NPCHide2"
   position {
-    x: -137
-    y: -14
+    x: -101
+    y: -4
     width: 2
     height: 2
   }
@@ -29328,8 +30774,8 @@ regions {
 regions {
   name: "ClubCamera"
   position {
-    x: -46
-    y: -84
+    x: -12
+    y: -74
     width: 24
     height: 24
   }
@@ -29374,8 +30820,8 @@ regions {
 regions {
   name: "GR-Entrance"
   position {
-    x: -31
-    y: -68
+    x: 3
+    y: -58
     width: -4
     height: 2
   }
@@ -29420,8 +30866,8 @@ regions {
 regions {
   name: "ALLEY-Camera"
   position {
-    x: 74
-    y: 25
+    x: 62
+    y: 33
     width: -44
     height: -44
   }
@@ -29466,8 +30912,8 @@ regions {
 regions {
   name: "ALLEY-DeckerBody"
   position {
-    x: 62
-    y: 15
+    x: 50
+    y: 23
     width: 1
     height: 1
   }
@@ -29512,8 +30958,8 @@ regions {
 regions {
   name: "ALLEY-Gunshot"
   position {
-    x: 53
-    y: 9.0999985
+    x: 41
+    y: 17.099998
     width: 3
     height: 10
   }
@@ -29558,8 +31004,8 @@ regions {
 regions {
   name: "ALLEY-DogTrigger"
   position {
-    x: 67
-    y: 6
+    x: 55
+    y: 14
     width: -11
     height: -3
   }
@@ -29604,8 +31050,8 @@ regions {
 regions {
   name: "ALLEY-Exit"
   position {
-    x: 45
-    y: 10
+    x: 33
+    y: 18
     width: -1
     height: 4
   }
@@ -29650,9 +31096,9 @@ regions {
 regions {
   name: "ALLEY-Hide"
   position {
-    x: 21
-    y: -23
-    width: 3
+    x: 32
+    y: -28
+    width: 4
     height: 4
   }
   enabledAtStart: true
@@ -29696,8 +31142,8 @@ regions {
 regions {
   name: "AlleySpawn"
   position {
-    x: 46
-    y: 10
+    x: 34
+    y: 18
     width: 2
     height: 3
   }
@@ -29788,8 +31234,8 @@ regions {
 regions {
   name: "rGR_HoldingPen"
   position {
-    x: -70
-    y: -75
+    x: 32
+    y: -23
     width: 4
     height: 4
   }
@@ -29834,10 +31280,10 @@ regions {
 regions {
   name: "rCrewSpawn"
   position {
-    x: -8
-    y: -72
-    width: 7
-    height: 11
+    x: 21
+    y: -30
+    width: 8
+    height: 12
   }
   enabledAtStart: true
   is_camera_region: true
@@ -29859,15 +31305,15 @@ regions {
     z: -0.75
   }
   directional_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
+    r: 0
+    g: 0
+    b: 0
     a: 1
   }
   ambient_light_color {
-    r: 0.50196081
-    g: 0.50196081
-    b: 0.50196081
+    r: 0
+    g: 0
+    b: 0
     a: 1
   }
   ambience_template: ""
@@ -30107,55 +31553,239 @@ regions {
   loop_default_music: false
   no_fow_in_region: false
 }
+regions {
+  name: "rExit_OBAPT"
+  position {
+    x: -36
+    y: -57
+    width: 12
+    height: 4
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "5b143569663136240d00369a"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
+regions {
+  name: "Spawn_OBAPT"
+  position {
+    x: -36
+    y: -73
+    width: 12
+    height: 16
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "5b143569663136240d00369c"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
+regions {
+  name: "c_OB_APT"
+  position {
+    x: -46
+    y: -76
+    width: 25
+    height: 26
+  }
+  enabledAtStart: true
+  is_camera_region: true
+  idRef {
+    id: "5b143569663136240d0036c7"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.31764707
+    g: 0.31764707
+    b: 0.31764707
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.13725491
+    g: 0.14901961
+    b: 0.18431373
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: "Seattle-Set3-Combat"
+  default_music: "Seattle-Set3-Legwork"
+  loop_combat_music: true
+  loop_default_music: true
+  no_fow_in_region: false
+}
+regions {
+  name: "r_OB_APT_Enter"
+  position {
+    x: -28
+    y: -57
+    width: 4
+    height: 4
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "5b14384d663136240d003871"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
 patrolRoutes {
   name: "Loyal_Wander"
   pathType: 0
   nodes {
     position {
-      x: -140
-      z: -16
+      x: -104
+      z: -6
     }
     index: 0
   }
   nodes {
     position {
-      x: -137
-      z: -29
+      x: -101
+      z: -19
     }
     index: 1
   }
   nodes {
     position {
-      x: -121
-      z: -34
+      x: -85
+      z: -24
     }
     index: 2
   }
   nodes {
     position {
-      x: -122
-      z: -26
+      x: -86
+      z: -16
     }
     index: 3
   }
   nodes {
     position {
-      x: -131
-      z: -24
+      x: -95
+      z: -14
     }
     index: 4
   }
   nodes {
     position {
-      x: -131
-      z: -16
+      x: -95
+      z: -6
     }
     index: 5
   }
   nodes {
     position {
-      x: -140
-      z: -16
+      x: -104
+      z: -6
     }
     index: 6
   }
@@ -30255,9 +31885,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -139
+    x: -103
     y: 0
-    z: -18
+    z: -8
   }
   orientation: ORIENTATION_W
   idRef {
@@ -30378,6 +32008,8 @@ characters {
         edged: 1
       }
       archetypeName: "Guard - Hunt And Destroy"
+      vulnerabilities {
+      }
     }
     equipment {
       prefab_name: "SamuraiTrenchcoat"
@@ -30476,9 +32108,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -140.2
+    x: -104.2
     y: 0
-    z: -34.2
+    z: -24.2
   }
   orientation: ORIENTATION_S
   GeneralTags: "XP1"
@@ -30548,9 +32180,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -140
+    x: -104
     y: 0
-    z: -14
+    z: -4
   }
   orientation: ORIENTATION_W
   GeneralTags: "XP1"
@@ -30905,9 +32537,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -6
+    x: 21
     y: 0
-    z: -68
+    z: -24
   }
   orientation: ORIENTATION_S
   GeneralTags: "Hamfist"
@@ -30979,9 +32611,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -6
+    x: 21
     y: 0
-    z: -67
+    z: -23
   }
   orientation: ORIENTATION_S
   GeneralTags: "Jangadance"
@@ -31060,9 +32692,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -5
+    x: 22
     y: 0
-    z: -67
+    z: -23
   }
   orientation: ORIENTATION_S
   GeneralTags: "Orifice"
@@ -31152,9 +32784,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -5
+    x: 22
     y: 0
-    z: -68
+    z: -24
   }
   orientation: ORIENTATION_S
   GeneralTags: "Dances"
@@ -31235,9 +32867,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -5
+    x: 22
     y: 0
-    z: -65
+    z: -21
   }
   orientation: ORIENTATION_S
   GeneralTags: "Jetboy"
@@ -31321,9 +32953,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -6
+    x: 21
     y: 0
-    z: -66
+    z: -22
   }
   orientation: ORIENTATION_S
   GeneralTags: "Anders"
@@ -31404,9 +33036,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -4.8999996
+    x: 22.1
     y: 0
-    z: -63
+    z: -19
   }
   orientation: ORIENTATION_S
   GeneralTags: "Splatter"
@@ -31484,9 +33116,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -5
+    x: 22
     y: 0
-    z: -64
+    z: -20
   }
   orientation: ORIENTATION_S
   GeneralTags: "Kitsune"
@@ -31586,9 +33218,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -25.5
+    x: 8.5
     y: 0
-    z: -67
+    z: -57
   }
   orientation: ORIENTATION_N
   displayName: "GR-hamfist"
@@ -31666,9 +33298,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -25.8
+    x: 8.2000008
     y: 0
-    z: -75.100006
+    z: -65.100006
   }
   orientation: ORIENTATION_E
   displayName: "GR-Club Patron"
@@ -31727,9 +33359,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -38
+    x: -4
     y: 0
-    z: -67
+    z: -57
   }
   orientation: ORIENTATION_S
   displayName: "GR-Doc"
@@ -31788,9 +33420,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -39
+    x: -5
     y: 0
-    z: -74
+    z: -64
   }
   orientation: ORIENTATION_S
   displayName: "GR-Bartender"
@@ -31851,9 +33483,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -35.7
+    x: -1.7000008
     y: 0
-    z: -79.399994
+    z: -69.399994
   }
   orientation: ORIENTATION_W
   displayName: "GR-Jangadance"
@@ -31935,9 +33567,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 59.800003
+    x: 47.800003
     y: 0
-    z: 4.7000008
+    z: 12.700001
   }
   orientation: ORIENTATION_S
   displayName: "ALLEY_GANGER"
@@ -32029,9 +33661,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 59
+    x: 47
     y: 0
-    z: -0.20000076
+    z: 7.7999992
   }
   orientation: ORIENTATION_E
   displayName: "ALLEY_DOG"
@@ -32086,9 +33718,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: -5.0999985
+    x: 23.900002
     y: 0
-    z: -71.2
+    z: -29.199997
   }
   orientation: ORIENTATION_S
   displayName: "Main"
@@ -32109,9 +33741,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -5.9999962
+    x: 21.000004
     y: 0
-    z: -64
+    z: -20
   }
   orientation: ORIENTATION_S
   GeneralTags: "akimi"
@@ -32233,9 +33865,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -4
+    x: 23
     y: 0
-    z: -66
+    z: -22
   }
   orientation: ORIENTATION_S
   GeneralTags: "Norbert"
@@ -32314,9 +33946,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -4
+    x: 23
     y: 0
-    z: -65
+    z: -21
   }
   orientation: ORIENTATION_S
   GeneralTags: "Frogtongue"
@@ -32393,9 +34025,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -4.1000061
+    x: 22.899994
     y: 0
-    z: -64
+    z: -20
   }
   orientation: ORIENTATION_S
   GeneralTags: "Steelflight"
@@ -33381,9 +35013,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 33.300003
+    x: 28.300003
     y: 0
-    z: -80
+    z: -19
   }
   orientation: ORIENTATION_S
   GeneralTags: "WasteBarKeep"
@@ -33428,9 +35060,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 33
+    x: 28
     y: 0
-    z: -81
+    z: -20
   }
   orientation: ORIENTATION_S
   GeneralTags: "SASSIE"
@@ -33465,6 +35097,7 @@ characters {
       }
       specializations {
       }
+      archetypeName: "Non-Combatant"
       vulnerabilities {
       }
     }
@@ -33483,9 +35116,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 32.1
+    x: 27.099998
     y: 0
-    z: -80.3
+    z: -19.300003
   }
   orientation: ORIENTATION_S
   GeneralTags: "GLUT_SEC"
@@ -33533,9 +35166,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 31
+    x: 27
     y: 0
-    z: -80
+    z: -21
   }
   orientation: ORIENTATION_S
   GeneralTags: "DBTALK"
@@ -33621,9 +35254,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 32
+    x: 27
     y: 0
-    z: -81
+    z: -20
   }
   orientation: ORIENTATION_E
   GeneralTags: "TALIS"
@@ -33678,9 +35311,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 30
+    x: 28
     y: 0
-    z: -81
+    z: -21
   }
   orientation: ORIENTATION_S
   GeneralTags: "M_SEC"
@@ -34582,6 +36215,467 @@ characters {
     is_prop_character: true
   }
 }
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -25.7
+    y: 0
+    z: -64.7
+  }
+  orientation: ORIENTATION_E
+  GeneralTags: "XP2"
+  GeneralTags: "N10_20"
+  GeneralTags: "isGrind"
+  displayName: "Mage2_OBAPT"
+  idRef {
+    id: "5b143569663136240d0036b0"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Standard/ElfMaleGanger"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 4
+        essence: 0
+        magic: 5
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 2
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Protect"
+      attitude: AttitudeCautious
+      attackRandom: AttackStyle_BestOnly
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Spell Stunbolt 1"
+    }
+    equipment {
+      prefab_name: "Spell Manabolt 1"
+    }
+    equipment {
+      prefab_name: "Spell Powerbolt 1"
+    }
+    team_id: "Civilians"
+    char_name: "Mage"
+    GeneralTags: "XP2"
+    GeneralTags: "N10_20"
+    GeneralTags: "isGrind"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    hiring_type: HiringType_None
+    portrait {
+      filename: "backer_elfmale_rthomasallwin"
+    }
+    karma: 23
+    hiring_cost_override: 50
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -27
+    y: 0
+    z: -68.6
+  }
+  orientation: ORIENTATION_E
+  GeneralTags: "XP2"
+  GeneralTags: "N10_20"
+  GeneralTags: "isGrind"
+  displayName: "Hvy2_OBAPT"
+  idRef {
+    id: "5b143569663136240d0036cb"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Gangers/HumanMaleGanger"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 1
+        strength: 3
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 2
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 1
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Seek And Destroy"
+      attitude: AttitudeAggressive
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Pi 1 Fichetti Security 500"
+    }
+    team_id: "Civilians"
+    char_name: "Heavy Dude"
+    GeneralTags: "XP2"
+    GeneralTags: "N10_20"
+    GeneralTags: "isGrind"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    hiring_type: HiringType_None
+    portrait {
+      filename: "backer_humanmale_alexeykruglyakov"
+    }
+    karma: 21
+    hiring_cost_override: 50
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -35.4
+    y: 0
+    z: -64.5
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "XP2"
+  GeneralTags: "N10_20"
+  GeneralTags: "isGrind"
+  displayName: "Hvy1_OBAPT"
+  idRef {
+    id: "5b143569663136240d0036f6"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Gangers/HumanMaleGanger"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 1
+        strength: 3
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 2
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 1
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Seek And Destroy"
+      attitude: AttitudeAggressive
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Berlin_Fist 1 Spiked Fist"
+    }
+    team_id: "Civilians"
+    char_name: "Heavy Dude"
+    GeneralTags: "XP2"
+    GeneralTags: "N10_20"
+    GeneralTags: "isGrind"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    hiring_type: HiringType_None
+    portrait {
+      filename: "backer_humanmale_alexeykruglyakov"
+    }
+    karma: 21
+    hiring_cost_override: 50
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -29.6
+    y: 0
+    z: -71.4
+  }
+  orientation: ORIENTATION_E
+  GeneralTags: "XP2"
+  GeneralTags: "N10_20"
+  GeneralTags: "isGrind"
+  displayName: "Mage1_OBAPT"
+  idRef {
+    id: "5b143569663136240d003701"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Extras/HumanMaleWorkingclassSweatshirtGreen"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 4
+        essence: 0
+        magic: 5
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 2
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Protect"
+      attitude: AttitudeCautious
+      attackRandom: AttackStyle_BestOnly
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Spell Stunbolt 1"
+    }
+    equipment {
+      prefab_name: "Spell Manabolt 1"
+    }
+    equipment {
+      prefab_name: "Spell Powerbolt 1"
+    }
+    team_id: "Civilians"
+    char_name: "Mage"
+    GeneralTags: "XP2"
+    GeneralTags: "N10_20"
+    GeneralTags: "isGrind"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    hiring_type: HiringType_None
+    portrait {
+      filename: "backer_elfmale_rthomasallwin"
+    }
+    karma: 23
+    hiring_cost_override: 50
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -43
+    y: 0
+    z: -62.6
+  }
+  orientation: ORIENTATION_S
+  displayName: "Business Man"
+  idRef {
+    id: "5b143569663136240d003715"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    conversationPoint {
+      conversationID: "51bca7ce633461a01c0018c3"
+      turnToFace: true
+    }
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Berlin:Business/HumanMaleBusinessMan"
+    character_sheet_id: "BaseCivilian"
+    equipment_sheet_id: "SNES_StarterWeapons"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        close_combat: 1
+      }
+      specializations {
+        unarmed: 1
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeCautious
+      attackRandom: AttackStyle_BestOnly
+      vulnerabilities {
+      }
+    }
+    team_id: "Civilians"
+    char_name: "Business Man"
+    pc_spawn_number: -1
+    portrait {
+      filename: "backerpc_humanmale_adamdoochin_stephenwatashima"
+    }
+    karma: 8
+    is_prop_character: true
+    has_fist: true
+  }
+}
 variables {
   int_value: 0
   variableref_value {
@@ -34702,6 +36796,14 @@ variables {
     typeName: "bool"
   }
 }
+variables {
+  int_value: 0
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "SpawnDifficulty"
+    typeName: "int"
+  }
+}
 mapEvents: "Proceed"
 mapEvents: "Spawn1"
 mapEvents: "Spawn2"
@@ -34728,6 +36830,8 @@ mapEvents: "eWalkerStop"
 mapEvents: "EnterCage"
 mapEvents: "LeaveCage"
 mapEvents: "eNewCurtains"
+mapEvents: "eSpawn"
+mapEvents: "eGrind"
 senseTags: "Akimi"
 goals {
   name: "Survive"
