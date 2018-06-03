@@ -30958,7 +30958,7 @@ regions {
 regions {
   name: "ALLEY-Gunshot"
   position {
-    x: 41
+    x: 43
     y: 17.099998
     width: 3
     height: 10
@@ -33578,8 +33578,9 @@ characters {
   }
   lod: 0
   character_instance {
-    prefab_name: "Gangers/OrkMaleGanger"
-    character_sheet_id: "BaseCivilian"
+    prefab_name: "Seattle:Gangers/OrkMaleGanger"
+    character_sheet_id: "Errant_Lv1_Human_Pistol"
+    equipment_sheet_id: "Errant_Lv1_Pistol_NoGrenade"
     character_mod {
       stats {
         body: 0
@@ -33591,19 +33592,22 @@ characters {
         essence: 0
         magic: 0
         hp: 0
-        ap: -1
-        armor: 1
+        ap: 0
+        armor: 0
         force: 0
         morale: 0
         discipline: 0
         awareness: 0
-        perception: -20
+        perception: 0
         authority: 0
         protect_tether_range: 0
         move_speed: 0
+        vision_peripheral_distance: 0
+        vision_cone_distance: 0
+        vision_cone_angle: 0
       }
       skills {
-        ranged_combat: 1
+        ranged_combat: 0
         close_combat: 0
         throwing_weapons: 0
         spellcasting: 0
@@ -33633,16 +33637,10 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Protect"
-      attitude: AttitudeCautious
+      archetypeName: "Guard - Seek And Destroy"
+      attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "SamuraiTrenchcoat"
-    }
-    equipment {
-      prefab_name: "Pi 1 Ceska Black Scorpion"
     }
     team_id: "Gangers"
     char_name: "Orc Ganger"
@@ -33654,7 +33652,7 @@ characters {
     portrait {
       filename: "backer_orkmale_bradleymiller_kiluminatialabrad"
     }
-    karma: 7
+    karma: 41
     hiring_cost_override: 50
   }
 }
