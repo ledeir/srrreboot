@@ -19,7 +19,7 @@ nodes {
   }
   branches {
     responseText: "Hitmen?"
-    nextNodeIndex: 2
+    nextNodeIndex: 3
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -116,7 +116,7 @@ nodes {
     auxiliaryLink: true
   }
   branches {
-    responseText: "Let Decker run off."
+    responseText: "{{GM}}Let Decker leave{{/GM}}"
     actions {
       ops {
         functionName: "Order Actor to Move To (Region)"
@@ -156,7 +156,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: -1
+    nextNodeIndex: 2
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -165,9 +165,17 @@ nodes {
 }
 nodes {
   idRef {
-    id: "51ae47e8633461541e0067c4"
+    id: "5b1614c0616131002f004e14"
   }
   index: 2
+  text: ""
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "51ae47e8633461541e0067c4"
+  }
+  index: 3
   text: "They want you DEAD! If I were you, I\'d watch myself!\n"
   branches {
     responseText: ""
@@ -175,7 +183,7 @@ nodes {
     auxiliaryLink: true
   }
   branches {
-    responseText: "Let Decker run off."
+    responseText: "{{GM}}Let Decker leave{{/GM}}"
     actions {
       ops {
         functionName: "Order Actor to Move To (Region)"

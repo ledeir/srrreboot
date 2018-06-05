@@ -1117,7 +1117,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "CosplayShades"
+  name: "CosplayShades.OLD"
   events {
     ops {
       functionName: "On Map Start"
@@ -1245,16 +1245,16 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "521ad0ee633461581b003a54"
   }
   elseActions {
   }
-  is_oneshot: false
+  is_oneshot: true
 }
 triggers {
-  name: "CosplayStar"
+  name: "CosplayStar.OLD"
   events {
     ops {
       functionName: "On Map Start"
@@ -1338,16 +1338,16 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "521ad31b633461581b003a58"
   }
   elseActions {
   }
-  is_oneshot: false
+  is_oneshot: true
 }
 triggers {
-  name: "LeaveMorgue"
+  name: "LeaveMorgue.OLD"
   events {
     ops {
       functionName: "On Item Interaction"
@@ -1531,7 +1531,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "521ad1f1633461581b003a56"
   }
@@ -1548,7 +1548,7 @@ triggers {
       }
     }
   }
-  is_oneshot: false
+  is_oneshot: true
 }
 triggers {
   name: "CortexBomb"
@@ -3329,6 +3329,55 @@ triggers {
   elseActions {
   }
   is_oneshot: true
+}
+triggers {
+  name: "LeaveMorgue"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "52c24d5d633461d80b000de1"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "TS_External"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b161812616131002f004ee6"
+  }
+  elseActions {
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "TS_External"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
 }
 regions {
   name: "Camera"
