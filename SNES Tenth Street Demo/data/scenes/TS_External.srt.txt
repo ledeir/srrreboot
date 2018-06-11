@@ -20654,6 +20654,28 @@ triggers {
   }
   actions {
     ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59ff3a1f6631368c160015be"
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Send Event"
       args {
         call_value {
@@ -21048,16 +21070,36 @@ triggers {
           functionName: "Evaluate If Actor is Inside Region"
           args {
             call_value {
-              functionName: "Specific Actor"
+              functionName: "All Actors on Team"
               args {
                 call_value {
-                  functionName: "Get Map Item (Player)"
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
                   args {
                     int_value: 0
                   }
                 }
               }
               args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 1
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (SceneDimension)"
+                  args {
+                    string_value: "Default"
+                  }
+                }
               }
             }
           }
@@ -21271,28 +21313,58 @@ triggers {
       functionName: "AND"
       args {
         call_value {
-          functionName: "Comparison (Actor)"
+          functionName: "Evaluate If Actor is Inside Region"
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "All Actors on Team"
+              args {
+                call_value {
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (SceneDimension)"
+                  args {
+                    string_value: "Default"
+                  }
+                }
+              }
             }
           }
           args {
             call_value {
               functionName: "Get Preset Value (int)"
               args {
-                string_value: "IsOrIsNot"
+                string_value: "AreOrAreNot"
               }
               args {
-                int_value: 1
+                int_value: 0
               }
             }
           }
           args {
             call_value {
-              functionName: "Get Map Item (Player)"
+              functionName: "Get Map Item (Region)"
               args {
-                int_value: 0
+                string_value: "5b1d6a0f6631362012003100"
               }
             }
           }
@@ -21317,6 +21389,28 @@ triggers {
     }
   }
   actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59ff3a1f6631368c160015be"
+          }
+        }
+      }
+    }
     ops {
       functionName: "Change Actor Team"
       args {
@@ -21590,6 +21684,337 @@ triggers {
   is_oneshot: false
 }
 triggers {
+  name: "Grind_ReturnBaddie"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d6a0f66313620120030fc"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Tag for Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isGrind_JA"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Interrupt Team\'s Movement"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Move To (Region)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d6a0f6631362012003100"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1de66e663136a811004605"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Disable"
+  events {
+    ops {
+      functionName: "On Region Exit"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d6a0f66313620120030fb"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59ff3a1f6631368c160015be"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1de4b4663136a811004603"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Offsite"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d6a0f66313620120030fc"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Evaluate If Actor is Inside Region"
+          args {
+            call_value {
+              functionName: "All Actors on Team"
+              args {
+                call_value {
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (SceneDimension)"
+                  args {
+                    string_value: "Default"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AreOrAreNot"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b1d6a0f6631362012003100"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate Turn Mode"
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "TurnBasedOrFreeMove"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59ff3a1f6631368c160015be"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1de86a663136a811004607"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: " "
   events {
   }
@@ -21622,7 +22047,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Grind_Start"
+  name: "RS_Grind_Start"
   events {
     ops {
       functionName: "On Region Enter"
@@ -21678,6 +22103,28 @@ triggers {
   }
   actions {
     ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b1db6e9663136201200337e"
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Send Event"
       args {
         call_value {
@@ -21698,7 +22145,7 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "Grind_Spawn"
+  name: "RS_Grind_Spawn"
   events {
     ops {
       functionName: "Get Map Item (Event)"
@@ -22072,16 +22519,36 @@ triggers {
           functionName: "Evaluate If Actor is Inside Region"
           args {
             call_value {
-              functionName: "Specific Actor"
+              functionName: "All Actors on Team"
               args {
                 call_value {
-                  functionName: "Get Map Item (Player)"
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
                   args {
                     int_value: 0
                   }
                 }
               }
               args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 1
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (SceneDimension)"
+                  args {
+                    string_value: "Default"
+                  }
+                }
               }
             }
           }
@@ -22284,7 +22751,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Region)"
           args {
-            string_value: "5b1d69ea6631362012002fc8"
+            string_value: "5b1d69ea6631362012002fad"
           }
         }
       }
@@ -22295,28 +22762,58 @@ triggers {
       functionName: "AND"
       args {
         call_value {
-          functionName: "Comparison (Actor)"
+          functionName: "Evaluate If Actor is Inside Region"
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "All Actors on Team"
+              args {
+                call_value {
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (SceneDimension)"
+                  args {
+                    string_value: "Default"
+                  }
+                }
+              }
             }
           }
           args {
             call_value {
               functionName: "Get Preset Value (int)"
               args {
-                string_value: "IsOrIsNot"
+                string_value: "AreOrAreNot"
               }
               args {
-                int_value: 1
+                int_value: 0
               }
             }
           }
           args {
             call_value {
-              functionName: "Get Map Item (Player)"
+              functionName: "Get Map Item (Region)"
               args {
-                int_value: 0
+                string_value: "5b1d69ea6631362012002fc8"
               }
             }
           }
@@ -22341,6 +22838,28 @@ triggers {
     }
   }
   actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b1db6e9663136201200337e"
+          }
+        }
+      }
+    }
     ops {
       functionName: "Change Actor Team"
       args {
@@ -22608,6 +23127,337 @@ triggers {
   isActive: true
   idRef {
     id: "5b1db8036631362012003387"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Offsite"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d69ea6631362012002fad"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Evaluate If Actor is Inside Region"
+          args {
+            call_value {
+              functionName: "All Actors on Team"
+              args {
+                call_value {
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (SceneDimension)"
+                  args {
+                    string_value: "Default"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AreOrAreNot"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b1d69ea6631362012002fc8"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate Turn Mode"
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "TurnBasedOrFreeMove"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b1db6e9663136201200337e"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1de8a5663136a811004608"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_ReturnBaddie"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d69ea6631362012002fad"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Tag for Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isGrind_RS"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Interrupt Team\'s Movement"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Move To (Region)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d69ea6631362012002fc8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1de6dd663136a811004606"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Grind_Disable"
+  events {
+    ops {
+      functionName: "On Region Exit"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b1d69ea6631362012002faa"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b1db6e9663136201200337e"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1de4f2663136a811004604"
   }
   elseActions {
   }
@@ -24318,7 +25168,7 @@ regions {
   name: "rExit"
   position {
     x: -136
-    y: 27
+    y: 26
     width: 6
     height: 8
   }
@@ -24363,7 +25213,7 @@ regions {
 regions {
   name: "GrindRoom_RailSide"
   position {
-    x: -147
+    x: -148
     y: 15.099998
     width: 11
     height: 16
