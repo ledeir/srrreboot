@@ -647,7 +647,7 @@ triggers {
   name: "FixEssence"
   events {
     ops {
-      functionName: "On Map Start"
+      functionName: "On Conversation Complete"
     }
   }
   conditions {
@@ -668,7 +668,7 @@ triggers {
             string_value: "BaseOrCurrent"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -719,7 +719,7 @@ triggers {
         }
       }
       args {
-        string_value: "ESSENCE LOSS!"
+        string_value: "ESSENCE RESTORED\nCauses a crash."
       }
       args {
         float_value: 0
@@ -743,70 +743,6 @@ triggers {
         float_value: 0
       }
     }
-    ops {
-      functionName: "Set Actor Base Attribute"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 6
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorAttributes"
-          }
-          args {
-            int_value: 6
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Actor Base Attribute"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 6
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorAttributes"
-          }
-          args {
-            int_value: 13
-          }
-        }
-      }
-    }
   }
   isActive: false
   idRef {
@@ -815,6 +751,92 @@ triggers {
   elseActions {
   }
   is_oneshot: true
+}
+triggers {
+  name: "SwapDataJack"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "53ec2c5e363935e809008066"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "broken Datajack"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Open Cyberware Screen From Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "53ec3d46363935e809008392"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b1f00606631365c10007467"
+  }
+  elseActions {
+    ops {
+      functionName: "Open Store Screen From Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "53ec3d46363935e809008392"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
 }
 regions {
   name: "New Region"
@@ -925,9 +947,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -21
+    x: -13
     y: 0
-    z: -26
+    z: -7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -960,10 +982,23 @@ characters {
       }
       specializations {
       }
+      archetypeName: "Non-Combatant"
       vulnerabilities {
       }
     }
-    team_id: "Shadowrunners"
+    equipment {
+      prefab_name: "broken Datajack"
+    }
+    equipment {
+      prefab_name: "Repaired_Datajack"
+    }
+    equipment {
+      prefab_name: "CyberdeckSony"
+    }
+    equipment {
+      prefab_name: "CyberdeckKraftwerk1"
+    }
+    team_id: "Civilians"
     char_name: "Ledeir"
     pc_spawn_number: -1
     portrait {
@@ -971,6 +1006,7 @@ characters {
     }
     description_bio: "The mysterious developer behind the reboot."
     karma: 6
+    is_prop_character: true
   }
 }
 characters {
@@ -1045,6 +1081,14 @@ characters {
     hiring_cost_override: 1000
   }
 }
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "DEBUGGER"
+    typeName: "bool"
+  }
+}
 worldMapLocation {
   filename: ""
   location {
@@ -1057,7 +1101,7 @@ parentStory: ""
 scene_title: "ABOUT THIS CONTENT PACK"
 scene_subtitle: ""
 scene_synopsis: "BETA  BUILD\n\n- THE MOD IS PLAYABLE END TO END\n- YOU MAY ENCOUNTER VARIOUS ISSUES OR BUGS.\n- YOU CAN FIND MORE INFORMATION HERE, OR JUST START PLAYING.\n\nTHIS WILL BE REMOVED IN LATER RELEASES"
-scene_image: ""
+scene_image: "end"
 scene_continue_button_skip: false
 scene_restore_runner_health: false
 directional_light_dir {
@@ -1107,6 +1151,8 @@ team_affiliations {
 scene_dimensions {
   dimension_name: "Default"
 }
+character_roster {
+}
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
   prereq_description: ""
@@ -1125,6 +1171,6 @@ override_hiring_average_cost: false
 show_equip_screen_on_scene_load: false
 is_persistant: false
 is_persistant_has_value: false
-can_move_outside_camera_regions: true
+can_move_outside_camera_regions: false
 can_start_before_triggers: false
 can_use_team_advancement: false

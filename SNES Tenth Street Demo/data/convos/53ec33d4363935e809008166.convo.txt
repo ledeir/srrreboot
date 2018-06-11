@@ -7,7 +7,7 @@ nodes {
     id: "53ec3427363935e80900816c"
   }
   index: 0
-  text: "Click around the room for more information or click the door to start the game."
+  text: "Welcome to the SNES Shadowrun Reboot Beta Candidate\nThis scene is included to give a brief introduction / status to the mod during development.\nIn our final release this will be replaced with a configuration / introduction scene.\n\nThis scene was updated for version 4.0 on January 8th, 2018"
   branches {
     responseText: ""
     nextNodeIndex: 1
@@ -19,10 +19,10 @@ nodes {
 }
 nodes {
   idRef {
-    id: "54cd684d3639358c1c002f6b"
+    id: "5b1efe796631365c1000742c"
   }
   index: 1
-  text: "I\'m sorry but if you imported a character with \'ware, its gone. This was done for plot reasons!\n\nIn the future we will make this optional and less intrusive."
+  text: "Click around the room for more information or click the door to start the game."
   branches {
     responseText: ""
     nextNodeIndex: 2
@@ -34,13 +34,31 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5728496861613170370001e8"
+    id: "54cd684d3639358c1c002f6b"
   }
   index: 2
+  text: "I\'m sorry but if you imported a character with \'ware, its gone. This was done for plot reasons!\n\nIn the future we will make this optional and less intrusive."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "5728496861613170370001e8"
+  }
+  index: 3
   text: "The mod SHOULD be playable end to end, but there definitely are bugs around.\nMost of them can be resolved by restarting the scene.\n\nGood luck and have fun!"
   nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
 }
 roots {
-  responseText: "Welcome to the SNES Shadowrun Reboot Beta Candidate\nThis scene is included to give a brief introduction / status to the mod during development.\nIn our final release this will be replaced with a configuration / introduction scene.\n\nThis scene was updated for version 4.0 on January 8th, 2018"
+  responseText: ""
   nextNodeIndex: 0
 }

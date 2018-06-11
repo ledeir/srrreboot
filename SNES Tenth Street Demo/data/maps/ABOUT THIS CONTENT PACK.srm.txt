@@ -1,7 +1,7 @@
-minX: -22
-minZ: -27
-numX: 25
-numZ: 37
+minX: -14
+minZ: -8
+numX: 17
+numZ: 18
 props {
   name: "sushibar_clutter_beer02"
   gridPoint {
@@ -861,8 +861,50 @@ props {
     z: 5
   }
   orientation: ORIENTATION_S
+  displayName: "obj_DataJackSwap"
   idRef {
     id: "53ec2c5e363935e809008066"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "DEBUGGER"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Matrix
+    interaction_info_text: "Swap DataJack"
   }
   lod: 0
 }
@@ -1123,9 +1165,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -20
+    x: -12
     y: 0
-    z: -24
+    z: -5
   }
   orientation: ORIENTATION_S
   lod: 0
@@ -1133,9 +1175,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -21
+    x: -13
     y: 0
-    z: -24
+    z: -5
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1146,9 +1188,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -22
+    x: -14
     y: 0
-    z: -24
+    z: -5
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1159,9 +1201,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -22
+    x: -14
     y: 0
-    z: -25
+    z: -6
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1172,9 +1214,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -22
+    x: -14
     y: 0
-    z: -26
+    z: -7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1185,9 +1227,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -22
+    x: -14
     y: 0
-    z: -27
+    z: -8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1198,9 +1240,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -21
+    x: -13
     y: 0
-    z: -27
+    z: -8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1211,9 +1253,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -19
+    x: -11
     y: 0
-    z: -26
+    z: -7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1224,9 +1266,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -19
+    x: -11
     y: 0
-    z: -25
+    z: -6
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1237,9 +1279,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -19
+    x: -11
     y: 0
-    z: -24
+    z: -5
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1250,9 +1292,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -19
+    x: -11
     y: 0
-    z: -27
+    z: -8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1263,9 +1305,9 @@ props {
 props {
   name: "system_invisible_blockSight"
   gridPoint {
-    x: -20
+    x: -12
     y: 0
-    z: -27
+    z: -8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -1345,6 +1387,19 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "54a8aeee373361bc12001f12"
+  }
+  lod: 0
+}
+props {
+  name: "diveBar_floor_wood01"
+  gridPoint {
+    x: -13
+    y: 0
+    z: -7
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b1eff376631365c1000743c"
   }
   lod: 0
 }
