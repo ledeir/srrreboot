@@ -7,10 +7,76 @@ nodes {
     id: "51ae4745633461541e0067bd"
   }
   index: 0
-  text: "You can\'t be alive! I saw you getting geeked by those hitmen!\nYou\'re crazy showing your face again. You\'d better get smart like me and pack a firearm, or you\'ll wind up dead!\n"
+  text: "{{GM}}A street thug recognizes you and approaches.{{/GM}}\n\nYou can\'t be alive! I saw you getting geeked by those hitmen!\n\nYou\'re crazy showing your face again. You\'d better get smart like me and pack a firearm, or you\'ll wind up dead!\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51ae51c9633461541e0067e1"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "A demo module of the first map in the SNES version"
+          }
+          args {
+            string_value: "DeckerTalk"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b1dec6d663136fc0d00753b"
+  }
+  index: 1
+  text: ""
   branches {
     responseText: "Firearms?"
-    nextNodeIndex: 1
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bTalkedToDecker"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 2
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -19,7 +85,31 @@ nodes {
   }
   branches {
     responseText: "Hitmen?"
-    nextNodeIndex: 3
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bTalkedToDecker"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 4
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -27,7 +117,42 @@ nodes {
     }
   }
   branches {
-    responseText: "Ignore the thug."
+    responseText: "{{CC}}Ignore{{/CC}} Buzz off."
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bTalkedToDecker"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Order Actor to Move To (Region)"
@@ -71,48 +196,102 @@ nodes {
       }
     }
     nextNodeIndex: -1
+    hideIfUnavailable: true
   }
-  nodeType: ConversationNodeType_Simple
-  sourceInSceneRef {
-    id: "51ae51c9633461541e0067e1"
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "A demo module of the first map in the SNES version"
-          }
-          args {
-            string_value: "DeckerTalk"
+  branches {
+    responseText: "{{CC}}Leave{{/CC}} Thanks pal."
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bTalkedToDecker"
+            }
           }
         }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
           }
-          args {
-            int_value: 1
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
           }
         }
       }
     }
+    actions {
+      ops {
+        functionName: "Order Actor to Move To (Region)"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Actor)"
+                args {
+                  string_value: "51ae51c9633461541e0067e1"
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Region)"
+            args {
+              string_value: "51ae54a6633461541e0067e3"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "FacingDirection"
+            }
+            args {
+              int_value: 5
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "End Current Actor Turn"
+      }
+    }
+    nextNodeIndex: -1
+    hideIfUnavailable: true
   }
+  nodeType: ConversationNodeType_Simple
+  comment: "DeckerLoop"
 }
 nodes {
   idRef {
     id: "51ae47c0633461541e0067c2"
   }
-  index: 1
+  index: 2
   text: "I ain\'t got time to talk to a corpse. If those guys find out I was with you, I\'ll be creamed too! "
   branches {
     responseText: ""
-    nextNodeIndex: 0
+    nextNodeIndex: 1
     auxiliaryLink: true
   }
   branches {
@@ -156,7 +335,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 2
+    nextNodeIndex: 3
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -167,7 +346,7 @@ nodes {
   idRef {
     id: "5b1614c0616131002f004e14"
   }
-  index: 2
+  index: 3
   text: ""
   nodeType: ConversationNodeType_Simple
 }
@@ -175,11 +354,11 @@ nodes {
   idRef {
     id: "51ae47e8633461541e0067c4"
   }
-  index: 3
+  index: 4
   text: "They want you DEAD! If I were you, I\'d watch myself!\n"
   branches {
     responseText: ""
-    nextNodeIndex: 0
+    nextNodeIndex: 1
     auxiliaryLink: true
   }
   branches {
@@ -234,6 +413,6 @@ nodes {
   }
 }
 roots {
-  responseText: "A street thug recognizes you and approaches."
+  responseText: ""
   nextNodeIndex: 0
 }
