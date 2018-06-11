@@ -10,6 +10,7 @@ props {
     z: -5
   }
   orientation: ORIENTATION_E
+  GeneralTags: "isFRESH"
   displayName: "YourSlab"
   idRef {
     id: "51ace57c633461601d0000a1"
@@ -17,47 +18,9 @@ props {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
-    prerequisites {
-      ops {
-        functionName: "Evaluate If Actor Has Item"
-        args {
-          call_value {
-            functionName: "Specific Actor"
-            args {
-              call_value {
-                functionName: "Get Map Item (Actor)"
-                args {
-                  string_value: "51a9a947633461e824000110"
-                }
-              }
-            }
-            args {
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "HasOrHasNot"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "TS02_Paper"
-            }
-          }
-        }
-      }
+    dummyInteraciton {
     }
-    interactionIcon: InteractionIcon_Inspect
-    interaction_info_text: ""
+    interaction_info_text: "Examine Drawer"
   }
   lod: 0
 }
@@ -3868,6 +3831,113 @@ props {
       }
     }
     interactionIcon: InteractionIcon_LockedDoor
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "morgue_appliance_mediumBodyLocker01"
+  gridPoint {
+    x: -13
+    y: 0
+    z: -5
+  }
+  orientation: ORIENTATION_E
+  displayName: "obj_ClosedLocker"
+  idRef {
+    id: "5b1dd0f1663136201200340b"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "TS02_Paper"
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (string)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (string)"
+            args {
+            }
+            args {
+              string_value: "SpawnPoint"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          string_value: "FRESH"
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Inspect
+    interaction_info_text: "Examine Drawer"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -13
+    y: 0
+    z: -7
+  }
+  orientation: ORIENTATION_S
+  displayName: "obj_CameraHolder"
+  idRef {
+    id: "5b1dd6d7663136a811004541"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
     interaction_info_text: ""
   }
   lod: 0

@@ -7,13 +7,81 @@ nodes {
     id: "51b4db4c633461ec190049a7"
   }
   index: 0
-  text: "You hear muffled voices."
+  text: "You wake up in darkness..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_GM_Voice
+  actions {
+    ops {
+      functionName: "Teleport Camera To Point"
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b1dd6d7663136a811004541"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b1dd59b663136a8110044f6"
+  }
+  index: 1
+  text: "...You hear muffled voices."
   branches {
     responseText: "Listen"
-    nextNodeIndex: 1
+    nextNodeIndex: 2
   }
   branches {
     responseText: "Skip"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Teleport Actor"
@@ -81,18 +149,19 @@ nodes {
       }
     }
     nextNodeIndex: -1
+    hideIfUnavailable: true
   }
-  nodeType: ConversationNodeType_Simple
+  nodeType: ConversationNodeType_GM_Voice
 }
 nodes {
   idRef {
     id: "51b4db8a633461ec190049bc"
   }
-  index: 1
+  index: 2
   text: "Brain burnt. They say some gang geeked $(l.him)."
   branches {
     responseText: ""
-    nextNodeIndex: 2
+    nextNodeIndex: 3
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -103,11 +172,11 @@ nodes {
   idRef {
     id: "51b4db8a633461ec190049bf"
   }
-  index: 2
-  text: "Yeah? $(l.he) don\'t look so dead."
+  index: 3
+  text: "Yeah? $+(l.he) don\'t look so dead."
   branches {
     responseText: ""
-    nextNodeIndex: 3
+    nextNodeIndex: 4
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -118,11 +187,11 @@ nodes {
   idRef {
     id: "51b4db8a633461ec190049c2"
   }
-  index: 3
+  index: 4
   text: "Ahhh, $(l.he)\'s flatlined out."
   branches {
     responseText: ""
-    nextNodeIndex: 4
+    nextNodeIndex: 5
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -133,11 +202,11 @@ nodes {
   idRef {
     id: "51b4db8a633461ec190049c5"
   }
-  index: 4
+  index: 5
   text: "We\'ll take care of $(l.him)... yeah, in the morning."
   branches {
     responseText: ""
-    nextNodeIndex: 5
+    nextNodeIndex: 6
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -148,77 +217,11 @@ nodes {
   idRef {
     id: "51b4db8a633461ec190049c8"
   }
-  index: 5
+  index: 6
   text: "Yeah, Sam."
   branches {
-    responseText: "You push the slab out of the wall and fall to the floor."
-    actions {
-      ops {
-        functionName: "Teleport Actor"
-        args {
-          call_value {
-            functionName: "Specific Actor"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Center of Region"
-            args {
-              call_value {
-                functionName: "Get Map Item (Region)"
-                args {
-                  string_value: "51c290dd6334613c1a0026ad"
-                }
-              }
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "FacingDirection"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "TeleportMethod"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Teleport Camera To Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Player)"
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 6
+    responseText: ""
+    nextNodeIndex: 7
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -227,16 +230,57 @@ nodes {
 }
 nodes {
   idRef {
+    id: "5b1dd90a663136a8110045df"
+  }
+  index: 7
+  text: "The voices fade away."
+  branches {
+    responseText: "{{CC}}Push against the door{{/CC}}"
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "eExitDrawer"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 8
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
     id: "51b4db8a633461ec190049cb"
   }
-  index: 6
-  text: "Oh, Ooooh my head.\nMy brain feels burnt...\nWhere am I? Who am I?"
+  index: 8
+  text: "{{GM}}You push the slab out of the wall and fall to the floor.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+  }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
-    id: "51a9a8f9633461e82400010d"
+    id: "51c290d36334613c1a0026ab"
+  }
+}
+nodes {
+  idRef {
+    id: "5b1dd752663136a811004580"
+  }
+  index: 9
+  text: "Oh, Ooooh my head.  My brain feels burnt...\n\nWhere am I? Who am I?"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51c290d36334613c1a0026ab"
   }
 }
 roots {
-  responseText: "You wake up in darkness."
+  responseText: ""
   nextNodeIndex: 0
+  comment: "INTRO"
 }
