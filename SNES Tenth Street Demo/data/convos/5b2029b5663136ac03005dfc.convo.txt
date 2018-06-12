@@ -1,0 +1,108 @@
+idRef {
+  id: "5b2029b5663136ac03005dfc"
+}
+ui_name: "TS_CaryardCutScene"
+nodes {
+  idRef {
+    id: "5b2029c9663136ac03005e02"
+  }
+  index: 0
+  text: "Hey... Where are we going?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bCutSceneComplete"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eIncrimentCounter"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b202d6a663136ac03005e35"
+  }
+  index: 1
+  text: "I\'m not authorized to answer any of your questions, $+(l.sir)."
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b2010ac663136ac03005d8c"
+  }
+}
+nodes {
+  idRef {
+    id: "5b2029da663136ac03005e05"
+  }
+  index: 2
+  text: "What?  What does that mean?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b202da3663136ac03005e42"
+  }
+  index: 3
+  text: "Well, $+(l.sir)... It means that we\'re only here to escort you, not to chat with you.\n\nNow please stop talking, and keep walking.  We\'ve got a ways to go."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b2011ea663136ac03005d90"
+  }
+}
+nodes {
+  idRef {
+    id: "5b202a18663136ac03005e08"
+  }
+  index: 4
+  text: "Fine.   Let\'s just get there..."
+  branches {
+    responseText: ""
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  nextNodeIndex: 0
+}
