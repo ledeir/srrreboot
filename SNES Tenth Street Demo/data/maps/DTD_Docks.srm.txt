@@ -6873,7 +6873,8 @@ props {
         }
       }
     }
-    interactionIcon: InteractionIcon_Door
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Enter Warehouse #1"
   }
   lod: 0
 }
@@ -6908,7 +6909,8 @@ props {
         }
       }
     }
-    interactionIcon: InteractionIcon_Door
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Enter Warehouse #2"
   }
   lod: 0
 }
@@ -9110,7 +9112,8 @@ props {
         }
       }
     }
-    interactionIcon: InteractionIcon_Door
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Exit Warehouse"
   }
   lod: 0
 }
@@ -9615,9 +9618,9 @@ props {
 props {
   name: "docks_clutter_container02"
   gridPoint {
-    x: 23
+    x: 23.2
     y: 0
-    z: -149
+    z: -148.5
   }
   orientation: ORIENTATION_S
   idRef {
@@ -9628,11 +9631,11 @@ props {
 props {
   name: "docks_clutter_container04"
   gridPoint {
-    x: 22
+    x: 24
     y: 0
-    z: -145
+    z: -147
   }
-  orientation: ORIENTATION_E
+  orientation: ORIENTATION_S
   idRef {
     id: "523aba2c373630840f002e0f"
   }
@@ -9907,7 +9910,8 @@ props {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
-    interactionIcon: InteractionIcon_Door
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Exit Warehouse"
   }
   lod: 0
 }
@@ -10738,7 +10742,8 @@ props {
         }
       }
     }
-    interactionIcon: InteractionIcon_Door
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Enter Warehouse #5"
   }
   lod: 0
 }
@@ -11715,8 +11720,8 @@ props {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
-    interactionIcon: InteractionIcon_Door
-    interaction_info_text: ""
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Exit Warehouse"
   }
   lod: 0
 }
@@ -14246,6 +14251,10 @@ props {
     z: -150
   }
   orientation: ORIENTATION_N
+  properties {
+    property_id: "fxScript"
+    string_value: "EnvironmentLoopLowMistBank"
+  }
   GeneralTags: "octo-prop"
   idRef {
     id: "52a4cc8e633461c4110039b5"

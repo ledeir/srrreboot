@@ -178,7 +178,15 @@ triggers {
         }
       }
       args {
-        int_value: 100
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 100
+          }
+          args {
+            int_value: 300
+          }
+        }
       }
     }
   }
@@ -229,7 +237,15 @@ triggers {
         }
       }
       args {
-        int_value: 100
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 100
+          }
+          args {
+            int_value: 300
+          }
+        }
       }
     }
   }
@@ -750,7 +766,15 @@ triggers {
         }
       }
       args {
-        int_value: 100
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 100
+          }
+          args {
+            int_value: 300
+          }
+        }
       }
     }
     ops {
@@ -1142,7 +1166,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Actor Reference)"
           args {
-            string_value: "5a4aa1656631361c05000678"
+            string_value: "5aaf0d85663136d8080068e6"
           }
         }
       }
@@ -1438,22 +1462,64 @@ triggers {
       }
     }
     ops {
-      functionName: "Play FX on Actor"
+      functionName: "Play Sound"
       args {
-        string_value: "JessicaDummyBuffHitReaction"
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "summoning"
+          }
+          args {
+            string_value: "WaterElemental_Summoned"
+          }
+        }
+      }
+      args {
+        float_value: 1
       }
       args {
         call_value {
-          functionName: "Specific Actor"
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX at Point"
+      args {
+        string_value: "Berlin:AmmoniaGasBurst"
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
           args {
             call_value {
-              functionName: "Get Map Item (Actor)"
+              functionName: "Current Location of Actor"
               args {
-                string_value: "523adf7e373630840a0066c3"
+                call_value {
+                  functionName: "Get Map Item (Actor)"
+                  args {
+                    string_value: "523adf7e373630840a0066c3"
+                  }
+                }
               }
             }
           }
           args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: 1
+              }
+              args {
+                float_value: 1
+              }
+            }
           }
         }
       }
@@ -1470,12 +1536,28 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Current Location of Actor"
+          functionName: "Get Offset Point"
           args {
             call_value {
-              functionName: "Get Map Item (Actor)"
+              functionName: "Current Location of Actor"
               args {
-                string_value: "523adf7e373630840a0066c3"
+                call_value {
+                  functionName: "Get Map Item (Actor)"
+                  args {
+                    string_value: "523adf7e373630840a0066c3"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: -1
+              }
+              args {
+                float_value: -1
               }
             }
           }
@@ -2021,6 +2103,53 @@ triggers {
     }
   }
   actions {
+    ops {
+      functionName: "Play FX at Point"
+      args {
+        string_value: "CriticalSquibGreenBlood"
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "52a4cc8e633461c4110039b5"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "summoning"
+          }
+          args {
+            string_value: "WaterElemental_Death"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
     ops {
       functionName: "Move Prop"
       args {
@@ -3025,7 +3154,15 @@ triggers {
         }
       }
       args {
-        int_value: 100
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 100
+          }
+          args {
+            int_value: 300
+          }
+        }
       }
     }
     ops {
@@ -6273,7 +6410,15 @@ triggers {
         }
       }
       args {
-        int_value: 100
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 100
+          }
+          args {
+            int_value: 300
+          }
+        }
       }
     }
     ops {
@@ -25213,9 +25358,10 @@ characters {
   character_instance {
     prefab_name: "Berlin:Creatures/CreatureScorpyrine"
     character_sheet_id: "Basilisk (normal)"
+    equipment_sheet_id: "Spirit Water F3 Gear"
     character_mod {
       stats {
-        body: 3
+        body: 6
         quickness: 0
         strength: 0
         charisma: 0
@@ -25223,8 +25369,8 @@ characters {
         willpower: 5
         essence: 0
         magic: 0
-        hp: 30
-        ap: -1
+        hp: 60
+        ap: 0
         armor: 4
         force: 0
         morale: -1
@@ -25239,15 +25385,15 @@ characters {
       }
       skills {
         ranged_combat: 0
-        close_combat: 0
+        close_combat: -4
         throwing_weapons: 0
         spellcasting: 2
         decking: 0
-        conjuring: 0
+        conjuring: 8
         spirit_summoning: 0
         drone_control: 0
         biotech: 0
-        dodge: 3
+        dodge: 5
         etiquette_corporate: 0
         etiquette_security: 0
         etiquette_gang: 0
@@ -25263,7 +25409,7 @@ characters {
         shotgun: 0
         smg: 0
         edged: 0
-        unarmed: 0
+        unarmed: -1
         spirit_control: 0
         esp_control: 0
         drone_combat: 0
@@ -25283,7 +25429,7 @@ characters {
     GeneralTags: "isBoss"
     enabled_at_start: true
     pc_spawn_number: -1
-    karma: 153
+    karma: 214
     is_prop_character: false
     ai_never_use_draining_abilities: true
     has_fist: false
@@ -28126,6 +28272,13 @@ characters {
   displayName: "ModelSwap"
   idRef {
     id: "5aaf0d85663136d8080068e6"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
   }
   lod: 0
   character_instance {
