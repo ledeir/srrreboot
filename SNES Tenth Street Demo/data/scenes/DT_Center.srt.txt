@@ -2297,17 +2297,6 @@ triggers {
       }
     }
     ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Order Actor to Move To (Start Position)"
       args {
         call_value {
@@ -2489,6 +2478,17 @@ triggers {
           args {
             string_value: "WithOrWithout"
           }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
           args {
             int_value: 0
           }
@@ -3126,17 +3126,6 @@ triggers {
       }
     }
     ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Order Actor to Move To (Start Position)"
       args {
         call_value {
@@ -3325,6 +3314,17 @@ triggers {
       }
     }
     ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Send Event"
       args {
         call_value {
@@ -3485,137 +3485,6 @@ triggers {
     }
   }
   is_oneshot: false
-}
-triggers {
-  name: "EnterDarkBlade.OLD"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "5214421d6334615020002e67"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "DB_Progress"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "Doorway"
-          }
-        }
-      }
-      args {
-        string_value: "DB_Mansion"
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Proceed"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "54e5709f36393528240023b2"
-  }
-  elseActions {
-    ops {
-      functionName: "Display Text over Point"
-      args {
-        call_value {
-          functionName: "Current Location of Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "The gate is locked.\nA sign reads: Dark Blade Club - members only."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  is_oneshot: true
 }
 triggers {
   name: "EnterDrake"
@@ -16264,7 +16133,10 @@ triggers {
   name: "WASTE-CalcHirelings"
   events {
     ops {
-      functionName: "On Map Start"
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_CONFIG"
+      }
     }
   }
   conditions {
@@ -24460,7 +24332,7 @@ triggers {
         }
       }
       args {
-        string_value: "Splatter has died!"
+        string_value: "Spatter has died!"
       }
       args {
         float_value: 0
@@ -31645,7 +31517,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Splatter"
-  displayName: "Splatter"
+  displayName: "Spatter"
   idRef {
     id: "524a3b656334610002006df6"
   }
@@ -31708,7 +31580,7 @@ characters {
       prefab_name: "Spell Powerbolt 3"
     }
     team_id: "Shadowrunners"
-    char_name: "Splatter"
+    char_name: "Spatter"
     GeneralTags: "Splatter"
     enabled_at_start: false
     pc_spawn_number: -1
@@ -34326,7 +34198,7 @@ characters {
       prefab_name: "DeckerFedora"
     }
     team_id: "Civilians"
-    char_name: "Splatter"
+    char_name: "Spatter"
     enabled_at_start: true
     pc_spawn_number: -1
     hiring_type: HiringType_Hireable

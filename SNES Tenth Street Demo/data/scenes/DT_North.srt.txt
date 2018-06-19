@@ -2675,6 +2675,28 @@ triggers {
   }
   actions {
     ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "534035b7373630540e000bf1"
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Teleport Actor"
       args {
         call_value {
@@ -12360,7 +12382,7 @@ triggers {
         }
       }
       args {
-        string_value: "Splatter has died!"
+        string_value: "Spatter has died!"
       }
       args {
         float_value: 0
@@ -16858,7 +16880,7 @@ characters {
       prefab_name: "Spell Powerbolt 3"
     }
     team_id: "Shadowrunners"
-    char_name: "Splatter"
+    char_name: "Spatter"
     GeneralTags: "Splatter"
     enabled_at_start: false
     pc_spawn_number: -1

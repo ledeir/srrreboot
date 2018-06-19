@@ -25123,7 +25123,7 @@ triggers {
         }
       }
       args {
-        string_value: "Splatter has died!"
+        string_value: "Spatter has died!"
       }
       args {
         float_value: 0
@@ -35126,6 +35126,252 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: "DEBUG-PHONE"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "PHONE"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "All Actors Within Area"
+          args {
+            call_value {
+              functionName: "Area: Region"
+              args {
+                call_value {
+                  functionName: "Get Map Item (Region)"
+                  args {
+                    string_value: "534006d5373630b410004151"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "53401472373630b4100044e2"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "currentFloor"
+          }
+        }
+      }
+      args {
+        int_value: 6
+      }
+    }
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS11_CredStick"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b286c766161314402001416"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
   name: "fl1_Cam"
   position {
@@ -36681,6 +36927,52 @@ regions {
     r: 0.50196081
     g: 0.50196081
     b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
+regions {
+  name: "cPhonePen"
+  position {
+    x: -13
+    y: -125
+    width: 9
+    height: 10
+  }
+  enabledAtStart: true
+  is_camera_region: true
+  idRef {
+    id: "5b286b576161314402001415"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  ambient_light_color {
+    r: 0
+    g: 0
+    b: 0
     a: 1
   }
   ambience_template: ""
@@ -39104,7 +39396,7 @@ characters {
       prefab_name: "Spell Powerbolt 3"
     }
     team_id: "Shadowrunners"
-    char_name: "Splatter"
+    char_name: "Spatter"
     GeneralTags: "Splatter"
     GeneralTags: "isCrew"
     enabled_at_start: false
@@ -39958,6 +40250,358 @@ characters {
     karma: 171
     hiring_cost_override: 4000
     id: "SNES_Steelflight"
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -8
+    y: 0
+    z: -119
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "DBTALK"
+  displayName: "upper_FoyerMage"
+  idRef {
+    id: "5b286b2f61613144020013fd"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Wealthy/HumanMaleAutumn"
+    character_sheet_id: "Lonestar_Lv3_Human_Mage"
+    equipment_sheet_id: "Lonestar_Mage_High"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 1
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 1
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 1
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+      vulnerabilities {
+      }
+    }
+    team_id: "Civilians"
+    char_name: "Mage"
+    GeneralTags: "DBTALK"
+    enabled_at_start: true
+    pc_spawn_number: -1
+    portrait {
+      filename: "backer_humanmale_chrisvangraas"
+    }
+    karma: 68
+    is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -7.6999969
+    y: 0
+    z: -120
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "WasteBarKeep"
+  displayName: "WASTE_BARKEEP"
+  idRef {
+    id: "5b286b2f61613144020013fe"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Wealthy/HumanMaleTurquoise"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      archetypeName: "Non-Combatant"
+    }
+    team_id: "Civilians"
+    char_name: "Barkeeper"
+    GeneralTags: "WasteBarKeep"
+    pc_spawn_number: -1
+    portrait {
+      filename: "backer_humanmale_evanjameshawco"
+    }
+    portrait_code_override: "s5b2"
+    karma: 6
+    is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -9
+    y: 0
+    z: -119
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "M_SEC"
+  displayName: "DocMSecretary"
+  idRef {
+    id: "5b286b2f6161314402001401"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Extras/ElfFemaleFashionista"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        discipline: 0
+        awareness: 24
+        perception: 0
+        authority: 0
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+      vulnerabilities {
+      }
+    }
+    team_id: "Civilians"
+    char_name: "Secretary"
+    GeneralTags: "M_SEC"
+    pc_spawn_number: -1
+    portrait {
+      filename: "pc_humanfemale_04c_whitebob"
+    }
+    karma: 6
+    is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -8
+    y: 0
+    z: -121
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "SASSIE"
+  displayName: "JA-Sassie"
+  idRef {
+    id: "5b286b2f6161314402001404"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Extras/HumanFemaleProstitute"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        discipline: 0
+        awareness: 24
+        perception: 0
+        authority: 0
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      vulnerabilities {
+      }
+    }
+    team_id: "Civilians"
+    char_name: "Sassie"
+    GeneralTags: "SASSIE"
+    enabled_at_start: true
+    pc_spawn_number: -1
+    portrait {
+      filename: "pc_humanfemale_08b_whitehair"
+    }
+    karma: 6
+    is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -8.9000015
+    y: 0
+    z: -120.3
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "GLUT_SEC"
+  displayName: "JA-Secretary"
+  idRef {
+    id: "5b286b2f6161314402001405"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Extras/HumanFemaleWorkingclass"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        awareness: 24
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+    }
+    team_id: "Civilians"
+    char_name: "Secretary"
+    GeneralTags: "GLUT_SEC"
+    pc_spawn_number: -1
+    portrait {
+      filename: "backer_humanfemale_grahamwilliams_tsilonsiereht"
+    }
+    karma: 6
+    is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -9
+    y: 0
+    z: -121
+  }
+  orientation: ORIENTATION_E
+  GeneralTags: "TALIS"
+  idRef {
+    id: "5b286b2f6161314402001408"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Story/MagicDealer"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        discipline: 0
+        awareness: 24
+        perception: 0
+        authority: 0
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "MageTraditional"
+    }
+    team_id: "Civilians"
+    char_name: "Talismonger"
+    GeneralTags: "TALIS"
+    pc_spawn_number: -1
+    portrait {
+      filename: "pc_elfmale_09_seanmcdonough"
+    }
+    karma: 6
+    is_prop_character: true
   }
 }
 variables {
