@@ -223,10 +223,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Create an Autosave. "
-    nextNodeIndex: 18
-  }
-  branches {
     responseText: "Leave"
     nextNodeIndex: -1
   }
@@ -4405,36 +4401,6 @@ nodes {
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_GM_Voice
-}
-nodes {
-  idRef {
-    id: "52464e5e6334614020004d3e"
-  }
-  index: 18
-  text: "Saving."
-  nodeType: ConversationNodeType_Simple
-  actions {
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "SLEEP"
-      }
-    }
-    ops {
-      functionName: "Autosave Game"
-    }
-  }
 }
 roots {
   responseText: "A quick nap will work wonders..."

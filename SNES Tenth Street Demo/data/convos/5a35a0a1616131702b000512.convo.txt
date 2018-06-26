@@ -22,25 +22,35 @@ nodes {
           }
         }
       }
-      ops {
-        functionName: "Open Scene"
-        args {
-          call_value {
-            functionName: "Get Map Item (Scene)"
-            args {
-              string_value: "DTD_Docks"
-            }
-          }
-        }
-      }
     }
-    nextNodeIndex: -1
+    nextNodeIndex: 1
   }
   branches {
     responseText: "Stay"
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b31cfcb6161310029004720"
+  }
+  index: 1
+  text: "You step through the portal to the docks."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "DTD_Docks"
+          }
+        }
+      }
+    }
+  }
 }
 roots {
   responseText: "Examine"
