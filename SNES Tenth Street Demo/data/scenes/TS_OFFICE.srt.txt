@@ -18445,6 +18445,88 @@ triggers {
         call_value {
           functionName: "Get Map Item (SenseTagList)"
           args {
+            string_value: "isMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isPathReset"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
             string_value: "isNumber"
           }
         }
@@ -18538,16 +18620,16 @@ triggers {
         call_value {
           functionName: "Random (int)"
           args {
-            int_value: 6
+            int_value: 5
           }
           args {
-            int_value: 12
+            int_value: 10
           }
         }
       }
     }
     ops {
-      functionName: "Delete Props by Tag"
+      functionName: "Set Prop Visible by Tag"
       args {
         call_value {
           functionName: "Tag From String"
@@ -18575,11 +18657,88 @@ triggers {
         }
       }
       args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
         float_value: -1
       }
       args {
         call_value {
           functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3926426631368413007b1d"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Nearest Tagged Prop to Prop"
+              args {
+                call_value {
+                  functionName: "Tag From String"
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "iPath"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        string_value: "isPath"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (Prop)"
+                  args {
+                    string_value: "5b2061836631361807000923"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -18700,12 +18859,646 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eShowMarker"
+          }
+        }
+      }
+    }
   }
-  isActive: false
+  isActive: true
   idRef {
     id: "5b2078d46631361807000993"
   }
   elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   Matrix.ShowLoot"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eShowMarker"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bShowLoot"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isLootMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: 4
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39300a6631368413007b22"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   Matrix.ShowIC"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eShowMarker"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bShowIC"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isICMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: 4
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39306e6631368413007b23"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Matrix.Reset"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b391e8e6631368413007b17"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "x"
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "Delete Props by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isMarker"
+          }
+        }
+      }
+      args {
+        float_value: 6
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearRow"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b391e946631368413007b18"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   ClearGrid.Row"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eClearRow"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "x"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 7
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "x"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearCol"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39202c6631368413007b19"
+  }
+  elseActions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eNextSet"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   ClearGrid.Col"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eClearCol"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 7
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Remove Tag from Prop"
+      args {
+        call_value {
+          functionName: "Tag From String"
+          args {
+            string_value: "isIC"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Prop to Prop"
+          args {
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "z"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        string_value: "-"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Variable (int)"
+                          args {
+                            string_value: "x"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b2061836631361807000923"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Tag from Prop"
+      args {
+        call_value {
+          functionName: "Tag From String"
+          args {
+            string_value: "isLoot"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Prop to Prop"
+          args {
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "z"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        string_value: "-"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Variable (int)"
+                          args {
+                            string_value: "x"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b2061836631361807000923"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearCol"
+          }
+        }
+      }
+      args {
+        float_value: 0.01
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39206e6631368413007b1a"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearRow"
+          }
+        }
+      }
+      args {
+        float_value: 0.01
+      }
+    }
   }
   is_oneshot: false
 }
@@ -18769,7 +19562,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (SceneDimension)"
           args {
-            string_value: "Default"
+            string_value: "Matrix"
           }
         }
       }
@@ -19124,6 +19917,102 @@ triggers {
           }
           args {
             int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a66631368413007b10"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b39198c6631368413007b0d"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b12"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
           }
         }
       }
@@ -20529,6 +21418,252 @@ triggers {
   is_oneshot: true
 }
 triggers {
+  name: "Matrix.RestrictMovement"
+  events {
+    ops {
+      functionName: "On Actor Movement Finished"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Compare Actor Team"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Matrix"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate If Actor is Inside Region"
+          args {
+            call_value {
+              functionName: "Specific Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+              args {
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AreOrAreNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b39198c6631368413007b0d"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: 1
+              }
+              args {
+                float_value: -1
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a66631368413007b10"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: 1
+              }
+              args {
+                float_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b12"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: -1
+              }
+              args {
+                float_value: -1
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: -1
+              }
+              args {
+                float_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b3919db6631368413007b13"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: "Matrix.TriggerUpdate"
   events {
     ops {
@@ -20956,7 +22091,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isIC"
               }
@@ -21037,7 +22172,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isLoot"
               }
@@ -21048,6 +22183,74 @@ triggers {
     }
   }
   actions {
+    ops {
+      functionName: "Add Tag to Prop"
+      args {
+        call_value {
+          functionName: "Tag From String"
+          args {
+            string_value: "isIC"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Prop to Prop"
+          args {
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Variable (int)"
+                          args {
+                            string_value: "z"
+                          }
+                        }
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        string_value: "-"
+                      }
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "x"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b2061836631361807000923"
+              }
+            }
+          }
+        }
+      }
+    }
     ops {
       functionName: "Clone Prop"
       args {
@@ -21115,74 +22318,6 @@ triggers {
                     string_value: "5b2061836631361807000923"
                   }
                 }
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Add Tag to Prop"
-      args {
-        call_value {
-          functionName: "Get Map Item (SenseTagList)"
-          args {
-            string_value: "isIC"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Prop to Prop"
-          args {
-            call_value {
-              functionName: "Tag From String"
-              args {
-                call_value {
-                  functionName: "Append (string)"
-                  args {
-                    call_value {
-                      functionName: "Convert (int) to (string)"
-                      args {
-                        call_value {
-                          functionName: "Get Variable (int)"
-                          args {
-                            string_value: "z"
-                          }
-                        }
-                      }
-                    }
-                  }
-                  args {
-                    call_value {
-                      functionName: "Append (string)"
-                      args {
-                        string_value: "-"
-                      }
-                      args {
-                        call_value {
-                          functionName: "Convert (int) to (string)"
-                          args {
-                            call_value {
-                              functionName: "Get Variable (int)"
-                              args {
-                                string_value: "x"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (Prop)"
-              args {
-                string_value: "5b2061836631361807000923"
               }
             }
           }
@@ -21458,7 +22593,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isIC"
               }
@@ -21539,7 +22674,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isLoot"
               }
@@ -21627,7 +22762,7 @@ triggers {
       functionName: "Add Tag to Prop"
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isLoot"
           }
@@ -21703,6 +22838,55 @@ triggers {
       }
       args {
         float_value: 0.01
+      }
+    }
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: 5
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
@@ -21898,7 +23082,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isIC"
               }
@@ -22017,7 +23201,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isLoot"
               }
@@ -24073,7 +25257,7 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isIC"
           }
@@ -24086,7 +25270,7 @@ triggers {
       functionName: "Remove Tag from Prop"
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isIC"
           }
@@ -24156,10 +25340,10 @@ triggers {
         call_value {
           functionName: "Get Map Item (Sound)"
           args {
-            string_value: "user_interface"
+            string_value: "decker"
           }
           args {
-            string_value: "Nuyen-Lost"
+            string_value: "Matrix_SummonESP"
           }
         }
       }
@@ -24174,6 +25358,134 @@ triggers {
           }
           args {
             int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5b208c50663136340900221b"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor near Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b208c50663136340900221b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Last Created Persona"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX on Actor"
+      args {
+        string_value: "MatrixESPSpawn"
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b208c50663136340900221b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Hunt And Destroy (Team)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b208c50663136340900221b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Matrix"
           }
         }
       }
@@ -24270,7 +25582,7 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isLoot"
           }
@@ -24311,7 +25623,7 @@ triggers {
       functionName: "Remove Tag from Prop"
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isLoot"
           }
@@ -24373,6 +25685,23 @@ triggers {
             }
           }
         }
+      }
+    }
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DATACUBE"
+          }
+        }
+      }
+      args {
+        int_value: 1
       }
     }
   }
@@ -28986,7 +30315,7 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Matrix/MatrixICE_white_range"
-    character_sheet_id: "IC_Lv1_White_Ranged"
+    character_sheet_id: "IC_Lv3_White_Ranged"
     equipment_sheet_id: "IC White Ranged Low"
     character_mod {
       stats {
@@ -28998,8 +30327,8 @@ characters {
         willpower: 0
         essence: 0
         magic: 0
-        hp: -25
-        ap: -1
+        hp: 0
+        ap: 0
         armor: 0
         force: 0
         morale: 0
@@ -29008,7 +30337,7 @@ characters {
         perception: 0
         authority: 0
         protect_tether_range: 0
-        move_speed: -3
+        move_speed: -4
         vision_peripheral_distance: 0
         vision_cone_distance: 0
         vision_cone_angle: 0
@@ -29054,12 +30383,12 @@ characters {
     GeneralTags: "isSpawnedIC"
     enabled_at_start: false
     pc_spawn_number: -1
-    spawn_type: SpawnType_Matrix
+    spawn_type: SpawnType_Normal
     portrait {
       filename: ""
     }
     dimension_name: "Matrix"
-    karma: 29
+    karma: 33
   }
 }
 variables {
@@ -29286,6 +30615,30 @@ variables {
     typeName: "string"
   }
 }
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bMineSweeper_DEBUG"
+    typeName: "bool"
+  }
+}
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bShowIC"
+    typeName: "bool"
+  }
+}
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bShowLoot"
+    typeName: "bool"
+  }
+}
 mapEvents: "JOB_CHECK"
 mapEvents: "BOMBCOUNT"
 mapEvents: "HamfistHack"
@@ -29309,9 +30662,14 @@ mapEvents: "eVerifyLocation[Loot]"
 mapEvents: "eNextSet"
 mapEvents: "eEvalLocation"
 mapEvents: "eProtest"
+mapEvents: "eResetMatrix"
+mapEvents: "eClearRow"
+mapEvents: "eClearCol"
+mapEvents: "eShowMarker"
 senseTags: "triggered"
 senseTags: "Akimi"
 senseTags: "isLoot"
+senseTags: "isIC"
 goals {
   name: "Survive"
   type: GoalType_Primary
