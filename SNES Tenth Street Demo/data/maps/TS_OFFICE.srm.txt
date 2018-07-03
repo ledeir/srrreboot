@@ -5828,9 +5828,9 @@ props {
 props {
   name: "matrix_floor_cover1x1"
   gridPoint {
-    x: -63
+    x: -62
     y: 0
-    z: -61
+    z: -62
   }
   orientation: ORIENTATION_S
   idRef {
@@ -5926,6 +5926,47 @@ props {
     z: -72
   }
   orientation: ORIENTATION_S
+  displayName: "Data Node Alpha"
+  idRef {
+    id: "5b3928536631368413007b20"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    matrixNode {
+      prerequisites_control_state: true
+      constant_matrix_fx: "matrixcontrolnode"
+      state_change_offline_fx: ""
+      state_change_offline_sound: ""
+      state_change_offline_sound_volume: 1
+      state_change_hackable_fx: "MatrixControlNodeHacked"
+      state_change_hackable_sound: "MatrixNodeHackReady"
+      state_change_hackable_sound_volume: 1
+      state_change_locked_fx: ""
+      state_change_locked_sound: ""
+      state_change_locked_sound_volume: 1
+      state_change_hacked_fx: ""
+      state_change_hacked_sound: ""
+      state_change_hacked_sound_volume: 1
+    }
+    interaction_info_text: "Hack Node"
+  }
   lod: 0
 }
 props {
@@ -5949,8 +5990,46 @@ props {
     z: -64
   }
   orientation: ORIENTATION_S
+  displayName: "Data Node Bravo"
   idRef {
     id: "5b20604f6631361807000919"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    matrixNode {
+      prerequisites_control_state: true
+      constant_matrix_fx: "matrixcontrolnode"
+      state_change_offline_fx: ""
+      state_change_offline_sound: ""
+      state_change_offline_sound_volume: 1
+      state_change_hackable_fx: "MatrixControlNodeHacked"
+      state_change_hackable_sound: "MatrixNodeHackReady"
+      state_change_hackable_sound_volume: 1
+      state_change_locked_fx: ""
+      state_change_locked_sound: ""
+      state_change_locked_sound_volume: 1
+      state_change_hacked_fx: ""
+      state_change_hacked_sound: ""
+      state_change_hacked_sound_volume: 1
+    }
+    interaction_info_text: "Hack Node"
   }
   lod: 0
 }
@@ -6385,7 +6464,8 @@ props {
     z: -80
   }
   orientation: ORIENTATION_N
-  GeneralTags: "isIC"
+  GeneralTags: "isMarker"
+  GeneralTags: "isICMarker"
   displayName: "obj_BlueSpike"
   idRef {
     id: "5b207b08663136180700099d"
@@ -6408,6 +6488,7 @@ props {
   }
   orientation: ORIENTATION_W
   GeneralTags: "isPath1"
+  GeneralTags: "isPathReset"
   idRef {
     id: "5b207f3d66313618070009a2"
   }
@@ -6422,6 +6503,7 @@ props {
   }
   orientation: ORIENTATION_W
   GeneralTags: "isPath2"
+  GeneralTags: "isPathReset"
   idRef {
     id: "5b207f3d66313618070009a3"
   }
@@ -6435,9 +6517,233 @@ props {
     z: -80
   }
   orientation: ORIENTATION_N
+  GeneralTags: "isMarker"
+  GeneralTags: "isLootMarker"
   displayName: "obj_GoldSpike"
   idRef {
     id: "5b2084356631362808003db5"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -18
+    y: 0
+    z: 6
+  }
+  orientation: ORIENTATION_S
+  displayName: "DEBUGGER_MineSweeperJackIn"
+  idRef {
+    id: "5b3916da6631368413007b0b"
+  }
+  interactionRoot {
+    isEnabled: false
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bMineSweeper_DEBUG"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    jackPoint {
+      LANIdentifier: "5b2061836631361807000923"
+      LANEquipment: ""
+    }
+    interaction_info_text: "MineSweeper Matrix Tester"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_blockMove"
+  gridPoint {
+    x: -63
+    y: 0
+    z: -80
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "isBlockMovement"
+  displayName: "obj_BlockMovement_NW"
+  idRef {
+    id: "5b39198c6631368413007b0d"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_blockMove"
+  gridPoint {
+    x: -63
+    y: 0
+    z: -79
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "isBlockMovement"
+  displayName: "obj_BlockMovement_NE"
+  idRef {
+    id: "5b3919a66631368413007b10"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_blockMove"
+  gridPoint {
+    x: -62
+    y: 0
+    z: -79
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "isBlockMovement"
+  displayName: "obj_BlockMovement_SE"
+  idRef {
+    id: "5b3919a76631368413007b11"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_blockMove"
+  gridPoint {
+    x: -62
+    y: 0
+    z: -80
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "isBlockMovement"
+  displayName: "obj_BlockMovement_SW"
+  idRef {
+    id: "5b3919a76631368413007b12"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -63
+    y: 0
+    z: -70
+  }
+  orientation: ORIENTATION_S
+  displayName: "obj_ResetMatrix"
+  idRef {
+    id: "5b391e8e6631368413007b17"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bMineSweeper_DEBUG"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Summon
+    interaction_info_text: "RESET Minesweeper"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_blockMove"
+  gridPoint {
+    x: -59
+    y: 0
+    z: -79
+  }
+  orientation: ORIENTATION_S
+  displayName: "obj_PathBlocker"
+  idRef {
+    id: "5b3926426631368413007b1d"
   }
   interactionRoot {
     isEnabled: true
