@@ -2010,303 +2010,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "KillLSSpawnBug3.DEL"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SR_TeamSize"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        int_value: 3
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 3
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "53376352633461d83c000823"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "KillLSSpawnBug2.DEL"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SR_TeamSize"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 2
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "5337639a633461d83c000824"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "KillLSSpawnBug1.DEL"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SR_TeamSize"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 1
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "533763af633461d83c000825"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "PAY_RUNNERS.DEL"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "HIRELING_CHECK"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "584397506161312037000e08"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
   name: ""
   events {
   }
@@ -12946,34 +12649,12 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
   }
   isActive: true
   idRef {
     id: "59d1cef1616131401c004dc9"
   }
   elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
   }
   is_oneshot: false
 }
@@ -14806,6 +14487,58 @@ triggers {
   elseActions {
   }
   is_oneshot: false
+}
+triggers {
+  name: "CheckWaiting.OLD"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "ENDWAIT"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b4581c1616131fc2e0027a6"
+  }
+  elseActions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
 }
 regions {
   name: "Cam"
@@ -17789,6 +17522,75 @@ characters {
     karma: 171
     hiring_cost_override: 4000
     id: "SNES_Steelflight"
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -9
+    y: 0
+    z: -16
+  }
+  orientation: ORIENTATION_N
+  displayName: "P1"
+  idRef {
+    id: "5b458182616131fc2e0027a3"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 1
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -8
+    y: 0
+    z: -16
+  }
+  orientation: ORIENTATION_N
+  displayName: "P2"
+  idRef {
+    id: "5b458186616131fc2e0027a4"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 2
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -8
+    y: 0
+    z: -15
+  }
+  orientation: ORIENTATION_N
+  displayName: "P3"
+  idRef {
+    id: "5b458187616131fc2e0027a5"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 3
   }
 }
 variables {

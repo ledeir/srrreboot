@@ -19509,34 +19509,12 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
   }
   isActive: true
   idRef {
     id: "59d1cef1616131401c004dc9"
   }
   elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
   }
   is_oneshot: false
 }
@@ -21829,6 +21807,58 @@ triggers {
   }
   is_oneshot: false
 }
+triggers {
+  name: "CheckWaiting.OLD"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "ENDWAIT"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b45812f616131fc2e0027a2"
+  }
+  elseActions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
 regions {
   name: "ship"
   position {
@@ -22941,6 +22971,7 @@ characters {
     z: -68
   }
   orientation: ORIENTATION_E
+  displayName: "P0"
   idRef {
     id: "53a8f82c633461d028003c62"
   }
@@ -26912,6 +26943,75 @@ characters {
     karma: 171
     hiring_cost_override: 4000
     id: "SNES_Steelflight"
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -169
+    y: 0
+    z: -68
+  }
+  orientation: ORIENTATION_E
+  displayName: "P2"
+  idRef {
+    id: "5b4580fd616131fc2e00279f"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 2
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -167
+    y: 0
+    z: -68
+  }
+  orientation: ORIENTATION_E
+  displayName: "P1"
+  idRef {
+    id: "5b458101616131fc2e0027a0"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 1
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: -167
+    y: 0
+    z: -69
+  }
+  orientation: ORIENTATION_E
+  displayName: "P3"
+  idRef {
+    id: "5b458103616131fc2e0027a1"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 3
   }
 }
 variables {

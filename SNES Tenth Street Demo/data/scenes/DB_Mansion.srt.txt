@@ -16251,34 +16251,12 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
   }
   isActive: true
   idRef {
     id: "59d1cef1616131401c004dc9"
   }
   elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
   }
   is_oneshot: false
 }
@@ -21113,6 +21091,58 @@ triggers {
   }
   is_oneshot: false
 }
+triggers {
+  name: "CheckWaiting.OLD"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "ENDWAIT"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b4580da616131fc2e00279e"
+  }
+  elseActions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
 regions {
   name: "CamKitchen"
   position {
@@ -25604,6 +25634,7 @@ characters {
     z: 12
   }
   orientation: ORIENTATION_E
+  displayName: "P0"
   idRef {
     id: "53fa8bb1363935102200658f"
   }
@@ -27029,6 +27060,75 @@ characters {
     karma: 6
     hiring_cost_override: 500
     is_prop_character: true
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: 63
+    y: 0
+    z: 12
+  }
+  orientation: ORIENTATION_E
+  displayName: "P1"
+  idRef {
+    id: "5b4580b1616131fc2e00279b"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 1
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: 63
+    y: 0
+    z: 11
+  }
+  orientation: ORIENTATION_E
+  displayName: "P2"
+  idRef {
+    id: "5b4580b2616131fc2e00279c"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 2
+  }
+}
+characters {
+  name: "system_spawner_playerSpawner"
+  gridPoint {
+    x: 62
+    y: 0
+    z: 11
+  }
+  orientation: ORIENTATION_E
+  displayName: "P3"
+  idRef {
+    id: "5b4580b3616131fc2e00279d"
+  }
+  lod: 0
+  character_instance {
+    character_mod {
+      archetypeName: "Player"
+    }
+    team_id: "Shadowrunners"
+    char_name: "New Actor"
+    enabled_at_start: true
+    pc_spawn_number: 3
   }
 }
 variables {
