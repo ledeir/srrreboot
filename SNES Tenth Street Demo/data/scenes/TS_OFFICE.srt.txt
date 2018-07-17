@@ -17087,6 +17087,1327 @@ triggers {
   is_oneshot: true
 }
 triggers {
+  name: "---SR CONVERSATIONS ---"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "58b4ef2f616131981d003a64"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "----------------------------"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "58c0dbac616131501000796d"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Chat-Akimi"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Akimi"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "555aa20d616131e4230025e7"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "akimi"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f10b616131981d003a66"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Anders"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Anders"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "523dda5e373630e412001963"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Anders"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f3c7616131981d003a67"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-DancesWithClams"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Dances"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "520ecb3b633461dc1f001ae4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Dances"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f402616131981d003a68"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Frogtongue"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Frogtongue"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "523ddb8f373630e4120019b4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Frogtongue"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f46b616131981d003a69"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Hamfist"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Hamfist"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "51bbf2dc6334616c1d00493e"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Hamfist"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f4a3616131981d003a6a"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Jangadance"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Jangadance"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5209a8d7633461501e006957"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Jangadance"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f4d6616131981d003a6c"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Jetboy"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Jetboy"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "523dd8b1373630e4120018bf"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Jetboy"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f521616131981d003a6d"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Kitsune"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Kitsune"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "52441afb37363074070014c0"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Kitsune"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f54e616131981d003a6e"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Norbert"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Norbert"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "523dbe51373630b8020018c1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Norbert"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f57d616131981d003a6f"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Orifice"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Orifice"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "520ebd1c633461dc1f001926"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Orifice"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f5a8616131981d003a70"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Splatter"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Splatter"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5244247237363074070015d6"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Splatter"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f5e1616131981d003a71"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Chat-Steelflight"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SRChat"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Steelflight"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5244221c3736307407001569"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Actor to Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (SenseTagList)"
+              args {
+                string_value: "Steelflight"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b4f632616131981d003a73"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "HirelingChat"
+  events {
+    ops {
+      functionName: "On Actor Clicked"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Evaluate Turn Mode"
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "TurnBasedOrFreeMove"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (Actor)"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "58b510e8616131981d003a79"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58b50ae2616131981d003a75"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: " "
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b2061516631361807000920"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
   name: "--== MineSweeper Matrix Area ==--"
   events {
   }
@@ -17101,6 +18422,80 @@ triggers {
   elseActions {
   }
   is_oneshot: true
+}
+triggers {
+  name: "Matrix.Debugger"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bMineSweeper_DEBUG"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b3916da6631368413007b0b"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b3974d7663136700e000dde"
+  }
+  elseActions {
+  }
+  is_oneshot: false
 }
 triggers {
   name: "Matrix.Setup"
@@ -17118,6 +18513,88 @@ triggers {
   conditions {
   }
   actions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isPathReset"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
     ops {
       functionName: "Set Prop Visible by Tag"
       args {
@@ -17217,16 +18694,16 @@ triggers {
         call_value {
           functionName: "Random (int)"
           args {
-            int_value: 6
+            int_value: 5
           }
           args {
-            int_value: 12
+            int_value: 10
           }
         }
       }
     }
     ops {
-      functionName: "Delete Props by Tag"
+      functionName: "Set Prop Visible by Tag"
       args {
         call_value {
           functionName: "Tag From String"
@@ -17254,11 +18731,88 @@ triggers {
         }
       }
       args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
         float_value: -1
       }
       args {
         call_value {
           functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3926426631368413007b1d"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Nearest Tagged Prop to Prop"
+              args {
+                call_value {
+                  functionName: "Tag From String"
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "iPath"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        string_value: "isPath"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Map Item (Prop)"
+                  args {
+                    string_value: "5b2061836631361807000923"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -17379,12 +18933,646 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eShowMarker"
+          }
+        }
+      }
+    }
   }
-  isActive: false
+  isActive: true
   idRef {
     id: "5b2078d46631361807000993"
   }
   elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   Matrix.ShowLoot"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eShowMarker"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bShowLoot"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isLootMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: 4
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39300a6631368413007b22"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   Matrix.ShowIC"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eShowMarker"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bShowIC"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isICMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: 4
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39306e6631368413007b23"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Matrix.Reset"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b391e8e6631368413007b17"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "x"
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "Delete Props by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isMarker"
+          }
+        }
+      }
+      args {
+        float_value: 6
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearRow"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b391e946631368413007b18"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   ClearGrid.Row"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eClearRow"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "x"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 7
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "x"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearCol"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39202c6631368413007b19"
+  }
+  elseActions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eNextSet"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   ClearGrid.Col"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eClearCol"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 7
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Remove Tag from Prop"
+      args {
+        call_value {
+          functionName: "Tag From String"
+          args {
+            string_value: "isIC"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Prop to Prop"
+          args {
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "z"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        string_value: "-"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Variable (int)"
+                          args {
+                            string_value: "x"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b2061836631361807000923"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Tag from Prop"
+      args {
+        call_value {
+          functionName: "Tag From String"
+          args {
+            string_value: "isLoot"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Prop to Prop"
+          args {
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "z"
+                              }
+                            }
+                          }
+                        }
+                      }
+                      args {
+                        string_value: "-"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Variable (int)"
+                          args {
+                            string_value: "x"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b2061836631361807000923"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearCol"
+          }
+        }
+      }
+      args {
+        float_value: 0.01
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b39206e6631368413007b1a"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "z"
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eClearRow"
+          }
+        }
+      }
+      args {
+        float_value: 0.01
+      }
+    }
   }
   is_oneshot: false
 }
@@ -17448,7 +19636,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (SceneDimension)"
           args {
-            string_value: "Default"
+            string_value: "Matrix"
           }
         }
       }
@@ -17803,6 +19991,102 @@ triggers {
           }
           args {
             int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a66631368413007b10"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b39198c6631368413007b0d"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b12"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b206e95663136180700093f"
+              }
+            }
           }
         }
       }
@@ -19208,6 +21492,252 @@ triggers {
   is_oneshot: true
 }
 triggers {
+  name: "Matrix.RestrictMovement"
+  events {
+    ops {
+      functionName: "On Actor Movement Finished"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Compare Actor Team"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Matrix"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Evaluate If Actor is Inside Region"
+          args {
+            call_value {
+              functionName: "Specific Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+              args {
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AreOrAreNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b39198c6631368413007b0d"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: 1
+              }
+              args {
+                float_value: -1
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a66631368413007b10"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: 1
+              }
+              args {
+                float_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b12"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: -1
+              }
+              args {
+                float_value: -1
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b3919a76631368413007b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Offset Point"
+          args {
+            call_value {
+              functionName: "Current Location of Actor"
+              args {
+                call_value {
+                  functionName: "Triggering Actor"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Specified Point (2D)"
+              args {
+                float_value: -1
+              }
+              args {
+                float_value: 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b3919db6631368413007b13"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: "Matrix.TriggerUpdate"
   events {
     ops {
@@ -19635,7 +22165,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isIC"
               }
@@ -19716,7 +22246,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isLoot"
               }
@@ -19727,6 +22257,74 @@ triggers {
     }
   }
   actions {
+    ops {
+      functionName: "Add Tag to Prop"
+      args {
+        call_value {
+          functionName: "Tag From String"
+          args {
+            string_value: "isIC"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Nearest Tagged Prop to Prop"
+          args {
+            call_value {
+              functionName: "Tag From String"
+              args {
+                call_value {
+                  functionName: "Append (string)"
+                  args {
+                    call_value {
+                      functionName: "Convert (int) to (string)"
+                      args {
+                        call_value {
+                          functionName: "Get Variable (int)"
+                          args {
+                            string_value: "z"
+                          }
+                        }
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Append (string)"
+                      args {
+                        string_value: "-"
+                      }
+                      args {
+                        call_value {
+                          functionName: "Convert (int) to (string)"
+                          args {
+                            call_value {
+                              functionName: "Get Variable (int)"
+                              args {
+                                string_value: "x"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b2061836631361807000923"
+              }
+            }
+          }
+        }
+      }
+    }
     ops {
       functionName: "Clone Prop"
       args {
@@ -19794,74 +22392,6 @@ triggers {
                     string_value: "5b2061836631361807000923"
                   }
                 }
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Add Tag to Prop"
-      args {
-        call_value {
-          functionName: "Get Map Item (SenseTagList)"
-          args {
-            string_value: "isIC"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Prop to Prop"
-          args {
-            call_value {
-              functionName: "Tag From String"
-              args {
-                call_value {
-                  functionName: "Append (string)"
-                  args {
-                    call_value {
-                      functionName: "Convert (int) to (string)"
-                      args {
-                        call_value {
-                          functionName: "Get Variable (int)"
-                          args {
-                            string_value: "z"
-                          }
-                        }
-                      }
-                    }
-                  }
-                  args {
-                    call_value {
-                      functionName: "Append (string)"
-                      args {
-                        string_value: "-"
-                      }
-                      args {
-                        call_value {
-                          functionName: "Convert (int) to (string)"
-                          args {
-                            call_value {
-                              functionName: "Get Variable (int)"
-                              args {
-                                string_value: "x"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (Prop)"
-              args {
-                string_value: "5b2061836631361807000923"
               }
             }
           }
@@ -20137,7 +22667,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isIC"
               }
@@ -20218,7 +22748,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isLoot"
               }
@@ -20306,7 +22836,7 @@ triggers {
       functionName: "Add Tag to Prop"
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isLoot"
           }
@@ -20382,6 +22912,55 @@ triggers {
       }
       args {
         float_value: 0.01
+      }
+    }
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: 5
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
@@ -20577,7 +23156,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isIC"
               }
@@ -20696,7 +23275,7 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "isLoot"
               }
@@ -22752,7 +25331,7 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isIC"
           }
@@ -22765,7 +25344,7 @@ triggers {
       functionName: "Remove Tag from Prop"
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isIC"
           }
@@ -22835,10 +25414,10 @@ triggers {
         call_value {
           functionName: "Get Map Item (Sound)"
           args {
-            string_value: "user_interface"
+            string_value: "decker"
           }
           args {
-            string_value: "Nuyen-Lost"
+            string_value: "Matrix_SummonESP"
           }
         }
       }
@@ -22853,6 +25432,134 @@ triggers {
           }
           args {
             int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "5b208c50663136340900221b"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor near Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b208c50663136340900221b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Last Created Persona"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX on Actor"
+      args {
+        string_value: "MatrixESPSpawn"
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b208c50663136340900221b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Order Actor to Hunt And Destroy (Team)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b208c50663136340900221b"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Matrix"
           }
         }
       }
@@ -22949,7 +25656,7 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isLoot"
           }
@@ -22990,7 +25697,7 @@ triggers {
       functionName: "Remove Tag from Prop"
       args {
         call_value {
-          functionName: "Get Map Item (SenseTagList)"
+          functionName: "Tag From String"
           args {
             string_value: "isLoot"
           }
@@ -23052,6 +25759,23 @@ triggers {
             }
           }
         }
+      }
+    }
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DATACUBE"
+          }
+        }
+      }
+      args {
+        int_value: 1
       }
     }
   }
@@ -23739,1275 +26463,6 @@ triggers {
   isActive: true
   idRef {
     id: "5b20ac636631363c09006840"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: ""
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: true
-  idRef {
-    id: "5b3310536161310c0d006274"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "---SR CONVERSATIONS ---"
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: false
-  idRef {
-    id: "58b4ef2f616131981d003a64"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Chat-Akimi"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Akimi"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "555aa20d616131e4230025e7"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Akimi"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f10b616131981d003a66"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Anders"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Anders"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "523dda5e373630e412001963"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Anders"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f3c7616131981d003a67"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-DancesWithClams"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Dances"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "520ecb3b633461dc1f001ae4"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Dances"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f402616131981d003a68"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Frogtongue"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Frogtongue"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "523ddb8f373630e4120019b4"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Frogtongue"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f46b616131981d003a69"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Hamfist"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Hamfist"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "51bbf2dc6334616c1d00493e"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Hamfist"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f4a3616131981d003a6a"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Jangadance"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Jangadance"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "5209a8d7633461501e006957"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Jangadance"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f4d6616131981d003a6c"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Jetboy"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Jetboy"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "523dd8b1373630e4120018bf"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Jetboy"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f521616131981d003a6d"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Kitsune"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Kitsune"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "52441afb37363074070014c0"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Kitsune"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f54e616131981d003a6e"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Norbert"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Norbert"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "523dbe51373630b8020018c1"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Norbert"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f57d616131981d003a6f"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Orifice"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Orifice"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "520ebd1c633461dc1f001926"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Orifice"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f5a8616131981d003a70"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Splatter"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Splatter"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "5244247237363074070015d6"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Splatter"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f5e1616131981d003a71"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Chat-Steelflight"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "SRChat"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "TalkToTarget"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Steelflight"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "5244221c3736307407001569"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Nearest Tagged Actor to Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "Steelflight"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "58b4f632616131981d003a73"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "HirelingChat"
-  events {
-    ops {
-      functionName: "On Actor Clicked"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "AND"
-      args {
-        call_value {
-          functionName: "Evaluate Turn Mode"
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "TurnBasedOrFreeMove"
-              }
-              args {
-                int_value: 1
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Comparison (Actor)"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "IsOrIsNot"
-              }
-              args {
-                int_value: 1
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "58b510e8616131981d003a79"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "58b50ae2616131981d003a75"
   }
   elseActions {
   }
@@ -26353,7 +27808,7 @@ regions {
     x: -77
     y: -73
     width: 16
-    height: 11
+    height: 12
   }
   enabledAtStart: true
   is_camera_region: true
@@ -28921,9 +30376,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -77
+    x: -62
     y: 0
-    z: -70
+    z: -62
   }
   orientation: ORIENTATION_S
   GeneralTags: "isSpawnedIC"
@@ -28934,7 +30389,7 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Matrix/MatrixICE_white_range"
-    character_sheet_id: "IC_Lv1_White_Ranged"
+    character_sheet_id: "IC_Lv3_White_Ranged"
     equipment_sheet_id: "IC White Ranged Low"
     character_mod {
       stats {
@@ -28946,8 +30401,8 @@ characters {
         willpower: 0
         essence: 0
         magic: 0
-        hp: -25
-        ap: -1
+        hp: 0
+        ap: 0
         armor: 0
         force: 0
         morale: 0
@@ -28956,7 +30411,7 @@ characters {
         perception: 0
         authority: 0
         protect_tether_range: 0
-        move_speed: -3
+        move_speed: -4
         vision_peripheral_distance: 0
         vision_cone_distance: 0
         vision_cone_angle: 0
@@ -29002,12 +30457,12 @@ characters {
     GeneralTags: "isSpawnedIC"
     enabled_at_start: false
     pc_spawn_number: -1
-    spawn_type: SpawnType_Matrix
+    spawn_type: SpawnType_Normal
     portrait {
       filename: ""
     }
     dimension_name: "Matrix"
-    karma: 29
+    karma: 33
   }
 }
 variables {
@@ -29234,6 +30689,30 @@ variables {
     typeName: "string"
   }
 }
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bMineSweeper_DEBUG"
+    typeName: "bool"
+  }
+}
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bShowIC"
+    typeName: "bool"
+  }
+}
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bShowLoot"
+    typeName: "bool"
+  }
+}
 mapEvents: "JOB_CHECK"
 mapEvents: "BOMBCOUNT"
 mapEvents: "HamfistHack"
@@ -29257,9 +30736,14 @@ mapEvents: "eVerifyLocation[Loot]"
 mapEvents: "eNextSet"
 mapEvents: "eEvalLocation"
 mapEvents: "eProtest"
+mapEvents: "eResetMatrix"
+mapEvents: "eClearRow"
+mapEvents: "eClearCol"
+mapEvents: "eShowMarker"
 senseTags: "triggered"
 senseTags: "Akimi"
 senseTags: "isLoot"
+senseTags: "isIC"
 goals {
   name: "Survive"
   type: GoalType_Primary
