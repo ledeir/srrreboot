@@ -19832,7 +19832,7 @@ triggers {
   }
   isActive: true
   idRef {
-    id: "58b4ef2f616131981d003a63"
+    id: "5b3b00106161316424001c5c"
   }
   elseActions {
   }
@@ -19923,7 +19923,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20018,7 +20021,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20113,7 +20119,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20208,7 +20217,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20303,7 +20315,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20398,7 +20413,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20493,7 +20511,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20588,7 +20609,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20683,7 +20707,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20778,7 +20805,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20873,7 +20903,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -20968,7 +21001,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -21090,58 +21126,6 @@ triggers {
   elseActions {
   }
   is_oneshot: false
-}
-triggers {
-  name: "CheckWaiting.OLD"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "ENDWAIT"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "5b4580da616131fc2e00279e"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: true
 }
 regions {
   name: "CamKitchen"

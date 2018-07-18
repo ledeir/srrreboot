@@ -27323,7 +27323,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27418,7 +27421,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27513,7 +27519,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27608,7 +27617,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27703,7 +27715,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27798,7 +27813,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27893,7 +27911,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -27988,7 +28009,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -28083,7 +28107,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -28178,7 +28205,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -28273,7 +28303,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -28368,7 +28401,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -28490,61 +28526,6 @@ triggers {
   elseActions {
   }
   is_oneshot: false
-}
-triggers {
-  name: "CheckWaiting.OLD"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_SPAWN"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "ENDWAIT"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "5b4d6648616131fc2c00064e"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: true
 }
 regions {
   name: "DT_RAIL_S"

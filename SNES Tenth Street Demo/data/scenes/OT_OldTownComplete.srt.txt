@@ -1,333 +1,4 @@
 triggers {
-  name: "MapLoad"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_LOCATION"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "SECRET"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Random Point Within Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "53449a0d373630a0100060fe"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 7
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "53dc7856363935ec140075b0"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "OT_EnterRail"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "51fdebc0633461b02f004ec7"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_RAIL_DOOR"
-      }
-    }
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "Monorail"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51fe9e07633461841e00390e"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "OT_LeaveRail"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_LOCATION"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: ""
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "OT_RAIL"
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "All Actors on Team"
-          args {
-            call_value {
-              functionName: "Get Preset Value (string)"
-              args {
-                string_value: "FactionList"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (SceneDimension)"
-              args {
-                string_value: "Default"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Random Point Within Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "51fe9ecf633461841e003911"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51feca04633461841e003aa4"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
   name: "Gain10to20Nuyen"
   events {
     ops {
@@ -973,1892 +644,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "CortexBomb"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "BOMBCOUNT"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "BOMBTIMER"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Add To Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "BOMBTIMER"
-          }
-        }
-      }
-      args {
-        int_value: -10
-      }
-    }
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "TICK TICK TICK"
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "CortexBomb"
-      }
-      args {
-        string_value: "Cortex bomb timer"
-      }
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "BOMBTIMER"
-          }
-        }
-      }
-      args {
-        int_value: 1800
-      }
-    }
-    ops {
-      functionName: "Send Event After Delay"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "BOMBCOUNT"
-          }
-        }
-      }
-      args {
-        float_value: 10
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "526600e86334611018006fde"
-  }
-  elseActions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "weapons"
-          }
-          args {
-            string_value: "GrenadeFrag"
-          }
-        }
-      }
-      args {
-        float_value: 10
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "BOOM! The cortex bomb explodes."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "BombActive"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_CONFIG"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "OT_CortexBomb"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "BOMBCOUNT"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5266069f63346110180071db"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Doc_OnLoad"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_CONFIG"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "OT_DeadEd"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "53449a0d373630a01000615e"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "51fec70b633461841e003a98"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51fec6bc633461841e003a96"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Doc_GotoDoc"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "53449a0d373630a0100061e7"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "53449a0d373630a0100060fe"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 7
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51feb749633461841e0039ce"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Doc_ExitDoc"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "53449a0d373630a0100060fd"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "53449a0d373630a0100061c8"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51feb99e633461841e0039cf"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Doc_WelcomeMessage"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "53449a0d373630a010006131"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "53449a0d373630a01000615e"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        string_value: "How\'s it going there? Welcome to Ed\'s Patch\'N\'Fix!\n"
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51fec70b633461841e003a98"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "CLUB_TalkToBarkeep"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "53449704373630a010006052"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "53449704373630a010006052"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        string_value: "Hey Mac. What ya want?"
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "521062dc6334619c070018cf"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "CLUB_CalcHirelings"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_CONFIG"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "OrificeCost"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            int_value: 500
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 1
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                int_value: 20
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 2
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51a9844d633461e82400002a"
-                  }
-                  args {
-                    string_value: "Negotiation"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "DancesCost"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            int_value: 2000
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 1
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                int_value: 100
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 2
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51a9844d633461e82400002a"
-                  }
-                  args {
-                    string_value: "Negotiation"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "DancesDuration"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            int_value: 10
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                int_value: 1
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 2
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Actor Attribute"
-                  args {
-                    call_value {
-                      functionName: "Get Map Item (Player)"
-                      args {
-                        int_value: 0
-                      }
-                    }
-                  }
-                  args {
-                    call_value {
-                      functionName: "Get Preset Value (int)"
-                      args {
-                        string_value: "BaseOrCurrent"
-                      }
-                      args {
-                        int_value: 1
-                      }
-                    }
-                  }
-                  args {
-                    call_value {
-                      functionName: "Get Preset Value (int)"
-                      args {
-                        string_value: "ActorAttributes"
-                      }
-                      args {
-                        int_value: 3
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "OrificeDuration"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            int_value: 10
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                int_value: 1
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 2
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Actor Attribute"
-                  args {
-                    call_value {
-                      functionName: "Get Map Item (Player)"
-                      args {
-                        int_value: 0
-                      }
-                    }
-                  }
-                  args {
-                    call_value {
-                      functionName: "Get Preset Value (int)"
-                      args {
-                        string_value: "BaseOrCurrent"
-                      }
-                      args {
-                        int_value: 1
-                      }
-                    }
-                  }
-                  args {
-                    call_value {
-                      functionName: "Get Preset Value (int)"
-                      args {
-                        string_value: "ActorAttributes"
-                      }
-                      args {
-                        int_value: 3
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "524ba747633461241c0019a7"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "OT_EnterCaryard"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "534492d4373630a010005f33"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SR_TeamSize"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_CARYARD"
-      }
-    }
-    ops {
-      functionName: "Start Conversation"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "59bf3b27616131e015000e28"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "51fe9dda633461841e00390d"
-  }
-  elseActions {
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_CARYARD"
-      }
-    }
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "OT_CARYARDS"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "OT_EnterMagicShop"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "52ef00526334611825004d7d"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "OT_ClearStreet"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_MAGIC"
-      }
-    }
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "534493d2373630a010005f3e"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 7
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5209c19e633461501e006b41"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "OT_EnterWeaponShop"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "5344a67b373630a010006447"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "OT_ClearStreet"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "534495ea373630a010005fe4"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "53449634373630a010005fe5"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "OT_ExitWeaponShop"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "5344958f373630a010005fb1"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "51fe9f0e633461841e003913"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "55b99f8c6161314815004403"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "53449636373630a010005fe6"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "OT_ExitSputnik"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "53449704373630a01000600d"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "51fe9ee7633461841e003912"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_EXIT_SPUTNIK"
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "55b99f8c6161314815004403"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5344995c373630a0100060d0"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Doc_ExitAlley"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "53449a0d373630a01000618a"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "51fe9f1c633461841e003914"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "55b99f8c6161314815004403"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "53449ad7373630a010006224"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "OT_ExitMagicShop"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "534493d2373630a010005f3d"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_STREET"
-      }
-    }
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "51fe9eb0633461841e003910"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "55b99f8c6161314815004403"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "534494a8373630a010005faa"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
   name: "OT_ClearStreet"
   events {
     ops {
@@ -3338,336 +1123,6 @@ triggers {
   isActive: true
   idRef {
     id: "55b99f8c6161314815004403"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Doc_EnterAlley"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "590d43d7616131a436001a76"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "OT_ClearStreet"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "53449a0d373630a010006161"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Triggering Actor"
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "590d4406616131a436001a78"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "OT_EnterSputnik"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "52eeffe16334611825004d78"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "OT_ClearStreet"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "SpawnPoint"
-          }
-        }
-      }
-      args {
-        string_value: "OT_SPUTNIK"
-      }
-    }
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "53449923373630a0100060ce"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 7
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Trigger: Run Alternate Trigger"
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "58953c7b6161314836005ade"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WaitOrNot"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Trigger: Run Alternate Trigger"
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "5a347ca2616131e40d005e4f"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WaitOrNot"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5a347c5f616131e40d005e4e"
   }
   elseActions {
   }
@@ -12515,69 +9970,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "MASTER_ONLOAD"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "LOAD_CONFIG"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "LOAD_SPAWN"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_LOCAL"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "LOAD_LOCATION"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "590f5c54616131a42e00544b"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
   name: "SC-SpawnDwC"
   events {
   }
@@ -12602,7 +9994,7 @@ triggers {
             string_value: "Comparison Ops"
           }
           args {
-            int_value: 5
+            int_value: 2
           }
         }
       }
@@ -12613,7 +10005,7 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Kill Actor"
+      functionName: "Teleport Actor"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -12631,12 +10023,14 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Random Point Within Region"
           args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b4eaa99616131681e006b9f"
+              }
+            }
           }
         }
       }
@@ -12655,29 +10049,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "53449704373630a010006015"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -12692,7 +10064,7 @@ triggers {
   }
   elseActions {
     ops {
-      functionName: "Kill Actor"
+      functionName: "Teleport Actor"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -12710,12 +10082,14 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Current Location of Prop"
           args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b4ebedc6161318c26006fbc"
+              }
+            }
           }
         }
       }
@@ -12726,7 +10100,7 @@ triggers {
             string_value: "FacingDirection"
           }
           args {
-            int_value: 0
+            int_value: 3
           }
         }
       }
@@ -12734,7 +10108,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -12770,7 +10144,7 @@ triggers {
             string_value: "Comparison Ops"
           }
           args {
-            int_value: 5
+            int_value: 2
           }
         }
       }
@@ -12781,7 +10155,7 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Kill Actor"
+      functionName: "Teleport Actor"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -12799,12 +10173,14 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Random Point Within Region"
           args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b4eaa99616131681e006b9f"
+              }
+            }
           }
         }
       }
@@ -12823,29 +10199,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "53449704373630a010006006"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -12860,7 +10214,7 @@ triggers {
   }
   elseActions {
     ops {
-      functionName: "Kill Actor"
+      functionName: "Teleport Actor"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -12878,12 +10232,14 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Current Location of Prop"
           args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b4ebee76161318c26006fbd"
+              }
+            }
           }
         }
       }
@@ -12894,7 +10250,7 @@ triggers {
             string_value: "FacingDirection"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -12902,7 +10258,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -15089,54 +12445,6 @@ triggers {
   isActive: false
   idRef {
     id: "59b0dded616131b427003f51"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: ""
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: true
-  idRef {
-    id: "59d1c60a616131401c004c67"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "DONE WAITING TRIGGERS"
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: true
-  idRef {
-    id: "59d1cf37616131401c004dcb"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "----------------------------"
-  events {
-  }
-  conditions {
-  }
-  actions {
-  }
-  isActive: true
-  idRef {
-    id: "59d1cf37616131401c004dcc"
   }
   elseActions {
   }
@@ -17638,61 +14946,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "CheckWaiting.OLD"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_SPAWN"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "ENDWAIT"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "5b4579da616131fc2e0026d2"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: true
-}
-triggers {
   name: "SpawnDances-AlreadyHired"
   events {
     ops {
@@ -18105,6 +15358,342 @@ triggers {
   is_oneshot: false
 }
 triggers {
+  name: "SC-SpawnDwC.OLD"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Dances"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "53449704373630a010006015"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "53449704373630a010006015"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b4eab51616131681e006ba1"
+  }
+  elseActions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "53449704373630a010006015"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "SC-SpawnOrifice.OLD"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Orifice"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "53449704373630a010006006"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "53449704373630a010006006"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b4eab51616131681e006ba2"
+  }
+  elseActions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "53449704373630a010006006"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
   name: ""
   events {
   }
@@ -18205,7 +15794,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18300,7 +15892,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18395,7 +15990,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18490,7 +16088,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18585,7 +16186,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18680,7 +16284,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18775,7 +16382,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18870,7 +16480,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -18965,7 +16578,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -19060,7 +16676,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -19155,7 +16774,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -19250,7 +16872,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -19368,6 +16993,2781 @@ triggers {
   isActive: true
   idRef {
     id: "58b50ae2616131981d003a75"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b4ec1f26161318c26006fbf"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "ENTER LOGIC (Load Ext)"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b4ec1f96161318c26006fc0"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "-----------------------------"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b4ec2006161318c26006fc1"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "MASTER_ONLOAD"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "LOAD_CONFIG"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "LOAD_SPAWN"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_LOCAL"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "LOAD_LOCATION"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "590f5c54616131a42e00544b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "MapLoad-SECRET"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_LOCATION"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "SECRET"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Random Point Within Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "53449a0d373630a0100060fe"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "53dc7856363935ec140075b0"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "MapLoad-CARYARD"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_LOCATION"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "OT_CARYARD"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "CHK_SPAWN"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b4ec1ad6161318c26006fbe"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "OT_LeaveRail"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_LOCATION"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: ""
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "OT_RAIL"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Random Point Within Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51fe9ecf633461841e003911"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51feca04633461841e003aa4"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Doc_ExitDoc"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "53449a0d373630a0100060fd"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "53449a0d373630a0100061c8"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51feb99e633461841e0039cf"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OT_ExitWeaponShop"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5344958f373630a010005fb1"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51fe9f0e633461841e003913"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "55b99f8c6161314815004403"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "53449636373630a010005fe6"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OT_ExitSputnik"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "53449704373630a01000600d"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51fe9ee7633461841e003912"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_EXIT_SPUTNIK"
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "55b99f8c6161314815004403"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5344995c373630a0100060d0"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Doc_ExitAlley"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "53449a0d373630a01000618a"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51fe9f1c633461841e003914"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "55b99f8c6161314815004403"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "53449ad7373630a010006224"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OT_ExitMagicShop"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "534493d2373630a010005f3d"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_STREET"
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51fe9eb0633461841e003910"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "55b99f8c6161314815004403"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "534494a8373630a010005faa"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "CortexBomb"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "BOMBCOUNT"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "BOMBTIMER"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "BOMBTIMER"
+          }
+        }
+      }
+      args {
+        int_value: -10
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "TICK TICK TICK"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Set Screen Label Progress Bar (int)"
+      args {
+        string_value: "CortexBomb"
+      }
+      args {
+        string_value: "Cortex bomb timer"
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "BOMBTIMER"
+          }
+        }
+      }
+      args {
+        int_value: 1800
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "BOMBCOUNT"
+          }
+        }
+      }
+      args {
+        float_value: 10
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "526600e86334611018006fde"
+  }
+  elseActions {
+    ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "weapons"
+          }
+          args {
+            string_value: "GrenadeFrag"
+          }
+        }
+      }
+      args {
+        float_value: 10
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "BOOM! The cortex bomb explodes."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "BombActive"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_CONFIG"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "OT_CortexBomb"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "BOMBCOUNT"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5266069f63346110180071db"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "CLUB_TalkToBarkeep"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "53449704373630a010006052"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "53449704373630a010006052"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Hey Mac. What ya want?"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "521062dc6334619c070018cf"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "CLUB_CalcHirelings"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_CONFIG"
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "OrificeCost"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            int_value: 500
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                int_value: 20
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51a9844d633461e82400002a"
+                  }
+                  args {
+                    string_value: "Negotiation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "DancesCost"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            int_value: 2000
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                int_value: 100
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51a9844d633461e82400002a"
+                  }
+                  args {
+                    string_value: "Negotiation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "DancesDuration"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            int_value: 10
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                int_value: 1
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Actor Attribute"
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (Player)"
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "BaseOrCurrent"
+                      }
+                      args {
+                        int_value: 1
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "ActorAttributes"
+                      }
+                      args {
+                        int_value: 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "OrificeDuration"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            int_value: 10
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                int_value: 1
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Actor Attribute"
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (Player)"
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "BaseOrCurrent"
+                      }
+                      args {
+                        int_value: 1
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "ActorAttributes"
+                      }
+                      args {
+                        int_value: 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "524ba747633461241c0019a7"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b4ec2606161318c26006fc2"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "LEAVE LOGIC (Leave Ext)"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b4ec2606161318c26006fc3"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "-----------------------------"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b4ec2606161318c26006fc4"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "OT_EnterRail"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51fdebc0633461b02f004ec7"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_RAIL_DOOR"
+      }
+    }
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "Monorail"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fe9e07633461841e00390e"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Doc_OnLoad"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "LOAD_CONFIG"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "OT_DeadEd"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor Reference)"
+          args {
+            string_value: "53449a0d373630a01000615e"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "51fec70b633461841e003a98"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fec6bc633461841e003a96"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Doc_GotoDoc"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "53449a0d373630a0100061e7"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "53449a0d373630a0100060fe"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51feb749633461841e0039ce"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Doc_WelcomeMessage"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "53449a0d373630a010006131"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "53449a0d373630a01000615e"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "How\'s it going there? Welcome to Ed\'s Patch\'N\'Fix!\n"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fec70b633461841e003a98"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "OT_EnterCaryard"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "534492d4373630a010005f33"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_TeamSize"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_CARYARD"
+      }
+    }
+    ops {
+      functionName: "Start Conversation"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "59bf3b27616131e015000e28"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "51fe9dda633461841e00390d"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_CARYARD"
+      }
+    }
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "OT_CARYARDS"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OT_EnterMagicShop"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "52ef00526334611825004d7d"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "OT_ClearStreet"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_MAGIC"
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "534493d2373630a010005f3e"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5209c19e633461501e006b41"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OT_EnterWeaponShop"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5344a67b373630a010006447"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "OT_ClearStreet"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "534495ea373630a010005fe4"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "53449634373630a010005fe5"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Doc_EnterAlley"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "590d43d7616131a436001a76"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "OT_ClearStreet"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "53449a0d373630a010006161"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "590d4406616131a436001a78"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "OT_EnterSputnik"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "52eeffe16334611825004d78"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "OT_ClearStreet"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SpawnPoint"
+          }
+        }
+      }
+      args {
+        string_value: "OT_SPUTNIK"
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "58953c7b6161314836005ade"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5a347ca2616131e40d005e4f"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "53449923373630a0100060ce"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5a347c5f616131e40d005e4e"
   }
   elseActions {
   }
@@ -20431,6 +20831,52 @@ regions {
   loop_default_music: false
   no_fow_in_region: false
 }
+regions {
+  name: "HoldingPen"
+  position {
+    x: -71
+    y: -66
+    width: -3
+    height: 6
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "5b4eaa99616131681e006b9f"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
@@ -20812,6 +21258,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Jetboy"
+  displayName: "Jetboy"
   idRef {
     id: "524915936334611812001f00"
   }
@@ -20832,7 +21279,10 @@ characters {
         ap: 0
         armor: 1
         morale: 24
+        discipline: 0
         awareness: 24
+        perception: 0
+        authority: 0
         protect_tether_range: 5
         move_speed: 0
       }
@@ -20848,6 +21298,8 @@ characters {
         edged: 1
       }
       archetypeName: "Player"
+      vulnerabilities {
+      }
     }
     equipment {
       prefab_name: "Pi 1 Ceska Black Scorpion"
@@ -20981,6 +21433,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Splatter"
+  displayName: "Spatter"
   idRef {
     id: "524a3bd46334610002006dff"
   }
@@ -21061,6 +21514,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Kitsune"
+  displayName: "Kitsune"
   idRef {
     id: "524a3bd46334610002006e01"
   }
@@ -21425,9 +21879,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -71.5
+    x: -72.5
     y: 0
-    z: -118.9
+    z: -64.9
   }
   orientation: ORIENTATION_N
   displayName: "SC_Orifice"
@@ -21587,9 +22041,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -71
+    x: -73
     y: 0
-    z: -122.8
+    z: -65.8
   }
   orientation: ORIENTATION_E
   displayName: "SC_DwC"
@@ -22280,6 +22734,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Norbert"
+  displayName: "Norbert"
   idRef {
     id: "5a531d8561613110390019a5"
   }
@@ -22361,6 +22816,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Frogtongue"
+  displayName: "Frogtongue"
   idRef {
     id: "5a531d8561613110390019a6"
   }
@@ -22440,6 +22896,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "Steelflight"
+  displayName: "Steelflight"
   idRef {
     id: "5a531d8561613110390019a7"
   }

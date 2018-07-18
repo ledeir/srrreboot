@@ -819,6 +819,35 @@ triggers {
       }
     }
     ops {
+      functionName: "Set Actor Run Speed"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51ad76e16334614c24006179"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "RunSpeedMethod"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Set Actor In Passive Mode"
       args {
         call_value {
@@ -2289,7 +2318,7 @@ triggers {
         float_value: 1
       }
       args {
-        float_value: 2
+        float_value: 0
       }
     }
     ops {
@@ -2380,31 +2409,6 @@ triggers {
           }
           args {
             int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Suspend Team\'s Turn"
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        int_value: 3
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
           }
         }
       }
@@ -22598,61 +22602,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "CheckWaiting.OLD"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "LOAD_SPAWN"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "ENDWAIT"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "5b3307446161310c0d006267"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "CHK_SPAWN"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: true
-}
-triggers {
   name: ""
   events {
   }
@@ -22753,7 +22702,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -22848,7 +22800,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -22943,7 +22898,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23038,7 +22996,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23133,7 +23094,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23228,7 +23192,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23323,7 +23290,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23418,7 +23388,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23513,7 +23486,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23608,7 +23584,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23703,7 +23682,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23798,7 +23780,10 @@ triggers {
           }
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
             }
           }
         }
@@ -23920,6 +23905,407 @@ triggers {
   elseActions {
   }
   is_oneshot: false
+}
+triggers {
+  name: "CollarDrop.OLD"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51ae381d633461541e00678a"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51ad76e16334614c24006179"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS03_Collar"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51ad76e16334614c24006179"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Woof! Woof! Woof!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51ad76e16334614c24006179"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Woof! Woof!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        float_value: 2
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "51ad76e16334614c24006179"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Woof! Woof! Woof!"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "collarTracker"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Set Actor In Passive Mode"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51ad76e16334614c24006179"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Suspend Team\'s Turn"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "End Current Actor Turn"
+    }
+    ops {
+      functionName: "Order Actor to Move To (Region)"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51ad76e16334614c24006179"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51ae3d0d633461541e00678e"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Retain Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Prop Visible"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "52c2505f633461d80b000de8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b4ebd2f6161318c26006fb8"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Retain Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
 }
 regions {
   name: "c_External"
