@@ -361,7 +361,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Kill Actor"
+      functionName: "Teleport Actor"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -379,22 +379,33 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Center of Region"
           args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5a46f10b303539c02b006a0d"
+              }
+            }
           }
         }
-      }
-      args {
       }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -7631,7 +7642,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "57706bed616131381e0023f2"
   }
@@ -9050,7 +9061,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Trigger)"
           args {
-            string_value: "51ce74106334612008004824"
+            string_value: "577012de616131381e00200a"
           }
         }
       }
@@ -9072,7 +9083,113 @@ triggers {
         call_value {
           functionName: "Get Map Item (Trigger)"
           args {
-            string_value: "577012cf616131381e002009"
+            string_value: "51ce74106334612008004824"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "58c89b8f61613118380068d9"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b54b666663136cc02007b6e"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "51b6b45f633461d01e004905"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "58c89b8f61613118380068b9"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
           }
         }
       }
@@ -9373,28 +9490,6 @@ triggers {
       }
     }
     ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "577012cf616131381e002009"
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Trigger: Run Alternate Trigger"
       args {
         call_value {
@@ -9445,18 +9540,7 @@ triggers {
   name: "ALLEY-LethalDamage"
   events {
     ops {
-      functionName: "On Actor Damage"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HPOrAP"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
+      functionName: "On Actor Death"
     }
   }
   conditions {
@@ -9487,66 +9571,10 @@ triggers {
       }
     }
     ops {
-      functionName: "Compare Actor Attribute"
+      functionName: "Comparison (Actor)"
       args {
         call_value {
           functionName: "Triggering Target Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "BaseOrCurrent"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorAttributes"
-          }
-          args {
-            int_value: 8
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        int_value: 5
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Actor Unkillable"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "58c89b8f61613118380068d9"
-              }
-            }
-          }
-          args {
-          }
         }
       }
       args {
@@ -9560,58 +9588,17 @@ triggers {
           }
         }
       }
-    }
-    ops {
-      functionName: "Kill Actor"
       args {
         call_value {
-          functionName: "Specific Actor"
+          functionName: "Get Map Item (Actor)"
           args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "58c89b8f61613118380068d9"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
+            string_value: "58c89b8f61613118380068d9"
           }
         }
       }
     }
+  }
+  actions {
     ops {
       functionName: "Move Prop"
       args {
@@ -9632,105 +9619,6 @@ triggers {
                 string_value: "58c89b8f61613118380068d9"
               }
             }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Order Actor to become a Non-Combatant"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "58c89b8f61613118380068d9"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Change Actor Team"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "58c89b8f61613118380068d9"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Trigger: Run Alternate Trigger"
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "51affd196334619419001919"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WaitOrNot"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
           }
         }
       }
@@ -9757,22 +9645,6 @@ triggers {
         }
       }
     }
-  }
-  isActive: false
-  idRef {
-    id: "51ce74106334612008004824"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "ALLEY-DieOrkDie"
-  events {
-  }
-  conditions {
-  }
-  actions {
     ops {
       functionName: "Set Variable (bool)"
       args {
@@ -9903,56 +9775,14 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "58c89b8f61613118380068d9"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
   }
   isActive: true
   idRef {
-    id: "51affd196334619419001919"
+    id: "51ce74106334612008004824"
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "ALLEY-WakeDog"
@@ -10036,12 +9866,32 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Activate Actor Spawner"
+      functionName: "Teleport Actor"
       args {
         call_value {
-          functionName: "Get Map Item (Actor Reference)"
+          functionName: "Specific Actor"
           args {
-            string_value: "58c89b8f61613118380068f3"
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "58c89b8f61613118380068f3"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Prop"
+          args {
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b54ca4a663136cc02007d32"
+              }
+            }
           }
         }
       }
@@ -10049,7 +9899,18 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -10116,6 +9977,17 @@ triggers {
           }
           args {
             int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Clear Persistent Dead Bodies"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "58c89b8f61613118380068a2"
           }
         }
       }
@@ -10222,48 +10094,6 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "58c89b8f61613118380068f3"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
   }
   isActive: true
   idRef {
@@ -10274,7 +10104,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "ALLEY-nuGunshot-Trigger"
+  name: "ALLEY-nuGunshot-Show"
   events {
     ops {
       functionName: "On Region Enter"
@@ -10289,74 +10119,16 @@ triggers {
     }
   }
   conditions {
-  }
-  actions {
     ops {
-      functionName: "Play Sound"
+      functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Map Item (Sound)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "weapons"
+            string_value: "51a9844d633461e82400002a"
           }
           args {
-            string_value: "Pistol"
-          }
-        }
-      }
-      args {
-        float_value: 50
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "player"
-          }
-          args {
-            string_value: "MaleDeath"
-          }
-        }
-      }
-      args {
-        float_value: 25
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Trigger: Run Alternate Trigger"
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "577012de616131381e00200a"
+            string_value: "AlleyComplete"
           }
         }
       }
@@ -10364,7 +10136,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
+            string_value: "IsOrIsNot"
           }
           args {
             int_value: 1
@@ -10375,18 +10147,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WaitOrNot"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
+            string_value: "bool"
           }
           args {
             int_value: 0
@@ -10394,84 +10155,8 @@ triggers {
         }
       }
     }
-  }
-  isActive: false
-  idRef {
-    id: "577012cf616131381e002009"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "ALLEY-nuGunshot-Show"
-  events {
-  }
-  conditions {
   }
   actions {
-    ops {
-      functionName: "Activate Actor Spawner"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "58c89b8f61613118380068d9"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Move Prop"
-      args {
-        call_value {
-          functionName: "Get Map Item (Prop)"
-          args {
-            string_value: "58c89b8f6161311838006913"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "58c89b8f61613118380068b9"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Point"
-      args {
-        call_value {
-          functionName: "Center of Region"
-          args {
-            call_value {
-              functionName: "Get Map Item (Region)"
-              args {
-                string_value: "58c89b8f61613118380068b9"
-              }
-            }
-          }
-        }
-      }
-    }
     ops {
       functionName: "Start Conversation Between Actors"
       args {
@@ -10492,9 +10177,9 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (Player)"
+          functionName: "Get Map Item (Actor)"
           args {
-            int_value: 0
+            string_value: "51b6b45f633461d01e004905"
           }
         }
       }
@@ -10505,13 +10190,87 @@ triggers {
             string_value: "WithOrWithout"
           }
           args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "577012de616131381e00200a"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "ALLEY-InitiateFight"
+  events {
+    ops {
+      functionName: "On Conversation Complete"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bStartFight_OrkGanger"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bStartFight_OrkGanger"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
             int_value: 0
           }
         }
       }
     }
     ops {
-      functionName: "Order Actor to Seek And Destroy (Team)"
+      functionName: "Order Actor to Hunt And Destroy (Team)"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -10548,9 +10307,9 @@ triggers {
       }
     }
   }
-  isActive: false
+  isActive: true
   idRef {
-    id: "577012de616131381e00200a"
+    id: "5b54c5ee663136cc02007cc5"
   }
   elseActions {
   }
@@ -31839,8 +31598,8 @@ regions {
 regions {
   name: "ALLEY-DeckerBody"
   position {
-    x: 50
-    y: 23
+    x: 51
+    y: 19
     width: 1
     height: 1
   }
@@ -31885,10 +31644,10 @@ regions {
 regions {
   name: "ALLEY-Gunshot"
   position {
-    x: 43
-    y: 17.099998
+    x: 46
+    y: 16.099998
     width: 3
-    height: 10
+    height: 16
   }
   enabledAtStart: true
   is_camera_region: false
@@ -31931,8 +31690,8 @@ regions {
 regions {
   name: "ALLEY-DogTrigger"
   position {
-    x: 55
-    y: 14
+    x: 57
+    y: 12
     width: -11
     height: -3
   }
@@ -32778,6 +32537,13 @@ characters {
   idRef {
     id: "51b6b45f633461d01e004905"
   }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
   lod: 0
   character_instance {
     prefab_name: "Seattle:Gangers/HumanMaleGanger"
@@ -32847,12 +32613,14 @@ characters {
     char_name: "Decker"
     enabled_at_start: false
     pc_spawn_number: -1
-    uninjurable: true
-    unkillable: true
+    uninjurable: false
+    unkillable: false
     portrait {
       filename: "custom_geeked_thug"
     }
     karma: 6
+    persistent_body: true
+    has_fist: false
   }
 }
 characters {
@@ -34540,11 +34308,11 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 47.800003
+    x: 25.800003
     y: 0
-    z: 12.700001
+    z: -27.3
   }
-  orientation: ORIENTATION_S
+  orientation: ORIENTATION_N
   displayName: "ALLEY_GANGER"
   idRef {
     id: "58c89b8f61613118380068d9"
@@ -34615,26 +34383,27 @@ characters {
       vulnerabilities {
       }
     }
-    team_id: "Gangers"
+    team_id: "Civilians"
     char_name: "Orc Ganger"
-    enabled_at_start: false
+    enabled_at_start: true
     pc_spawn_number: -1
     ai_ignores: false
-    unkillable: true
+    unkillable: false
     hiring_type: HiringType_None
     portrait {
       filename: "backer_orkmale_bradleymiller_kiluminatialabrad"
     }
     karma: 41
     hiring_cost_override: 50
+    has_fist: false
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 47
+    x: 26
     y: 0
-    z: 7.7999992
+    z: -24.2
   }
   orientation: ORIENTATION_E
   displayName: "ALLEY_DOG"
@@ -34675,7 +34444,7 @@ characters {
     team_id: "Civilians"
     char_name: "Dog"
     patrolRoute: "Dog"
-    enabled_at_start: false
+    enabled_at_start: true
     pc_spawn_number: -1
     ai_ignores: true
     uninjurable: true
@@ -38050,6 +37819,14 @@ variables {
     typeName: "bool"
   }
 }
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "bStartFight_OrkGanger"
+    typeName: "bool"
+  }
+}
 mapEvents: "Proceed"
 mapEvents: "Spawn1"
 mapEvents: "Spawn2"
@@ -38081,6 +37858,7 @@ mapEvents: "eGrind"
 mapEvents: "eAnimateHall"
 mapEvents: "eIncrimentCounter"
 mapEvents: "eCarYardCutScene"
+mapEvents: "eOrkCangerFight"
 senseTags: "Akimi"
 goals {
   name: "Survive"

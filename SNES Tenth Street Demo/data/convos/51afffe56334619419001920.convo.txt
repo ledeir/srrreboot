@@ -7,18 +7,14 @@ nodes {
     id: "51b000036334619419001926"
   }
   index: 0
-  text: "Tread carefully whelp, you have much to overcome.\nDog controls your destiny. Seek out three items of his favor and then seek his shrine."
+  text: "I have a strange feeling about those eyes"
   branches {
-    responseText: "Dog?"
+    responseText: ""
     nextNodeIndex: 1
-  }
-  branches {
-    responseText: "Shrine?"
-    nextNodeIndex: 2
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
-    id: "58c89b8f61613118380068f3"
+    id: "590ce9c061613110090008aa"
   }
   actions {
     ops {
@@ -50,9 +46,28 @@ nodes {
 }
 nodes {
   idRef {
-    id: "51b0005a633461941900192a"
+    id: "5b54c973663136cc02007d0c"
   }
   index: 1
+  text: "Tread carefully whelp, you have much to overcome.\nDog controls your destiny. Seek out three items of his favor and then seek his shrine."
+  branches {
+    responseText: "Dog?"
+    nextNodeIndex: 2
+  }
+  branches {
+    responseText: "Shrine?"
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "58c89b8f61613118380068f3"
+  }
+}
+nodes {
+  idRef {
+    id: "51b0005a633461941900192a"
+  }
+  index: 2
   text: "Woof"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -63,7 +78,7 @@ nodes {
   idRef {
     id: "51b0005c633461941900192c"
   }
-  index: 2
+  index: 3
   text: "Woof"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -71,6 +86,6 @@ nodes {
   }
 }
 roots {
-  responseText: "I have a strange feeling about those eyes"
+  responseText: ""
   nextNodeIndex: 0
 }

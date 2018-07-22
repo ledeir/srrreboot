@@ -17081,6 +17081,104 @@ triggers {
   is_oneshot: true
 }
 triggers {
+  name: "Matrix.Welcome"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b205f1e6631361807000902"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Actor is Player Controlled"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eShowMarker"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Screen Label"
+      args {
+        string_value: "BLOCKER_IC"
+      }
+      args {
+        string_value: "IC Protection Cubes Remaining: $(story.DataCube)"
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54d002663136cc02007d37"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Matrix.JackOut"
+  events {
+    ops {
+      functionName: "On Host Jacked Out"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Remove Screen Label"
+      args {
+        string_value: "BLOCKER_IC"
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54d7b3663136d8160076de"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: "Matrix.Debugger"
   events {
     ops {
@@ -17622,20 +17720,17 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (bool)"
+      functionName: "Compare Actor Skill"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "bShowLoot"
-          }
+          functionName: "Last Created Persona"
         }
       }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "BaseOrCurrent"
           }
           args {
             int_value: 1
@@ -17646,12 +17741,26 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "bool"
+            string_value: "ActorSkills"
           }
           args {
-            int_value: 1
+            int_value: 5
           }
         }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        int_value: 3
       }
     }
   }
@@ -17711,6 +17820,55 @@ triggers {
     id: "5b39300a6631368413007b22"
   }
   elseActions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isLootMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        float_value: 4
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   is_oneshot: false
 }
@@ -17726,20 +17884,17 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (bool)"
+      functionName: "Compare Actor Skill"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "bShowIC"
-          }
+          functionName: "Last Created Persona"
         }
       }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "BaseOrCurrent"
           }
           args {
             int_value: 1
@@ -17750,12 +17905,26 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "bool"
+            string_value: "ActorSkills"
           }
           args {
-            int_value: 1
+            int_value: 5
           }
         }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        int_value: 6
       }
     }
   }
@@ -17815,6 +17984,55 @@ triggers {
     id: "5b39306e6631368413007b23"
   }
   elseActions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isICMarker"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        float_value: 4
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5b2061ba6631361807000924"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
   is_oneshot: false
 }
@@ -21958,7 +22176,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "5b208ea4663136340900221c"
   }
@@ -22512,7 +22730,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "5b208fde6631363409002221"
   }
@@ -23343,7 +23561,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "5b208fff6631363409002225"
   }
@@ -23897,7 +24115,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "5b208fff6631363409002227"
   }
@@ -24066,6 +24284,197 @@ triggers {
       }
     }
     ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b54cee9663136cc02007d36"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b208a326631363409002219"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "   CheckCubes"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DataCube"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DataCube"
+          }
+        }
+      }
+      args {
+        int_value: -1
+      }
+    }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "IC Blocked."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 5
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "decker"
+          }
+          args {
+            string_value: "Matrix_NodeHackSuccess"
+          }
+        }
+      }
+      args {
+        float_value: 0.5
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Screen Label"
+      args {
+        string_value: "BLOCKER_IC"
+      }
+      args {
+        string_value: "IC Protection Cubes Remaining: $(story.DataCube)"
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54cee9663136cc02007d36"
+  }
+  elseActions {
+    ops {
       functionName: "Play Sound"
       args {
         call_value {
@@ -24222,12 +24631,6 @@ triggers {
       }
     }
   }
-  isActive: true
-  idRef {
-    id: "5b208a326631363409002219"
-  }
-  elseActions {
-  }
   is_oneshot: false
 }
 triggers {
@@ -24323,31 +24726,20 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Play Sound"
+      functionName: "Add To Variable (int)"
       args {
         call_value {
-          functionName: "Get Map Item (Sound)"
+          functionName: "Get Story Variable (int)"
           args {
-            string_value: "user_interface"
+            string_value: "51a9844d633461e82400002a"
           }
           args {
-            string_value: "Nuyen-Gain"
+            string_value: "DataCube"
           }
         }
       }
       args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
+        int_value: 1
       }
     }
     ops {
@@ -24419,20 +24811,86 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Add Item to Actor"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Get Map Item (Item)"
           args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "DATACUBE"
+            string_value: "MATRIX_DATACUBE_ADDER"
           }
         }
       }
       args {
-        int_value: 1
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Item from Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "MATRIX_DATACUBE_ADDER"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Screen Label"
+      args {
+        string_value: "BLOCKER_IC"
+      }
+      args {
+        string_value: "IC Protection Cubes Remaining: $(story.DataCube)"
       }
     }
   }
@@ -24488,6 +24946,487 @@ triggers {
   isActive: false
   idRef {
     id: "5b20aa5f6631363c09006836"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Matrix.GetBadNews"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b3928536631368413007b20"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS_DF_BADNEWS"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS_DF_BADNEWS"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Display Text over Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5264bf806334619015006e38"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Downloaded file DF_BADNEWS"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b3928536631368413007b20"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Hack Status On Matrix Node Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HackIndicatorStatus"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b3928536631368413007b20"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54db7d6631361c16004791"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Matrix.GetGlutmanNuyen"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "TS_Glutmen_Robbed"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Glutman Account \n7732-152804475 \n500\302\245 Nuyen"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Add Nuyen"
+      args {
+        int_value: 500
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "TS_Glutmen_Robbed"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Hack Status On Matrix Node Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HackIndicatorStatus"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54db7d6631361c16004792"
+  }
+  elseActions {
+    ops {
+      functionName: "Display Text over Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Glutman Account \n7732-152804475 \n0 Nuyen"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Hack Status On Matrix Node Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HackIndicatorStatus"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b20604f6631361807000919"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: " "
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b54dcf06631361c16004793"
   }
   elseActions {
   }
@@ -30364,7 +31303,7 @@ characters {
         essence: 0
         magic: 0
         hp: 0
-        ap: 0
+        ap: -1
         armor: 0
         force: 0
         morale: 0
@@ -30388,7 +31327,7 @@ characters {
         spirit_summoning: 0
         drone_control: 0
         biotech: 0
-        dodge: 0
+        dodge: -2
         etiquette_corporate: 0
         etiquette_security: 0
         etiquette_gang: 0
@@ -30424,7 +31363,7 @@ characters {
       filename: ""
     }
     dimension_name: "Matrix"
-    karma: 33
+    karma: 30
   }
 }
 variables {

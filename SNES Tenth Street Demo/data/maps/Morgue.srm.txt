@@ -1584,8 +1584,50 @@ props {
     z: -3.2000008
   }
   orientation: ORIENTATION_S
+  displayName: "obj_HIRINGOverRide"
   idRef {
     id: "51ae6ae0633461541e006857"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "Debugger"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Summon
+    interaction_info_text: "FORCE HIRING SCREEN"
   }
   lod: 0
 }
@@ -1674,7 +1716,7 @@ props {
   gridPoint {
     x: -2
     y: 0
-    z: -16.7
+    z: -17.7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -3726,7 +3768,7 @@ props {
         }
       }
     }
-    interactionIcon: InteractionIcon_Warp
+    interactionIcon: InteractionIcon_Generic
     interaction_info_text: "Enter Restroom"
   }
   lod: 0
@@ -3967,4 +4009,73 @@ props {
     id: "5b500c59616131fc0f0031f3"
   }
   lod: 0
+}
+props {
+  name: "morgue_floor_tile02"
+  gridPoint {
+    x: -47
+    y: 0
+    z: -14
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b54a7e8663136cc02007b62"
+  }
+  lod: 0
+}
+props {
+  name: "lonestar_signs_restroom"
+  gridPoint {
+    x: 0.2
+    y: 0.9
+    z: -14.6
+  }
+  orientation: ORIENTATION_E
+  lod: 0
+}
+props {
+  name: "lonestar_signs_storage"
+  gridPoint {
+    x: 0
+    y: 0.7
+    z: -10.8
+  }
+  orientation: ORIENTATION_E
+  lod: 0
+}
+props {
+  name: "lonestar_signs_recroom"
+  gridPoint {
+    x: 0
+    y: 0.7
+    z: -18.8
+  }
+  orientation: ORIENTATION_E
+  lod: 0
+}
+props {
+  name: "system_gizmo_lightbulb"
+  gridPoint {
+    x: -0.3
+    y: 0
+    z: -14.700001
+  }
+  orientation: ORIENTATION_S
+  properties {
+    property_id: "LightScript"
+    string_value: "loop; CUBIC:7:7FFFD4; BOUNCE:2:000000;"
+  }
+  idRef {
+    id: "5b54b201663136cc02007b6b"
+  }
+  lod: 0
+  light {
+    range: 4
+    color {
+      r: 0.49803922
+      g: 1
+      b: 0.83137256
+    }
+    intensity: 4
+  }
 }

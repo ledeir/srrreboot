@@ -338,7 +338,7 @@ triggers {
         }
       }
       args {
-        string_value: "{{000000}}Breaking News!{{-}} Gang shooting results in the death of an as yet unidentified person.   Shooters remain at large, according to police spokesperson.                                                                                              "
+        string_value: "                                                     {{000000}}Breaking News!{{-}} Gang shooting results in the death of an as yet unidentified person.   Shooters remain at large, according to police spokesperson.                                                                                              "
       }
     }
   }
@@ -826,7 +826,7 @@ triggers {
         }
       }
       args {
-        string_value: "Restroom is for employees only."
+        string_value: "$(scene.sDoorInteraction)"
       }
       args {
         float_value: 0
@@ -1250,6 +1250,58 @@ triggers {
   is_oneshot: true
 }
 triggers {
+  name: "DisableMedkit"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "51a99655633461e824000093"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "TS_Morgue_Medkit"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "533df8d9633461f81f003304"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: "CortexBomb"
   events {
     ops {
@@ -1574,58 +1626,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "DisableMedkit"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "51a99655633461e824000093"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "TS_Morgue_Medkit"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "533df8d9633461f81f003304"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
   name: "ExamineBodyBox"
   events {
     ops {
@@ -1875,6 +1875,34 @@ triggers {
       functionName: "End Current Actor Turn"
     }
     ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "player"
+          }
+          args {
+            string_value: "MaleCritical"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Suspend Team\'s Turn"
       args {
         call_value {
@@ -1921,7 +1949,7 @@ triggers {
         }
       }
       args {
-        string_value: "AAAAAAAAAARGH!\n"
+        string_value: "AAAAAAAAAARGH!"
       }
       args {
         float_value: 0
@@ -1936,7 +1964,7 @@ triggers {
         float_value: 0
       }
       args {
-        float_value: 2
+        float_value: 5
       }
       args {
         float_value: 0
@@ -1967,7 +1995,7 @@ triggers {
         }
       }
       args {
-        string_value: "IT\'S ALIVE!\n"
+        string_value: "IT\'S ALIVE!"
       }
       args {
         float_value: 0
@@ -1982,7 +2010,7 @@ triggers {
         float_value: 0
       }
       args {
-        float_value: 2
+        float_value: 5
       }
       args {
         float_value: 0
@@ -2208,6 +2236,34 @@ triggers {
       }
     }
     ops {
+      functionName: "Play Sound"
+      args {
+        call_value {
+          functionName: "Get Map Item (Sound)"
+          args {
+            string_value: "player"
+          }
+          args {
+            string_value: "MaleCritical"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Display Text over Actor"
       args {
         call_value {
@@ -2229,7 +2285,7 @@ triggers {
         }
       }
       args {
-        string_value: "Oh no! The zombie!!\n!\n"
+        string_value: "  Oh no! \nThe zombie!!!\n"
       }
       args {
         float_value: 0
@@ -2244,7 +2300,7 @@ triggers {
         float_value: 0
       }
       args {
-        float_value: 2
+        float_value: 5
       }
       args {
         float_value: 0
@@ -2290,7 +2346,7 @@ triggers {
         float_value: 0
       }
       args {
-        float_value: 2
+        float_value: 5
       }
       args {
         float_value: 0
@@ -2434,157 +2490,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "DEBUG.RestroomCheck"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Debugger"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Add Item to Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "TS07_LoneStarBadge"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Add Item to Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "TS04_Shades"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "KW_Grinder"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5a46f81b303539c02b006abf"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
   name: "NewsFeed(1)"
   events {
     ops {
@@ -2661,7 +2566,7 @@ triggers {
         }
       }
       args {
-        string_value: "{{000000}}Entertainment News:{{-}} Demand for rebooted classic video games at an all time high.                                           "
+        string_value: "                                                  {{000000}}Entertainment News:{{-}} Demand for rebooted classic video games at an all time high.                                           "
       }
     }
   }
@@ -2750,7 +2655,7 @@ triggers {
         }
       }
       args {
-        string_value: "{{000000}}Special Alert:{{-}} Reports of sporadic gunfire erupted downtown today.  Residents advised to stay clear while police deal with the situation.                                           "
+        string_value: "                                                  {{000000}}Special Alert:{{-}} Reports of sporadic gunfire erupted downtown today.  Residents advised to stay clear while police deal with the situation.                                           "
       }
     }
   }
@@ -2839,7 +2744,7 @@ triggers {
         }
       }
       args {
-        string_value: "{{000000}}Tabloids:{{-}} Morgue workers claim zombie apoycalapse is commencing.  City instituting a new drug screening policy.                                            "
+        string_value: "                                                  {{000000}}Tabloids:{{-}} Morgue workers claim zombie apoycalapse is commencing.  City instituting a new drug screening policy.                                            "
       }
     }
   }
@@ -2928,7 +2833,7 @@ triggers {
         }
       }
       args {
-        string_value: "{{000000}}Crime Watch:{{-}} A Break-In at Drake Technologies has local police stumped.   Mr. Drake refuses investigators access to his facilities.                                           "
+        string_value: "                                                  {{000000}}Crime Watch:{{-}} A Break-In at Drake Technologies has local police stumped.   Mr. Drake refuses investigators access to his facilities.                                           "
       }
     }
   }
@@ -3017,7 +2922,7 @@ triggers {
         }
       }
       args {
-        string_value: "{{000000}}Music News:{{-}} Maria Mercurial is hosting a special show at the Grinders Club.  Tickets are sold out.                                           "
+        string_value: "                                                  {{000000}}Music News:{{-}} Maria Mercurial is hosting a special show at the Cage Club.  Tickets are sold out.                                           "
       }
     }
   }
@@ -3489,6 +3394,271 @@ triggers {
   is_oneshot: true
 }
 triggers {
+  name: "HiredRunnerEnter"
+  events {
+    ops {
+      functionName: "On Curtains Up"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51c290d36334613c1a0026aa"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51c290d36334613c1a0026aa"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "51c290d36334613c1a0026aa"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Detain Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DetainMethod"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Detain Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DetainMethod"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Detain Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DetainMethod"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b500c8f616131fc0f0031f5"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: "LeaveMorgue"
   events {
     ops {
@@ -3594,150 +3764,6 @@ triggers {
       }
     }
     ops {
-      functionName: "Teleport Actor near Actor"
-      args {
-        call_value {
-          functionName: "All Actors With Tag"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "HR_Morgue"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-      args {
-        int_value: 3
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Change Actor Team"
-      args {
-        call_value {
-          functionName: "All Actors With Tag"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "HR_Morgue"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "FactionList"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SceneDimension)"
-          args {
-            string_value: "Default"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Change Actor Control"
-      args {
-        call_value {
-          functionName: "All Actors With Tag"
-          args {
-            call_value {
-              functionName: "Get Map Item (SenseTagList)"
-              args {
-                string_value: "HR_Morgue"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "PlayerOrAI"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Open Scene"
       args {
         call_value {
@@ -3758,58 +3784,221 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "HiredRunnerEnter"
+  name: "SpeechBuble.DoThisAlone"
   events {
     ops {
-      functionName: "On Map Start"
+      functionName: "On Region Exit"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "51b415366334614c1c00483e"
+          }
+        }
+      }
     }
   }
   conditions {
-  }
-  actions {
     ops {
-      functionName: "Detain Actor"
+      functionName: "AND"
       args {
         call_value {
-          functionName: "Specific Actor"
+          functionName: "Comparison (Actor)"
           args {
             call_value {
-              functionName: "Get Map Item (Player)"
+              functionName: "Triggering Actor"
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
               args {
                 int_value: 1
               }
             }
           }
           args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DetainMethod"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Detain Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
             call_value {
               functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Count of Alive Actors"
+              args {
+                call_value {
+                  functionName: "All Actors on Team"
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (string)"
+                      args {
+                        string_value: "FactionList"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "AllOrAny"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Map Item (SceneDimension)"
+                      args {
+                        string_value: "Default"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
               args {
                 int_value: 2
               }
             }
           }
           args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Better handle this alone..."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 5
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54afbe663136cc02007b69"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b54a8e1663136cc02007b64"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "DEBUGGER.ForceHiring"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "51ae6ae0633461541e006857"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Open Hiring Screen and Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "Morgue"
+          }
+        }
+      }
+      args {
+        string_value: "Over Ride Current Team, and Hire new runners?"
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "Debugger"
           }
         }
       }
@@ -3817,7 +4006,57 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "DetainMethod"
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b54a8e6663136cc02007b65"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "DEBUG.RestroomCheck"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "Debugger"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
           }
           args {
             int_value: 1
@@ -3825,8 +4064,18 @@ triggers {
         }
       }
     }
+  }
+  actions {
     ops {
-      functionName: "Detain Actor"
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS07_LoneStarBadge"
+          }
+        }
+      }
       args {
         call_value {
           functionName: "Specific Actor"
@@ -3834,7 +4083,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Player)"
               args {
-                int_value: 3
+                int_value: 0
               }
             }
           }
@@ -3846,7 +4095,69 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "DetainMethod"
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS04_Shades"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Grinder"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
           }
           args {
             int_value: 1
@@ -3857,7 +4168,7 @@ triggers {
   }
   isActive: false
   idRef {
-    id: "5b500c8f616131fc0f0031f5"
+    id: "5a46f81b303539c02b006abf"
   }
   elseActions {
   }
@@ -4098,8 +4409,8 @@ regions {
   position {
     x: -47
     y: -16
-    width: 1
-    height: 1
+    width: 2
+    height: 4
   }
   enabledAtStart: true
   is_camera_region: true
@@ -4675,9 +4986,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: -2
+    x: -47
     y: 0
-    z: -6
+    z: -13
   }
   orientation: ORIENTATION_S
   GeneralTags: "HR_Morgue"
@@ -4700,9 +5011,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: -2
+    x: -47
     y: 0
-    z: -5
+    z: -14
   }
   orientation: ORIENTATION_S
   GeneralTags: "HR_Morgue"
@@ -4725,9 +5036,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: -2
+    x: -46
     y: 0
-    z: -4
+    z: -13
   }
   orientation: ORIENTATION_S
   GeneralTags: "HR_Morgue"
@@ -4785,6 +5096,14 @@ variables {
     scope: TsVariableScope_Scene
     name: "iNewsFeed"
     typeName: "int"
+  }
+}
+variables {
+  string_value: "{{FF00FF}}Restroom is for employees only.{{-}}"
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "sDoorInteraction"
+    typeName: "string"
   }
 }
 mapEvents: "BOMBCOUNT"
@@ -4853,15 +5172,13 @@ team_affiliations {
 scene_dimensions {
   dimension_name: "Default"
 }
-character_roster {
-}
-show_hiring_screen_on_scene_load: true
+show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {
   prereq_description: ""
   prereq_conditions {
   }
 }
-hiring_slot_count: 0
+hiring_slot_count: 3
 hiring_minimum_karma: 0
 hiring_maximum_karma: 0
 hire_from_content_pack: "518d7672643431b03f0041aa"
