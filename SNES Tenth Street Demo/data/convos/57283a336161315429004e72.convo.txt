@@ -9,7 +9,7 @@ nodes {
   index: 0
   text: "The dying cries of the AI echo through your head and the machinery starts to shake and smoke.\nYou need to get out, and get out FAST!"
   branches {
-    responseText: "After slaughtering security downstairs the roof is the only choice!"
+    responseText: "After slaughtering security downstairs the roof is the only choice!\n{{GM}}WARNING: BAD END{{/GM}}"
     conditions {
       ops {
         functionName: "AND"
@@ -131,15 +131,15 @@ nodes {
         functionName: "AND"
         args {
           call_value {
-            functionName: "Comparison (bool)"
+            functionName: "Comparison (int)"
             args {
               call_value {
-                functionName: "Get Story Variable (bool)"
+                functionName: "Get Story Variable (int)"
                 args {
                   string_value: "51a9844d633461e82400002a"
                 }
                 args {
-                  string_value: "AN_AKIMI_ALLY"
+                  string_value: "EndCreditKarma"
                 }
               }
             }
@@ -147,23 +147,15 @@ nodes {
               call_value {
                 functionName: "Get Preset Value (int)"
                 args {
-                  string_value: "IsOrIsNot"
+                  string_value: "Comparison Ops"
                 }
                 args {
-                  int_value: 1
+                  int_value: 2
                 }
               }
             }
             args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "bool"
-                }
-                args {
-                  int_value: 1
-                }
-              }
+              int_value: 0
             }
           }
         }
@@ -241,7 +233,7 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Hot air rises! Take the stairs!"
+    responseText: "Hot air rises! Take the stairs!\n{{GM}}This option will be removed. Please let us know if there are no other options visible{{/GM}}"
     conditions {
       ops {
         functionName: "AND"
