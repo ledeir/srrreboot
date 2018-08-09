@@ -565,9 +565,66 @@ nodes {
   index: 12
   text: "Not for sale! You\'d have to take it off my dead body!"
   branches {
-    responseText: ""
+    responseText: "Talk"
     nextNodeIndex: 1
     auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Kill Him{{/GM}}"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "TS07_LoneStarBadge"
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "KillBM"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+    hideIfUnavailable: true
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
