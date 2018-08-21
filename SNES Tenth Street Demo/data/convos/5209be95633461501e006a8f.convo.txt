@@ -165,7 +165,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 12
     hideIfUnavailable: true
   }
   branches {
@@ -208,7 +208,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 12
+    nextNodeIndex: 13
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -255,7 +255,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 13
+    nextNodeIndex: 14
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -805,6 +805,48 @@ nodes {
     }
   }
   branches {
+    responseText: "Dog sent me."
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_MagicShopOpen"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 11
+  }
+  branches {
     responseText: "I\'m all set"
     nextNodeIndex: 1
     auxiliaryLink: true
@@ -863,9 +905,35 @@ nodes {
 }
 nodes {
   idRef {
-    id: "57996ef36161316018005be4"
+    id: "5b7ba5e6616131bc280020fe"
   }
   index: 11
+  text: "[SHOP]"
+  branches {
+    responseText: ""
+    nextNodeIndex: 6
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Open Store Screen From Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "534493d2373630a010005f6f"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "57996ef36161316018005be4"
+  }
+  index: 12
   text: "I\'m sorry! We don\'t sell online!"
   branches {
     responseText: ""
@@ -879,7 +947,7 @@ nodes {
   idRef {
     id: "524435d7373630100f002dbd"
   }
-  index: 12
+  index: 13
   text: "Their leader, he be evil! Do not allow yourself to fall victim to his lies. You best beware. Best you do not contact them in person until you know their intentions. Their number is 826-661."
   branches {
     responseText: ""
@@ -920,7 +988,7 @@ nodes {
   idRef {
     id: "524436a7373630100f002df4"
   }
-  index: 13
+  index: 14
   text: "Creatures of the night fear little\342\200\246 except for a stake of wood\342\200\246"
   branches {
     responseText: ""

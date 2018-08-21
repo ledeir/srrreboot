@@ -1457,7 +1457,44 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Spell Fireball 1"
+              string_value: "Berlin_Spell Powerbolt 1"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Add Item to Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "Berlin_Spell Nerve Bolt 1"
             }
           }
         }
@@ -1557,6 +1594,31 @@ nodes {
           }
         }
       }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_MagicShopOpen"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 1
     auxiliaryLink: true
@@ -1618,7 +1680,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Bound Earth Spirit 2"
+              string_value: "Berlin_Bound Air Spirit 2"
             }
           }
         }
@@ -1655,7 +1717,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Bound Nature Spirit 2"
+              string_value: "Berlin_Bound Water Spirit 2"
             }
           }
         }
@@ -1766,6 +1828,31 @@ nodes {
           }
         }
       }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_MagicShopOpen"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 1
     auxiliaryLink: true
@@ -1790,7 +1877,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Spell Blindness"
+              string_value: "Berlin_Spell Distraction 1"
             }
           }
         }
@@ -1914,7 +2001,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Spell Petrify"
+              string_value: "Berlin_Spell Slow 1"
             }
           }
         }
