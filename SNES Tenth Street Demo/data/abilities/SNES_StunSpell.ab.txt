@@ -1,0 +1,68 @@
+id: "SNES_StunSpell"
+
+uirep {
+	icon: "icon_guard"
+
+	name: "Stagering Shot"
+
+	description: "A psychic blast designed to knock an opponent senseless, and out of cover."
+
+}
+
+prereqStrings: "Item.CORE_SKILL >= 5"
+apCostMod: 0
+
+hpDamageMod: -3
+apDamageMod: 1
+accuracyMod: -5
+damageBucket{
+	successEntries{
+		weight: 0.25
+		value: 2
+	}
+	successEntries{
+		weight: 0.25
+		value: 1.5
+	}
+	successEntries{
+		weight: 0.5
+		value: 1
+	}
+	failureEntries{
+		weight: 0.5
+		value: 1
+	}
+	failureEntries{
+		weight: 0.5
+		value: 0.5
+	}
+}
+
+drainBucket{
+	successEntries{
+		weight: 0.66
+		value: 1
+	}
+	successEntries{
+		weight: 0.34
+		value: 0
+	}
+	failureEntries{
+		weight: 0.66
+		value: 0
+	}
+	failureEntries{
+		weight: 0.34
+		value: -1
+	}
+}
+
+attackRatingMod: 0
+
+flushCover: true
+cooldown: 3
+offensiveAbility: true
+
+toHitFunction: "actorSpellAttackToHit"
+
+damageFunction: "weaponDamage"

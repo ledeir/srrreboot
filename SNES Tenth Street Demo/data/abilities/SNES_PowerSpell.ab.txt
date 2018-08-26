@@ -1,0 +1,68 @@
+id: "SNES_PowerSpell"
+
+uirep {
+	icon: "icon_manapunch"
+
+	name: "Power Shot"
+
+	description: "Power Shot. A more powerful, but less accurate version of the spell. Forces target out of cover."
+
+}
+
+prereqStrings: "Item.CORE_SKILL >= 7"
+apCostMod: 0
+
+hpDamageMod: 6
+apDamageMod: 0
+
+accuracyMod: -10
+damageBucket{
+	successEntries{
+		weight: 0.25
+		value: 2
+	}
+	successEntries{
+		weight: 0.25
+		value: 1.5
+	}
+	successEntries{
+		weight: 0.5
+		value: 1
+	}
+	failureEntries{
+		weight: 0.5
+		value: 1
+	}
+	failureEntries{
+		weight: 0.5
+		value: 0.5
+	}
+}
+
+drainBucket{
+	successEntries{
+		weight: 0.66
+		value: 1
+	}
+	successEntries{
+		weight: 0.34
+		value: 0
+	}
+	failureEntries{
+		weight: 0.66
+		value: 0
+	}
+	failureEntries{
+		weight: 0.34
+		value: -1
+	}
+}
+
+attackRatingMod: 0
+
+cooldown: 3
+offensiveAbility: true
+
+toHitFunction: "actorSpellAttackToHit"
+
+damageFunction: "weaponDamage"

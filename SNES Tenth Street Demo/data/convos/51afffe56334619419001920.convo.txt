@@ -7,12 +7,12 @@ nodes {
     id: "51b000036334619419001926"
   }
   index: 0
-  text: "I have a strange feeling about those eyes"
+  text: "You a strange feeling about those eyes..."
   branches {
     responseText: ""
     nextNodeIndex: 1
   }
-  nodeType: ConversationNodeType_Simple
+  nodeType: ConversationNodeType_GM_Voice
   sourceInSceneRef {
     id: "590ce9c061613110090008aa"
   }
@@ -51,13 +51,337 @@ nodes {
   index: 1
   text: "Tread carefully whelp, you have much to overcome.\nDog controls your destiny. Seek out three items of his favor and then seek his shrine."
   branches {
-    responseText: "Dog?"
+    responseText: ""
     nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "58c89b8f61613118380068f3"
+  }
+}
+nodes {
+  idRef {
+    id: "5b832975663136b8170053e3"
+  }
+  index: 2
+  text: "{{GM}}He drops an amulet at your feet, you can almost feel the tingles of power contained within it.{{/GM}}"
+  branches {
+    responseText: "{{CC}}Conjuring{{/CC}} Examine the amulet"
+    conditions {
+      ops {
+        functionName: "Compare Actor Skill"
+        args {
+          call_value {
+            functionName: "Get Map Item (Player)"
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "BaseOrCurrent"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "ActorSkills"
+            }
+            args {
+              int_value: 7
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "{{CC}}Spellcasting{{/CC}} Examine the amulet"
+    conditions {
+      ops {
+        functionName: "Compare Actor Skill"
+        args {
+          call_value {
+            functionName: "Get Map Item (Player)"
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "BaseOrCurrent"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "ActorSkills"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    nextNodeIndex: 7
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Examine the amulet"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Compare Actor Skill"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorSkills"
+                }
+                args {
+                  int_value: 7
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Compare Actor Skill"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorSkills"
+                }
+                args {
+                  int_value: 3
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    comment: "No Magic"
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "58c89b8f61613118380068f3"
+  }
+}
+nodes {
+  idRef {
+    id: "5b832a29663136b8170053ec"
+  }
+  index: 3
+  text: "The amulet contains knowledge of a powerful shaman attack spell."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_GM_Voice
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "SNES_ToxicBolt_1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b832a7b663136b8170053ef"
+  }
+  index: 4
+  text: "Dog seems pleased at your acceptance of it\'s gift."
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "58c89b8f61613118380068f3"
+  }
+}
+nodes {
+  idRef {
+    id: "5b832b8a663136b81700540d"
+  }
+  index: 5
+  text: ""
+  branches {
+    responseText: "Dog?"
+    nextNodeIndex: 6
   }
   branches {
     responseText: "Shrine?"
-    nextNodeIndex: 3
+    nextNodeIndex: 6
+    auxiliaryLink: true
   }
+  branches {
+    responseText: "Gift?"
+    nextNodeIndex: 6
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "Dog Respond"
+}
+nodes {
+  idRef {
+    id: "5b832aa7663136b8170053f4"
+  }
+  index: 6
+  text: "Woof!"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "58c89b8f61613118380068f3"
@@ -65,21 +389,79 @@ nodes {
 }
 nodes {
   idRef {
-    id: "51b0005a633461941900192a"
+    id: "5b832ace663136b8170053f9"
   }
-  index: 2
-  text: "Woof"
-  nodeType: ConversationNodeType_Simple
-  sourceInSceneRef {
-    id: "58c89b8f61613118380068f3"
+  index: 7
+  text: "The amulet contains knowledge of a powerful mage attack spell."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_GM_Voice
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "SNES_PowerBolt_1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
   }
 }
 nodes {
   idRef {
-    id: "51b0005c633461941900192c"
+    id: "5b832b6a663136b817005404"
   }
-  index: 3
-  text: "Woof"
+  index: 8
+  text: "You feel the tingles running up your arm, seeking something...  Then they fade out."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
+    id: "5b832be6663136b817005418"
+  }
+  index: 9
+  text: "{{GM}}Dog wimpers some and his stance changes.  It\'s almost as if he finds you... lacking.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+    auxiliaryLink: true
+  }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "58c89b8f61613118380068f3"

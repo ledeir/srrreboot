@@ -1,0 +1,70 @@
+id: "SNES_AimSpell"
+
+uirep {
+
+  icon: "icon_deckertargeting"
+
+  name: "Aimed Fire"
+
+  description: "Take your time... Accuracy matters... (Increases accuracy by 15%.)"
+
+}
+
+prereqStrings: "Item.CORE_SKILL >= 3"
+apCostMod: 0
+
+hpDamageMod: 0
+
+apDamageMod: 0
+
+accuracyMod: 15
+damageBucket{
+	successEntries{
+		weight: 0.25
+		value: 2
+	}
+	successEntries{
+		weight: 0.25
+		value: 1.5
+	}
+	successEntries{
+		weight: 0.5
+		value: 1
+	}
+	failureEntries{
+		weight: 0.5
+		value: 1
+	}
+	failureEntries{
+		weight: 0.5
+		value: 0.5
+	}
+}
+
+drainBucket{
+	successEntries{
+		weight: 0.66
+		value: 1
+	}
+	successEntries{
+		weight: 0.34
+		value: 0
+	}
+	failureEntries{
+		weight: 0.66
+		value: 0
+	}
+	failureEntries{
+		weight: 0.34
+		value: -1
+	}
+}
+
+attackRatingMod: 0
+
+cooldown: 1
+offensiveAbility: true
+
+toHitFunction: "actorSpellAttackToHit"
+
+damageFunction: "weaponDamage"
