@@ -1,20 +1,20 @@
-id: "SNES_StunSpell"
+id: "SNES_SpiritPower"
 
 uirep {
-	icon: "icon_guard"
+	icon: "icon_acidburst"
 
-	name: "Stagering Shot"
+	name: "Forceful Shot"
 
-	description: "A psychic blast designed to knock an opponent senseless, and out of cover."
+	description: "A focused less accurate version of the spell."
 
 }
 
-prereqStrings: "Item.CORE_SKILL >= 5"
+prereqStrings: "Item.CORE_SKILL >= 7"
 apCostMod: 0
 
-hpDamageMod: -30
+hpDamageMod: 8
 apDamageMod: 1
-accuracyMod: -7
+accuracyMod: -20
 damageBucket{
 	successEntries{
 		weight: 0.25
@@ -59,7 +59,6 @@ drainBucket{
 
 attackRatingMod: 0
 
-flushCover: true
 cooldown: 3
 offensiveAbility: true
 

@@ -1,20 +1,22 @@
-id: "SNES_StunSpell"
+id: "SNES_SpiritAim"
 
 uirep {
-	icon: "icon_guard"
 
-	name: "Stagering Shot"
+  icon: "icon_deadeye"
+  name: "Aimed Bolt"
 
-	description: "A psychic blast designed to knock an opponent senseless, and out of cover."
+  description: "Hold it steady... (Increases accuracy by 15%.)"
 
 }
 
-prereqStrings: "Item.CORE_SKILL >= 5"
+prereqStrings: "Item.CORE_SKILL >= 3"
 apCostMod: 0
 
-hpDamageMod: -30
-apDamageMod: 1
-accuracyMod: -7
+hpDamageMod: 0
+
+apDamageMod: 0
+
+accuracyMod: 15
 damageBucket{
 	successEntries{
 		weight: 0.25
@@ -59,8 +61,7 @@ drainBucket{
 
 attackRatingMod: 0
 
-flushCover: true
-cooldown: 3
+cooldown: 1
 offensiveAbility: true
 
 toHitFunction: "actorSpellAttackToHit"

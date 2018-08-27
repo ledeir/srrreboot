@@ -1,20 +1,21 @@
-id: "SNES_StunSpell"
+id: "SNES_Spiritbolt"
 
 uirep {
-	icon: "icon_guard"
-
-	name: "Stagering Shot"
-
-	description: "A psychic blast designed to knock an opponent senseless, and out of cover."
+  icon: "icon_acidbolt"
+  name: "Cast Spirit Bolt"
+  description: "The basic form of dog's attack spell"
 
 }
 
-prereqStrings: "Item.CORE_SKILL >= 5"
+prereqStrings: "Item.CORE_SKILL >= 1"
 apCostMod: 0
 
-hpDamageMod: -30
-apDamageMod: 1
-accuracyMod: -7
+hpDamageMod: 0
+
+apDamageMod: 0
+
+accuracyMod: 0
+
 damageBucket{
 	successEntries{
 		weight: 0.25
@@ -56,11 +57,8 @@ drainBucket{
 		value: -1
 	}
 }
-
 attackRatingMod: 0
 
-flushCover: true
-cooldown: 3
 offensiveAbility: true
 
 toHitFunction: "actorSpellAttackToHit"
