@@ -3184,6 +3184,17 @@ triggers {
         call_value {
           functionName: "Get Map Item (Event)"
           args {
+            string_value: "ClearCheck"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
             string_value: "HIRELING_CHECK"
           }
         }
@@ -6497,7 +6508,7 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "RemoveSuspectLevel"
+  name: "RemoveSuspectLevel.BROKEN"
   events {
   }
   conditions {
@@ -35538,6 +35549,2109 @@ triggers {
   }
   is_oneshot: false
 }
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b85b5eb616131f02e003dad"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "PRESISTENCE LOGIC"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b85b5eb616131f02e003dae"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "----------------------------"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b85b5eb616131f02e003daf"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spawn1"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake1Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "fl1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b5f4616131f02e003db0"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spawn2"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake2Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "fl2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b5f4616131f02e003db0"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b66e616131f02e003db1"
+  }
+  elseActions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b5f4616131f02e003db0"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spawn3"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake3Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "fl3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b66e616131f02e003db1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b679616131f02e003db2"
+  }
+  elseActions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b66e616131f02e003db1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spawn4"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake4Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "fl4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b679616131f02e003db2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b679616131f02e003db3"
+  }
+  elseActions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b679616131f02e003db2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spawn5"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake5Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "fl5"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b679616131f02e003db3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b688616131f02e003db4"
+  }
+  elseActions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b679616131f02e003db3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spawn6"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake6Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "fl6"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b688616131f02e003db4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b688616131f02e003db5"
+  }
+  elseActions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b688616131f02e003db4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "SpawnRoof"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DrakeRoofClear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "ROOFCOMBAT"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b688616131f02e003db5"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b688616131f02e003db6"
+  }
+  elseActions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b688616131f02e003db5"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "MapLoad-Spawn"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b85b688616131f02e003db6"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85b875616131f02e003db7"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Clear1"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "currentFloor"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake1Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85de5f616131f02e003dc5"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Clear2"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "currentFloor"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "iDisguise_Current"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake2Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85deef616131f02e003dc6"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Clear3"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "currentFloor"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "iDisguise_Current"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake3Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85df99616131f02e003dc7"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Clear4"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "currentFloor"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "iDisguise_Current"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake4Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 4
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85df9d616131f02e003dc8"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Clear5"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "currentFloor"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "iDisguise_Current"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake5Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 5
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85df9d616131f02e003dc9"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Clear6"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "currentFloor"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 6
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "iDisguise_Current"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "Drake6Clear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 6
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85dfab616131f02e003dca"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "ClearRoof"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "ClearCheck"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "currentFloor"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 7
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "iDisguise_Current"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DrakeRoofClear"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorClear"
+          }
+        }
+      }
+      args {
+        int_value: 7
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b85dfab616131f02e003dcb"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "DEBUG-PERSISTANCE"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "DEBUG_PERSIST"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Steelflight"
+          }
+        }
+      }
+      args {
+        int_value: 10
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Kitsune"
+          }
+        }
+      }
+      args {
+        int_value: 10
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_Fights_Frogtongue"
+          }
+        }
+      }
+      args {
+        int_value: 10
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "SR_TeamSize"
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "SPAWN_TEAM"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b860f29616131f02e003dcc"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
   name: "fl1_Cam"
   position {
@@ -37289,6 +39403,7 @@ characters {
   orientation: ORIENTATION_W
   GeneralTags: "XP6"
   GeneralTags: "roof"
+  GeneralTags: "ROOFCOMBAT"
   displayName: "roof_turret1"
   idRef {
     id: "53400703373630b41000431f"
@@ -37321,7 +39436,8 @@ characters {
     char_name: "Auto Turret"
     GeneralTags: "XP6"
     GeneralTags: "roof"
-    enabled_at_start: true
+    GeneralTags: "ROOFCOMBAT"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37339,6 +39455,7 @@ characters {
   orientation: ORIENTATION_E
   GeneralTags: "XP6"
   GeneralTags: "roof"
+  GeneralTags: "ROOFCOMBAT"
   displayName: "roof_turret2"
   idRef {
     id: "53400703373630b41000435a"
@@ -37371,7 +39488,8 @@ characters {
     char_name: "Auto Turret"
     GeneralTags: "XP6"
     GeneralTags: "roof"
-    enabled_at_start: true
+    GeneralTags: "ROOFCOMBAT"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37441,6 +39559,7 @@ characters {
     }
     portrait_code_override: "s4h1"
     karma: 6
+    is_prop_character: true
   }
 }
 characters {
@@ -37529,7 +39648,7 @@ characters {
     GeneralTags: "XP4-7"
     GeneralTags: "N70_100"
     GeneralTags: "fl6"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37629,7 +39748,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl3"
     patrolRoute: "F3_Sam2"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37743,7 +39862,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl3"
     patrolRoute: "F3_Mage1"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37796,7 +39915,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl3"
     patrolRoute: "F3_Sam4"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37818,6 +39937,7 @@ characters {
   GeneralTags: "XP6"
   GeneralTags: "N70_100"
   GeneralTags: "isNoticedParty"
+  GeneralTags: "fl1"
   displayName: "fl1_mage"
   idRef {
     id: "5346975e373630fc0f000310"
@@ -37899,7 +40019,8 @@ characters {
     GeneralTags: "XP6"
     GeneralTags: "N70_100"
     GeneralTags: "isNoticedParty"
-    enabled_at_start: true
+    GeneralTags: "fl1"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -37998,7 +40119,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl3"
     GeneralTags: "isNoticedParty"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38054,7 +40175,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl2"
     GeneralTags: "isNoticedParty"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38151,7 +40272,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl2"
     patrolRoute: "F2_Sam2"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38208,7 +40329,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl2"
     patrolRoute: "None"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38305,7 +40426,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl2"
     patrolRoute: "F2_Sam4"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38402,7 +40523,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl4"
     patrolRoute: "F4_Sam1"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38457,7 +40578,7 @@ characters {
     GeneralTags: "XP3-5"
     GeneralTags: "N70_100"
     GeneralTags: "fl6"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38510,7 +40631,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl6"
     patrolRoute: "F6_Sam1"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38606,7 +40727,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl6"
     patrolRoute: "F6_Sam2"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38706,7 +40827,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl4"
     patrolRoute: "F4_Sam3"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38802,7 +40923,7 @@ characters {
     GeneralTags: "XP4-7"
     GeneralTags: "N70_100"
     GeneralTags: "fl4"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38857,7 +40978,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl4"
     patrolRoute: "F4_Sam2"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -38954,7 +41075,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl5"
     patrolRoute: "F5_Sam2"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -39051,7 +41172,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl5"
     patrolRoute: "F5_Sam3"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -39148,7 +41269,7 @@ characters {
     GeneralTags: "N70_100"
     GeneralTags: "fl5"
     patrolRoute: "F5_Sam1"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -39243,7 +41364,7 @@ characters {
     GeneralTags: "XP4-7"
     GeneralTags: "N70_100"
     GeneralTags: "fl5"
-    enabled_at_start: true
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -39263,6 +41384,8 @@ characters {
   GeneralTags: "XP4-7"
   GeneralTags: "N70_100"
   GeneralTags: "roof"
+  GeneralTags: "ROOFCOMBAT"
+  displayName: "roof-grenadier"
   idRef {
     id: "53469bd6373630fc0f000322"
   }
@@ -39293,7 +41416,8 @@ characters {
     GeneralTags: "XP4-7"
     GeneralTags: "N70_100"
     GeneralTags: "roof"
-    enabled_at_start: true
+    GeneralTags: "ROOFCOMBAT"
+    enabled_at_start: false
     pc_spawn_number: -1
     portrait {
       filename: ""
@@ -40428,7 +42552,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "DBTALK"
-  displayName: "upper_FoyerMage"
+  displayName: "CHAT-DB-Mage"
   idRef {
     id: "5b286b2f61613144020013fd"
   }
@@ -40516,7 +42640,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "WasteBarKeep"
-  displayName: "WASTE_BARKEEP"
+  displayName: "CHAT-Waste-Bar"
   idRef {
     id: "5b286b2f61613144020013fe"
   }
@@ -40563,7 +42687,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "M_SEC"
-  displayName: "DocMSecretary"
+  displayName: "CHAT-DRM_Sec"
   idRef {
     id: "5b286b2f6161314402001401"
   }
@@ -40618,7 +42742,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "SASSIE"
-  displayName: "JA-Sassie"
+  displayName: "CHAT-Sassie"
   idRef {
     id: "5b286b2f6161314402001404"
   }
@@ -40673,7 +42797,7 @@ characters {
   }
   orientation: ORIENTATION_S
   GeneralTags: "GLUT_SEC"
-  displayName: "JA-Secretary"
+  displayName: "CHAT-Glutman_Sec"
   idRef {
     id: "5b286b2f6161314402001405"
   }
@@ -40723,6 +42847,7 @@ characters {
   }
   orientation: ORIENTATION_E
   GeneralTags: "TALIS"
+  displayName: "CHAT-Talismonger"
   idRef {
     id: "5b286b2f6161314402001408"
   }
@@ -41040,6 +43165,14 @@ variables {
     typeName: "bool"
   }
 }
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "DEBUG_PERSIST"
+    typeName: "bool"
+  }
+}
 mapEvents: "ProcessHack1"
 mapEvents: "PasswordCheck"
 mapEvents: "HamfistHack"
@@ -41091,6 +43224,7 @@ mapEvents: "eFLOOR2_Hostile"
 mapEvents: "eComment"
 mapEvents: "ENDWAIT"
 mapEvents: "CHK_SPAWN"
+mapEvents: "ClearCheck"
 senseTags: "IC"
 senseTags: "Splatter"
 senseTags: "Akimi"
