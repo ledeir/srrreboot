@@ -1,0 +1,493 @@
+idRef {
+  id: "5b95c2f7663136a808002efc"
+}
+ui_name: "OT_CY_ESCAPE_QueensDoor"
+nodes {
+  idRef {
+    id: "5b95c938663136a808002f06"
+  }
+  index: 0
+  text: "{{GM}}An oddly intense set of eyes peer out of a slot which looks to have been torn, rather than cut, through the steel door.{{/GM}}\n\nWho are you?   \n\nWhy are you ponding on my door?!?"
+  branches {
+    responseText: "I\'m $(s.name).  A guy named El Jefe told me to seek you out for advice finding car parts."
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "I\'m $(s.name).  Nice to meet you.   I\'d shake your hand, but I doubt it\'d fit through that slot."
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95c277663136a808002efb"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95cd97663136a808002fef"
+  }
+  index: 1
+  text: "El Jefe?   Don\'t know \'em, don\'t care to.  \n\nIf you ain\'t the Corp-scouts,  leave  an  old  lady  in  peace...\n\nAll  this  violence  on  my  doorstep  makes  me  weary."
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95c277663136a808002efb"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95cef7663136a808002ffb"
+  }
+  index: 2
+  text: ""
+  branches {
+    responseText: "CorpScout?"
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "Sorry to have bothered you, Ma\'am."
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "CorpScouts"
+}
+nodes {
+  idRef {
+    id: "5b95cf11663136a808003006"
+  }
+  index: 3
+  text: "The greatest bakery treats in the entire history of everything.   I don\'t see any cookies, so go bother someone else!"
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bKnowsAboutCorpScoutCookies"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95ceed663136a808002ff5"
+  }
+  index: 4
+  text: "Good riddance."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95ce9d663136a808002ff1"
+  }
+  index: 5
+  text: "{{GM}}She cackles an odd sounding laughter.{{/GM}}\n\nNo it wouldn\'t.  That\'s kinda the point.\n\nLook, if you ain\'t my CorpScout rep, I ain\'t interested."
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95cf89663136a808003008"
+  }
+  index: 6
+  text: "You again?  Really?"
+  branches {
+    responseText: "{{CC}}Hold up the box of cookies. {{/CC}}I brought you some cookies!"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "OT_CY_CorpScoutCookies"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 7
+  }
+  branches {
+    responseText: "Where can I find some cookies?"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Evaluate If Actor Has Item"
+            args {
+              call_value {
+                functionName: "Specific Actor"
+                args {
+                  call_value {
+                    functionName: "Get Map Item (Player)"
+                    args {
+                      int_value: 0
+                    }
+                  }
+                }
+                args {
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "HasOrHasNot"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Item)"
+                args {
+                  string_value: "OT_CY_CorpScoutCookies"
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Compare Actor Gender"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Gender"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Where can I find some cookies?"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Evaluate If Actor Has Item"
+            args {
+              call_value {
+                functionName: "Specific Actor"
+                args {
+                  call_value {
+                    functionName: "Get Map Item (Player)"
+                    args {
+                      int_value: 0
+                    }
+                  }
+                }
+                args {
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "HasOrHasNot"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Item)"
+                args {
+                  string_value: "OT_CY_CorpScoutCookies"
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Compare Actor Gender"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Gender"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 9
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Sorry, my mistake."
+    nextNodeIndex: 10
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95c277663136a808002efb"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95cfba663136a80800300c"
+  }
+  index: 7
+  text: "Wee-el come on in Dearie.   I\'ll fix you up a nice cup of earl-grey tea!"
+  branches {
+    responseText: "Thanks!"
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "eEnterShack"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95c277663136a808002efb"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95cfe8663136a80800300e"
+  }
+  index: 8
+  text: "If I knew that Sonny, I\'d already have them."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d0ff663136a808003011"
+  }
+  index: 9
+  text: "If I knew that my dear, I\'d have them already!"
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d158663136a808003014"
+  }
+  index: 10
+  text: "Good riddance."
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 0
+  comment: "Initial"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  nextNodeIndex: 6
+  comment: "Return"
+}

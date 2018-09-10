@@ -1,0 +1,669 @@
+idRef {
+  id: "5b95dcdc663136a808004559"
+}
+ui_name: "OT_CY_ESCAPE_GrannieLauren"
+nodes {
+  idRef {
+    id: "5b95dd15663136a808004564"
+  }
+  index: 0
+  text: "{{GM}}She takes the box of cookies.{{/GM}}\n\n\"Pleased to meet you dearie...  here\'s some nuyen for your troubles.\n\nOh how handsome you are!  Would you like some nice fresh tea?"
+  branches {
+    responseText: "Really, I couldn\'t take your money.  I\'ll take a tea though."
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "Thanks.  And sure, I\'d love some tea."
+    nextNodeIndex: 17
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  actions {
+    ops {
+      functionName: "Remove Item from Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "OT_CY_CorpScoutCookies"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95dde8663136a80800456e"
+  }
+  index: 1
+  text: "Nonsense!   You\'ve earned it!\n\n{{GM}}She digs around in her oversized hand bag, and hands you a couple of nuyen.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  actions {
+    ops {
+      functionName: "Add Nuyen"
+      args {
+        int_value: 2
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95de5b663136a808004573"
+  }
+  index: 2
+  text: "{{GM}}She hands you a tea cup, balanced on a fine china saucer and then takes one for herself, sipping it slowly.{{/GM}}\n\nHow do you like your tea?"
+  branches {
+    responseText: "{{CC}}Drink Tea{{/CC}} Delicious.  Thank you."
+    actions {
+      ops {
+        functionName: "Heal Actor"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          int_value: 30
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HPOrAP"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 3
+  }
+  branches {
+    responseText: "{{CC}}Pretend to drink.{{/CC}} It\'s a great blend, thanks!"
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Actually, I prefer soycaf myself."
+    nextNodeIndex: 16
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95df09663136a808004579"
+  }
+  index: 3
+  text: "Oh it\'s so nice to have some civilized company in this place.\n\n{{GM}}Her expression is unbridled joy, just beaming from her eyes{{/GM}}\n\nThe finer things are wasted on the locals."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95df8f663136a808004580"
+  }
+  index: 4
+  text: "{{GM}}She opens the box of cookies, and very carefully places on on an ornate china plate.  She takes a couple of sniffs, and then a delicate bite... blissfully munching away lost in her memories.{{/GM}}\n\nOh, I\'m sorry darling!\n\n{{GM}}Looking embarassed, she pulls a second cookie from the pack, places it on a identical plate, and offers it to you.{{/GM}}\n\nYou really must try these!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e050663136a808004587"
+  }
+  index: 5
+  text: "Seeing no alternative, you quickly eat the cookie.\n\nThe cookie tastes plain, but there is something about it that makes your mouth water.  Food-wise, it just doesn\'t make sense."
+  branches {
+    responseText: ""
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_GM_Voice
+  sourceInSceneRef {
+    id: "51ee071d63346190050019b8"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e08d663136a80800458a"
+  }
+  index: 6
+  text: "{{GM}}Seeing your reaction, she nods and winks.{{/GM}}\n\nThere\'s something there that can\'t be, but it is! \n\nIn all my days baking the finest connfections and quality wares, this remains a mystery!\n\nWell now honey, I could regale you with my tall-tales from my time as a CorpScout leader, but you\'re clearly not the right age, nor are you dressed appropriately to be on an approved cookie drive."
+  branches {
+    responseText: ""
+    nextNodeIndex: 7
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e102663136a80800458d"
+  }
+  index: 7
+  text: "This neighborhood really isn\'t a target demographic... so you must be here for something else.\n\n{{GM}}She places the box on a small table next to her chair, and turns back to you looking expectantly.{{/GM}}"
+  branches {
+    responseText: "Grannie, you got me.  I\'m looking for a bit of help.   A rigger might be able to help me escape from the caryards, if I can help him fix a van.   He said you might know where I can find the missing pieces."
+    nextNodeIndex: 8
+  }
+  branches {
+    responseText: "I heard you were a fantastic host, and a better cook.   So what is it exactly that you cook?"
+    nextNodeIndex: 13
+  }
+  branches {
+    responseText: "I\'m not interested in trading favors.  I just need some car parts."
+    nextNodeIndex: 14
+  }
+  branches {
+    responseText: "Don\'t make me beat it out of you, Grannie."
+    nextNodeIndex: 14
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e1f2663136a808004593"
+  }
+  index: 8
+  text: "Oh dearie, so sweet!\n\nIt just so happens that I do have somthing that would match that favor for favor.   My big kitchen downstairs has been on the fritz since those pesky critters moved in.  Help me with the critters, and I\'m sure you can find the pieces you need down there.\n\nIf you get my kitchen up and running, I can start baking again.  I can even offer to let you get some goods!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e307663136a808004598"
+  }
+  index: 9
+  text: "The deal I propose is this...\n\nYou help me get my kitchen back up and running, and find a way to keep them pesky critters at bay... and I\'ll give you two things.   \n\nFirst, help in finding the parts you need, and second...\n\n{{GM}}She smiles sweetly.{{/GM}}\n\nI\'ll reopen my bakery for you.\n"
+  branches {
+    responseText: "Sure Grannie.  I\'ll help you out."
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_Grannie_Flow"
+            }
+          }
+        }
+        args {
+          int_value: 4
+        }
+      }
+    }
+    nextNodeIndex: 10
+  }
+  branches {
+    responseText: "Sorry Grannie.   I don\'t have time right now to help."
+    nextNodeIndex: 12
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e3f6663136a8080045a1"
+  }
+  index: 10
+  text: "Excellent!  The entrance is right over there.\n\nNow what parts did you need?   I can have my people start looking for them in the mean time."
+  branches {
+    responseText: "A charged battery, and a starter."
+    nextNodeIndex: 11
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e43b663136a8080045a5"
+  }
+  index: 11
+  text: "Actually, if that all... You can probably find them downstairs.   My boys have be taking parts to keep my kitchen running for years.  I\'m sure what you need is already down there."
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e3d4663136a80800459f"
+  }
+  index: 12
+  text: "A shame.\n\nWell, let me know if you change your mind, Dearie!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e276663136a808004595"
+  }
+  index: 13
+  text: "Oh dearie me... you and your manners!  I make high grads of all the nice things people want... \n\n{{GM}}She dances around with a little twirl flourish for a second, looking much, much younger.{{/GM}}\n\n...I haven\'t been able to cook for some time.   I need to get some work done in my kitchen downstairs, but those pesky critters keep chasing off all my workers!\n\nMy passion for cooking is my weakness, what can I say..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e6d5663136a808004629"
+  }
+  index: 14
+  text: "Only thing I hate more than my neighbors, is bad manners.\n\n{{GM}}Her hands start glowing with power so strongly that it shifts out of the astral realm and into the physical.  Even from this distance, you can feel the heat and power coursing through her body.{{/GM}}\n\nGet out of my house..."
+  branches {
+    responseText: "I\'m sorry, I meant no disrespect..."
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bGrannieKickedYouOut"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 15
+  }
+  branches {
+    responseText: "{{CC}}Exit{{/CC}} Crazy old coot."
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "eExitShack"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+    ops {
+      functionName: "Play Animation From Manifest"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5b95d935663136a808003985"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Animation)"
+          args {
+            string_value: "Seattle:General/standing_aiming_magic"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play FX on Actor"
+      args {
+        string_value: "Berlin:BloodMagicCircle"
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b95d935663136a808003985"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e813663136a808004632"
+  }
+  index: 15
+  text: "OOOOOUUUUUUUUTTTTTTTTT!!!!!!\n\n{{GM}}Her power, like her anger, flash bright red, illuminating the entire shack.{{/GM}}"
+  branches {
+    responseText: "{{CC}}Leave... Quickly!{{/CC}}"
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "eExitShack"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  actions {
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b95e953663136a80800469e"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Current Location of Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5b95d935663136a808003985"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95df46663136a80800457d"
+  }
+  index: 16
+  text: "{{GM}}Her face shows a hint of annoyance, but her tone remains pleasant.{{/GM}}\n\nReally?   Well, ou know what they say Honey... \"The greatest wealth is to live content with little\"."
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95de35663136a808004570"
+  }
+  index: 17
+  text: "{{GM}}She digs around in her oversized hand bag, and hands you a couple of nuyen.{{/GM}}\n\nYou certainly earned it for cheering up a old lady."
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  actions {
+    ops {
+      functionName: "Add Nuyen"
+      args {
+        int_value: 2
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95e61c663136a8080045c9"
+  }
+  index: 18
+  text: "Why hi there, Dearie!\n\nCome to keep an old lady company?"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+roots {
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "OT_CY_CorpScoutCookies"
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 0
+  comment: "Corpscout Cookies"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "OT_CY_CorpScoutCookies"
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 18
+  comment: "No Cookies"
+}

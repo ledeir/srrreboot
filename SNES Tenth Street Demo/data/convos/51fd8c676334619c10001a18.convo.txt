@@ -185,8 +185,524 @@ nodes {
     }
   }
   branches {
-    responseText: "Heal"
+    responseText: "Corp Scout Cookies"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bKnowsAboutCorpScoutCookies"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "OT_CY_CorpScoutCookies"
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_Grannie_Flow"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 4
+            }
+          }
+        }
+        args {
+          int_value: 2
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CY_Exit"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bCookiesOrdered"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 6
+    hideIfUnavailable: true
+    comment: "Pre-Order"
+  }
+  branches {
+    responseText: "Corp Scout Cookies"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bCookiesOrdered"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_Grannie_Flow"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 4
+            }
+          }
+        }
+        args {
+          int_value: 2
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CY_Exit"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "OT_CY_CorpScoutCookies"
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bHasSlept"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 11
+    hideIfUnavailable: true
+    comment: "Ordered - No Sleep"
+  }
+  branches {
+    responseText: "Corp Scout Cookies"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bCookiesOrdered"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_Grannie_Flow"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 4
+            }
+          }
+        }
+        args {
+          int_value: 2
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CY_Exit"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "OT_CY_CorpScoutCookies"
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bHasSlept"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 12
+    hideIfUnavailable: true
+    comment: "Ordered - Sleep"
+  }
+  branches {
+    responseText: "Heal"
+    nextNodeIndex: 13
   }
   branches {
     responseText: "Weapons"
@@ -229,7 +745,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 10
+    nextNodeIndex: 17
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -312,7 +828,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 13
+    nextNodeIndex: 20
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -359,7 +875,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 14
+    nextNodeIndex: 21
     hideIfUnavailable: true
   }
   branches {
@@ -492,9 +1008,174 @@ nodes {
 }
 nodes {
   idRef {
-    id: "51fd8d876334619c10001a30"
+    id: "5b95d31f663136a808003096"
   }
   index: 6
+  text: "Met our resident Grannie, did you?   Dunno why but she\'s got a big ol\' hankering for them.\n\nI can get some, but they ain\'t cheap.  They\'re hard to find these days.  \n\nLets call it 1,000\302\245.  Deal?"
+  branches {
+    responseText: "Yes."
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 1000
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Remove Nuyen"
+        args {
+          int_value: 1000
+        }
+      }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bCookiesOrdered"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 7
+  }
+  branches {
+    responseText: "No deal."
+    nextNodeIndex: 10
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d456663136a80800309c"
+  }
+  index: 7
+  text: "Done.\n\nCome back tomorrow, and I\'ll have them for you."
+  branches {
+    responseText: "Why tomorrow?"
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b95d486663136a80800309f"
+    }
+  }
+  branches {
+    responseText: "Thanks."
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d489663136a8080030a1"
+  }
+  index: 8
+  text: "\'Cause I ain\'t got \'em stuffed down the front of my pants, $(l.man)!\n\nTakes a minutes to get \'em.  \n\nGo take a nap or something..."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d4be663136a8080030a3"
+  }
+  index: 9
+  text: "Sure. \n\nSee you tomorrow."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d37a663136a80800309a"
+  }
+  index: 10
+  text: "Suit yourself.  \n\nNot like you\'re gonna find these tucked away in some old busted car.  Lemme know when you wise up."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d553663136a8080030a7"
+  }
+  index: 11
+  text: "Relax, $(l.man)!\n\nTake a chill pill and a nap.  They\'ll be here tomorrow!"
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95d553663136a8080030a7"
+  }
+  index: 12
+  text: "Told ya, $(l.man).\n\nHere you go.   Enjoy."
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "OT_CY_CorpScoutCookies"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "51fd8d876334619c10001a30"
+  }
+  index: 13
   text: "Hey, you want some patches? I know where I can get some. 100 nuyen each though."
   branches {
     responseText: "{{GM}}100\302\245{{/GM}} Yes"
@@ -542,7 +1223,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 7
+    nextNodeIndex: 14
     hideIfUnavailable: true
   }
   branches {
@@ -591,12 +1272,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 8
+    nextNodeIndex: 15
     hideIfUnavailable: true
   }
   branches {
     responseText: "No"
-    nextNodeIndex: 9
+    nextNodeIndex: 16
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -604,7 +1285,7 @@ nodes {
   idRef {
     id: "51fd8dfb6334619c10001a34"
   }
-  index: 7
+  index: 14
   text: "Here ya go, $(l.guy)! They\'re great in an emergency."
   branches {
     responseText: "Talk"
@@ -676,7 +1357,7 @@ nodes {
   idRef {
     id: "51fd8dfd6334619c10001a36"
   }
-  index: 8
+  index: 15
   text: "You\'ve already got enough! We need some here in the yards."
   branches {
     responseText: "Talk"
@@ -689,7 +1370,7 @@ nodes {
   idRef {
     id: "51fd8e216334619c10001a39"
   }
-  index: 9
+  index: 16
   text: "Well if ya ever need \'em..."
   branches {
     responseText: "Talk"
@@ -702,7 +1383,7 @@ nodes {
   idRef {
     id: "54c734c53639359c0d0079c1"
   }
-  index: 10
+  index: 17
   text: "Even here you won\'t last long without a weapon! For 100 nuyen I can help you out!"
   branches {
     responseText: "{{GM}}100\302\245{{/GM}} Buy Rebar"
@@ -725,12 +1406,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   branches {
     responseText: "No thanks."
-    nextNodeIndex: 12
+    nextNodeIndex: 19
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -738,7 +1419,7 @@ nodes {
   idRef {
     id: "54c735463639359c0d0079f4"
   }
-  index: 11
+  index: 18
   text: "Try not to lose this one!"
   branches {
     responseText: "Talk"
@@ -796,7 +1477,7 @@ nodes {
   idRef {
     id: "54c735ac3639359c0d0079f9"
   }
-  index: 12
+  index: 19
   text: "Come back to me when you need patches! "
   branches {
     responseText: "Talk"
@@ -809,7 +1490,7 @@ nodes {
   idRef {
     id: "528064246334614c20000c4b"
   }
-  index: 13
+  index: 20
   text: "Rummaging through the car yards is a gold mine. I scavenged this and can find more!"
   branches {
     responseText: "Talk"
@@ -886,7 +1567,7 @@ nodes {
   idRef {
     id: "528065576334614c20000c4e"
   }
-  index: 14
+  index: 21
   text: "Sometimes I find stuff that still works or can repair things. Wanna see what I got?"
   branches {
     responseText: "Yes {{GM}}open shop{{/GM}}"
@@ -903,7 +1584,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 22
   }
   branches {
     responseText: "No, I\'m not interested in a Caryard brat\'s toys!"
@@ -915,7 +1596,7 @@ nodes {
   idRef {
     id: "53447c6b373630f408004a1f"
   }
-  index: 15
+  index: 22
   text: "Come back another time, maybe I can scavenge something else...\n{{GM}}He won\'t, at the moment.{{/GM}}"
   branches {
     responseText: ""

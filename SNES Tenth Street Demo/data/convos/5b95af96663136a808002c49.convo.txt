@@ -1,0 +1,646 @@
+idRef {
+  id: "5b95af96663136a808002c49"
+}
+ui_name: "OT_CY_ESCAPE_Rigger"
+nodes {
+  idRef {
+    id: "5b95afa4663136a808002c4f"
+  }
+  index: 0
+  text: "{{GM}}He glances sideways at you, but doesn\'t stop working.{{/GM}}\n\nHelp you with something, partner?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Rigger_Convo_Flow"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b0d6663136a808002c61"
+  }
+  index: 1
+  text: ""
+  branches {
+    responseText: "Nice van."
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b95b0e3663136a808002c66"
+    }
+  }
+  branches {
+    responseText: "You look familiar..."
+    nextNodeIndex: 24
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}} Excuse me..."
+    nextNodeIndex: 25
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "El Jefe Happy Loop"
+}
+nodes {
+  idRef {
+    id: "5b95b080663136a808002c5a"
+  }
+  index: 2
+  text: "{{GM}}He shoots a sideways glance, but continues working.{{/GM}}\n\nIt\'s not mine.  \n\nBorrowed it from a friend once, and promptly drove it through a wall.  Guess it ended up here.\n\nMaybe it\'ll be my saving grace, again."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b102663136a808002c6b"
+  }
+  index: 3
+  text: ""
+  branches {
+    responseText: "Saving grace?"
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "Thought it looked familiar.   Didn\'t I see it on the news once outside some club?"
+    nextNodeIndex: 20
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b95b3cd663136a808002c83"
+    }
+  }
+  branches {
+    responseText: "What\'s wrong with it?"
+    nextNodeIndex: 21
+  }
+  branches {
+    responseText: "Well.. I good luck!"
+    nextNodeIndex: 23
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "Van Loop"
+}
+nodes {
+  idRef {
+    id: "5b95b514663136a808002c86"
+  }
+  index: 4
+  text: "{{GM}}He grunts pulling hard on a rusted bolt before looking back to you.{{/GM}}\n\nYeah.   Saved my hoop once already.  If I can get her running, she may be my ticket outta this place.\n\n{{GM}}He wipes his hands on his filthy overalls, which does nothing to remove the crusty muck from his hands.{{/GM}}\n\nI\'m El Jefe.   And you are?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b54b663136a808002c89"
+  }
+  index: 5
+  text: ""
+  branches {
+    responseText: "{{CC}}Shake his hand.{{/CC}} $(s.name)."
+    nextNodeIndex: 6
+  }
+  branches {
+    responseText: "{{CC}}Decline the handshake.{{/CC}} I\'m $(s.name)."
+    nextNodeIndex: 19
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "Introduce_Loop"
+}
+nodes {
+  idRef {
+    id: "5b95b67d663136a808002ca3"
+  }
+  index: 6
+  text: "{{GM}}He shakes your hand heartily, and returns to his work.{{/GM}}\n\nNice to meetcha.\n\nSay... You interested in helping out?   I think it could benefit us both..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 7
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b6d4663136a808002ca6"
+  }
+  index: 7
+  text: ""
+  branches {
+    responseText: "Help us how?"
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b95b919663136a808002cdb"
+    }
+  }
+  branches {
+    responseText: "Tell me about this favor."
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "Job_Loop"
+}
+nodes {
+  idRef {
+    id: "5b95b880663136a808002cd3"
+  }
+  index: 8
+  text: "{{GM}}He nods behind him towards the big gate, barring the exit.{{/GM}}\n\nThat fella back there, who calls himself \"The King\" makes people pay to let them out of here.\n\nWithout my drones, I don\'t really have a chance to fight him in the arena, like some other more enterprising types have tried...\n\nBut he\'s be on top of this slum for as long as anyone can remember."
+  branches {
+    responseText: ""
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b928663136a808002cdd"
+  }
+  index: 9
+  text: "{{GM}}He pulls hard on his wrench, his face turning red with the effort.   A metallic snapping sound and the slack in his arm mean something has given, but you\'re not sure if it was his wrench or the bolt.  He stops working and faces you.{{/GM}}\n\nIf we can get this thing running, we can just crash that gate, and break his hold on this place.  No death-games arena... No pay-to-escape.   Just straight up freedom.\n"
+  branches {
+    responseText: ""
+    nextNodeIndex: 10
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95b9a7663136a808002ce0"
+  }
+  index: 10
+  text: ""
+  branches {
+    responseText: "{{CC}}Agree{{/CC}} What do you need from me?"
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_RiggerStatus"
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    nextNodeIndex: 11
+  }
+  branches {
+    responseText: "{{CC}}Decline{{/CC}} I want to explore my other options first."
+    nextNodeIndex: 18
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "Accept/Decline"
+}
+nodes {
+  idRef {
+    id: "5b95b9da663136a808002ce5"
+  }
+  index: 11
+  text: "{{GM}}He returns to his work, wringing his hands to alleviate some of the pain he must be feeling.{{/GM}}\n\nThat\'s the hard part.  I\'ve got most of this fixed... but I\'m missing two critical pieces.   A battery, and the starter."
+  branches {
+    responseText: ""
+    nextNodeIndex: 12
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95ba2c663136a808002cf2"
+  }
+  index: 12
+  text: ""
+  branches {
+    responseText: "Tell me about the battery."
+    nextNodeIndex: 13
+  }
+  branches {
+    responseText: "Tell me about the starter."
+    nextNodeIndex: 14
+  }
+  branches {
+    responseText: "Got it.  Battery and a starter.  I\'m on it.   Any clues where to start looking?"
+    nextNodeIndex: 15
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "JobRequirements"
+}
+nodes {
+  idRef {
+    id: "5b95ba5e663136a808002cf7"
+  }
+  index: 13
+  text: "Nothing special about it.   Any old car battery with a charge should work.  If it was a manual transmission, we could push start it... but these useless automatics... no dice."
+  branches {
+    responseText: ""
+    nextNodeIndex: 12
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95bab1663136a808002cf9"
+  }
+  index: 14
+  text: "That ones a touch trickier.   I haven\'t seem anything like it in the wrecks up here.   But all these cars had one, at one point.   So they\'re somewhere.   I don\'t see many shoppers looking for spares, so it makes me think someone took them."
+  branches {
+    responseText: ""
+    nextNodeIndex: 12
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95bb54663136a808002d06"
+  }
+  index: 15
+  text: "Yeah.  One idea.\n\nIf he...  \n\n{{GM}}His inclines his head, gesturing towards \"The King\"{{/GM}}\n\n...is our King.  She\'d be the Queen.  Used to be some sort public figure a while back, but kinda has been lost to the ages.\n\nRumor has it she set up shop here, but I haven\'t seen her make an appearance outside in... well... ever."
+  branches {
+    responseText: "Outside?   I don\'t see a whole lot of \'inside\' to hide in."
+    nextNodeIndex: 16
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_KnowsAboutGrannie"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b95bbda663136a808002d09"
+  }
+  index: 16
+  text: "No, not much.   She\'s got a little shack over there...\n\n{{GM}}He points off to the east{{/GM}}\n\n...But she\'s got some real nasty neighbors.   I doubt you can even get her attention with them around.\n\nThat\'s where I\'d start my search... if I didn\'t have so much here to keep me busy."
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95bcc9663136a808002d0c"
+  }
+  index: 17
+  text: "Heard she\'s a bit... Odd.   So good luck."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95bce2663136a808002d0e"
+  }
+  index: 18
+  text: "Well, can\'t say I\'m not disappointed... but you gotta do your own thing.  \n\nI\'ll be around, if you change your mind."
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95bf53663136a808002e01"
+  }
+  index: 19
+  text: "{{GM}}He lowers his filthy hand, a bit dejected.{{/GM}}\n\nSorry about that.  Forget sometimes that not everybody likes having a little grease on their hands.  \n\nSo, think you can help us both out?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95b126663136a808002c70"
+  }
+  index: 20
+  text: "{{GM}}He shrugs, then returns to struggling with a stubborn bolt.{{/GM}}\n\nEither that, or some fancy restaurant, Yoshiros.\n\nThat was a long time ago.  Now it\'s just a junk heap... but MAYBE she\'s got just enough life left in her, to save me again."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b2ac663136a808002c74"
+  }
+  index: 21
+  text: "Oh this old thing?  \n\n{{GM}}He gesutres down at it, before returning to his work..{{/GM}}\n\nPerhaps its the few years of neglected regular maintenance?\n\nCould also be that nearly everything useful has been salvaged off by these vultures?  Who knows...\n\nIt saved me once, maybe it can do it again... Guy\'s gotta have a hobby, Am I right? "
+  branches {
+    responseText: ""
+    nextNodeIndex: 22
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b319663136a808002c77"
+  }
+  index: 22
+  text: "{{GM}}He flinches as he says those words.{{/GM}}\n\nSorry.  Used to know a guy who said that.   A lot.   Drove me up the wall.  Still find myself saying it, after all these years... Almost as bad as this other guy who\'d say \"Chummer\" constantly.\n\n{{GM}}He sighs, grabbing a different wrench.{{/GM}}\n\nWhere are my manners... I\'m El Jefe...  And you are?\n\n{{GM}}He extends a filthy hand in greeting.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95b61f663136a808002ca1"
+  }
+  index: 23
+  text: "{{GM}}He nods, seems to be concidering something briefly before he puts a hand out to stop you from leaving.{{/GM}}\n\nHey... wait a second.   Where are my manners?   I\'m El Jefe.   You might be just what we both need... \n\nI could use a favor and you could use a friend.  What\'s your name?\n\n{{GM}}He wipes his hand on a dirty rag, and extends his hand towards you.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95b217663136a808002c72"
+  }
+  index: 24
+  text: "Do I?\n\n{{GM}}He looks mildly amused, but at the same time reluctant to admit to anything.{{/GM}}\n\nMust just have one of those faces.\n\nNow if you\'ll excuse me... I\'ve got work to do.   Maybe this thing can save me again."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95bdc6663136a808002d66"
+  }
+  index: 25
+  text: "{{GM}}He glances over, and then reaches out to stop you from leaving.{{/GM}}\n\nI\'m sorry, where are my manners.   I\'m El Jefe.   \n\nAnd I have a favor to ask that might benefit us both, but first things first... Who are you?\n\n{{GM}}He extends one of his huge muck covered hands to you, a friendly smile on his face.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95b06a663136a808002c55"
+  }
+  index: 26
+  text: "{{GM}}Covered in his traditional greasy sheen, he keeps working as you approach.{{/GM}}\n\nHey $+(l.name)...  Whats up?  Making any progress on that thing?"
+  branches {
+    responseText: "I never agreed to anything."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_RiggerStatus"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 27
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Remind me, what do I need?"
+    nextNodeIndex: 28
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}} Excuse me..."
+    nextNodeIndex: 29
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+nodes {
+  idRef {
+    id: "5b95c10e663136a808002e79"
+  }
+  index: 27
+  text: "I know.   But I was hoping if I pretended you did, that you might reconcider.\n\nSo... Have you?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 10
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95c159663136a808002e7b"
+  }
+  index: 28
+  text: "Sure thing.  \n\nI just need a battery, and a starter.   Then we can get this...\n\n{{GM}}He slaps his hand on the thick sounding metal hood.{{/GM}}\n\n...show on the road."
+  branches {
+    responseText: ""
+    nextNodeIndex: 12
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95c082663136a808002e26"
+  }
+  index: 29
+  text: "{{GM}}He nods, a friendly smile on his face.{{/GM}}\n\nOf course."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95b061663136a808002c53"
+  }
+  index: 30
+  text: "{{GM}}El Jefe glares at you as you approach.{{/GM}}\n\nWhat?\n\nDon\'t you have puppies you should be kicking?   Kids balloons to pop?"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95aaa56631369812001367"
+  }
+}
+roots {
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Rigger_Convo_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 0
+  comment: "Intial Meet"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Rigger_Convo_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 26
+  comment: "Return Visit"
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 30
+  comment: "Foiled"
+}
