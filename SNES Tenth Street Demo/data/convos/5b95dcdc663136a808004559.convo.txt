@@ -274,7 +274,7 @@ nodes {
     id: "5b95e307663136a808004598"
   }
   index: 9
-  text: "The deal I propose is this...\n\nYou help me get my kitchen back up and running, and find a way to keep them pesky critters at bay... and I\'ll give you two things.   \n\nFirst, help in finding the parts you need, and second...\n\n{{GM}}She smiles sweetly.{{/GM}}\n\nI\'ll reopen my bakery for you.\n"
+  text: "The deal I propose is this...\n\nYou help me get my kitchen back up and running, and find a way to keep them pesky critters at bay... and I\'ll give you two things.   \n\nFirst, I\'ll have my boys round up the parts you need, and second...\n\n{{GM}}She smiles sweetly.{{/GM}}\n\nI\'ll reopen my bakery for you.\n"
   branches {
     responseText: "Sure Grannie.  I\'ll help you out."
     actions {
@@ -327,7 +327,7 @@ nodes {
     id: "5b95e43b663136a8080045a5"
   }
   index: 11
-  text: "Actually, if that all... You can probably find them downstairs.   My boys have be taking parts to keep my kitchen running for years.  I\'m sure what you need is already down there."
+  text: "Oh my... They may be tricky to find.   \n\nI\'ll have my boys get started looking, and hopefully by the time you wrap up down there... We should be just peachy!"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "5b95d935663136a808003985"
@@ -365,7 +365,7 @@ nodes {
     id: "5b95e6d5663136a808004629"
   }
   index: 14
-  text: "Only thing I hate more than my neighbors, is bad manners.\n\n{{GM}}Her hands start glowing with power so strongly that it shifts out of the astral realm and into the physical.  Even from this distance, you can feel the heat and power coursing through her body.{{/GM}}\n\nGet out of my house..."
+  text: "Only thing I hate more than my neighbors, is bad manners.\n\n{{GM}}Her hands start glowing with power so strongly that their glow shifts out of the astral realm and into the physical.  Even from this distance, you can feel the heat and power coursing through her body.{{/GM}}\n\nGet out of my house..."
   branches {
     responseText: "I\'m sorry, I meant no disrespect..."
     actions {
@@ -574,7 +574,432 @@ nodes {
     id: "5b95e61c663136a8080045c9"
   }
   index: 18
-  text: "Why hi there, Dearie!\n\nCome to keep an old lady company?"
+  text: "Why hi there, Dearie!\n\nCome to keep an old lady company?  Did you reconsider my offer?"
+  branches {
+    responseText: "Tell me about it again."
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "No, not yet."
+    nextNodeIndex: 12
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "How about you just give me what I want, before I take it by force!"
+    nextNodeIndex: 14
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "I\'m sick of these games.   Just give me what I want!"
+    nextNodeIndex: 14
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9ea888663136ec1400100c"
+  }
+  index: 19
+  text: "{{GM}}Grannie Lauren is absentmindedly munching on one of the CorpScout cookies, but glances over to you as you come in.{{/GM}}\n\nWelcome back, dearie!\n\nAny luck getting my kitchen up and running again?   How about them pesky critters?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 20
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eafab663136ec14001017"
+  }
+  index: 20
+  text: ""
+  branches {
+    responseText: "You might have mentioned the giant scorpions!"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bMetScorpions"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 21
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b9eafc1663136ec1400101c"
+    }
+  }
+  branches {
+    responseText: "Cleared out the loose ones, and restored the power to the cage."
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bScorpionsDefeated"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 22
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b9eafc4663136ec1400101d"
+    }
+  }
+  branches {
+    responseText: "Kitchen is up and running."
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bKitchenFixed"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 23
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b9eafc7663136ec1400101e"
+    }
+  }
+  branches {
+    responseText: "Both done."
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Variable (bool)"
+                args {
+                  string_value: "bScorpionsDefeated"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Variable (bool)"
+                args {
+                  string_value: "bKitchenFixed"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 24
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b9efc1d663136b404003308"
+    }
+  }
+  branches {
+    responseText: "Still working on it."
+    nextNodeIndex: 27
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  comment: "GrannieLoop"
+}
+nodes {
+  idRef {
+    id: "5b9eafeb663136ec14001022"
+  }
+  index: 21
+  text: "{{GM}}She smiles sweetly.{{/GM}}\n\nI did.   I mentioned that some pesky critters were loose.   \n\nThey used to be caged, but a equipment failure shorted out their fence.   I need them though,  they provide some of the critical pieces of our most famous recipes!   Clearing out the loose ones is okay, but I need that nest secured."
+  branches {
+    responseText: ""
+    nextNodeIndex: 20
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eb087663136ec1400102e"
+  }
+  index: 22
+  text: "My... aren\'t you resourceful."
+  branches {
+    responseText: ""
+    nextNodeIndex: 20
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eb0a1663136ec1400103d"
+  }
+  index: 23
+  text: "Excellent Dearie! \n\nI can\'t wait to get started baking again!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 20
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eb12d663136ec14001040"
+  }
+  index: 24
+  text: "{{GM}}She claps her hands and bounces around.{{/GM}}\n\nThat\'s wonderful dearie!\n\nI\'ll get back to work in my kitchen immediately!\n\nCome up and knock on my door any time you want, as long as those pesky neighbors aren\'t there..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 25
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        int_value: 5
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bFoundParts"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eb258663136ec14001043"
+  }
+  index: 25
+  text: "Oh my!  I almost forgot!\n\n{{GM}}She indicates to a box sitting on the floor next to her chair.{{/GM}}\n\nMy boys found what you needed.  Good luck!"
+  branches {
+    responseText: "Thanks Grannie!"
+    nextNodeIndex: 26
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eb2ba663136ec14001046"
+  }
+  index: 26
+  text: "Of course, Dearie.\n\nNow I must get back to work!"
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "eExitShack"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9eafd1663136ec14001020"
+  }
+  index: 27
+  text: "Of course Dearie!\n\nLet me know when you\'re all through!"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "5b95d935663136a808003985"
@@ -663,7 +1088,107 @@ roots {
         }
       }
     }
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
   }
   nextNodeIndex: 18
-  comment: "No Cookies"
+  comment: "Didn\'t Accept"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 4
+      }
+    }
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "OT_CY_CorpScoutCookies"
+          }
+        }
+      }
+    }
+  }
+  nextNodeIndex: 19
+  comment: "Accepted - Return"
 }

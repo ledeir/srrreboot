@@ -422,6 +422,49 @@ nodes {
   text: "Good riddance."
   nodeType: ConversationNodeType_Simple
 }
+nodes {
+  idRef {
+    id: "5b9ec321663136ec140010f9"
+  }
+  index: 11
+  text: "{{GM}}She peers out through the slot in the door.{{/GM}}\n\nOh Hi there, dearie!\n\nKitchens running great!   Can I interest you in my fine baked wares today?"
+  branches {
+    responseText: "Whatcha got?"
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5b95c277663136a808002efb"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Not today."
+    nextNodeIndex: 12
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
+nodes {
+  idRef {
+    id: "5b9ec353663136ec140010fd"
+  }
+  index: 12
+  text: "I\'m open any time.   Come back whenever you like!"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5b95d935663136a808003985"
+  }
+}
 roots {
   conditions {
     ops {
@@ -490,4 +533,39 @@ roots {
   }
   nextNodeIndex: 6
   comment: "Return"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 5
+      }
+    }
+  }
+  nextNodeIndex: 11
+  comment: "Shop"
 }

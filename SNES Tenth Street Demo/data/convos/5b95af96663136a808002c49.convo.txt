@@ -390,7 +390,7 @@ nodes {
     id: "5b95b126663136a808002c70"
   }
   index: 20
-  text: "{{GM}}He shrugs, then returns to struggling with a stubborn bolt.{{/GM}}\n\nEither that, or some fancy restaurant, Yoshiros.\n\nThat was a long time ago.  Now it\'s just a junk heap... but MAYBE she\'s got just enough life left in her, to save me again."
+  text: "{{GM}}He shrugs, then returns to struggling with a stubborn bolt.{{/GM}}\n\nEither that, or that fancy restaurant Yoshiros...\n\nBut that was a long time ago.  Now it\'s just a junk heap... but MAYBE she\'s got just enough life left in her, to save me again."
   branches {
     responseText: ""
     nextNodeIndex: 3
@@ -517,8 +517,57 @@ nodes {
     nextNodeIndex: 28
   }
   branches {
-    responseText: "{{CC}}Leave{{/CC}} Excuse me..."
+    responseText: "{{CC}}Show Parts{{/CC}} Will these work?"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "bFoundParts"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "No Effect"
+      }
+    }
     nextNodeIndex: 29
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b9ef75c663136b404003076"
+    }
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}} Excuse me..."
+    nextNodeIndex: 30
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -553,9 +602,51 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5b95c082663136a808002e26"
+    id: "5b9edfb9663136ec14001223"
   }
   index: 29
+  text: "{{GM}}He looks over the parts, a huge smile creasing his face.{{/GM}}\n\nI\'m not sure how you managed to find these... but yeah.   They\'ll be perfect!\n\nLet\'s blow this Popsicle stand!"
+  branches {
+    responseText: ""
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_RiggerStatus"
+            }
+          }
+        }
+        args {
+          int_value: 3
+        }
+      }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "eBreakOut"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b95c082663136a808002e26"
+  }
+  index: 30
   text: "{{GM}}He nods, a friendly smile on his face.{{/GM}}\n\nOf course."
   nodeType: ConversationNodeType_Simple
 }
@@ -563,11 +654,35 @@ nodes {
   idRef {
     id: "5b95b061663136a808002c53"
   }
-  index: 30
+  index: 31
   text: "{{GM}}El Jefe glares at you as you approach.{{/GM}}\n\nWhat?\n\nDon\'t you have puppies you should be kicking?   Kids balloons to pop?"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "5b95aaa56631369812001367"
+  }
+  actions {
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b95aaa56631369812001367"
+          }
+        }
+      }
+    }
   }
 }
 roots {
@@ -641,6 +756,36 @@ roots {
 }
 roots {
   responseText: ""
-  nextNodeIndex: 30
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Rigger_Convo_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: -1
+      }
+    }
+  }
+  nextNodeIndex: 31
   comment: "Foiled"
 }

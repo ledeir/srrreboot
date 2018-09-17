@@ -199,6 +199,45 @@ nodes {
     nextNodeIndex: 4
   }
   branches {
+    responseText: "{{CC}}Tell About El Jefe\'s Plan{{/CC}}"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_RiggerStatus"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 9
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5b9ef3bd663136b404002f66"
+    }
+  }
+  branches {
     responseText: "{{GM}}Leave{{/GM}}"
     nextNodeIndex: -1
   }
@@ -454,6 +493,93 @@ nodes {
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5b9ef37c663136b404002f42"
+  }
+  index: 9
+  text: "Hmm... You tell me good.   Now his plan no work!\n\nI give you discount on leaving..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "CY_ExitCost"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Variable (int)"
+              args {
+                string_value: "CY_ExitCost"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 150
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_RiggerStatus"
+          }
+        }
+      }
+      args {
+        int_value: -1
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Rigger_Convo_Flow"
+          }
+        }
+      }
+      args {
+        int_value: -1
+      }
+    }
+  }
 }
 roots {
   responseText: ""

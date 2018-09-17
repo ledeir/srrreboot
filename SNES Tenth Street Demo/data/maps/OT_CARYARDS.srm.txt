@@ -8950,7 +8950,7 @@ props {
   }
   interactionRoot {
     isEnabled: true
-    interactionRadius: 1
+    interactionRadius: 2
     prerequisites {
       ops {
         functionName: "AND"
@@ -9037,6 +9037,42 @@ props {
                   string_value: "51fd7b006334619c1000193b"
                 }
               }
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CY_Exit"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
             }
           }
         }
@@ -13686,6 +13722,7 @@ props {
     z: 25
   }
   orientation: ORIENTATION_S
+  GeneralTags: "isVan"
   displayName: "obj_RiggerVan"
   idRef {
     id: "5b95af02663136a808002c47"
@@ -17380,7 +17417,7 @@ props {
 props {
   name: "secretLab_wall_4x4fill"
   gridPoint {
-    x: 64
+    x: 61.9
     y: 2
     z: 171.2
   }
@@ -17865,9 +17902,9 @@ props {
 props {
   name: "pikePlace_buildingOrnament_panelBox01"
   gridPoint {
-    x: 53.800003
-    y: 2
-    z: 172.9
+    x: 53.600002
+    y: 2.4
+    z: 175
   }
   orientation: ORIENTATION_E
   idRef {
@@ -18206,11 +18243,18 @@ props {
   gridPoint {
     x: 52.9
     y: 0.7
-    z: 170
+    z: 172
   }
   orientation: ORIENTATION_E
+  displayName: "obj_EnableFence"
   idRef {
     id: "5b95d934663136a80800330a"
+  }
+  interactionRoot {
+    isEnabled: false
+    interactionRadius: 2
+    interactionIcon: InteractionIcon_Matrix
+    interaction_info_text: "Engage Fence Power"
   }
   lod: 0
 }
@@ -18295,9 +18339,9 @@ props {
 props {
   name: "tenements_clutter_pileOfClothes"
   gridPoint {
-    x: 33.2
+    x: 38.2
     y: 0
-    z: 188.9
+    z: 189.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -19900,8 +19944,31 @@ props {
     z: 187.9
   }
   orientation: ORIENTATION_E
+  displayName: "obj_Kitchen3"
   idRef {
     id: "5b95d934663136a808003389"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Matrix
+    interaction_info_text: "Turn on vents"
   }
   lod: 0
 }
@@ -22562,19 +22629,6 @@ props {
 props {
   name: "sewer_wall_brickEdge04"
   gridPoint {
-    x: 16
-    y: 0
-    z: 180
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003454"
-  }
-  lod: 0
-}
-props {
-  name: "sewer_wall_brickEdge04"
-  gridPoint {
     x: 22
     y: 0
     z: 174
@@ -22716,19 +22770,6 @@ props {
   lod: 0
 }
 props {
-  name: "syndicate_security_razorwire"
-  gridPoint {
-    x: 14.1
-    y: 0.2
-    z: 181.3
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a808003460"
-  }
-  lod: 0
-}
-props {
   name: "sewer_wall_brickEdge04"
   gridPoint {
     x: -12.4
@@ -22850,19 +22891,6 @@ props {
   lod: 0
 }
 props {
-  name: "morgue_wall_brickDoor01Front"
-  gridPoint {
-    x: 14
-    y: 0
-    z: 180
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800346a"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_wall_fill"
   gridPoint {
     x: 40.6
@@ -22963,19 +22991,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a808003472"
-  }
-  lod: 0
-}
-props {
-  name: "syndicate_security_razorwire"
-  gridPoint {
-    x: 12.1
-    y: 0.2
-    z: 181.3
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a808003473"
   }
   lod: 0
 }
@@ -23101,19 +23116,6 @@ props {
   lod: 0
 }
 props {
-  name: "docks_wall_securityFenceEnd03"
-  gridPoint {
-    x: 11.5
-    y: 0
-    z: 179.8
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a80800347d"
-  }
-  lod: 0
-}
-props {
   name: "asylum_furniture_plasticChair"
   gridPoint {
     x: 28.5
@@ -23157,19 +23159,6 @@ props {
   lod: 0
 }
 props {
-  name: "sewer_wall_brickEnd01"
-  gridPoint {
-    x: 10.499998
-    y: 0.2
-    z: 180.76001
-  }
-  orientation: ORIENTATION_W
-  idRef {
-    id: "5b95d934663136a808003481"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_wall_fill"
   gridPoint {
     x: 40.6
@@ -23179,19 +23168,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d934663136a808003482"
-  }
-  lod: 0
-}
-props {
-  name: "morgue_wall_brickDoor01End"
-  gridPoint {
-    x: 11
-    y: 0
-    z: 180
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003483"
   }
   lod: 0
 }
@@ -23222,19 +23198,6 @@ props {
   lod: 0
 }
 props {
-  name: "factory_decor_handRail01"
-  gridPoint {
-    x: -6.2
-    y: 0
-    z: 198.9
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003486"
-  }
-  lod: 0
-}
-props {
   name: "brotherhood_wall_doorMid03"
   gridPoint {
     x: 67
@@ -23250,7 +23213,7 @@ props {
 props {
   name: "pikePlace_storage_plasticCrates01"
   gridPoint {
-    x: 14.900002
+    x: 17.900002
     y: 0
     z: 177.7
   }
@@ -23443,19 +23406,6 @@ props {
   lod: 0
 }
 props {
-  name: "docks_wall_securityFenceEnd03"
-  gridPoint {
-    x: 9.1
-    y: 0
-    z: 180.4
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003497"
-  }
-  lod: 0
-}
-props {
   name: "factory_decor_handRail01"
   gridPoint {
     x: 7
@@ -23638,19 +23588,6 @@ props {
   lod: 0
 }
 props {
-  name: "factory_decor_handRail01"
-  gridPoint {
-    x: -8.6
-    y: 0
-    z: 198.8
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a8080034a6"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_clutter_electronicGarbage"
   gridPoint {
     x: 19
@@ -23699,61 +23636,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a8080034aa"
-  }
-  lod: 0
-}
-props {
-  name: "bremerton_ship_switch02"
-  gridPoint {
-    x: -5.3999996
-    y: 0.9
-    z: 194.7
-  }
-  orientation: ORIENTATION_W
-  displayName: "obj_WheelPlacement"
-  idRef {
-    id: "5b95d934663136a8080034ab"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    prerequisites {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "bWheelPlaced"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    interactionIcon: InteractionIcon_Inspect
-    interaction_info_text: "Examine Panel?"
   }
   lod: 0
 }
@@ -23853,19 +23735,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a8080034b2"
-  }
-  lod: 0
-}
-props {
-  name: "factory_decor_handRail01"
-  gridPoint {
-    x: -6.2
-    y: 0
-    z: 195.5
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a8080034b3"
   }
   lod: 0
 }
@@ -24035,19 +23904,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a8080034c0"
-  }
-  lod: 0
-}
-props {
-  name: "sewer_wall_brickEnd01"
-  gridPoint {
-    x: -6.8
-    y: 0
-    z: 194.1
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a8080034c1"
   }
   lod: 0
 }
@@ -24256,19 +24112,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d934663136a8080034d1"
-  }
-  lod: 0
-}
-props {
-  name: "factory_decor_handRail01"
-  gridPoint {
-    x: -8.6
-    y: 0
-    z: 195.4
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a8080034d2"
   }
   lod: 0
 }
@@ -24558,19 +24401,6 @@ props {
   lod: 0
 }
 props {
-  name: "hive_decor_corpses02"
-  gridPoint {
-    x: -6
-    y: 0
-    z: 190
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a8080034e8"
-  }
-  lod: 0
-}
-props {
   name: "factory_wall_pipeEnd03"
   gridPoint {
     x: 1.2999992
@@ -24722,19 +24552,6 @@ props {
   lod: 0
 }
 props {
-  name: "syndicate_security_razorwire4"
-  gridPoint {
-    x: -4.9
-    y: 2.6
-    z: 185.4
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a8080034f4"
-  }
-  lod: 0
-}
-props {
   name: "sewer_wall_brickEdge04"
   gridPoint {
     x: 0.60000038
@@ -24878,32 +24695,6 @@ props {
   lod: 0
 }
 props {
-  name: "docks_wall_securityFenceEnd03"
-  gridPoint {
-    x: -4.8999996
-    y: 0
-    z: 184.5
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003500"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -3
-    y: 0
-    z: 185
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003501"
-  }
-  lod: 0
-}
-props {
   name: "tenements_clutter_pileOfClothes"
   gridPoint {
     x: 19.1
@@ -24939,19 +24730,6 @@ props {
   orientation: ORIENTATION_W
   idRef {
     id: "5b95d934663136a808003504"
-  }
-  lod: 0
-}
-props {
-  name: "docks_wall_securityFenceEnd03"
-  gridPoint {
-    x: -1.5999994
-    y: 0
-    z: 180.8
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003505"
   }
   lod: 0
 }
@@ -25004,19 +24782,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a808003509"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -4
-    y: 0
-    z: 185
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800350a"
   }
   lod: 0
 }
@@ -25112,19 +24877,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -5
-    y: 0
-    z: 185
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003512"
-  }
-  lod: 0
-}
-props {
   name: "factory_tech_bridgeUp"
   gridPoint {
     x: 57
@@ -25190,32 +24942,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -6
-    y: 0
-    z: 185
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003518"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -2
-    y: 0
-    z: 181
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003519"
-  }
-  lod: 0
-}
-props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -7
@@ -25269,19 +24995,6 @@ props {
   displayName: "obj_PhysAdChallenge"
   idRef {
     id: "5b95d934663136a80800351d"
-  }
-  lod: 0
-}
-props {
-  name: "mitte_decor_corpse02"
-  gridPoint {
-    x: -5
-    y: 0
-    z: 183
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800351e"
   }
   lod: 0
 }
@@ -25347,32 +25060,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a808003523"
-  }
-  lod: 0
-}
-props {
-  name: "syndicate_security_razorwire2"
-  gridPoint {
-    x: -3.8000002
-    y: 0
-    z: 181
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a808003524"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -3
-    y: 0
-    z: 181
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003525"
   }
   lod: 0
 }
@@ -25659,19 +25346,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a80800353b"
-  }
-  lod: 0
-}
-props {
-  name: "factory_decor_engineerCorpse"
-  gridPoint {
-    x: -6
-    y: 0
-    z: 181
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800353c"
   }
   lod: 0
 }
@@ -26082,19 +25756,6 @@ props {
   lod: 0
 }
 props {
-  name: "docks_clutter_loneStarCorpse02"
-  gridPoint {
-    x: -5
-    y: 0
-    z: 179
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a80800355b"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_wall_4x4fill"
   gridPoint {
     x: 27.900002
@@ -26143,19 +25804,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d934663136a80800355f"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -4
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a808003560"
   }
   lod: 0
 }
@@ -26316,32 +25964,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a80800356c"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -5
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800356d"
-  }
-  lod: 0
-}
-props {
-  name: "syndicate_security_razorwire2"
-  gridPoint {
-    x: -6
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a80800356e"
   }
   lod: 0
 }
@@ -26532,32 +26154,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -6
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800357d"
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -2
-    y: 0
-    z: 174
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800357e"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_clutter_smallCrate"
   gridPoint {
     x: 16
@@ -26623,30 +26219,6 @@ props {
   lod: 0
 }
 props {
-  name: "haven_wall_checkPointGateOpen"
-  gridPoint {
-    x: -3
-    y: 0
-    z: 172.5
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003584"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    doorPoint {
-      doorState: false
-      aiOnlyDoor: false
-      doorSound: "MetalScrape1"
-      doorSoundBundle: "props"
-    }
-    interaction_info_text: ""
-  }
-  lod: 0
-}
-props {
   name: "vfx_fx_roach"
   gridPoint {
     x: 15
@@ -26660,19 +26232,6 @@ props {
   }
   idRef {
     id: "5b95d934663136a808003585"
-  }
-  lod: 0
-}
-props {
-  name: "hive_decor_corpses02"
-  gridPoint {
-    x: -4
-    y: 0
-    z: 175
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003586"
   }
   lod: 0
 }
@@ -26781,19 +26340,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_blockMove"
-  gridPoint {
-    x: -3
-    y: 0
-    z: 174
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d934663136a80800358f"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_wall_4x4fill"
   gridPoint {
     x: -37.2
@@ -26816,19 +26362,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d934663136a808003591"
-  }
-  lod: 0
-}
-props {
-  name: "syndicate_security_razorwire4"
-  gridPoint {
-    x: -4
-    y: 0
-    z: 174
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a808003592"
   }
   lod: 0
 }
@@ -27201,19 +26734,6 @@ props {
   lod: 0
 }
 props {
-  name: "docks_wall_securityFenceEnd03"
-  gridPoint {
-    x: -5.7999992
-    y: 0
-    z: 172.2
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a8080035af"
-  }
-  lod: 0
-}
-props {
   name: "barrens_wall_alleyFenceLargeGateBack"
   gridPoint {
     x: -3
@@ -27314,19 +26834,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d934663136a8080035b7"
-  }
-  lod: 0
-}
-props {
-  name: "docks_wall_securityFenceEnd03"
-  gridPoint {
-    x: -10.9
-    y: 0
-    z: 176.5
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a8080035b8"
   }
   lod: 0
 }
@@ -27574,8 +27081,8 @@ props {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
-    interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: "Return to Caryards?"
+    interactionIcon: InteractionIcon_Warp
+    interaction_info_text: "Return to Grannie\'s Shack"
   }
   lod: 0
 }
@@ -27852,19 +27359,6 @@ props {
   lod: 0
 }
 props {
-  name: "haven_street_sandbagBarrier02"
-  gridPoint {
-    x: -5.6000004
-    y: 0
-    z: 170
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a8080035e0"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_floor_2x2pipesEnd"
   gridPoint {
     x: 30
@@ -28135,9 +27629,9 @@ props {
 props {
   name: "tenements_decor_steelDrums01"
   gridPoint {
-    x: -24.9
+    x: -25.9
     y: 0
-    z: 188.3
+    z: 189
   }
   orientation: ORIENTATION_S
   idRef {
@@ -28256,9 +27750,9 @@ props {
 props {
   name: "tenements_decor_steelDrum01"
   gridPoint {
-    x: -24.800001
+    x: -26.000002
     y: 0
-    z: 187.6
+    z: 189.20001
   }
   orientation: ORIENTATION_S
   idRef {
@@ -28380,19 +27874,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d934663136a808003607"
-  }
-  lod: 0
-}
-props {
-  name: "syndicate_security_razorwire"
-  gridPoint {
-    x: -8.7
-    y: 0
-    z: 169.9
-  }
-  orientation: ORIENTATION_N
-  idRef {
-    id: "5b95d934663136a808003608"
   }
   lod: 0
 }
@@ -28639,19 +28120,6 @@ props {
   lod: 0
 }
 props {
-  name: "haven_street_sandbagBarrier02"
-  gridPoint {
-    x: -10
-    y: 0
-    z: 170
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a80800361b"
-  }
-  lod: 0
-}
-props {
   name: "secretLab_wall_fill"
   gridPoint {
     x: 18.7
@@ -28739,19 +28207,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d934663136a808003622"
-  }
-  lod: 0
-}
-props {
-  name: "hive_clutter_grenadeBoxes"
-  gridPoint {
-    x: -9.3
-    y: 0
-    z: 169
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d934663136a808003623"
   }
   lod: 0
 }
@@ -31387,8 +30842,31 @@ props {
     z: 158
   }
   orientation: ORIENTATION_S
+  displayName: "obj_Kitchen4"
   idRef {
     id: "5b95d934663136a8080036d3"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Matrix
+    interaction_info_text: "Switch On Power"
   }
   lod: 0
 }
@@ -33555,8 +33033,31 @@ props {
     z: 131.5
   }
   orientation: ORIENTATION_S
+  displayName: "obj_Kitchen2"
   idRef {
     id: "5b95d934663136a808003777"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Matrix
+    interaction_info_text: "Reboot generator"
   }
   lod: 0
 }
@@ -36646,7 +36147,7 @@ props {
 props {
   name: "syndicate_plants_bamboox2"
   gridPoint {
-    x: 3
+    x: 2
     y: 1
     z: 114.3
   }
@@ -36854,7 +36355,7 @@ props {
 props {
   name: "syndicate_plants_bamboox2"
   gridPoint {
-    x: 1.6999998
+    x: 0.69999981
     y: 1
     z: 114.2
   }
@@ -37036,7 +36537,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: 1
+    x: 0
     y: 0
     z: 114.10001
   }
@@ -37140,7 +36641,7 @@ props {
 props {
   name: "syndicate_plants_bamboox2"
   gridPoint {
-    x: 3
+    x: 2
     y: 1
     z: 111.3
   }
@@ -37192,7 +36693,7 @@ props {
 props {
   name: "syndicate_plants_bamboo"
   gridPoint {
-    x: 3
+    x: 2
     y: 1
     z: 112
   }
@@ -37326,7 +36827,7 @@ props {
 props {
   name: "syndicate_plants_bamboox2"
   gridPoint {
-    x: 1.6999998
+    x: 0.69999981
     y: 1
     z: 111.2
   }
@@ -37560,7 +37061,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: 1
+    x: 0
     y: 0
     z: 111
   }
@@ -37762,16 +37263,38 @@ props {
     z: 116
   }
   orientation: ORIENTATION_S
-  displayName: "obj_Refiner"
+  displayName: "obj_Kitchen1"
   idRef {
     id: "5b95d934663136a80800389a"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Matrix
+    interaction_info_text: "Switch On Machine"
   }
   lod: 0
 }
 props {
   name: "syndicate_plants_bamboox2"
   gridPoint {
-    x: 2.6999998
+    x: 1.6999998
     y: 1
     z: 108.2
   }
@@ -37823,7 +37346,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: -3
+    x: -4
     y: 0
     z: 114.10001
   }
@@ -38113,7 +37636,7 @@ props {
 props {
   name: "syndicate_plants_bamboox2"
   gridPoint {
-    x: 1.1000004
+    x: 0.10000038
     y: 1
     z: 108.2
   }
@@ -38191,7 +37714,7 @@ props {
 props {
   name: "syndicate_plants_bamboo"
   gridPoint {
-    x: 2.1000004
+    x: 1.1000004
     y: 0.7
     z: 108.60001
   }
@@ -38243,7 +37766,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: 1
+    x: 0
     y: 0
     z: 108
   }
@@ -38373,7 +37896,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: -3
+    x: -4
     y: 0
     z: 111.10001
   }
@@ -38581,7 +38104,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: -7
+    x: -8
     y: 0
     z: 113.89999
   }
@@ -38750,7 +38273,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: -3
+    x: -4
     y: 0
     z: 108
   }
@@ -38897,7 +38420,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: -7
+    x: -8
     y: 0
     z: 111.10001
   }
@@ -39040,7 +38563,7 @@ props {
 props {
   name: "haven_groundDecoration_planter01"
   gridPoint {
-    x: -7
+    x: -8
     y: 0
     z: 108
   }
@@ -43068,9 +42591,9 @@ props {
 props {
   name: "cemetery_ground_curbEdge02"
   gridPoint {
-    x: -5.8999996
+    x: -5.9999995
     y: 0
-    z: 199
+    z: 198
   }
   orientation: ORIENTATION_S
   idRef {
@@ -43135,7 +42658,7 @@ props {
   gridPoint {
     x: -8.5
     y: 0
-    z: 198.9
+    z: 197.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -44262,19 +43785,6 @@ props {
   lod: 0
 }
 props {
-  name: "mitte_decor_rubble01"
-  gridPoint {
-    x: -9.7
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_S
-  idRef {
-    id: "5b95d935663136a808003a90"
-  }
-  lod: 0
-}
-props {
   name: "cemetery_ground_curbEdge02"
   gridPoint {
     x: -8.5
@@ -44362,19 +43872,6 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "5b95d935663136a808003a97"
-  }
-  lod: 0
-}
-props {
-  name: "mitte_decor_rubble01"
-  gridPoint {
-    x: -10
-    y: 0
-    z: 176
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d935663136a808003a98"
   }
   lod: 0
 }
@@ -50955,19 +50452,6 @@ props {
   lod: 0
 }
 props {
-  name: "sewer_floor_vent02"
-  gridPoint {
-    x: 9.9
-    y: 0
-    z: 188
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d935663136a808003c90"
-  }
-  lod: 0
-}
-props {
   name: "sewer_floor_vent03"
   gridPoint {
     x: 10
@@ -52069,19 +51553,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d935663136a808003ce5"
-  }
-  lod: 0
-}
-props {
-  name: "sewer_floor_vent02"
-  gridPoint {
-    x: 13.9
-    y: 0
-    z: 174
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d935663136a808003ce6"
   }
   lod: 0
 }
@@ -64332,19 +63803,6 @@ props {
   lod: 0
 }
 props {
-  name: "sewer_floor_water01"
-  gridPoint {
-    x: 12
-    y: 0
-    z: 188
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d936663136a808004095"
-  }
-  lod: 0
-}
-props {
   name: "sewer_floor_water02"
   gridPoint {
     x: 0
@@ -64796,19 +64254,6 @@ props {
   orientation: ORIENTATION_E
   idRef {
     id: "5b95d936663136a8080040b8"
-  }
-  lod: 0
-}
-props {
-  name: "sewer_floor_water01"
-  gridPoint {
-    x: 12
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_E
-  idRef {
-    id: "5b95d936663136a8080040b9"
   }
   lod: 0
 }
@@ -75571,4 +75016,559 @@ props {
     }
     intensity: 7
   }
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -74
+    y: 0
+    z: 102
+  }
+  orientation: ORIENTATION_S
+  displayName: "obj_SewerExit_WarpTO"
+  idRef {
+    id: "5b9eb59b663136ec140010a2"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "tenements_decor_elLights02"
+  gridPoint {
+    x: 54
+    y: 0.6
+    z: 169.2
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "isFixed"
+  idRef {
+    id: "5b9eb6bf663136ec140010a7"
+  }
+  lod: 0
+}
+props {
+  name: "tenements_decor_elLights01"
+  gridPoint {
+    x: 54.1
+    y: 1
+    z: 166.2
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "isFixed"
+  idRef {
+    id: "5b9eb6b9663136ec140010a6"
+  }
+  lod: 0
+}
+props {
+  name: "haven_wall_securityFenceEdge04"
+  gridPoint {
+    x: 53
+    y: 0
+    z: 168
+  }
+  orientation: ORIENTATION_E
+  displayName: "obj_Fence_Broken"
+  idRef {
+    id: "5b9eb998663136ec140010b1"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 2
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Inspect
+    interaction_info_text: "Inspect Fence"
+  }
+  lod: 0
+}
+props {
+  name: "docks_wall_securityFenceEdge05"
+  gridPoint {
+    x: 53
+    y: 0
+    z: 168.6
+  }
+  orientation: ORIENTATION_N
+  GeneralTags: "isFenceFixed"
+  displayName: "obj_Fence_Fixed"
+  idRef {
+    id: "5b9eb6b1663136ec140010a5"
+  }
+  lod: 0
+}
+props {
+  name: "docks_wall_securityFenceEdge05"
+  gridPoint {
+    x: 56
+    y: 0
+    z: 168.6
+  }
+  orientation: ORIENTATION_N
+  displayName: "obj_Fence_Fixed"
+  idRef {
+    id: "5b9eb6dd663136ec140010a8"
+  }
+  lod: 0
+}
+props {
+  name: "secretLab_wall_4x4fill"
+  gridPoint {
+    x: 64
+    y: 2
+    z: 173.2
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9eb6e5663136ec140010a9"
+  }
+  lod: 0
+}
+props {
+  name: "bremerton_ship_walllight02"
+  gridPoint {
+    x: 53
+    y: 2
+    z: 171.1
+  }
+  orientation: ORIENTATION_N
+  lod: 0
+}
+props {
+  name: "bremerton_ship_walllight03"
+  gridPoint {
+    x: 53.1
+    y: 2
+    z: 171.1
+  }
+  orientation: ORIENTATION_N
+  GeneralTags: "isFixed"
+  idRef {
+    id: "5b9eb7a9663136ec140010ab"
+  }
+  lod: 0
+}
+props {
+  name: "mitte_clutter_crate08"
+  gridPoint {
+    x: 52
+    y: 0
+    z: 175
+  }
+  orientation: ORIENTATION_S
+  displayName: "obj_FenceParts"
+  idRef {
+    id: "5b9eb8f3663136ec140010ad"
+  }
+  interactionRoot {
+    isEnabled: false
+    interactionRadius: 2
+    interactionIcon: InteractionIcon_Inspect
+    interaction_info_text: "Inspect crate"
+  }
+  lod: 0
+}
+props {
+  name: "brotherhood_wall_doorMid03"
+  gridPoint {
+    x: -25.099998
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  displayName: "obj_Door1"
+  idRef {
+    id: "5b9ebcce663136ec140010bd"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -27
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd02663136ec140010c0"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -26
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd0c663136ec140010c1"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -24
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd0d663136ec140010c2"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -23
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd0e663136ec140010c3"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -25
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd10663136ec140010c4"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -22
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd11663136ec140010c5"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_solidProp"
+  gridPoint {
+    x: -21
+    y: 0
+    z: 187
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ebd12663136ec140010c6"
+  }
+  lod: 0
+}
+props {
+  name: "factory_decor_handRail01"
+  gridPoint {
+    x: 12.1
+    y: 0
+    z: 187.4
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "5b9ecbba663136ec140011be"
+  }
+  lod: 0
+}
+props {
+  name: "secretLab_floor_2x2panel02c"
+  gridPoint {
+    x: 12
+    y: 0
+    z: 188
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ecbba663136ec140011bf"
+  }
+  lod: 0
+}
+props {
+  name: "factory_decor_handRail01"
+  gridPoint {
+    x: 12.000002
+    y: 0
+    z: 189.7
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "5b9ecbba663136ec140011c0"
+  }
+  lod: 0
+}
+props {
+  name: "sewer_floor_water01"
+  gridPoint {
+    x: 12
+    y: 0
+    z: 178
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "5b9ecc3c663136ec140011c2"
+  }
+  lod: 0
+}
+props {
+  name: "sewer_floor_vent01"
+  gridPoint {
+    x: 14
+    y: 0
+    z: 174
+  }
+  orientation: ORIENTATION_E
+  idRef {
+    id: "5b9ecc52663136ec140011c3"
+  }
+  lod: 0
+}
+props {
+  name: "cemetery_ground_curbEdge02"
+  gridPoint {
+    x: -5.9999995
+    y: 0
+    z: 196
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9edc9f663136ec140011c8"
+  }
+  lod: 0
+}
+props {
+  name: "cemetery_ground_curbEdge02"
+  gridPoint {
+    x: -8.5
+    y: 0
+    z: 196.5
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9edca4663136ec140011c9"
+  }
+  lod: 0
+}
+props {
+  name: "secretLab_wall_4x4fill"
+  gridPoint {
+    x: 43.199997
+    y: 0
+    z: 21
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ee12c663136ec14001280"
+  }
+  lod: 0
+}
+props {
+  name: "secretLab_wall_4x4fill"
+  gridPoint {
+    x: 43.199997
+    y: 0
+    z: 24
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ee12c663136ec14001281"
+  }
+  lod: 0
+}
+props {
+  name: "secretLab_wall_4x4fill"
+  gridPoint {
+    x: 43.199997
+    y: 0
+    z: 27
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5b9ee12c663136ec14001282"
+  }
+  lod: 0
+}
+props {
+  name: "oldtown_shack_door01"
+  gridPoint {
+    x: 0.4
+    y: 0
+    z: 53.1
+  }
+  orientation: ORIENTATION_N
+  displayName: "obj_GranniesDoor(PostCY)"
+  idRef {
+    id: "5b9eeb6a663136ec140013f6"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 2
+    prerequisites {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "CY_Grannie_Flow"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              int_value: 5
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Evaluate If Actor is Inside Region"
+            args {
+              call_value {
+                functionName: "All Actors With Tag"
+                args {
+                  call_value {
+                    functionName: "Get Map Item (SenseTagList)"
+                    args {
+                      string_value: "isCYGrind"
+                    }
+                  }
+                }
+                args {
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "AllOrAny"
+                    }
+                    args {
+                      int_value: 0
+                    }
+                  }
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "AreOrAreNot"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Map Item (Region)"
+                args {
+                  string_value: "51fd7b006334619c1000193b"
+                }
+              }
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "OT_CY_Exit"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_LockedDoor
+    interaction_info_text: "Knock on door"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_blockMove"
+  gridPoint {
+    x: 24
+    y: 0
+    z: 19
+  }
+  orientation: ORIENTATION_S
+  lod: 0
 }

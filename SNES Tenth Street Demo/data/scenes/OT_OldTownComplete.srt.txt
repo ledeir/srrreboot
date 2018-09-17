@@ -16726,6 +16726,17 @@ triggers {
         call_value {
           functionName: "Get Map Item (Event)"
           args {
+            string_value: "eCheckVan"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
             string_value: "LOAD_CONFIG"
           }
         }
@@ -20753,6 +20764,170 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: true
+  idRef {
+    id: "5b9eef52663136b404002f18"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "---CHECK FOR VAN---"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5b9eef57663136b404002f1a"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Van.Check"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "eCheckVan"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_RiggerStatus"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Prop Visible by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isVan"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DoesOrDoesNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Move Prop"
+      args {
+        call_value {
+          functionName: "Get Map Item (Prop)"
+          args {
+            string_value: "5b9eefd3663136b404002f1c"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specified Point (2D)"
+          args {
+            float_value: -25
+          }
+          args {
+            float_value: 2
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b9eef54663136b404002f19"
+  }
+  elseActions {
+    ops {
+      functionName: "Delete Props by Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isVan"
+          }
+        }
+      }
+      args {
+        float_value: -1
+      }
+      args {
+        call_value {
+          functionName: "Everywhere"
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
 regions {
   name: "OT_ExtCamera"
   position {
@@ -21769,7 +21944,7 @@ regions {
   name: "NevermindCaryard"
   position {
     x: -21
-    y: 4
+    y: 5
     width: -2
     height: 3
   }
@@ -22612,7 +22787,7 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -22
+    x: -19
     y: 0
     z: 0
   }
@@ -24119,6 +24294,7 @@ mapEvents: "ENDWAIT"
 mapEvents: "EnterCage"
 mapEvents: "CHK_LOCAL"
 mapEvents: "GenerateMagicShop"
+mapEvents: "eCheckVan"
 senseTags: "N10_20"
 senseTags: "N30_60"
 senseTags: "XP1"

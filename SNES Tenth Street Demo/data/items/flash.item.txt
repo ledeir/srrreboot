@@ -1,0 +1,66 @@
+id: "Flash"
+
+type: ItemType_Consumable
+
+uirep {
+
+  icon: "icon_cram"
+
+  name: "Grannie's Ol' Cough Medicine"
+
+  description: "Sure... It's just Grannie's ol' cough medicine... [+2 Movement and +2 AP for 1 RND.]"
+
+}
+
+coreAttribute: Attribute_Intelligence
+
+coreSkill: Skill_Biotech
+
+apCost: 1
+
+prereqStrings: "Player.RACE != RACE.CREATURE"
+
+maxAmmo: 0
+
+baseHPDamage: 0
+
+baseAPDamage: 0
+
+rangeModTable: 0
+
+noiseLevel: 0
+
+noiseRounds: 0
+
+modelessAbilities: "Use Cram"
+
+affectsFriendly: true
+
+canTargetSelf: true
+
+canTargetActor: true
+
+isBuff: true
+
+activationStatusEffects {
+  uirep {
+    icon: "icon_nitro"
+    name: "Grannie's Cough Medicine: Movement +2, AP +2"
+  }
+  stackingCategory: "Adrenaline"
+  statMods {
+    attribute: Attribute_AP
+    intModValue: 2
+  }
+  statMods {
+    attribute: Attribute_Move_Speed
+    intModValue: 2
+  }
+  is_buff: true
+}
+
+store_cost: 1500
+
+sorting_group: "Drugs"
+
+damageType: VulnerabilityType_Buff
