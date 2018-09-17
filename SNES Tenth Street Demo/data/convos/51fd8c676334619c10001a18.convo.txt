@@ -1011,9 +1011,9 @@ nodes {
     id: "5b95d31f663136a808003096"
   }
   index: 6
-  text: "Met our resident Grannie, did you?   Dunno why but she\'s got a big ol\' hankering for them.\n\nI can get some, but they ain\'t cheap.  They\'re hard to find these days.  \n\nLets call it 1,000\302\245.  Deal?"
+  text: "Met our resident Grannie, did you?   Dunno why but she\'s got a big ol\' hankering for them.\n\nI can get some, but they ain\'t cheap.  They\'re hard to find these days.  \n\nLets call it 275\302\245.  Deal?"
   branches {
-    responseText: "Yes."
+    responseText: "{{CC}}275\302\245{{/CC}} Yes."
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -1029,7 +1029,7 @@ nodes {
           }
         }
         args {
-          int_value: 1000
+          int_value: 275
         }
       }
     }
@@ -1037,7 +1037,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1000
+          int_value: 275
         }
       }
       ops {
