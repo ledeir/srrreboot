@@ -1835,6 +1835,49 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Elevator To 1 Success"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
   }
   isActive: true
   idRef {
@@ -37499,6 +37542,28 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5b89980a616131682a003aaf"
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -39577,7 +39642,7 @@ triggers {
     ops {
       functionName: "Get Map Item (Event)"
       args {
-        string_value: "EndFloorCombat"
+        string_value: "ElevatorEndCombat"
       }
     }
   }
@@ -39774,7 +39839,7 @@ triggers {
     ops {
       functionName: "Get Map Item (Event)"
       args {
-        string_value: "EndFloorCombat"
+        string_value: "ElevatorEndCombat"
       }
     }
   }
@@ -39971,7 +40036,7 @@ triggers {
     ops {
       functionName: "Get Map Item (Event)"
       args {
-        string_value: "EndFloorCombat"
+        string_value: "ElevatorEndCombat"
       }
     }
   }
@@ -40168,7 +40233,7 @@ triggers {
     ops {
       functionName: "Get Map Item (Event)"
       args {
-        string_value: "EndFloorCombat"
+        string_value: "ElevatorEndCombat"
       }
     }
   }
@@ -40365,7 +40430,7 @@ triggers {
     ops {
       functionName: "Get Map Item (Event)"
       args {
-        string_value: "EndFloorCombat"
+        string_value: "ElevatorEndCombat"
       }
     }
   }
@@ -40562,7 +40627,7 @@ triggers {
     ops {
       functionName: "Get Map Item (Event)"
       args {
-        string_value: "EndFloorCombat"
+        string_value: "ElevatorEndCombat"
       }
     }
   }
@@ -40752,6 +40817,99 @@ triggers {
   elseActions {
   }
   is_oneshot: false
+}
+triggers {
+  name: "StripDisguiseFL1-DEBUG_ONLY"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "StripDisguise"
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "currentFloor"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "STRIP DISGUISE FLOOR 1"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: false
+  idRef {
+    id: "5b89980a616131682a003aaf"
+  }
+  elseActions {
+  }
+  is_oneshot: true
 }
 regions {
   name: "fl1_Cam"
@@ -46326,7 +46484,6 @@ mapEvents: "eComment"
 mapEvents: "ENDWAIT"
 mapEvents: "CHK_SPAWN"
 mapEvents: "ClearCheck"
-mapEvents: "EndFloorCombat"
 senseTags: "IC"
 senseTags: "Splatter"
 senseTags: "Akimi"
