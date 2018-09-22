@@ -39061,6 +39061,34 @@ triggers {
   events {
   }
   conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DR_FloorOpen"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
   }
   actions {
     ops {
@@ -45438,9 +45466,9 @@ characters {
         body: 6
         quickness: 5
         strength: 1
-        charisma: 5
+        charisma: 3
         intelligence: 5
-        willpower: 5
+        willpower: 7
         essence: 0
         magic: 6
         hp: 0
@@ -45462,7 +45490,7 @@ characters {
         ranged_combat: 0
         close_combat: 1
         throwing_weapons: 0
-        spellcasting: 6
+        spellcasting: 8
         decking: 0
         conjuring: 0
         spirit_summoning: 4
@@ -45536,7 +45564,7 @@ characters {
       filename: "akimi1"
     }
     portrait_code_override: "s6h2c6"
-    karma: 157
+    karma: 176
     hiring_cost_override: 1000
   }
 }
