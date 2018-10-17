@@ -26139,6 +26139,36 @@ triggers {
   is_oneshot: false
 }
 triggers {
+  name: "DEBUG-EquipmentScreen"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "52c031633733614c0d004dd1"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Open Equip Screen"
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b830b9f66313650140066c5"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
   name: ""
   events {
   }
@@ -26231,7 +26261,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Akimi"
               }
@@ -26257,6 +26287,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26329,7 +26373,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Anders"
               }
@@ -26355,6 +26399,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26427,7 +26485,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Dances"
               }
@@ -26453,6 +26511,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26525,7 +26597,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Frogtongue"
               }
@@ -26551,6 +26623,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26623,7 +26709,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Hamfist"
               }
@@ -26649,6 +26735,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26721,7 +26821,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Jangadance"
               }
@@ -26747,6 +26847,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26819,7 +26933,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Jetboy"
               }
@@ -26845,6 +26959,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -26917,7 +27045,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Kitsune"
               }
@@ -26943,6 +27071,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -27015,7 +27157,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Norbert"
               }
@@ -27041,6 +27183,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -27113,7 +27269,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Orifice"
               }
@@ -27139,6 +27295,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -27211,7 +27381,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Splatter"
               }
@@ -27237,6 +27407,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -27309,7 +27493,7 @@ triggers {
           functionName: "Nearest Tagged Actor to Actor"
           args {
             call_value {
-              functionName: "Get Map Item (SenseTagList)"
+              functionName: "Tag From String"
               args {
                 string_value: "Steelflight"
               }
@@ -27335,6 +27519,20 @@ triggers {
             int_value: 1
           }
         }
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Variable (string)"
+          args {
+            string_value: "TalkToTarget"
+          }
+        }
+      }
+      args {
+        string_value: "NONE"
       }
     }
   }
@@ -27438,36 +27636,6 @@ triggers {
   isActive: true
   idRef {
     id: "58b50ae2616131981d003a75"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "DebugEquipmentScreen"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "52c031633733614c0d004dd1"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Equip Screen"
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5b830b9f66313650140066c5"
   }
   elseActions {
   }
