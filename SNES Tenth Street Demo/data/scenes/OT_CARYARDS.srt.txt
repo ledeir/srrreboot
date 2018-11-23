@@ -4198,7 +4198,7 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "CYQ.Door (Allowed)"
+  name: "CYQ.Door (Allowed - In Scene)"
   events {
     ops {
       functionName: "On Item Interaction"
@@ -4293,6 +4293,159 @@ triggers {
   isActive: true
   idRef {
     id: "5b95ea4e663136a808004709"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "CYQ.Door (Allowed - Left Scene)"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b95ae5d663136a808002c3f"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b9eeb6a663136ec140013f6"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Grannie_Flow"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 6
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Prop"
+      args {
+        call_value {
+          functionName: "Triggering Prop"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Oh, now it\'s convenient for you to return?  Not interested.\n\nGo bother someone else."
+      }
+      args {
+        float_value: 128
+      }
+      args {
+        float_value: 112
+      }
+      args {
+        float_value: 214
+      }
+      args {
+        float_value: 128
+      }
+      args {
+        float_value: 20
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b95ae5d663136a808002c3f"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b9eeb6a663136ec140013f6"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf87dc1663136100f000e13"
   }
   elseActions {
   }
@@ -10875,7 +11028,7 @@ characters {
   }
   lod: 0
   character_instance {
-    prefab_name: "Seattle:Standard/OrkMaleRigger"
+    prefab_name: "Seattle:Story/TrollMaleHawaiianShirt"
     character_sheet_id: "Lvl1_Merc_Human_CombatRigger"
     character_mod {
       stats {
@@ -10939,12 +11092,12 @@ characters {
       }
     }
     team_id: "Civilians"
-    char_name: "El Jefe"
+    char_name: "Newt"
     GeneralTags: "isElJefe"
     pc_spawn_number: -1
     cyberware_jack: "Datajack"
     portrait {
-      filename: "pc_orkmale_07_shotgun"
+      filename: "backer_trollmale_matthewpalsson"
     }
     karma: 43
   }
@@ -11119,7 +11272,7 @@ characters {
       }
     }
     team_id: "Civilians"
-    char_name: "Grannie Lauren"
+    char_name: "Grannie"
     pc_spawn_number: -1
     portrait {
       filename: "grannie-besto"
