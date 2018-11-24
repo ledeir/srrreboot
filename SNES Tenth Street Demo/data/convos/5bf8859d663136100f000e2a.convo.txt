@@ -208,9 +208,48 @@ nodes {
     id: "5bf88e31663136100f000ed0"
   }
   index: 7
-  text: "{{GM}}He glaces around, a puzzled look on his face for a nanosecond.{{/GM}}\n\nWho?"
+  text: "{{GM}}He glances around, a puzzled look on his face for a nanosecond.{{/GM}}\n\nNames sounds familiar, but I\'m a bit distracted here... Who\'s that?"
   branches {
     responseText: "Show {{CC}}Business Card{{/CC}}."
+    actions {
+      ops {
+        functionName: "Remove Item from Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "TS_CAGE_FoleyCard"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 8
   }
   nodeType: ConversationNodeType_Simple
@@ -223,7 +262,7 @@ nodes {
     id: "5bf88e68663136100f000ed3"
   }
   index: 8
-  text: "UGH.   What a bunch of bottom feeding sellouts.\n\n{{GM}}His face screws up for a second, then relaxes.{{/GM}}\n\nFoley... Yeah I think I\'ve heard of him.   Harmless enough, unless he thinks he can exploit something out of you.\n\nPersonally, I\'d steer clear."
+  text: "UGH.   That\'s why I know him.   King of the bottom feeding sellouts.\n\n{{GM}}His face screws up for a second, then relaxes.{{/GM}}\n\nFoley... Harmless enough, unless he thinks he can exploit something out of you.\n\nPersonally, I\'d steer clear."
   branches {
     responseText: ""
     nextNodeIndex: 9
