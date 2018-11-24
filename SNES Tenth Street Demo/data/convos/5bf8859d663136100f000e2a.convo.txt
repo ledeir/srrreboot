@@ -1,0 +1,336 @@
+idRef {
+  id: "5bf8859d663136100f000e2a"
+}
+ui_name: "TS_CAGE_Hernandez"
+nodes {
+  idRef {
+    id: "5bf885c0663136100f000e31"
+  }
+  index: 0
+  text: "Hoi Chummer!\n\nWhat a night, eh?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf885f0663136100f000e38"
+  }
+  index: 1
+  text: "{{GM}}Without even waiting for a response.{{/GM}}\n\nSorry?   What was that?   \n\nSorry... Can\'t hear you over my favorite singer here."
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88b3d663136100f000e98"
+  }
+  index: 2
+  text: "{{GM}}The man is impeciably groomed, appearing to be from the Aztlan nation.  He seems to be \"happy drunk\" and really into the show.{{/GM}}\n\n\'Sup Chummer?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88bd0663136100f000ea4"
+  }
+  index: 3
+  text: ""
+  branches {
+    responseText: "Ask about {{CC}}Hernandez{{/CC}}."
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf88e26663136100f000ece"
+    }
+  }
+  branches {
+    responseText: "Ask about {{CC}}Mercurial{{/CC}}."
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf88c23663136100f000eaa"
+    }
+  }
+  branches {
+    responseText: "Ask about {{CC}}Max Foley{{/CC}}."
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "TS_CAGE_FoleyCard"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 7
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf88c02663136100f000ea9"
+    }
+  }
+  branches {
+    responseText: "Ask about {{CC}}waste{{/CC}}."
+    nextNodeIndex: 10
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf88c27663136100f000eab"
+    }
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88c5a663136100f000eb0"
+  }
+  index: 4
+  text: "That\'s me.\n\n{{GM}}He nods in your direction, before returning his attention to the show.{{/GM}}\n\nOnly honest man in the biz.   I\'m Maria\'s promoter or manager... which ever title you like.\n\nMostly though, this is all her.   I mostly just do the soykaf runs.\n\n{{GM}}He grins broadly.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88c2d663136100f000ead"
+  }
+  index: 5
+  text: "What a babe!  What a performer!  She puts both the nova and the hot into Hova-Hot!\n\n{{GM}}He grins{{/GM}}\n\nWe go back a ways.   Helped her out in a difficult time, got her free of some shadows, and onto the stage.  Best thing I ever did."
+  branches {
+    responseText: "Shadows?"
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88d93663136100f000ebe"
+  }
+  index: 6
+  text: "You know it.  You\'ve got that shadowrunner look to you, so you probably know more about that life than I do...\n\nShe had some serious trouble with some Azzies, but look at her now.   A walking, talking miracle!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88e31663136100f000ed0"
+  }
+  index: 7
+  text: "{{GM}}He glaces around, a puzzled look on his face for a nanosecond.{{/GM}}\n\nWho?"
+  branches {
+    responseText: "Show {{CC}}Business Card{{/CC}}."
+    nextNodeIndex: 8
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88e68663136100f000ed3"
+  }
+  index: 8
+  text: "UGH.   What a bunch of bottom feeding sellouts.\n\n{{GM}}His face screws up for a second, then relaxes.{{/GM}}\n\nFoley... Yeah I think I\'ve heard of him.   Harmless enough, unless he thinks he can exploit something out of you.\n\nPersonally, I\'d steer clear."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88ece663136100f000ed6"
+  }
+  index: 9
+  text: "{{GM}}He chuckles more to himself than to you.{{/GM}}\n\nI dunno about that fashion sense of his either."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88f13663136100f000eee"
+  }
+  index: 10
+  text: "{{GM}}He gives you a friendly slap on the shoulder.{{/GM}}\n\nGood eyes, friend!\n\n{{GM}}He turns to the bartender, raising his mostly empty glass.{{/GM}}\n\nHow about a refill?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005eb8"
+  }
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 0
+  comment: "Not Talked to Foley"
+}
+roots {
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  nextNodeIndex: 2
+  comment: "Talked to Foley"
+}

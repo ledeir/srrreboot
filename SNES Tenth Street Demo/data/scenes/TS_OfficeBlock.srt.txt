@@ -22747,6 +22747,44 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Play Animation From Manifest"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Animation)"
+          args {
+            string_value: "Berlin:General/standing_idle_smoking"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Play Animation From Manifest"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005eb8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Animation)"
+          args {
+            string_value: "Seattle:General/standing_idle_talking"
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -24946,7 +24984,7 @@ triggers {
         }
       }
       args {
-        string_value: "Bring your love back to me baaaaaby!\n"
+        string_value: "Bring your love back to me baaaaaby!"
       }
       args {
         float_value: 0
@@ -24992,7 +25030,7 @@ triggers {
         }
       }
       args {
-        string_value: "I don\'t want to hear a \'maaaaaaaybe\'\n"
+        string_value: "I don\'t want to hear a \'maaaaaaaybe\'"
       }
       args {
         float_value: 0
@@ -25038,7 +25076,7 @@ triggers {
         }
       }
       args {
-        string_value: "Look. You must feel the same way too.\n"
+        string_value: "Look. You must feel the same way too."
       }
       args {
         float_value: 0
@@ -25084,7 +25122,7 @@ triggers {
         }
       }
       args {
-        string_value: "I really enjoy cruising fast with you...\n"
+        string_value: "I really enjoy cruising fast with you..."
       }
       args {
         float_value: 0
@@ -25130,7 +25168,7 @@ triggers {
         }
       }
       args {
-        string_value: "So don\'t try to take me up on a run!!!\n"
+        string_value: "So don\'t try to take me up on a run!!!"
       }
       args {
         float_value: 0
@@ -25176,7 +25214,7 @@ triggers {
         }
       }
       args {
-        string_value: "Think of me! I\'m just looking for fun...\n"
+        string_value: "Think of me! I\'m just looking for fun..."
       }
       args {
         float_value: 0
@@ -31855,6 +31893,779 @@ triggers {
   }
   is_oneshot: true
 }
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5bf895f1663136100f00110b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "---FOLEY / HERNANDEZ ---"
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5bf895f1663136100f00110c"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "F-H.FoleyInteraction (Convo)"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "OR"
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "CAGE_FoleyHernandez_Progress"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "CAGE_FoleyHernandez_Progress"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5bf8865b663136100f000e43"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf895ec663136100f00110a"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "F-H.FoleyInteraction (Dig)"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Dig into it runner.  Get me something I can use."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 7
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf896a1663136100f00110d"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "F-H.FoleyInteraction (Done)"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Places to go, people to me...\n\nAm I Right?"
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 7
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005ead"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf896a9663136100f00110e"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: ""
+  events {
+  }
+  conditions {
+  }
+  actions {
+  }
+  isActive: false
+  idRef {
+    id: "5bf897a6663136100f001115"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "F-H.HernandezInteraction (Unknown)"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005eb8"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5bf8859d663136100f000e2a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005eb8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf897a0663136100f001113"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "F-H.HernandezInteraction (Done)"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005eb8"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5ae94a376161314c10005eb8"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        string_value: "His head continues to bob to the music, and he doesn\'t respond."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 7
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5ae94a376161314c10005eb8"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf897a0663136100f001114"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "F-H.Disabler"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "OT_CY_Exit"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5ae94a376161314c10005eb8"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "5ae94a376161314c10005ead"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5bf89ba6663136100f0011ca"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
 regions {
   name: "CameraA"
   position {
@@ -35960,9 +36771,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: 31.900002
+    x: 33.9
     y: 0
-    z: -27.199997
+    z: -52.199997
   }
   orientation: ORIENTATION_S
   displayName: "Main"
@@ -36584,9 +37395,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 27
+    x: 31
     y: 0
-    z: -47
+    z: -49
   }
   orientation: ORIENTATION_S
   displayName: "Customer2"
@@ -36596,17 +37407,39 @@ characters {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
-    inspectInteraction {
-      dispalyTime: 2
-      fadeTime: 0
-      inspectText: "I was here first. I always sit here. You can\'t make me move!\nI don\'t know nothing. I stay alive that way!"
-      disableAfterInteracting: true
+    prerequisites {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "iConcert"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
     }
-    interaction_info_text: ""
+    interactionIcon: InteractionIcon_Conversation
+    interaction_info_text: "Talk to Foley"
   }
   lod: 0
   character_instance {
-    prefab_name: "Extras/HumanMaleWorkingclassSweater"
+    prefab_name: "Seattle:Story/SgtAguirre"
     character_sheet_id: "BaseCivilian"
     character_mod {
       stats {
@@ -36632,10 +37465,15 @@ characters {
       specializations {
       }
       archetypeName: "Non-Combatant"
+      vulnerabilities {
+      }
     }
     team_id: "Civilians"
-    char_name: "Busy Man"
+    char_name: "Max Foley"
     pc_spawn_number: -1
+    portrait {
+      filename: "max_foley"
+    }
     karma: 6
   }
 }
@@ -36646,7 +37484,7 @@ characters {
     y: 0
     z: -54
   }
-  orientation: ORIENTATION_N
+  orientation: ORIENTATION_W
   displayName: "Customer1"
   idRef {
     id: "5ae94a376161314c10005eb8"
@@ -36654,17 +37492,39 @@ characters {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
-    inspectInteraction {
-      dispalyTime: 2
-      fadeTime: 0
-      inspectText: "Hi! Wiz music, don\'t you think?\nI look familiar? What kind of line is that! Creep!\nI can\'t hear you, the music is too loud!"
-      disableAfterInteracting: true
+    prerequisites {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "iConcert"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
     }
-    interaction_info_text: ""
+    interactionIcon: InteractionIcon_Conversation
+    interaction_info_text: "Talk to Hernandez"
   }
   lod: 0
   character_instance {
-    prefab_name: "Extras/HumanMaleWorkingclassShirtSpiky"
+    prefab_name: "Seattle:Wealthy/HumanMaleAutumn"
     character_sheet_id: "BaseCivilian"
     character_mod {
       stats {
@@ -36690,10 +37550,15 @@ characters {
       specializations {
       }
       archetypeName: "Non-Combatant"
+      vulnerabilities {
+      }
     }
     team_id: "Civilians"
-    char_name: "Well Dressed Man"
+    char_name: "Armando Hernandez"
     pc_spawn_number: -1
+    portrait {
+      filename: "Armando_Hernandez"
+    }
     karma: 6
     is_prop_character: true
   }

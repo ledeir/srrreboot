@@ -1,0 +1,551 @@
+idRef {
+  id: "5bf8865b663136100f000e43"
+}
+ui_name: "TS_CAGE_Foley"
+nodes {
+  idRef {
+    id: "5bf8866b663136100f000e49"
+  }
+  index: 0
+  text: "{{GM}}The man is sporting a cheap looking pendant, and the latest fashionable clothes, though he\'s clearly too old for them, the whole time puffing away on an expensive smelling cigar as if he owns the place.{{/GM}}\n\nGreat Show, am I right?"
+  branches {
+    responseText: "Ask about {{CC}}Mercurial{{/CC}}."
+    nextNodeIndex: 1
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5bf88738663136100f000e4e"
+  }
+  index: 1
+  text: "{{GM}}He lifts it glass to her, as if as a toast.{{/GM}}\n\nAye, there she is.   World\'s greatest rockstar...  She could be HUGE!   Sadly, she\'s being mismanaged.   \n\nWhat a waste."
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88791663136100f000e51"
+  }
+  index: 2
+  text: "[{GM}}He puffs on his cigar, flashing you his cheesy fake grin revealing his ugly gold capped teeth.{{/GM}}\n\nBut where are my manners?   Name\'s Max.  Max Foley.  I run a music label called Low-Ball Records.   Might you have heard of it?  You look like you\'re in the biz, am I right?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88821663136100f000e58"
+  }
+  index: 3
+  text: ""
+  branches {
+    responseText: "Ask about {{CC}}waste{{/CC}}."
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf888f6663136100f000e5e"
+    }
+  }
+  branches {
+    responseText: "Ask about {{CC}}the biz{{/CC}}."
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf888fb663136100f000e5f"
+    }
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88849663136100f000e5d"
+  }
+  index: 4
+  text: "That guy...\n\n{{GM}}His tips his drink at the man at the other end of the bar with his back turned, and scoffs in disgust.{{/GM}}\n\n...Armando Fraggin\' Hernandez.  Total amateur hack.   Keeps her playing these small fry low rent gigs, all while her records keep going mint!\n\nProbably something to do with \"integrity\" or some crap, am I right?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88905663136100f000e62"
+  }
+  index: 5
+  text: "How\'d a small time hack like him even score this nova-hot piece?\n\nBoy\'s either got some crazy luck or some history, am I right?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88955663136100f000e6e"
+  }
+  index: 6
+  text: "{{GM}}He gives you a once-over look, clearly a very practiced gesture.{{/GM}}\n\nYou... You\'ve got that... \"Outlaw retro noir movie\" vibe.\n\nLemme tell ya... Low Ball could work with that.   People dig that \'salt of the earth\' origins story, am I right?   Don\'t even matter if you can sing.   We can, and will, auto-tune the heck outta you."
+  branches {
+    responseText: ""
+    nextNodeIndex: 7
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf889f2663136100f000e71"
+  }
+  index: 7
+  text: "Seriously... You ought to consider sending in your demo reel!   We could make some serious bank, am I right?\n\n{{GM}}He hands you a business card.  The logo on the card is impressively animated.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "TS_CAGE_FoleyCard"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5bf88fb0663136100f000f45"
+  }
+  index: 8
+  text: "{{GM}}Max waves his hand in front of his face, grinning like a gold toothed shark the whole time.{{/GM}}\n\nThat guy... Seriously... Is he nose-deaf?\n\n{{GM}}He leans in, and lowers his voice.{{/GM}}\n\nSo, you got something for me runner?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf8903e663136100f000f48"
+  }
+  index: 9
+  text: ""
+  branches {
+    responseText: ""
+    nextNodeIndex: 10
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+  comment: "Final Max"
+}
+nodes {
+  idRef {
+    id: "5bf894cd663136100f000fd7"
+  }
+  index: 10
+  text: ""
+  branches {
+    responseText: "Ask about {{CC}}Nuyen{{/CC}}."
+    nextNodeIndex: 11
+  }
+  branches {
+    responseText: "Ask about {{CC}}Fashion{{/CC}}."
+    nextNodeIndex: 18
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf89405663136100f000f99"
+    }
+  }
+  branches {
+    responseText: "Ask about {{CC}}Hernandez{{/CC}}"
+    nextNodeIndex: 19
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf894ae663136100f000fb9"
+    }
+  }
+  branches {
+    responseText: "{{CC}}Leave{{/CC}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf89085663136100f000f4f"
+  }
+  index: 11
+  text: "{{GM}}Max\'s eyes narrow slightly, but his grin remains as big as ever.{{/GM}}\n\nThat means you know something... Whatcha thinking?"
+  branches {
+    responseText: "30\302\245"
+    nextNodeIndex: 12
+  }
+  branches {
+    responseText: "50\302\245"
+    nextNodeIndex: 12
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "80\302\245"
+    nextNodeIndex: 12
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "I don\'t actually have anything... Just wanted to see what you\'d say."
+    nextNodeIndex: 17
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf89191663136100f000f66"
+  }
+  index: 12
+  text: "Done.   Whatcha got?"
+  branches {
+    responseText: "Tell Max about {{CC}}Azzies{{/CC}}."
+    nextNodeIndex: 13
+  }
+  branches {
+    responseText: "{{CC}}Lie{{/CC}} to Max."
+    nextNodeIndex: 15
+  }
+  branches {
+    responseText: "There\'s nothing to tell."
+    nextNodeIndex: 16
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf891ee663136100f000f6b"
+  }
+  index: 13
+  text: "{{GM}}Max\'s fingers dance against his drink glass, licking his lips.{{/GM}}\n\nSure, that might work.  I work with creative types all the time.  You never can tell what or who\'ll be the next hot thing.\n\nAzzies, huh?  Sounds like a solid tip.   Tell you what, I\'ll include a little something-something for the quality."
+  branches {
+    responseText: ""
+    nextNodeIndex: 14
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5bf892ac663136100f000f6e"
+  }
+  index: 14
+  text: "{{GM}}He leans back in, and whispers in your ear.{{/GM}}\n\nOh, and we never met.   Got that?  Nobody never told me or anyone else anything, am I right?\n\n{{GM}}He presses a small disposable credstick into your hand.{{/GM}}\n\nHave yourself a good night, Runner.\n\nI know I will, am I right?"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+  actions {
+    ops {
+      functionName: "Add Nuyen"
+      args {
+        int_value: 100
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5bf8932a663136100f000f70"
+  }
+  index: 15
+  text: "{{GM}}Max devours ever word, but that shark is still circling in his eyes.{{/GM}}\n\nI don\'t buy it runner.   No body pulls one over on Max Foley.\n\nGet out of my face, and quit wasting my time."
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5bf89398663136100f000f72"
+  }
+  index: 16
+  text: "{{GM}}His face darkens, and he takes a long swallow from his drink.{{/GM}}\n\nWell, then I guess I don\'t need you, do I?\n\nWaste of my night, am I right?"
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 3
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5bf89128663136100f000f55"
+  }
+  index: 17
+  text: "{{GM}}He laughs and relaxes back against the bar. Despite his friendly posture, theres a shark in those eyes.{{/GM}}\n\nHa ha. \n\nYou got me, runner.   Guess you got a bit more fishing to do, am I right?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf893ff663136100f000f98"
+  }
+  index: 18
+  text: "{{GM}}He spreads his arms, and takes a half turn.{{/GM}}\n\nWhat?  You want the name and number for my tailor or something?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf89441663136100f000fb8"
+  }
+  index: 19
+  text: "{{GM}}He laughs loudly, earning him some dirty looks from the club goers.{{/GM}}\n\nThat boy is just a drunken love sick puppy, isn\'t he?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5ae94a376161314c10005ead"
+  }
+}
+roots {
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 0
+  comment: "Convo = 0"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CAGE_FoleyHernandez_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  nextNodeIndex: 8
+  comment: "Convo = 2"
+}
