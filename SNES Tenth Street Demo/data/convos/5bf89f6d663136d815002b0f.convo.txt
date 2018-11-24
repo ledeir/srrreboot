@@ -1,0 +1,715 @@
+idRef {
+  id: "5bf89f6d663136d815002b0f"
+}
+ui_name: "ANEKI_VIDEOFILE"
+nodes {
+  idRef {
+    id: "5bf89f75663136d815002b15"
+  }
+  index: 0
+  text: "{{GM}}The screen shows grainy footage, probably from some low-cost temporary video surveillance camera, all displayed without sound.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5bf89f99663136d815002b16"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf8a01e663136d815002b1e"
+  }
+  index: 1
+  text: "{{GM}}The feed shows a handful of scientists and security personnel getting brutally gunned down by the building\'s automated defenses.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5bf89f99663136d815002b16"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf8a06e663136d815002b21"
+  }
+  index: 2
+  text: "{{GM}}The feed shifts slightly, showing one of the people crawling down the hallway.  You can see the horiffic wound in his chest, and his lips are moving, clearly pleading with the drones.  After a second, the drone opens fire, gunning him down, then it cuts out entirely.{{/GM}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5bf89f99663136d815002b16"
+  }
+}
+nodes {
+  idRef {
+    id: "5bf8a120663136d815002b24"
+  }
+  index: 3
+  text: ""
+  branches {
+    responseText: "Ask for {{CC}}Akimi{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Akimi"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a324663136d815002b68"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Anders{{/CC}}\' opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Anders"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a331663136d815002b69"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Dances With Clams{{/CC}}\' opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Dances"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a336663136d815002b6a"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Frogtounge{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Frogtongue"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 7
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a33a663136d815002b6b"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Hamfist{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Hamfist"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a33f663136d815002b6c"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Jangadance{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Jagadance"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 9
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a343663136d815002b6d"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Jetboy{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Jetboy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 10
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a348663136d815002b6e"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Kitsune{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_OnCall_Kitsune"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 11
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a34b663136d815002b6f"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Norbert{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Norbert"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 12
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a350663136d815002b70"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Oriface{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Orifice"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 13
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a354663136d815002b71"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Spatter{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Splatter"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 14
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a359663136d815002b72"
+    }
+  }
+  branches {
+    responseText: "Ask for {{CC}}Steelflight{{/CC}}\'s opinion."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "SR_Fights_Steelflight"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    nextNodeIndex: 15
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a35e663136d815002b73"
+    }
+  }
+  branches {
+    responseText: "$(scene.sFight) We kill them all!"
+    nextNodeIndex: -1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a365663136d815002b74"
+    }
+  }
+  branches {
+    responseText: "$(scene.sFriend) Let\'s try to save them!"
+    nextNodeIndex: -1
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "5bf8a36b663136d815002b75"
+    }
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "Crew Loop"
+}
+nodes {
+  idRef {
+    id: "5bf8a37a663136d815002b77"
+  }
+  index: 4
+  text: "(AKIMI BLERP)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Akimi"
+}
+nodes {
+  idRef {
+    id: "5bf8a444663136d815002bc6"
+  }
+  index: 5
+  text: "(ANDERS BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Anders"
+}
+nodes {
+  idRef {
+    id: "5bf8a44b663136d815002bca"
+  }
+  index: 6
+  text: "(DANCES WITH CLAMS BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Dances"
+}
+nodes {
+  idRef {
+    id: "5bf8a452663136d815002bce"
+  }
+  index: 7
+  text: "(FROGTOUNGE BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Frogtounge"
+}
+nodes {
+  idRef {
+    id: "5bf8a45e663136d815002bd2"
+  }
+  index: 8
+  text: "(HAMFIST BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Hamfist"
+}
+nodes {
+  idRef {
+    id: "5bf8a466663136d815002bd6"
+  }
+  index: 9
+  text: "(JANGADANCE BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Jangadance"
+}
+nodes {
+  idRef {
+    id: "5bf8a46f663136d815002bda"
+  }
+  index: 10
+  text: "(JEYBOY BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Jetboy"
+}
+nodes {
+  idRef {
+    id: "5bf8a477663136d815002bde"
+  }
+  index: 11
+  text: "(KITSUNE BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Kitsune"
+}
+nodes {
+  idRef {
+    id: "5bf8a47e663136d815002be2"
+  }
+  index: 12
+  text: "(NORBERT BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Norbert"
+}
+nodes {
+  idRef {
+    id: "5bf8a486663136d815002be6"
+  }
+  index: 13
+  text: "(ORIFACE BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Oriface"
+}
+nodes {
+  idRef {
+    id: "5bf8a490663136d815002bea"
+  }
+  index: 14
+  text: "(SPATTER BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Spatter"
+}
+nodes {
+  idRef {
+    id: "5bf8a497663136d815002bee"
+  }
+  index: 15
+  text: "(STEELFLIGHT BLERB)"
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "Steelflight"
+}
+roots {
+  nextNodeIndex: 0
+}
