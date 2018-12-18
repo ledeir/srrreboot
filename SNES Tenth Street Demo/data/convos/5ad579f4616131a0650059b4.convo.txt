@@ -43,6 +43,17 @@ nodes {
     responseText: "Enter Gurney\'s Shop"
     actions {
       ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "GotoGunshop"
+            }
+          }
+        }
+      }
+      ops {
         functionName: "Teleport Actor"
         args {
           call_value {

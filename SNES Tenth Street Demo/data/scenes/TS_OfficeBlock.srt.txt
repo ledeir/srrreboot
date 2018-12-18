@@ -9693,23 +9693,54 @@ triggers {
       }
     }
     ops {
-      functionName: "Set Region Enabled"
+      functionName: "Teleport Actor"
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Specific Actor"
           args {
-            string_value: "EnableOrDisable"
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "58c89b8f61613118380068f3"
+              }
+            }
           }
           args {
-            int_value: 0
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Map Item (Region)"
+          functionName: "Current Location of Prop"
           args {
-            string_value: "58c89b8f61613118380068c1"
+            call_value {
+              functionName: "Get Map Item (Prop)"
+              args {
+                string_value: "5b54ca4a663136cc02007d32"
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
+          }
+          args {
+            int_value: 0
           }
         }
       }
@@ -9919,69 +9950,6 @@ triggers {
       }
     }
     ops {
-      functionName: "Start Conversation Between Actors"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "51afffe56334619419001920"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "58c89b8f61613118380068f3"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "DogQuest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Clear Persistent Dead Bodies"
       args {
         call_value {
@@ -10026,21 +9994,24 @@ triggers {
 triggers {
   name: "ALLEY-DogLeave"
   events {
-    ops {
-      functionName: "On Region Exit"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "58c89b8f61613118380068c1"
-          }
-        }
-      }
-    }
   }
   conditions {
   }
   actions {
+    ops {
+      functionName: "Trigger: Wait for Rounds"
+      args {
+        int_value: 2
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
     ops {
       functionName: "Teleport Actor"
       args {
@@ -34004,9 +33975,9 @@ regions {
   name: "ALLEY-DogTrigger"
   position {
     x: 57
-    y: 13
+    y: 19
     width: -11
-    height: -5
+    height: -14
   }
   enabledAtStart: false
   is_camera_region: false
@@ -36722,6 +36693,53 @@ characters {
   displayName: "ALLEY_DOG"
   idRef {
     id: "58c89b8f61613118380068f3"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 3
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DogQuest"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    conversationPoint {
+      conversationID: "51afffe56334619419001920"
+      turnToFace: false
+    }
+    interaction_info_text: "A strange dog is watching you intently."
   }
   lod: 0
   character_instance {

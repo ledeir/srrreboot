@@ -1,7 +1,7 @@
 idRef {
   id: "51afffe56334619419001920"
 }
-ui_name: "SeekOutDog"
+ui_name: "TS_Alley_Dog"
 nodes {
   idRef {
     id: "51b000036334619419001926"
@@ -563,6 +563,52 @@ nodes {
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "58c89b8f61613118380068f3"
+  }
+  actions {
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "51b00a4b633461941900194c"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
   }
 }
 nodes {
