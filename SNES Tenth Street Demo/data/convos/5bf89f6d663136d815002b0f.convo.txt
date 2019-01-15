@@ -523,6 +523,25 @@ nodes {
   }
   branches {
     responseText: "$(scene.sFight) We kill them all!"
+    actions {
+      ops {
+        functionName: "Set Variable (string)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (string)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "ANEKI_ACTION"
+            }
+          }
+        }
+        args {
+          string_value: "HOSTILE"
+        }
+      }
+    }
     nextNodeIndex: -1
     hideIfUnavailable: true
     onlyOnce: true
@@ -532,12 +551,54 @@ nodes {
   }
   branches {
     responseText: "$(scene.sFriend) Let\'s try to save them!"
+    actions {
+      ops {
+        functionName: "Set Variable (string)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (string)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "ANEKI_ACTION"
+            }
+          }
+        }
+        args {
+          string_value: "PEACEFUL"
+        }
+      }
+    }
     nextNodeIndex: -1
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
       id: "5bf8a36b663136d815002b75"
     }
+  }
+  branches {
+    responseText: "Let\'s play it by ear..."
+    actions {
+      ops {
+        functionName: "Set Variable (string)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (string)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "ANEKI_ACTION"
+            }
+          }
+        }
+        args {
+          string_value: "NEUTRAL"
+        }
+      }
+    }
+    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
   comment: "Crew Loop"
@@ -603,7 +664,7 @@ nodes {
     id: "5bf8a45e663136d815002bd2"
   }
   index: 8
-  text: "Looks like Aneki should have hired a better decker. Looks like we can ignore the meat and just trash the drones."
+  text: "Aneki shoulda\' hired a better decker. Looks like we can ignore the meat and just trash the drones."
   branches {
     responseText: ""
     nextNodeIndex: 3
