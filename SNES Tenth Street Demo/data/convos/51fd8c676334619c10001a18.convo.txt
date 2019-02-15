@@ -191,9 +191,12 @@ nodes {
         functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bKnowsAboutCorpScoutCookies"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_KnowsAboutCookies"
             }
           }
         }
@@ -322,9 +325,48 @@ nodes {
         functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bCookiesOrdered"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_CookiesOrdered"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_DisableCookieVendor"
             }
           }
         }
@@ -363,9 +405,12 @@ nodes {
         functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bCookiesOrdered"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_CookiesOrdered"
             }
           }
         }
@@ -494,9 +539,48 @@ nodes {
         functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bHasSlept"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_HasSlept"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_DisableCookieVendor"
             }
           }
         }
@@ -535,9 +619,12 @@ nodes {
         functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bCookiesOrdered"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_CookiesOrdered"
             }
           }
         }
@@ -666,9 +753,12 @@ nodes {
         functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bHasSlept"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_HasSlept"
             }
           }
         }
@@ -691,6 +781,42 @@ nodes {
             }
             args {
               int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_DisableCookieVendor"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
             }
           }
         }
@@ -1044,9 +1170,12 @@ nodes {
         functionName: "Set Variable (bool)"
         args {
           call_value {
-            functionName: "Get Variable (bool)"
+            functionName: "Get Story Variable (bool)"
             args {
-              string_value: "bCookiesOrdered"
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "CY_CookiesOrdered"
             }
           }
         }
@@ -1132,6 +1261,31 @@ nodes {
   text: "Told ya, $(l.man).\n\nHere you go.   Enjoy."
   nodeType: ConversationNodeType_Simple
   actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_DisableCookieVendor"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
     ops {
       functionName: "Add Item to Actor"
       args {

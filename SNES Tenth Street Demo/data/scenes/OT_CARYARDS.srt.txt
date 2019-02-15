@@ -4660,9 +4660,12 @@ triggers {
           functionName: "Comparison (bool)"
           args {
             call_value {
-              functionName: "Get Variable (bool)"
+              functionName: "Get Story Variable (bool)"
               args {
-                string_value: "bCookiesOrdered"
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "CY_CookiesOrdered"
               }
             }
           }
@@ -4736,9 +4739,12 @@ triggers {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bHasSlept"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_HasSlept"
           }
         }
       }
@@ -5512,32 +5518,23 @@ triggers {
       }
     }
     ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "Kitchen"
-      }
-      args {
-        string_value: "Repair The Kitchen:"
-      }
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "iKitchenRepairs"
-          }
-        }
-      }
-      args {
-        int_value: 4
-      }
-    }
-    ops {
       functionName: "Set Screen Label"
       args {
         string_value: "Fence"
       }
       args {
-        string_value: "Cage Status:\n$(scene.sFenceStatus)"
+        string_value: "Cage Status: $(scene.sFenceStatus)"
+      }
+    }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eCheck_Kitchen"
+          }
+        }
       }
     }
   }
@@ -5990,9 +5987,12 @@ triggers {
       functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bHasFenceParts"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_HasFenceParts"
           }
         }
       }
@@ -6071,9 +6071,12 @@ triggers {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bHasFenceParts"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_HasFenceParts"
           }
         }
       }
@@ -6140,9 +6143,12 @@ triggers {
       functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bHasFenceParts"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_HasFenceParts"
           }
         }
       }
@@ -6520,9 +6526,12 @@ triggers {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bFenceFixed"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_FenceFixed"
           }
         }
       }
@@ -6569,7 +6578,7 @@ triggers {
         string_value: "Fence"
       }
       args {
-        string_value: "Cage Status:\n$(scene.sFenceStatus)"
+        string_value: "Cage Status: $(scene.sFenceStatus)"
       }
     }
   }
@@ -6674,37 +6683,28 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen1"
           }
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "Kitchen"
-      }
-      args {
-        string_value: "Repair The Kitchen:"
-      }
-      args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
           }
         }
-      }
-      args {
-        int_value: 4
       }
     }
     ops {
@@ -6842,37 +6842,28 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen2"
           }
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "Kitchen"
-      }
-      args {
-        string_value: "Repair The Kitchen:"
-      }
-      args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
           }
         }
-      }
-      args {
-        int_value: 4
       }
     }
     ops {
@@ -7010,37 +7001,28 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen3"
           }
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "Kitchen"
-      }
-      args {
-        string_value: "Repair The Kitchen:"
-      }
-      args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
           }
         }
-      }
-      args {
-        int_value: 4
       }
     }
     ops {
@@ -7178,37 +7160,28 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen4"
           }
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "Kitchen"
-      }
-      args {
-        string_value: "Repair The Kitchen:"
-      }
-      args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
           }
         }
-      }
-      args {
-        int_value: 4
       }
     }
     ops {
@@ -7265,12 +7238,15 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (int)"
+      functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Variable (int)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "iKitchenRepairs"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen1"
           }
         }
       }
@@ -7278,26 +7254,154 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "Comparison Ops"
+            string_value: "IsOrIsNot"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
       args {
-        int_value: 4
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_Kitchen4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
   actions {
     ops {
+      functionName: "Set Screen Label"
+      args {
+        string_value: "Kitchen"
+      }
+      args {
+        string_value: "Kitchen Stauts: {{00CED1}}[ Repaired ]{{-}}"
+      }
+    }
+    ops {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bKitchenFixed"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_KitchenFixed"
           }
         }
       }
@@ -7319,6 +7423,15 @@ triggers {
     id: "5b9ec4b8663136ec14001165"
   }
   elseActions {
+    ops {
+      functionName: "Set Screen Label"
+      args {
+        string_value: "Kitchen"
+      }
+      args {
+        string_value: "Kitchen Stauts: {{00CED1}}[In Progress]{{-}}"
+      }
+    }
   }
   is_oneshot: false
 }
@@ -7431,9 +7544,12 @@ triggers {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bMetScorpions"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_SeenScorpion"
           }
         }
       }
@@ -7763,9 +7879,12 @@ triggers {
       functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bFenceFixed"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_FenceFixed"
           }
         }
       }
@@ -7823,9 +7942,12 @@ triggers {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bScorpionsDefeated"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_ScorpionsKilled"
           }
         }
       }
@@ -8322,7 +8444,7 @@ triggers {
         }
       }
       args {
-        string_value: "Nobody takes my cars, El Jefe!"
+        string_value: "Nobody takes my cars, Newt!"
       }
       args {
         float_value: 255
@@ -12034,6 +12156,7 @@ mapEvents: "eCheck_Scorpion"
 mapEvents: "eCheck_Cage"
 mapEvents: "eBreakOut"
 mapEvents: "eBreakOut_SendVan"
+mapEvents: "eCheckLabels"
 senseTags: "isActiveScorpion"
 goals {
   name: "Survive"

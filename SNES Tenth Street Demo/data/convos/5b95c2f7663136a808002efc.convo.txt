@@ -9,7 +9,7 @@ nodes {
   index: 0
   text: "{{GM}}An oddly intense set of eyes peer out of a slot which looks to have been torn, rather than cut, through the steel door.{{/GM}}\n\nWho are you?   \n\nWhy are you ponding on my door?!?"
   branches {
-    responseText: "I\'m $(s.name).  A guy named El Jefe told me to seek you out for advice finding car parts."
+    responseText: "I\'m $(s.name).  A guy named Newt asked me to seek you out for advice finding car parts."
     nextNodeIndex: 1
   }
   branches {
@@ -45,7 +45,7 @@ nodes {
     id: "5b95cd97663136a808002fef"
   }
   index: 1
-  text: "El Jefe?   Don\'t know \'em, don\'t care to.  \n\nIf you ain\'t the Corp-scouts,  leave  an  old  lady  in  peace...\n\nAll  this  violence  on  my  doorstep  makes  me  weary."
+  text: "Newt?   Don\'t know \'em, don\'t care to.  \n\nIf you ain\'t the Corp-scouts,  leave  an  old  lady  in  peace...\n\nAll  this  violence  on  my  doorstep  makes  me  weary."
   branches {
     responseText: ""
     nextNodeIndex: 2
@@ -84,9 +84,12 @@ nodes {
       functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Variable (bool)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "bKnowsAboutCorpScoutCookies"
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_KnowsAboutCookies"
           }
         }
       }
