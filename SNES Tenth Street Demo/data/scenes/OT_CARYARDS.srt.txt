@@ -3839,6 +3839,28 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Set Region Enabled"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b9ee172663136ec14001285"
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -3887,7 +3909,7 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Teleport Actor near Actor"
+      functionName: "Kill Actor"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -3904,13 +3926,13 @@ triggers {
         }
       }
       args {
-        int_value: 0
-      }
-      args {
         call_value {
-          functionName: "Get Map Item (Actor)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "5b95d935663136a808003985"
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
           }
         }
       }
@@ -3929,7 +3951,7 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "TeleportMethod"
+            string_value: "WithOrWithout"
           }
           args {
             int_value: 0
@@ -3953,6 +3975,28 @@ triggers {
       args {
         call_value {
           functionName: "Everywhere"
+        }
+      }
+    }
+    ops {
+      functionName: "Set Region Enabled"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "5b9ee172663136ec14001285"
+          }
         }
       }
     }
@@ -7870,7 +7914,119 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Sewer.Scorpion_Status"
+  name: "Sewer.Scorpion_Status (Cleared)"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "AND"
+      args {
+        call_value {
+          functionName: "Comparison (bool)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (bool)"
+              args {
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "CY_ScorpionsKilled"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "bool"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (int)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "CY_Grannie_Flow"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Activate Actor Spawner By Tag"
+      args {
+        call_value {
+          functionName: "Get Map Item (SenseTagList)"
+          args {
+            string_value: "isScorpion"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5c6888a66631362c0b0057d7"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Sewer.Scorpion_Status (UnCleared)"
   events {
     ops {
       functionName: "On Map Start"
@@ -7908,75 +8064,19 @@ triggers {
             string_value: "bool"
           }
           args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Activate Actor Spawner By Tag"
-      args {
-        call_value {
-          functionName: "Get Map Item (SenseTagList)"
-          args {
-            string_value: "isScorpion"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
             int_value: 1
           }
         }
       }
     }
   }
+  actions {
+  }
   isActive: true
   idRef {
-    id: "5c6888a66631362c0b0057d7"
+    id: "5c881c64663136040300379c"
   }
   elseActions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "iCritters_Remain"
-          }
-        }
-      }
-      args {
-        int_value: 5
-      }
-    }
-    ops {
-      functionName: "Set Screen Label Progress Bar (int)"
-      args {
-        string_value: "Scoripions"
-      }
-      args {
-        string_value: "Purge the Scorpions:"
-      }
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "iCritters_Remain"
-          }
-        }
-      }
-      args {
-        int_value: 5
-      }
-    }
   }
   is_oneshot: false
 }
@@ -9091,6 +9191,42 @@ triggers {
         int_value: 3
       }
     }
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_EscapeHappened"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
   }
   actions {
     ops {
@@ -9527,6 +9663,31 @@ triggers {
       }
       args {
         float_value: 2.25
+      }
+    }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "CY_EscapeHappened"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
     ops {
