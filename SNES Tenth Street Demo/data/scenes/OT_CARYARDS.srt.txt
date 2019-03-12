@@ -7914,7 +7914,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Sewer.Scorpion_Status (Cleared)"
+  name: "Sewer.Scorpion_Status (UnCleared)"
   events {
     ops {
       functionName: "On Map Start"
@@ -8016,6 +8016,17 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "eCheck_Scorpion"
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -8026,7 +8037,7 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "Sewer.Scorpion_Status (UnCleared)"
+  name: "Sewer.Scorpion_Status (Cleared)"
   events {
     ops {
       functionName: "On Map Start"
