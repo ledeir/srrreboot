@@ -1725,6 +1725,44 @@ nodes {
   text: "Sometimes I find stuff that still works or can repair things. Wanna see what I got?"
   branches {
     responseText: "Yes {{GM}}open shop{{/GM}}"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Jester"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Open Store Screen From Actor"
@@ -1732,13 +1770,275 @@ nodes {
           call_value {
             functionName: "Get Map Item (Actor)"
             args {
-              string_value: "51fd7e6c6334619c10001941"
+              string_value: "5c89d85a6161310c2b005aa4"
             }
           }
         }
       }
     }
     nextNodeIndex: 22
+    hideIfUnavailable: true
+    comment: "Base"
+  }
+  branches {
+    responseText: "Yes {{GM}}open shop{{/GM}}"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Jester"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Roof"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5c89d9ff6161310c2b005b40"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 22
+    hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "low"
+  }
+  branches {
+    responseText: "Yes {{GM}}open shop{{/GM}}"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Drake"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Roof"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5c89da006161310c2b005b41"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 22
+    hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "med"
+  }
+  branches {
+    responseText: "Yes {{GM}}open shop{{/GM}}"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Drake"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5c89da016161310c2b005b42"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 22
+    hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "high"
   }
   branches {
     responseText: "No, I\'m not interested in a Caryard brat\'s toys!"
@@ -1751,7 +2051,7 @@ nodes {
     id: "53447c6b373630f408004a1f"
   }
   index: 22
-  text: "Come back another time, maybe I can scavenge something else...\n{{GM}}He won\'t, at the moment.{{/GM}}"
+  text: "Come back another time, maybe I can scavenge something else..."
   branches {
     responseText: ""
     nextNodeIndex: 1
