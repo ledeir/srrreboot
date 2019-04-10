@@ -64,7 +64,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 3
+    nextNodeIndex: 4
     hideIfUnavailable: true
   }
   branches {
@@ -107,7 +107,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 6
+    nextNodeIndex: 7
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -116,7 +116,7 @@ nodes {
   }
   branches {
     responseText: "Nothing"
-    nextNodeIndex: 7
+    nextNodeIndex: 8
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -127,7 +127,50 @@ nodes {
   index: 2
   text: "Take a look at my stall, you might find it useful."
   branches {
+    responseText: "Talk"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  branches {
     responseText: "Shop"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Jester"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Open Store Screen From Actor"
@@ -142,23 +185,285 @@ nodes {
       }
     }
     nextNodeIndex: -1
+    hideIfUnavailable: true
+    comment: "Base"
   }
   branches {
-    responseText: "Talk"
-    nextNodeIndex: 1
-    auxiliaryLink: true
+    responseText: "Shop"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Jester"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Roof"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5cad6deb616131bc290082df"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+    hideIfUnavailable: true
+    comment: "Low"
+  }
+  branches {
+    responseText: "Shop"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Drake"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "STORE_Roof"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5cad6e4a616131bc290082e1"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+    hideIfUnavailable: true
+    comment: "Med"
+  }
+  branches {
+    responseText: "Shop"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "STORE_Drake"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "5cad6e84616131bc290082e2"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+    hideIfUnavailable: true
+    comment: "High"
   }
   branches {
     responseText: "Leave"
-    nextNodeIndex: -1
+    nextNodeIndex: 3
   }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5cad75cb616131bc2900835a"
+  }
+  index: 3
+  text: "I might have some better gear later!"
   nodeType: ConversationNodeType_Simple
 }
 nodes {
   idRef {
     id: "527ff018633461c010006e59"
   }
-  index: 3
+  index: 4
   text: "If you have the nuyen I might know a guy."
   branches {
     responseText: "Yes {{GM}}Pay 100 nuyen{{/GM}}"
@@ -243,7 +548,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 4
+    nextNodeIndex: 5
     hideIfUnavailable: true
   }
   branches {
@@ -294,7 +599,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 5
+    nextNodeIndex: 6
     hideIfUnavailable: true
   }
   branches {
@@ -312,7 +617,7 @@ nodes {
   idRef {
     id: "527ff06a633461c010006e61"
   }
-  index: 4
+  index: 5
   text: "Find the kid in the caryards. Tell him Slim sent ya."
   branches {
     responseText: "Talk"
@@ -362,7 +667,7 @@ nodes {
   idRef {
     id: "527ff096633461c010006e66"
   }
-  index: 5
+  index: 6
   text: "Find the kid in the caryards. Tell him Slim sent ya."
   branches {
     responseText: "Talk"
@@ -406,7 +711,7 @@ nodes {
   idRef {
     id: "5ac2fef86161319814001020"
   }
-  index: 6
+  index: 7
   text: "Did my guy in the cardyards help you out?"
   branches {
     responseText: "Talk"
@@ -423,7 +728,7 @@ nodes {
   idRef {
     id: "527ff01c633461c010006e5b"
   }
-  index: 7
+  index: 8
   text: "Then stop wasting my time and scram."
   nodeType: ConversationNodeType_Simple
 }
