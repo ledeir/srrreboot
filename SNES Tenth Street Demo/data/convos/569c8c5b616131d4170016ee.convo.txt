@@ -7,13 +7,13 @@ nodes {
     id: "569c8d94616131d417001702"
   }
   index: 0
-  text: "Don\'t shoot!!!\n(THIS CONVERSATION IS UNDER CONSTRUCTION)"
+  text: "Don\'t shoot!!!"
   branches {
     responseText: "[Shoot]"
     nextNodeIndex: 1
   }
   branches {
-    responseText: "[Security]"
+    responseText: "[Etiquette Security]"
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -65,9 +65,10 @@ nodes {
     }
     nextNodeIndex: 2
     hideIfUnavailable: true
+    comment: "[Etiquette Security]"
   }
   branches {
-    responseText: "Talk"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -120,9 +121,10 @@ nodes {
     nextNodeIndex: 2
     hideIfUnavailable: true
     auxiliaryLink: true
+    comment: "Charisma 5"
   }
   branches {
-    responseText: "Talk"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -174,6 +176,7 @@ nodes {
     }
     nextNodeIndex: 6
     hideIfUnavailable: true
+    comment: "Low Charisma"
   }
   branches {
     responseText: "Leave"
@@ -186,7 +189,7 @@ nodes {
     id: "57e9eb826161318c2000258e"
   }
   index: 1
-  text: "{{GM}}Without hesitating you kill him and loot the body{{/GM}}\n(THIS WILL TRIGGER AN ATTACK IN THE FUTURE)"
+  text: "{{GM}}Without hesitating you kill him and loot the body{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
@@ -295,6 +298,7 @@ nodes {
       }
     }
   }
+  comment: "Kill and Loot"
 }
 nodes {
   idRef {
@@ -303,7 +307,7 @@ nodes {
   index: 2
   text: "{{GM}}As you assert your authority he calms down{{/GM}}"
   branches {
-    responseText: "Key"
+    responseText: "Do you have the access key?"
     conditions {
       ops {
         functionName: "Evaluate If Actor Has Item"
@@ -345,13 +349,14 @@ nodes {
     }
     nextNodeIndex: 3
     hideIfUnavailable: true
+    comment: "Key - NEED to verify keyword"
   }
   branches {
-    responseText: "Stay Here"
+    responseText: "I\'ll deal with the drones. Stay here where its safe."
     nextNodeIndex: 4
   }
   branches {
-    responseText: "Escape"
+    responseText: "I\'ll distract the drones. Escape when you have the chance."
     nextNodeIndex: 5
   }
   nodeType: ConversationNodeType_Simple
@@ -435,16 +440,154 @@ nodes {
     id: "57e9ed036161318c20002599"
   }
   index: 5
-  text: "... If you say so!\n(HE WILL FLEE IN THE FUTURE AND POSSIBLY SPAWN/TRIGGER ENEMIES)"
+  text: "... If you say so!"
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5d200690616131843400411d"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5d200607616131843400411c"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  comment: "DEBUG: Verify flee logic"
 }
 nodes {
   idRef {
     id: "57e9eda96161318c200025a3"
   }
   index: 6
-  text: "NOOO!!! You\'re going to kill me!!!\n(HE WILL FLEE IN THE FUTURE)"
+  text: "NOOO!!! You\'re going to kill me!!!"
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5d200690616131843400411d"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "5d200607616131843400411c"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  comment: "DEBUG: Verify Flee Logic"
 }
 roots {
   responseText: "{{GM}}The survivor is obviously terrified.{{/GM}}"

@@ -74,7 +74,7 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Etiquette Shadowrunner"
+    responseText: "[[Etiquette Shadowrunner]]"
     conditions {
       ops {
         functionName: "Compare Team Skill"
@@ -140,7 +140,7 @@ nodes {
     auxiliaryLink: true
   }
   branches {
-    responseText: "Decker(4)"
+    responseText: "[[Decker]]"
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -193,9 +193,10 @@ nodes {
     nextNodeIndex: 1
     hideIfUnavailable: true
     auxiliaryLink: true
+    comment: "Decker 4"
   }
   branches {
-    responseText: "High Charisma"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -248,9 +249,10 @@ nodes {
     nextNodeIndex: 1
     hideIfUnavailable: true
     auxiliaryLink: true
+    comment: "High Charisma 3+"
   }
   branches {
-    responseText: "Low Charisma"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -302,9 +304,10 @@ nodes {
     }
     nextNodeIndex: 5
     hideIfUnavailable: true
+    comment: "Low Charisma"
   }
   branches {
-    responseText: "Attack"
+    responseText: "[[Attack]]"
     nextNodeIndex: 6
   }
   nodeType: ConversationNodeType_Simple
@@ -378,7 +381,7 @@ nodes {
   index: 2
   text: "I wish I knew! Probably a Floor Six project."
   branches {
-    responseText: "[Intelligence 4] The building is only 5 floors... Unless you count the roof."
+    responseText: "[Intelligence] The building is only 5 floors... Unless you count the roof."
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -430,6 +433,7 @@ nodes {
     }
     nextNodeIndex: 3
     hideIfUnavailable: true
+    comment: "[Intelligence 4"
   }
   branches {
     responseText: "Corps and their projects eh? \nStay safe and we\'ll deal with the drones."
@@ -601,7 +605,7 @@ nodes {
     id: "5671011161613110210017aa"
   }
   index: 5
-  text: "[TRIGGER COMBAT]"
+  text: "{{GM}}You start to talk and immediately say the wrong thing causing someone to open fire. {{/GM}}"
   branches {
     responseText: ""
     actions {
@@ -639,13 +643,14 @@ nodes {
       }
     }
   }
+  comment: "Trigger Combat"
 }
 nodes {
   idRef {
     id: "5671014861613110210017f3"
   }
   index: 6
-  text: "[TRIGGER COMBAT]"
+  text: "{{GM}}You jump at the opportunity to eliminate the guards before they get reinforcements.{{/GM}}"
   branches {
     responseText: ""
     actions {
@@ -683,6 +688,7 @@ nodes {
       }
     }
   }
+  comment: "Trigger Combat"
 }
 nodes {
   idRef {
@@ -691,7 +697,7 @@ nodes {
   index: 7
   text: "You shot my people, what\'s your malfunction?"
   branches {
-    responseText: "Etiquette Security"
+    responseText: "[[Etiquette Security]]"
     conditions {
       ops {
         functionName: "Compare Team Skill"
@@ -756,7 +762,7 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Etiquette Shadowrunner"
+    responseText: "[[Etiquette Shadowrunner]]"
     conditions {
       ops {
         functionName: "Compare Team Skill"
@@ -821,7 +827,7 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Decker(5)"
+    responseText: "[[Decker]]"
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -873,9 +879,10 @@ nodes {
     }
     nextNodeIndex: 15
     hideIfUnavailable: true
+    comment: "Decker 5"
   }
   branches {
-    responseText: "High Charisma"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -949,11 +956,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 16
+    nextNodeIndex: 17
     hideIfUnavailable: true
+    comment: "High Charisma 4+ X"
   }
   branches {
-    responseText: "Low Charisma"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -1027,12 +1035,13 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
-    hideIfUnavailable: true
-  }
-  branches {
-    responseText: "Attack"
     nextNodeIndex: 19
+    hideIfUnavailable: true
+    comment: "Low Charisma"
+  }
+  branches {
+    responseText: "[[Attack]]"
+    nextNodeIndex: 20
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -1041,7 +1050,7 @@ nodes {
     id: "5671017161613110210017fb"
   }
   index: 8
-  text: "[Success]\nYeah... Yeah... Collateral and all that jazz. Hurry up to the lab and shut things down!"
+  text: "Yeah... Yeah... Collateral and all that jazz. Hurry up to the lab and shut things down!"
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
@@ -1087,6 +1096,7 @@ nodes {
       }
     }
   }
+  comment: "[Success]"
 }
 nodes {
   idRef {
@@ -1183,7 +1193,7 @@ nodes {
     id: "567102696161311021001875"
   }
   index: 10
-  text: "[Success]\nGuess you don\'t know what the frag is going on any more than we do."
+  text: "Guess you don\'t know what the frag is going on any more than we do."
   branches {
     responseText: "What do you know?"
     nextNodeIndex: 11
@@ -1247,7 +1257,7 @@ nodes {
   index: 11
   text: "Its probably a Floor Six project."
   branches {
-    responseText: "[Intelligence 4] The building is only 5 floors... Unless you count the roof."
+    responseText: "[Intelligence] The building is only 5 floors... Unless you count the roof."
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -1298,9 +1308,10 @@ nodes {
       }
     }
     nextNodeIndex: 12
+    comment: "[Intelligence 4"
   }
   branches {
-    responseText: "We\'ll deal with the drones."
+    responseText: "We\'ll deal with the drones. You should escape while you can."
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -1431,7 +1442,7 @@ nodes {
   index: 13
   text: "You\'ll need four keys. I\'ve got one in my safe. \nI never bothered to change the code, its 12345."
   branches {
-    responseText: "[Leave]"
+    responseText: "Thanks\n[Leave]"
     actions {
       ops {
         functionName: "Set Variable (bool)"
@@ -1506,14 +1517,14 @@ nodes {
     id: "5671017861613110210017ff"
   }
   index: 15
-  text: "[Success]\nThat\'s way more detail than I need, are you going to stop things or what?"
+  text: "That\'s way more detail than I need, are you going to stop things or what?"
   branches {
-    responseText: "Yes"
+    responseText: "We\'ll take care of it."
     nextNodeIndex: 11
     auxiliaryLink: true
   }
   branches {
-    responseText: "No [Leave]"
+    responseText: "No. "
     actions {
       ops {
         functionName: "Set Variable (bool)"
@@ -1541,7 +1552,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: -1
+    nextNodeIndex: 16
   }
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1566,18 +1577,26 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5671017b6161311021001801"
+    id: "5d1ffc116161318434003e8b"
   }
   index: 16
-  text: "[Success]\nYeah... Sure. I get you. How about making it up to us?"
+  text: "{{GM}}The guard stares at you dumbfounded as you leave.{{/GM}}"
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5671017b6161311021001801"
+  }
+  index: 17
+  text: "Yeah... Sure. I get you. How about making it up to us?"
   branches {
-    responseText: "Yes"
+    responseText: "What do you want us to do?"
     nextNodeIndex: 11
     auxiliaryLink: true
   }
   branches {
-    responseText: "No."
-    nextNodeIndex: 17
+    responseText: "Frag off."
+    nextNodeIndex: 18
   }
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1604,7 +1623,7 @@ nodes {
   idRef {
     id: "569330ab616131f01c00188c"
   }
-  index: 17
+  index: 18
   text: "Fine! We\'ll take it out of your hide!"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1625,8 +1644,8 @@ nodes {
   idRef {
     id: "5671013761613110210017ac"
   }
-  index: 18
-  text: "[TRIGGER COMBAT]"
+  index: 19
+  text: "{{GM}}You start to talk and immediately say the wrong thing causing the guards to open fire. {{/GM}}"
   branches {
     responseText: ""
     actions {
@@ -1662,13 +1681,14 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  comment: "Trigger Combat"
 }
 nodes {
   idRef {
     id: "5671014c61613110210017f5"
   }
-  index: 19
-  text: "[TRIGGER COMBAT]"
+  index: 20
+  text: "{{GM}}You jump at the opportunity to eliminate the guards before they get reinforcements.{{/GM}}"
   branches {
     responseText: ""
     actions {
@@ -1683,33 +1703,36 @@ nodes {
           }
         }
       }
-      ops {
-        functionName: "Add To Variable (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "EndCreditKarma"
-            }
-          }
-        }
-        args {
-          int_value: -20
-        }
-      }
     }
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "EndCreditKarma"
+          }
+        }
+      }
+      args {
+        int_value: -20
+      }
+    }
+  }
+  comment: "Trigger Combat"
 }
 nodes {
   idRef {
     id: "5670fe8061613110210016e1"
   }
-  index: 20
+  index: 21
   text: "You killed my men. Gimme a reason not to end you!"
   branches {
     responseText: "[Etiquette Security] When the drone\'s breached the floor you all became expendable."
@@ -1773,11 +1796,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 21
+    nextNodeIndex: 22
     hideIfUnavailable: true
+    comment: "[Etiquette Security]"
   }
   branches {
-    responseText: "Etiquette Shadowrunner"
+    responseText: "[[Etiquette Shadowrunner]]"
     conditions {
       ops {
         functionName: "Compare Team Skill"
@@ -1838,11 +1862,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 24
+    nextNodeIndex: 25
     hideIfUnavailable: true
+    comment: "Etiquette Shadowrunner"
   }
   branches {
-    responseText: "Decker(6)"
+    responseText: "[[Decker]]"
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -1892,11 +1917,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 25
+    nextNodeIndex: 26
     hideIfUnavailable: true
+    comment: "Decker 6"
   }
   branches {
-    responseText: "High Charisma"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -1970,11 +1996,57 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 26
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "AN_HUMAN_ENEMY"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Add To Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "EndCreditKarma"
+            }
+          }
+        }
+        args {
+          int_value: 10
+        }
+      }
+    }
+    nextNodeIndex: 17
     hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "High Charisma"
   }
   branches {
-    responseText: "Low Charisma"
+    responseText: "[[Charisma]]"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -2048,12 +2120,15 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 27
+    nextNodeIndex: 19
     hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "Low Charisma"
   }
   branches {
     responseText: "Attack"
-    nextNodeIndex: 28
+    nextNodeIndex: 20
+    auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -2061,7 +2136,7 @@ nodes {
   idRef {
     id: "567101806161311021001803"
   }
-  index: 21
+  index: 22
   text: "Same goes for you chum."
   branches {
     responseText: "Do you really think that\'s the last of em? Save your bullets!"
@@ -2138,11 +2213,11 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 22
+    nextNodeIndex: 23
   }
   branches {
-    responseText: "Fine. Lets handle this. [Attack]"
-    nextNodeIndex: 23
+    responseText: "[Attack] Fine. Lets settle this."
+    nextNodeIndex: 24
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -2150,8 +2225,8 @@ nodes {
   idRef {
     id: "5671039461613110210018e9"
   }
-  index: 22
-  text: "[Success]"
+  index: 23
+  text: "Yer right, we\'ll save out bullets this time. But if I ever see you again..."
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
@@ -2197,13 +2272,14 @@ nodes {
       }
     }
   }
+  comment: "Success"
 }
 nodes {
   idRef {
     id: "567103a461613110210018eb"
   }
-  index: 23
-  text: "[Fail]"
+  index: 24
+  text: ""
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
@@ -2235,13 +2311,14 @@ nodes {
       }
     }
   }
+  comment: "Fight"
 }
 nodes {
   idRef {
     id: "5671015b61613110210017f9"
   }
-  index: 24
-  text: "[TRIGGER COMBAT]"
+  index: 25
+  text: "Fragging Runners! You probably set the drones on us! Men, ATTACK!"
   branches {
     responseText: ""
     actions {
@@ -2277,65 +2354,42 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  comment: "Combat"
 }
 nodes {
   idRef {
     id: "567101846161311021001805"
   }
-  index: 25
-  text: "[Success]"
-  nodeType: ConversationNodeType_Simple
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "AN_HUMAN_ENEMY"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Add To Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "EndCreditKarma"
-          }
-        }
-      }
-      args {
-        int_value: 10
-      }
-    }
-  }
-}
-nodes {
-  idRef {
-    id: "5671018a6161311021001807"
-  }
   index: 26
-  text: "[Success]"
+  text: "That\'s way more detail than I need, are you going to stop things or what?"
+  branches {
+    responseText: "Yeah. We\'ll handle it."
+    nextNodeIndex: 11
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Not our problem, save yourself."
+    actions {
+      ops {
+        functionName: "Add To Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "EndCreditKarma"
+            }
+          }
+        }
+        args {
+          int_value: -20
+        }
+      }
+    }
+    nextNodeIndex: 27
+  }
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
@@ -2381,97 +2435,31 @@ nodes {
       }
     }
   }
+  comment: "Success"
 }
 nodes {
   idRef {
-    id: "5671013f61613110210017cf"
+    id: "5d1ffe916161318434003f4c"
   }
   index: 27
-  text: "[TRIGGER COMBAT]"
-  branches {
-    responseText: ""
-    actions {
-      ops {
-        functionName: "Send Event"
-        args {
-          call_value {
-            functionName: "Get Map Item (Event)"
-            args {
-              string_value: "FL2HostileHumans"
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: -1
-  }
+  text: "{{GM}}Not liking your answer the security guards attack{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Send Event"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Get Map Item (Event)"
           args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "EndCreditKarma"
+            string_value: "FL2HostileHumans"
           }
         }
-      }
-      args {
-        int_value: -10
-      }
-    }
-  }
-}
-nodes {
-  idRef {
-    id: "5671015061613110210017f7"
-  }
-  index: 28
-  text: "[TRIGGER COMBAT]"
-  branches {
-    responseText: ""
-    actions {
-      ops {
-        functionName: "Send Event"
-        args {
-          call_value {
-            functionName: "Get Map Item (Event)"
-            args {
-              string_value: "FL2HostileHumans"
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-  actions {
-    ops {
-      functionName: "Add To Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "EndCreditKarma"
-          }
-        }
-      }
-      args {
-        int_value: -20
       }
     }
   }
 }
 roots {
-  responseText: "[Conversation under construction - FRIENDLY]"
+  responseText: "{{GM}}This Troll is obviously in charge and he seems relieved to see you.{{/GM}}"
   conditions {
     ops {
       functionName: "Comparison (int)"
@@ -2526,9 +2514,10 @@ roots {
   }
   nextNodeIndex: 0
   hideIfUnavailable: true
+  comment: "FRIENDLY"
 }
 roots {
-  responseText: "[Conversation under construction - SUSPICIOUS]"
+  responseText: "{{GM}}The Troll in charge looks at you warily, you will need to tread carefully.{{/GM}}"
   conditions {
     ops {
       functionName: "Comparison (int)"
@@ -2583,9 +2572,10 @@ roots {
   }
   nextNodeIndex: 7
   hideIfUnavailable: true
+  comment: "SUSPISCIOUS"
 }
 roots {
-  responseText: "[Conversation under construction - HOSTILE]"
+  responseText: "{{GM}}The Troll glares at you angrily, just looking for an excuse to attack.{{/GM}}"
   conditions {
     ops {
       functionName: "Comparison (int)"
@@ -2613,6 +2603,7 @@ roots {
       }
     }
   }
-  nextNodeIndex: 20
+  nextNodeIndex: 21
   hideIfUnavailable: true
+  comment: "HOSTILE"
 }
