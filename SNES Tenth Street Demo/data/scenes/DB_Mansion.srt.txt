@@ -1309,83 +1309,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "upper_F_Trespassing2"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "523b8a123733612413004360"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "523b8a973733612413004369"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "DB_Progress"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "AngryMage"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525f9ea93736309813006859"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
   name: "upper_F_leave"
   events {
     ops {
@@ -1495,6 +1418,291 @@ triggers {
   elseActions {
   }
   is_oneshot: false
+}
+triggers {
+  name: "upper_F_CombatStarts"
+  events {
+    ops {
+      functionName: "On Combat Entered"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Region Enabled"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "525a849f3736301010007a5d"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "525a6ce9373630100e0054d9"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "525a6f87373630100e00553e"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "525a847b3736301010007a5c"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "upper_F_Trespassing"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "525a630d373630100e0054a7"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Start Conversation Between Actors"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "525a6288373630100e00547a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "525a6420373630100e0054d1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "525a84fb3736301010007a5e"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "upper_F_Trespassing2"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "523b8a123733612413004360"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "523b8a973733612413004369"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DB_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "AngryMage"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "525f9ea93736309813006859"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "upper_F_ReturnToMage"
+  events {
+    ops {
+      functionName: "On Region Enter"
+      args {
+        call_value {
+          functionName: "Get Map Item (Region)"
+          args {
+            string_value: "525a849f3736301010007a5d"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "AngryMage"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "525a84fc3736301010007a5f"
+  }
+  elseActions {
+  }
+  is_oneshot: true
 }
 triggers {
   name: "upper_F_AngryMage"
@@ -1731,187 +1939,6 @@ triggers {
   elseActions {
   }
   is_oneshot: false
-}
-triggers {
-  name: "upper_F_CombatStarts"
-  events {
-    ops {
-      functionName: "On Combat Entered"
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Region Enabled"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "525a849f3736301010007a5d"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525a6ce9373630100e0054d9"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Interactable Object"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "525a6f87373630100e00553e"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525a847b3736301010007a5c"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "upper_F_Trespassing"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "525a630d373630100e0054a7"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "AngryMage"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525a84fb3736301010007a5e"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "upper_F_ReturnToMage"
-  events {
-    ops {
-      functionName: "On Region Enter"
-      args {
-        call_value {
-          functionName: "Get Map Item (Region)"
-          args {
-            string_value: "525a849f3736301010007a5d"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "AngryMage"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525a84fc3736301010007a5f"
-  }
-  elseActions {
-  }
-  is_oneshot: true
 }
 triggers {
   name: "upper_gotoKitchen"
@@ -2639,12 +2666,32 @@ triggers {
       }
     }
     ops {
-      functionName: "Activate Actor Spawner"
+      functionName: "Teleport Actor"
       args {
         call_value {
-          functionName: "Get Map Item (Actor Reference)"
+          functionName: "Specific Actor"
           args {
-            string_value: "525a6420373630100e0054d1"
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "525a6420373630100e0054d1"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Center of Region"
+          args {
+            call_value {
+              functionName: "Get Map Item (Region)"
+              args {
+                string_value: "5dde1d8c616131b035001409"
+              }
+            }
           }
         }
       }
@@ -2652,7 +2699,18 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TeleportMethod"
           }
           args {
             int_value: 0
@@ -9645,6 +9703,44 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Clear Actor Orders"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
@@ -11512,6 +11608,42 @@ triggers {
     }
   }
   conditions {
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DB_Butcher_Dead"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
   }
   actions {
     ops {
@@ -11750,6 +11882,31 @@ triggers {
     }
   }
   actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DB_Butcher_Dead"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
     ops {
       functionName: "Add Nuyen"
       args {
@@ -23073,9 +23230,9 @@ regions {
   }
   ambience_template: "sewer-quiet"
   combat_music: "Seattle-Set5-Combat"
-  default_music: "Silence"
+  default_music: "Seattle-Set6-Ominous"
   loop_combat_music: true
-  loop_default_music: false
+  loop_default_music: true
   no_fow_in_region: false
 }
 regions {
@@ -23354,6 +23511,52 @@ regions {
   loop_default_music: false
   no_fow_in_region: false
 }
+regions {
+  name: "MageBox"
+  position {
+    x: -20
+    y: -5
+    width: 1
+    height: 1
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "5dde1d8c616131b035001409"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: false
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
@@ -23506,9 +23709,9 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -20
+    x: -28
     y: 0
-    z: -5
+    z: 134
   }
   orientation: ORIENTATION_S
   GeneralTags: "XP10"
@@ -23594,7 +23797,7 @@ characters {
     GeneralTags: "XP10"
     GeneralTags: "N70_100"
     GeneralTags: "DBTALK"
-    enabled_at_start: false
+    enabled_at_start: true
     pc_spawn_number: -1
     portrait {
       filename: "backer_humanmale_chrisvangraas"

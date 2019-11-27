@@ -4347,438 +4347,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "dog_CheckSpellcasting.OLD"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "dog_CheckSpellcasting"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Compare Actor Skill"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "BaseOrCurrent"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorSkills"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Actor Base Skill"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorSkills"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Actor Base Attribute"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Actor Attribute"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "BaseOrCurrent"
-              }
-              args {
-                int_value: 1
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "ActorAttributes"
-              }
-              args {
-                int_value: 6
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorAttributes"
-          }
-          args {
-            int_value: 7
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "523b1e803736308812000bfe"
-  }
-  elseActions {
-    ops {
-      functionName: "Set Actor Base Skill"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Get Map Item (Player)"
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 3
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorSkills"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "dog_CheckSummoning.OLD"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "dog_CheckSummoning"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Compare Actor Skill"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "BaseOrCurrent"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorSkills"
-          }
-          args {
-            int_value: 8
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Actor Base Skill"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorSkills"
-          }
-          args {
-            int_value: 8
-          }
-        }
-      }
-    }
-  }
-  isActive: false
-  idRef {
-    id: "53450246373630b40a00330b"
-  }
-  elseActions {
-    ops {
-      functionName: "Set Actor Base Skill"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Get Map Item (Player)"
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 8
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "ActorSkills"
-          }
-          args {
-            int_value: 8
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: true
-}
-triggers {
   name: ""
   events {
   }
@@ -14891,7 +14459,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -14928,7 +14496,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -14965,7 +14533,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15002,7 +14570,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15039,7 +14607,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15076,7 +14644,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15113,7 +14681,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15150,7 +14718,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15187,7 +14755,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15224,7 +14792,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15261,7 +14829,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15298,7 +14866,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15335,7 +14903,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15372,7 +14940,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15409,7 +14977,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15446,7 +15014,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15483,7 +15051,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15520,7 +15088,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15557,7 +15125,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15594,7 +15162,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15631,7 +15199,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15668,7 +15236,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15785,7 +15353,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15822,7 +15390,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15859,7 +15427,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -15976,7 +15544,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16013,7 +15581,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16050,7 +15618,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16087,7 +15655,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16124,7 +15692,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16161,7 +15729,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16198,7 +15766,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16235,7 +15803,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16352,7 +15920,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16389,7 +15957,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16426,7 +15994,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16463,7 +16031,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16500,7 +16068,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16537,7 +16105,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16574,7 +16142,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16691,7 +16259,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16728,7 +16296,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16765,7 +16333,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16802,7 +16370,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16839,7 +16407,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16876,7 +16444,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16913,7 +16481,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16950,7 +16518,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -16987,7 +16555,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17024,7 +16592,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17061,7 +16629,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17098,7 +16666,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17135,7 +16703,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17252,7 +16820,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17289,7 +16857,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17326,7 +16894,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17363,7 +16931,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17400,7 +16968,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17437,7 +17005,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17474,7 +17042,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17511,7 +17079,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17548,7 +17116,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17585,7 +17153,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17622,7 +17190,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17659,7 +17227,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17696,7 +17264,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17733,7 +17301,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17770,7 +17338,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17807,7 +17375,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17844,7 +17412,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -17881,7 +17449,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (Actor)"
               args {
-                string_value: "523b079c3736308812000bd7"
+                string_value: "5ddd89fa616131d0270016c6"
               }
             }
           }
@@ -32960,6 +32528,62 @@ characters {
     char_name: "New Actor"
     enabled_at_start: true
     pc_spawn_number: 3
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -19
+    y: 0
+    z: -106
+  }
+  orientation: ORIENTATION_S
+  displayName: "DogShop"
+  idRef {
+    id: "5ddd89fa616131d0270016c6"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Berlin:Creatures/CreatureDogFriendly"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 24
+        discipline: 0
+        awareness: 24
+        perception: 0
+        authority: 0
+        protect_tether_range: 5
+        move_speed: 6
+      }
+      skills {
+      }
+      specializations {
+      }
+      archetypeName: "Non-Combatant"
+      vulnerabilities {
+      }
+    }
+    team_id: "Civilians"
+    char_name: "Dog Totem"
+    enabled_at_start: true
+    pc_spawn_number: -1
+    ai_ignores: true
+    portrait {
+      filename: "custom_geeked_dog"
+    }
+    karma: 6
+    is_prop_character: true
+    has_fist: false
   }
 }
 variables {

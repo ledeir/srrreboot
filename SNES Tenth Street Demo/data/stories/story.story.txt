@@ -540,6 +540,18 @@ variables {
   }
 }
 variables {
+  name: "DB_Butcher_Dead"
+  typeName: "bool"
+  defaultValue {
+    bool_value: false
+    variableref_value {
+      scope: TsVariableScope_Story
+      name: "DB_Butcher_Dead"
+      typeName: "bool"
+    }
+  }
+}
+variables {
   name: "DB_KITCHEN_MEDKIT"
   typeName: "bool"
   defaultValue {
@@ -1059,7 +1071,7 @@ variables {
   name: "Global_GrindDelay"
   typeName: "float"
   defaultValue {
-    float_value: 25
+    float_value: 60
     variableref_value {
       scope: TsVariableScope_Story
       name: "Global_GrindDelay"

@@ -27,8 +27,73 @@ nodes {
     }
   }
   branches {
-    responseText: "{{GM}}Leave{{/GM}}"
+    responseText: "Frag Off."
+    actions {
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "AngryMage"
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: -1
+    comment: "Combat"
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    actions {
+      ops {
+        functionName: "Trigger: Run Alternate Trigger"
+        args {
+          call_value {
+            functionName: "Get Map Item (Trigger)"
+            args {
+              string_value: "525a615f373630100e005478"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WaitOrNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+    comment: "Forced Exit"
   }
   nodeType: ConversationNodeType_Simple
   sourceWithTagInScene: "DBTALK"

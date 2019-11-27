@@ -247,54 +247,8 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "TEMPORARY CHEAT - RESYNC SHOPS"
-    conditions {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Drake"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 9
-  }
-  branches {
-    responseText: "TEMPORARY CHEAT - RESYNC MAGIC SHOP"
-    nextNodeIndex: 10
-  }
-  branches {
     responseText: "Configuration Menu"
-    nextNodeIndex: 11
+    nextNodeIndex: 9
   }
   branches {
     responseText: "Leave"
@@ -554,6 +508,69 @@ nodes {
           }
           args {
             int_value: 8
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Heal Actor"
+      args {
+        call_value {
+          functionName: "All Actors on Team"
+          args {
+            call_value {
+              functionName: "Get Preset Value (string)"
+              args {
+                string_value: "FactionList"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Map Item (SceneDimension)"
+              args {
+                string_value: "Default"
+              }
+            }
+          }
+        }
+      }
+      args {
+        int_value: 20
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
           }
         }
       }
@@ -4063,396 +4080,17 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5ac2eff76161319814000e58"
-  }
-  index: 9
-  text: "On build V4.0.13 we updated the shop interface. Depending on story progression the items now get upgraded. \nClick the appropriate option if you have already killed Drake or killed Jester"
-  branches {
-    responseText: "Nothing Unlocked."
-    actions {
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Jester"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Drake"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Roof"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Jester is DEAD!"
-    actions {
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Jester"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Drake is DEAD!"
-    actions {
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Drake"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "STORE_Roof"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "No Changes."
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "5b7baa2e616131bc2800228b"
-  }
-  index: 10
-  text: "On build 4.1.0.11 we changed how we handle magic. The item scavenger hunt now unlocks spells in a shop.\nThis unlocks everything, as if you already turned in all the combinations."
-  branches {
-    responseText: "Unlock"
-    actions {
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "Magic_Attack"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "Magic_Control"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "Magic_Defense"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "Magic_Heal"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "Magic_Stealth"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "Magic_Summon"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Set Variable (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "OT_MagicShopOpen"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Nevermind."
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
     id: "5205cc36633461e803003e43"
   }
-  index: 11
+  index: 9
   text: "You can adjust the settings of the game any time you rest."
   branches {
     responseText: "Spawn Rate"
-    nextNodeIndex: 12
+    nextNodeIndex: 10
   }
   branches {
     responseText: "Grind Rate"
-    nextNodeIndex: 13
+    nextNodeIndex: 11
   }
   branches {
     responseText: "Redeem Karma"
@@ -4461,11 +4099,11 @@ nodes {
   }
   branches {
     responseText: "Reset Hire-able Runner Logic\nPeople who have played early versions are reporting difficulty hiring runners. This hopefully resolves that.\nThis will fire, without giving a refund, any runners you currently have."
-    nextNodeIndex: 18
+    nextNodeIndex: 16
   }
   branches {
     responseText: "Enable Non-Plot Monorail Combat\n"
-    nextNodeIndex: 19
+    nextNodeIndex: 17
   }
   branches {
     responseText: "Leave Configuration Menu"
@@ -4478,7 +4116,7 @@ nodes {
   idRef {
     id: "5205cc76633461e803003e88"
   }
-  index: 12
+  index: 10
   text: "Adjust the likelyhood of enemies spawning."
   branches {
     responseText: "Low"
@@ -4501,7 +4139,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   branches {
@@ -4525,7 +4163,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   branches {
@@ -4549,7 +4187,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   branches {
@@ -4573,12 +4211,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4587,11 +4225,11 @@ nodes {
   idRef {
     id: "59ff45706631368c16001623"
   }
-  index: 13
+  index: 11
   text: "Modify the rate at which \'Grind\' enemies respawn."
   branches {
     responseText: ""
-    nextNodeIndex: 14
+    nextNodeIndex: 12
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -4599,7 +4237,7 @@ nodes {
   idRef {
     id: "59ff45df6631368c160016b8"
   }
-  index: 14
+  index: 12
   text: "Modify the rate at which \'Grind\' enemies respawn."
   branches {
     responseText: "Low"
@@ -4652,7 +4290,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 13
   }
   branches {
     responseText: "Normal"
@@ -4705,7 +4343,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 16
+    nextNodeIndex: 14
   }
   branches {
     responseText: "High"
@@ -4758,7 +4396,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 15
   }
   branches {
     responseText: "Return to Configuration Menu"
@@ -4771,11 +4409,11 @@ nodes {
   idRef {
     id: "59ff477e6631368c16001736"
   }
-  index: 15
+  index: 13
   text: "Grinding enemies will respawn at a {{CC}}LOW{{/CC}} rate."
   branches {
     responseText: ""
-    nextNodeIndex: 14
+    nextNodeIndex: 12
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4784,11 +4422,11 @@ nodes {
   idRef {
     id: "59ff47d76631368c16001741"
   }
-  index: 16
+  index: 14
   text: "Grinding enemies will respawn at a {{CC}}NORMAL{{/CC}} rate."
   branches {
     responseText: ""
-    nextNodeIndex: 14
+    nextNodeIndex: 12
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4797,11 +4435,11 @@ nodes {
   idRef {
     id: "59ff47d96631368c16001743"
   }
-  index: 17
+  index: 15
   text: "Grinding enemies will respawn at a {{CC}}HIGH{{/CC}} rate."
   branches {
     responseText: ""
-    nextNodeIndex: 14
+    nextNodeIndex: 12
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -4810,11 +4448,11 @@ nodes {
   idRef {
     id: "524b9d82633461241c0018ce"
   }
-  index: 18
+  index: 16
   text: "Runners Reset!"
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -5199,7 +4837,7 @@ nodes {
   idRef {
     id: "58eff5736161319433006b9a"
   }
-  index: 19
+  index: 17
   text: "In the future you will be able to grind in the monorail. This is not yet implemented."
   branches {
     responseText: "Enable"
@@ -5241,7 +4879,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   branches {
@@ -5284,12 +4922,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple

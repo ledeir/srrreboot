@@ -1068,7 +1068,7 @@ nodes {
         call_value {
           functionName: "Get Map Item (Actor)"
           args {
-            string_value: "523b079c3736308812000bd7"
+            string_value: "5ddd89fa616131d0270016c6"
           }
         }
       }
@@ -1166,8 +1166,195 @@ nodes {
     nextNodeIndex: 12
   }
   branches {
-    responseText: "you have all spells"
+    responseText: "You have all spells"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Attack"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Control"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Defense"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Heal"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Summon"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 13
+  }
+  branches {
+    responseText: "Ask something else"
+    nextNodeIndex: 1
+    auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -1181,7 +1368,12 @@ nodes {
   index: 8
   text: "To learn defensive magic you will need the scales of a cold and of a warm blooded creature."
   branches {
-    responseText: ""
+    responseText: "Ask about other spells"
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Ask something else"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
@@ -1197,7 +1389,12 @@ nodes {
   index: 9
   text: "To learn combat magic you will need two items which have not rested in the earth."
   branches {
-    responseText: ""
+    responseText: "Ask about other spells"
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Ask something else"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
@@ -1213,7 +1410,12 @@ nodes {
   index: 10
   text: "To summon my help, and the help of others, you will need two items of my pack."
   branches {
-    responseText: ""
+    responseText: "Ask about other spells"
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Ask something else"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
@@ -1229,7 +1431,12 @@ nodes {
   index: 11
   text: "To learn stealth magic you need water of a clean and unclean source."
   branches {
-    responseText: ""
+    responseText: "Ask about other spells"
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Ask something else"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
@@ -1245,7 +1452,12 @@ nodes {
   index: 12
   text: "To learn control magic you will need the residue of two sea creatures."
   branches {
-    responseText: ""
+    responseText: "Ask about other spells"
+    nextNodeIndex: 7
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Ask something else"
     nextNodeIndex: 1
     auxiliaryLink: true
   }
