@@ -27125,6 +27125,76 @@ triggers {
   }
   actions {
     ops {
+      functionName: "Change Actor Team"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "569c88ff616131d4170016ed"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 6
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Team\'s Turn"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 6
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
       functionName: "Set Actor Run Speed"
       args {
         call_value {
@@ -27313,6 +27383,39 @@ triggers {
           functionName: "Get Map Item (Trigger)"
           args {
             string_value: "5d200690616131843400411d"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Team\'s Turn"
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 6
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
           }
         }
       }
@@ -35821,6 +35924,7 @@ team_affiliations {
   affiliation: 0
   affiliation: 1
   affiliation: 1
+  affiliation: 0
 }
 team_affiliations {
   team_name: "Gangers"
@@ -35830,6 +35934,7 @@ team_affiliations {
   affiliation: 0
   affiliation: 1
   affiliation: 1
+  affiliation: 0
 }
 team_affiliations {
   team_name: "LoneStar"
@@ -35839,9 +35944,11 @@ team_affiliations {
   affiliation: 0
   affiliation: 1
   affiliation: 1
+  affiliation: 0
 }
 team_affiliations {
   team_name: "Civilians"
+  affiliation: 0
   affiliation: 0
   affiliation: 0
   affiliation: 0
@@ -35857,6 +35964,7 @@ team_affiliations {
   affiliation: 0
   affiliation: 0
   affiliation: 1
+  affiliation: 0
 }
 team_affiliations {
   team_name: "DRONES"
@@ -35866,11 +35974,20 @@ team_affiliations {
   affiliation: 1
   affiliation: 1
   affiliation: 0
+  affiliation: 1
+}
+team_affiliations {
+  team_name: "FLEEING"
+  affiliation: 0
+  affiliation: 1
+  affiliation: 1
+  affiliation: 0
+  affiliation: 0
+  affiliation: 1
+  affiliation: 0
 }
 scene_dimensions {
   dimension_name: "Default"
-}
-character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {

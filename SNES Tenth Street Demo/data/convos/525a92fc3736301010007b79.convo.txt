@@ -434,6 +434,485 @@ nodes {
   }
   nodeType: ConversationNodeType_Simple
 }
+nodes {
+  idRef {
+    id: "5f172155616131001a0026f3"
+  }
+  index: 8
+  text: "Dark Blades\n\nVladimir\'s personal PC. \nMisuse will be punished by death!"
+  branches {
+    responseText: "Accounting"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DB_MoneyInComputer"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 9
+    hideIfUnavailable: true
+    comment: "Money Present"
+  }
+  branches {
+    responseText: "Accounting"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DB_MoneyInComputer"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 11
+    hideIfUnavailable: true
+    comment: "Money Taken"
+  }
+  branches {
+    responseText: "Data Files"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DB00_DF_JesterName"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 12
+    hideIfUnavailable: true
+    comment: "Data Present"
+  }
+  branches {
+    responseText: "Data Files"
+    conditions {
+      ops {
+        functionName: "Evaluate If Actor Has Item"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Triggering Actor"
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "HasOrHasNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DB00_DF_JesterName"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 14
+    hideIfUnavailable: true
+    comment: "Data Taken"
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5f1721c9616131001a0026f7"
+  }
+  index: 9
+  text: "Dark Blade Account 8967-3434-2745 \nBalance: 5,000 Nuyen"
+  branches {
+    responseText: "{{GM}}Transfer money to own account{{/GM}}"
+    actions {
+      ops {
+        functionName: "Add Nuyen"
+        args {
+          int_value: 5000
+        }
+      }
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DB_MoneyInComputer"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 10
+  }
+  branches {
+    responseText: "{{GM}}Return to Main Menu{{/GM}}"
+    nextNodeIndex: 8
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Disconnect{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5f17230d616131001a002708"
+  }
+  index: 10
+  text: "Dark Blade Account 8967-3434-2745 \nBalance: 0 Nuyen"
+  branches {
+    responseText: "{{GM}}Return to Main Menu{{/GM}}"
+    nextNodeIndex: 8
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Disconnect{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5f1721cf616131001a0026f9"
+  }
+  index: 11
+  text: "Dark Blade Account 8967-3434-2745 \nBalance: 0 Nuyen"
+  branches {
+    responseText: "{{GM}}Return to Main Menu{{/GM}}"
+    nextNodeIndex: 8
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Disconnect{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5f172413616131001a002711"
+  }
+  index: 12
+  text: "Datafile: DF_DB-Jester"
+  branches {
+    responseText: "Download File"
+    actions {
+      ops {
+        functionName: "Add Item to Team"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "DB00_DF_JesterName"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (string)"
+            args {
+              string_value: "FactionList"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Map Item (SceneDimension)"
+            args {
+              string_value: "Default"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 13
+  }
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: 8
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Disconnect{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5f17249a616131001a002718"
+  }
+  index: 13
+  text: "After meeting with the Jester, he agreed to aid us in our plans. He is unaware that if he resists, I know his true name to now be Nirwanda and therefore can bind him to my will.\n- Vladimir."
+  branches {
+    responseText: "[Intelligence] This was too easy..."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Attribute"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorAttributes"
+                }
+                args {
+                  int_value: 4
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 4
+        }
+      }
+    }
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "Smart"
+  }
+  branches {
+    responseText: "This could be useful!"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Attribute"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorAttributes"
+                }
+                args {
+                  int_value: 4
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 4
+            }
+          }
+        }
+        args {
+          int_value: 4
+        }
+      }
+    }
+    nextNodeIndex: 8
+    hideIfUnavailable: true
+    auxiliaryLink: true
+    comment: "Dumb"
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "5f172416616131001a002713"
+  }
+  index: 14
+  text: "No relevant data found."
+  branches {
+    responseText: "{{GM}}Return to main menu{{/GM}}"
+    nextNodeIndex: 8
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Disconnect{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
 roots {
   responseText: ""
   conditions {
@@ -441,12 +920,12 @@ roots {
       functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Story Variable (bool)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "51a9844d633461e82400002a"
+            string_value: "bool"
           }
           args {
-            string_value: "DB_MoneyInComputer"
+            int_value: 1
           }
         }
       }
@@ -468,7 +947,7 @@ roots {
             string_value: "bool"
           }
           args {
-            int_value: 1
+            int_value: 0
           }
         }
       }
@@ -476,6 +955,7 @@ roots {
   }
   nextNodeIndex: 0
   hideIfUnavailable: true
+  comment: "Money in computer"
 }
 roots {
   responseText: ""
@@ -484,12 +964,12 @@ roots {
       functionName: "Comparison (bool)"
       args {
         call_value {
-          functionName: "Get Story Variable (bool)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "51a9844d633461e82400002a"
+            string_value: "bool"
           }
           args {
-            string_value: "DB_MoneyInComputer"
+            int_value: 1
           }
         }
       }
@@ -519,4 +999,10 @@ roots {
   }
   nextNodeIndex: 4
   hideIfUnavailable: true
+  comment: "Money already taken"
+}
+roots {
+  responseText: ""
+  nextNodeIndex: 8
+  comment: "Dialogue V2"
 }

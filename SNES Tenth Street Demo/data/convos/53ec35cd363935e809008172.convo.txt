@@ -7,10 +7,14 @@ nodes {
     id: "53ec3645363935e8090081ad"
   }
   index: 0
-  text: "In the future we plan to allow you to configure various aspects of the module. You will be able to do this anywhere there is a bed."
+  text: "Various aspects of the module can be configured to your preference. You can do this anywhere there is a bed."
   branches {
     responseText: "CONFIGURE SPAWN RATE"
     nextNodeIndex: 1
+  }
+  branches {
+    responseText: "CONFIGURE GRIND RATE"
+    nextNodeIndex: 2
   }
   branches {
     responseText: "Return to Menu"
@@ -31,7 +35,7 @@ nodes {
     id: "53ec369e363935e809008258"
   }
   index: 1
-  text: "On entering specific regions of the outside maps, enemies (Snipers and Hitmen) will spawn.\nThis setting will adjust the likelyhood of them spawning. \nNOT TESTED YET"
+  text: "On entering specific regions of the outside maps, enemies (Snipers and Hitmen) will spawn.\nThis setting will adjust the likelyhood of them spawning. "
   branches {
     responseText: "Return to Main Menu"
     nextNodeIndex: 0
@@ -94,6 +98,232 @@ nodes {
   sourceInSceneRef {
     id: "53ec3d46363935e809008392"
   }
+}
+nodes {
+  idRef {
+    id: "59ff45706631368c16001623"
+  }
+  index: 2
+  text: "Modify the rate at which \'Grind\' enemies respawn."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "53ec3d46363935e809008392"
+  }
+}
+nodes {
+  idRef {
+    id: "59ff45df6631368c160016b8"
+  }
+  index: 3
+  text: "Modify the rate at which \'Grind\' enemies respawn."
+  branches {
+    responseText: "Low"
+    conditions {
+      ops {
+        functionName: "Comparison (float)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (float)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Global_GrindDelay"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          float_value: 60
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (float)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (float)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Global_GrindDelay"
+            }
+          }
+        }
+        args {
+          float_value: 60
+        }
+      }
+    }
+    nextNodeIndex: 4
+  }
+  branches {
+    responseText: "Normal"
+    conditions {
+      ops {
+        functionName: "Comparison (float)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (float)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Global_GrindDelay"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          float_value: 25
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (float)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (float)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Global_GrindDelay"
+            }
+          }
+        }
+        args {
+          float_value: 25
+        }
+      }
+    }
+    nextNodeIndex: 5
+  }
+  branches {
+    responseText: "High"
+    conditions {
+      ops {
+        functionName: "Comparison (float)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (float)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Global_GrindDelay"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          float_value: 10
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (float)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (float)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Global_GrindDelay"
+            }
+          }
+        }
+        args {
+          float_value: 10
+        }
+      }
+    }
+    nextNodeIndex: 6
+  }
+  branches {
+    responseText: "Return to Configuration Menu"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  comment: "GrindMenuReturn"
+}
+nodes {
+  idRef {
+    id: "59ff477e6631368c16001736"
+  }
+  index: 4
+  text: "Grinding enemies will respawn at a {{CC}}LOW{{/CC}} rate."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "59ff47d76631368c16001741"
+  }
+  index: 5
+  text: "Grinding enemies will respawn at a {{CC}}NORMAL{{/CC}} rate."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "59ff47d96631368c16001743"
+  }
+  index: 6
+  text: "Grinding enemies will respawn at a {{CC}}HIGH{{/CC}} rate."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
 }
 roots {
   responseText: "Configuration Menu"

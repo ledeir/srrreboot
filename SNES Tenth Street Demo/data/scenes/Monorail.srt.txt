@@ -2510,37 +2510,72 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (bool)"
+      functionName: "AND"
       args {
         call_value {
-          functionName: "Get Story Variable (bool)"
+          functionName: "Comparison (bool)"
           args {
-            string_value: "51a9844d633461e82400002a"
+            call_value {
+              functionName: "Get Story Variable (bool)"
+              args {
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "DT_Akimi_Present"
+              }
+            }
           }
           args {
-            string_value: "DT_Akimi_Present"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "bool"
+              }
+              args {
+                int_value: 1
+              }
+            }
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Comparison (int)"
           args {
-            string_value: "IsOrIsNot"
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51a9844d633461e82400002a"
+              }
+              args {
+                string_value: "SR_Fights_Akimi"
+              }
+            }
           }
           args {
-            int_value: 1
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 5
+              }
+            }
           }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
           args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
+            int_value: 0
           }
         }
       }

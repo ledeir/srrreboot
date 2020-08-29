@@ -4099,11 +4099,91 @@ nodes {
   }
   branches {
     responseText: "Reset Hire-able Runner Logic\nPeople who have played early versions are reporting difficulty hiring runners. This hopefully resolves that.\nThis will fire, without giving a refund, any runners you currently have."
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 16
+    hideIfUnavailable: true
+    comment: "Old Debug Logic - Not needed"
   }
   branches {
     responseText: "Enable Non-Plot Monorail Combat\n"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 17
+    hideIfUnavailable: true
+    comment: "Not Yet Implemented"
   }
   branches {
     responseText: "Leave Configuration Menu"
@@ -4120,6 +4200,36 @@ nodes {
   text: "Adjust the likelyhood of enemies spawning."
   branches {
     responseText: "Low"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DangerMod"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          int_value: -50
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Variable (int)"
@@ -4144,6 +4254,36 @@ nodes {
   }
   branches {
     responseText: "Normal"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DangerMod"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Variable (int)"
@@ -4168,6 +4308,36 @@ nodes {
   }
   branches {
     responseText: "High"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DangerMod"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          int_value: 50
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Variable (int)"
@@ -4192,6 +4362,36 @@ nodes {
   }
   branches {
     responseText: "Constant"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DangerMod"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          int_value: 90
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Variable (int)"
@@ -4400,7 +4600,8 @@ nodes {
   }
   branches {
     responseText: "Return to Configuration Menu"
-    nextNodeIndex: -1
+    nextNodeIndex: 9
+    auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
   comment: "GrindMenuReturn"
@@ -4873,7 +5074,7 @@ nodes {
               string_value: "bool"
             }
             args {
-              int_value: 0
+              int_value: 1
             }
           }
         }
@@ -4916,7 +5117,7 @@ nodes {
               string_value: "bool"
             }
             args {
-              int_value: 1
+              int_value: 0
             }
           }
         }

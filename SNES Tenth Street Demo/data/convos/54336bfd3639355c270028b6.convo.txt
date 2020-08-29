@@ -7,14 +7,53 @@ nodes {
     id: "54336c253639355c270028bc"
   }
   index: 0
-  text: "The module starts through this door..."
+  text: "The module starts through this door."
   branches {
     responseText: "NEW PLAYERS - READ THIS"
     nextNodeIndex: 1
   }
   branches {
     responseText: "I WANT TO CHEAT!"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 2
+    hideIfUnavailable: true
   }
   branches {
     responseText: "Begin Game"

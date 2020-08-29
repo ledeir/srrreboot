@@ -85,7 +85,7 @@ props {
       conversationID: "54336ee83639355c270028f5"
       turnToFace: false
     }
-    interaction_info_text: "The Importance of Sleep"
+    interaction_info_text: "Sleep / Karma Mechanic Explanation"
   }
   lod: 0
 }
@@ -231,8 +231,46 @@ props {
     id: "53ec2c4f363935e80900800b"
   }
   interactionRoot {
-    isEnabled: false
+    isEnabled: true
     interactionRadius: 2
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     conversationPoint {
       conversationID: "53ec31f4363935e809008136"
       turnToFace: false

@@ -123,6 +123,7 @@ nodes {
     }
     nextNodeIndex: -1
     hideIfUnavailable: true
+    comment: "Akimi False / Enemy True"
   }
   branches {
     responseText: "Get to the roof before the building blows!"
@@ -231,85 +232,43 @@ nodes {
     }
     nextNodeIndex: -1
     hideIfUnavailable: true
+    comment: "Karma + / Enemy False"
   }
   branches {
     responseText: "Hot air rises! Take the stairs!\n{{GM}}This option will be removed. Please let us know if there are no other options visible{{/GM}}"
     conditions {
       ops {
-        functionName: "AND"
+        functionName: "Comparison (bool)"
         args {
           call_value {
-            functionName: "Comparison (bool)"
+            functionName: "Get Preset Value (int)"
             args {
-              call_value {
-                functionName: "Get Story Variable (bool)"
-                args {
-                  string_value: "51a9844d633461e82400002a"
-                }
-                args {
-                  string_value: "AN_AKIMI_ALLY"
-                }
-              }
+              string_value: "bool"
             }
             args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "IsOrIsNot"
-                }
-                args {
-                  int_value: 1
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "bool"
-                }
-                args {
-                  int_value: 1
-                }
-              }
+              int_value: 1
             }
           }
         }
         args {
           call_value {
-            functionName: "Comparison (bool)"
+            functionName: "Get Preset Value (int)"
             args {
-              call_value {
-                functionName: "Get Story Variable (bool)"
-                args {
-                  string_value: "51a9844d633461e82400002a"
-                }
-                args {
-                  string_value: "AN_HUMAN_ENEMY"
-                }
-              }
+              string_value: "IsOrIsNot"
             }
             args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "IsOrIsNot"
-                }
-                args {
-                  int_value: 1
-                }
-              }
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
             }
             args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "bool"
-                }
-                args {
-                  int_value: 0
-                }
-              }
+              int_value: 0
             }
           }
         }
@@ -347,6 +306,7 @@ nodes {
     }
     nextNodeIndex: -1
     hideIfUnavailable: true
+    comment: "Akimi True / Enemy False -- REMOVED"
   }
   branches {
     responseText: "There might be people left inside! Take the stairs!"
@@ -463,6 +423,7 @@ nodes {
     }
     nextNodeIndex: -1
     hideIfUnavailable: true
+    comment: "Akimi False / Enemy False"
   }
   branches {
     responseText: "Get to the roof before the building blows!"
@@ -579,6 +540,7 @@ nodes {
     }
     nextNodeIndex: -1
     hideIfUnavailable: true
+    comment: "Akimi False / Enemy False"
   }
   branches {
     responseText: "After slaughtering security downstairs the roof is the only choice!"
@@ -695,6 +657,7 @@ nodes {
     }
     nextNodeIndex: -1
     hideIfUnavailable: true
+    comment: "Akimi True / Enemy True"
   }
   nodeType: ConversationNodeType_Simple
 }

@@ -1,4 +1,64 @@
 triggers {
+  name: "JR_Setup.RemoveCostumes"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Remove Item from Actor by Item Type"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ItemType"
+          }
+          args {
+            int_value: 20
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "All Actors"
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5f173151616131001a002923"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
   name: "Setup.DroneControl"
   events {
     ops {
@@ -13316,6 +13376,8 @@ team_affiliations {
 }
 scene_dimensions {
   dimension_name: "Default"
+}
+character_roster {
 }
 show_hiring_screen_on_scene_load: false
 scene_hiring_prerequisites {

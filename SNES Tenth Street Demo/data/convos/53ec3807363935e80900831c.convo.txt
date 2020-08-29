@@ -7,37 +7,77 @@ nodes {
     id: "53ec380f363935e809008322"
   }
   index: 0
-  text: "Version 4.0 is the beta candidate build."
+  text: "COMMON QUESTIONS AND KNOWN ISSUES"
   branches {
-    responseText: "BETA CANDIDATE"
+    responseText: "Is the module fully playable?"
     nextNodeIndex: 1
   }
   branches {
-    responseText: "Hired Runners"
+    responseText: "What do I need to know about Hired Runners?"
     nextNodeIndex: 2
   }
   branches {
-    responseText: "Performance"
+    responseText: "Known Lag and Performance Issues"
     nextNodeIndex: 3
   }
   branches {
-    responseText: "Drake Tower, Drake Volcano and Aneki Building"
+    responseText: "What scenes have major differences from the original game?"
     nextNodeIndex: 4
   }
   branches {
     responseText: "Character Selection"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 5
+    hideIfUnavailable: true
+    comment: "Commented Out"
   }
   branches {
-    responseText: "Balance"
+    responseText: "Are the enemies balanced? Can I play on hard mode?"
     nextNodeIndex: 6
   }
   branches {
-    responseText: "Future Enhancements"
+    responseText: "What future enhancements are planned?"
     nextNodeIndex: 7
   }
   branches {
-    responseText: "Bugs"
+    responseText: "How do I report bugs?"
     nextNodeIndex: 8
   }
   branches {
@@ -51,7 +91,7 @@ nodes {
     id: "572849e16161317037000273"
   }
   index: 1
-  text: "The module should be playable end to end with minimal bugs.\nWe do have a fairly long list of issues (and enhancements), but nothing should prevent you from beating the mod provided you save regularly.\nFor more information on bugs, visit our steam forums."
+  text: "The module should be playable end to end with minimal/minor bugs.\nWe do have a list of issues (and enhancements), but nothing should prevent you from completing the mod provided you save regularly."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -68,7 +108,7 @@ nodes {
     id: "53ec39a1363935e809008343"
   }
   index: 2
-  text: "Current Features\n- You can click on your character to talk / manage your hired runners. \n- Hired runners persist, so you can give them gear and items so they are better equipped.\n\nKnown Issues\n- Runners don\'t always track fights properly, so they will stand longer than they are supposed to.\n\nFuture Enhancements:\n- Currently you cannot upgrade their armor. I would like to change this in the future.\n"
+  text: "- You can click on your character to talk / manage your hired runners. \n- Hired runners persist, they will keep any gear you give them.\n\nKnown Issues\n- Runners don\'t always track fights properly, so they will stay longer than they are supposed to.\n\nFuture Enhancements:\n- Currently you cannot upgrade their armor. I would like to change this in the future.\n"
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -88,7 +128,7 @@ nodes {
     id: "590d5d56616131a436001f48"
   }
   index: 3
-  text: "We are trying to make scene transitions as efficient as possible, unfortunately some are still fairly slow to load.\nWe also need to more thoroughly test scenes are our performance enhancements, numerous bugs have popped up because of them."
+  text: "A lot of our maps are VERY large and have lots of spawners. This can cause lag and other performance issues. "
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -105,7 +145,7 @@ nodes {
     id: "54e2d44e363935ac06004660"
   }
   index: 4
-  text: "These locations are the most different from the original and are no longer strictly hack and slash.\nThey are also the least tested scenes.\nPlease let us know if you encounter any issues."
+  text: "Drake Tower, Drake Volcano, and Aneki Tower are VERY different from the original game.\nThey are no longer strictly hack and slash and have various social or stealth options."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -142,7 +182,7 @@ nodes {
     id: "53ec39a0363935e809008341"
   }
   index: 6
-  text: "The module has been tested for balance on Normal mode. \nIf you decide to try hard mode, let us know how the difficulty is."
+  text: "The module has only been tested for balance on Normal mode. \nWe hope to properly configure Hard mode in the future. "
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -162,7 +202,7 @@ nodes {
     id: "53ec39a6363935e809008347"
   }
   index: 7
-  text: "Among those are:\n- Upgradable Hired Runners\n- Quests (which will be optional to display) are not yet implemented. This will make the module MUCH more newbie friendly.\n- More to be listed later\n"
+  text: "Among those are:\n- Upgradable Hired Runners\n- Quest Tracking (which will be optional to display) to make the module MUCH more newbie friendly.\n"
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0

@@ -1,0 +1,940 @@
+idRef {
+  id: "5f189258616131780d000e4c"
+}
+ui_name: "DT_Wastlands_Barkeep_V2"
+nodes {
+  idRef {
+    id: "523da8d43736306805003e5f"
+  }
+  index: 0
+  text: "Yo $(l.man). What\342\200\231s been happenin\342\200\231? You gone underground lately?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da9053736306805003e62"
+  }
+  index: 1
+  text: "Say what? Drok, what a bummer! Want an iced tea? I\342\200\231ll have to hold the ice."
+  branches {
+    responseText: "Ice"
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9bc3736306805003ea0"
+    }
+  }
+  branches {
+    responseText: "Shadowrunners"
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9bf3736306805003ea1"
+    }
+  }
+  branches {
+    responseText: "Hiring"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "TalkedAboutRunners"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 4
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523daa5c3736306805003ec6"
+    }
+  }
+  branches {
+    responseText: "Hitmen"
+    nextNodeIndex: 5
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df60e373630e412001cb9"
+    }
+  }
+  branches {
+    responseText: "Dark Blade"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_DarkBlade"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 6
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df656373630e412001cda"
+    }
+  }
+  branches {
+    responseText: "Rust Stilettos"
+    nextNodeIndex: 7
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9d13736306805003ea5"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da9753736306805003e6e"
+  }
+  index: 2
+  text: "Sorry, no ice. The freezer\342\200\231s on the fritz. We\342\200\231re waiting on a delivery."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da9773736306805003e70"
+  }
+  index: 3
+  text: "All kinds hang here! Mercs, mages, deckers\342\200\246 If you\342\200\231ve got the money then, no problem!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "TalkedAboutRunners"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9793736306805003e72"
+  }
+  index: 4
+  text: "You\342\200\231d better be a good leader, or they\342\200\231ll take off and go where the money is better."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "523da97b3736306805003e74"
+  }
+  index: 5
+  text: "$(l.man), I shouldn\342\200\231t be telling ya this, but I wouldn\342\200\231t wanna lose a good customer like you. There\342\200\231s a price on your head! Rust Stilettos gang are aiming to collect. Small gang, big plans. They got backing somewhere."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "523da97d3736306805003e76"
+  }
+  index: 6
+  text: "Those blood suckers!? They\342\200\231re holed up at some club they have on the outskirts of town. You sure you wanna mess with vampires?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Vampires"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9803736306805003e78"
+  }
+  index: 7
+  text: "They\342\200\231re hiding out somewhere near here. You\342\200\231d better watch your back."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da8d43736306805003e5f"
+  }
+  index: 8
+  text: "Yo $(l.guy)! What\342\200\231s been going down?\n\nThings are like so cool! Especially now that the guy with the ice delivered."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da9053736306805003e62"
+  }
+  index: 9
+  text: "Say what? Drok, what a bummer! Want an iced tea? I\342\200\231ll have to hold the ice."
+  branches {
+    responseText: "Ice"
+    nextNodeIndex: 10
+  }
+  branches {
+    responseText: "Shadowrunners"
+    nextNodeIndex: 11
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9bf3736306805003ea1"
+    }
+  }
+  branches {
+    responseText: "Hiring"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "TalkedAboutRunners"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 12
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523daa5c3736306805003ec6"
+    }
+  }
+  branches {
+    responseText: "Hitmen"
+    nextNodeIndex: 13
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df60e373630e412001cb9"
+    }
+  }
+  branches {
+    responseText: "Dark Blade"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_DarkBlade"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 14
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df656373630e412001cda"
+    }
+  }
+  branches {
+    responseText: "Rust Stilettos"
+    nextNodeIndex: 15
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9d13736306805003ea5"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523dde02373630e412001a65"
+  }
+  index: 10
+  text: "The chiller is the dude over there in the corner."
+  branches {
+    responseText: "{{GM}}Talk{{/GM}}"
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Enable/Disable Interactable Object"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "58abcb39616131d421006dbd"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9773736306805003e70"
+  }
+  index: 11
+  text: "All kinds hang here! Mercs, mages, deckers\342\200\246 If you\342\200\231ve got the money then, no problem!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "TalkedAboutRunners"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9793736306805003e72"
+  }
+  index: 12
+  text: "You\342\200\231d better be a good leader, or they\342\200\231ll take off and go where the money is better."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "523da97b3736306805003e74"
+  }
+  index: 13
+  text: "$(l.man), I shouldn\342\200\231t be telling ya this, but I wouldn\342\200\231t wanna lose a good customer like you. There\342\200\231s a price on your head! Rust Stilettos gang are aiming to collect. Small gang, big plans. They got backing somewhere."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "523da97d3736306805003e76"
+  }
+  index: 14
+  text: "Those blood suckers!? They\342\200\231re holed up at some club they have on the outskirts of town. You sure you wanna mess with vampires?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Vampires"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9803736306805003e78"
+  }
+  index: 15
+  text: "They\342\200\231re hiding out somewhere near here. You\342\200\231d better watch your back."
+  branches {
+    responseText: ""
+    nextNodeIndex: 9
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da8d43736306805003e5f"
+  }
+  index: 16
+  text: "Yo $(l.man). How\'s the weather? How\'s life?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da9053736306805003e62"
+  }
+  index: 17
+  text: "I hear ya. Same old, same old."
+  branches {
+    responseText: "Shadowrunners"
+    nextNodeIndex: 18
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9bf3736306805003ea1"
+    }
+  }
+  branches {
+    responseText: "Hiring"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Variable (bool)"
+            args {
+              string_value: "TalkedAboutRunners"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 19
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523daa5c3736306805003ec6"
+    }
+  }
+  branches {
+    responseText: "Hitmen"
+    nextNodeIndex: 20
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df60e373630e412001cb9"
+    }
+  }
+  branches {
+    responseText: "Dark Blade"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "KW_DarkBlade"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 21
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523df656373630e412001cda"
+    }
+  }
+  branches {
+    responseText: "Rust Stilettos"
+    nextNodeIndex: 22
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "523da9d13736306805003ea5"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523da9773736306805003e70"
+  }
+  index: 18
+  text: "All kinds hang here! Mercs, mages, deckers\342\200\246 If you\342\200\231ve got the money then, no problem!"
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "TalkedAboutRunners"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9793736306805003e72"
+  }
+  index: 19
+  text: "You\342\200\231d better be a good leader, or they\342\200\231ll take off and go where the money is better."
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "523da97b3736306805003e74"
+  }
+  index: 20
+  text: "$(l.man), I shouldn\342\200\231t be telling ya this, but I wouldn\342\200\231t wanna lose a good customer like you. There\342\200\231s a price on your head! Rust Stilettos gang are aiming to collect. Small gang, big plans. They got backing somewhere."
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+    auxiliaryLink: true
+  }
+}
+nodes {
+  idRef {
+    id: "523da97d3736306805003e76"
+  }
+  index: 21
+  text: "Those blood suckers!? They\342\200\231re holed up at some club they have on the outskirts of town. You sure you wanna mess with vampires?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+    auxiliaryLink: true
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "KW_Vampires"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523da9803736306805003e78"
+  }
+  index: 22
+  text: "They\342\200\231re hiding out somewhere near here. You\342\200\231d better watch your back."
+  branches {
+    responseText: ""
+    nextNodeIndex: 17
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_Wastelands_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 5
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  nextNodeIndex: 0
+  comment: "Wastelands Progress <=0"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_Wastelands_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  nextNodeIndex: 8
+  comment: "Wastelands Progress = 2"
+}
+roots {
+  responseText: ""
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_Wastelands_Progress"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
+  }
+  nextNodeIndex: 16
+  comment: "Other"
+}
