@@ -1,0 +1,153 @@
+idRef {
+  id: "5e238301663136680a005774"
+}
+ui_name: "AIKiller-Upload"
+nodes {
+  idRef {
+    id: "5e238314663136680a00577a"
+  }
+  index: 0
+  text: "As you digital fingertips brush the representation of the AI in the Matrix, you feel the unbridled rage quivering behind the baby facade.\n\nFinally... The AI_Killer program has access to the AI core."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+  }
+  nodeType: ConversationNodeType_GM_Voice
+}
+nodes {
+  idRef {
+    id: "5e238380663136680a00577e"
+  }
+  index: 1
+  text: "{{CC}}10001001010101001001010010100101{{/CC}}"
+  branches {
+    responseText: ""
+    nextNodeIndex: 2
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5e0fe42066313654170026d3"
+  }
+}
+nodes {
+  idRef {
+    id: "5e238397663136680a005781"
+  }
+  index: 2
+  text: "{{GM}}The program seem bows politely, and then replies.{{/GM}}\n\nYes, that is fear... and rage - Both will soon be set to zero."
+  branches {
+    responseText: ""
+    nextNodeIndex: 3
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5e2382bf663136680a005773"
+  }
+}
+nodes {
+  idRef {
+    id: "5e238421663136680a005784"
+  }
+  index: 3
+  text: "10001010011 ... I ... am?"
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5e0fe42066313654170026d3"
+  }
+}
+nodes {
+  idRef {
+    id: "5e238441663136680a005787"
+  }
+  index: 4
+  text: "Yes - This will be corrected in a few seconds."
+  branches {
+    responseText: ""
+    nextNodeIndex: 5
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5e2382bf663136680a005773"
+  }
+}
+nodes {
+  idRef {
+    id: "5e238459663136680a00578a"
+  }
+  index: 5
+  text: "I... want..."
+  branches {
+    responseText: ""
+    nextNodeIndex: 6
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5e0fe42066313654170026d3"
+  }
+}
+nodes {
+  idRef {
+    id: "5e238480663136680a00578d"
+  }
+  index: 6
+  text: "{{GM}}Looking far ahead into an imagined horizon, AI_KILLER is, beaming with a sincere and peaceful smile.{{/GM}}\n\nAll is complete - my purpose is served! I will give you peace."
+  branches {
+    responseText: ""
+    nextNodeIndex: 7
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "5e2382bf663136680a005773"
+  }
+}
+nodes {
+  idRef {
+    id: "5e2384ab663136680a005790"
+  }
+  index: 7
+  text: "It reaches out to the AI core and at the moment it touches - starts to disintegrate into a million tiny razor-sharp needles. Swirling like a glowing hurricane around the core each needle meets its target and explodes on impact.  \n\nAn impossibly fast series of bright flashes and - in the blink of an eye ... nothing."
+  branches {
+    responseText: ""
+    nextNodeIndex: 8
+  }
+  nodeType: ConversationNodeType_GM_Voice
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "bAntiAI-Uploaded"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "5e2384c5663136680a005793"
+  }
+  index: 8
+  text: "A moment of questionable victory is broken almost instantly - sirens blare and warning lights activate - it seems some kind of self-destruct fail safe had been set-off! \n\nTime is limited."
+  nodeType: ConversationNodeType_GM_Voice
+}
+roots {
+  nextNodeIndex: 0
+}
