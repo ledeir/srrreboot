@@ -20,25 +20,6 @@ nodes {
   sourceInSceneRef {
     id: "51c64d95633461a80b0049ae"
   }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "TS_GlutmenProgress"
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-    }
-  }
 }
 nodes {
   idRef {
@@ -163,6 +144,23 @@ nodes {
   branches {
     responseText: "Follow"
     actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "TS_GlutmenProgress"
+            }
+          }
+        }
+        args {
+          int_value: 2
+        }
+      }
       ops {
         functionName: "Trigger: Run Alternate Trigger"
         args {

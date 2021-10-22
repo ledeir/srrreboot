@@ -87,7 +87,188 @@ nodes {
     responseText: "Glutman?"
     conditions {
       ops {
-        functionName: "Comparison (int)"
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "TS_GlutmenProgress"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "GlutmanAtCage"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    onlyOnce: true
+    idRef {
+      id: "559c8dae616131b417005f5b"
+    }
+    comment: "Originally was: Progress > 0"
+  }
+  branches {
+    responseText: "Glutman?"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Comparison (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "TS_GlutmenProgress"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Comparison (bool)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (bool)"
+                args {
+                  string_value: "51a9844d633461e82400002a"
+                }
+                args {
+                  string_value: "GlutmanAtCage"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "IsOrIsNot"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "bool"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "GlutmanAtCage"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Set Variable (int)"
         args {
           call_value {
             functionName: "Get Story Variable (int)"
@@ -100,27 +281,17 @@ nodes {
           }
         }
         args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
+          int_value: 1
         }
       }
     }
-    nextNodeIndex: 3
+    nextNodeIndex: 4
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
       id: "559c8dae616131b417005f5b"
     }
+    comment: "To resolve an error condition"
   }
   branches {
     responseText: "Business?"
@@ -154,7 +325,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 4
+    nextNodeIndex: 5
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -193,7 +364,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 5
+    nextNodeIndex: 6
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -298,9 +469,18 @@ nodes {
 }
 nodes {
   idRef {
-    id: "552abc2e363935b01700605a"
+    id: "55161d32363935ac2a005fa0"
   }
   index: 4
+  text: "Mr Glutman is out at the moment. He was going to The Cage club. Maybe you can find him there..."
+  nodeType: ConversationNodeType_Simple
+  sourceWithTagInScene: "GLUT_SEC"
+}
+nodes {
+  idRef {
+    id: "552abc2e363935b01700605a"
+  }
+  index: 5
   text: "We are primarily a Matrix solution company though we also have an on-site cyberdeck dealer. He\'s currently on vacation but you should check back later."
   branches {
     responseText: "Talk"
@@ -314,7 +494,7 @@ nodes {
   idRef {
     id: "552abc9d363935b01700605d"
   }
-  index: 5
+  index: 6
   text: "Our repairman Gunther is in the office. You should talk to him if you have any cyberdeck needs."
   branches {
     responseText: "Talk"
