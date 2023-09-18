@@ -75,38 +75,67 @@ nodes {
     responseText: "Firearms?"
     conditions {
       ops {
-        functionName: "Evaluate If Actor Has Item"
+        functionName: "AND"
         args {
           call_value {
-            functionName: "Specific Actor"
+            functionName: "Evaluate If Actor Has Item"
             args {
               call_value {
-                functionName: "Get Map Item (Player)"
+                functionName: "Specific Actor"
+                args {
+                  call_value {
+                    functionName: "Get Map Item (Player)"
+                    args {
+                      int_value: 0
+                    }
+                  }
+                }
+                args {
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "HasOrHasNot"
+                }
                 args {
                   int_value: 0
                 }
               }
             }
             args {
+              call_value {
+                functionName: "Get Map Item (Item)"
+                args {
+                  string_value: "Pi 1 Fichetti Security 500"
+                }
+              }
             }
           }
         }
         args {
           call_value {
-            functionName: "Get Preset Value (int)"
+            functionName: "Evaluate If Stash Has Item"
             args {
-              string_value: "HasOrHasNot"
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "HasOrHasNot"
+                }
+                args {
+                  int_value: 0
+                }
+              }
             }
             args {
-              int_value: 0
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Pi 1 Fichetti Security 500"
+              call_value {
+                functionName: "Get Map Item (Item)"
+                args {
+                  string_value: "Pi 1 Fichetti Security 500"
+                }
+              }
             }
           }
         }

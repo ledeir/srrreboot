@@ -1147,23 +1147,218 @@ nodes {
   text: "They are needed to give power to your magic. They are found all around you, in exotic ingredients or even everyday things.\n\nBring certain ingredients to me and i will teach you magic spells."
   branches {
     responseText: "DEFENSE"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Defense"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 8
+    hideIfUnavailable: true
   }
   branches {
     responseText: "COMBAT"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Attack"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 9
+    hideIfUnavailable: true
   }
   branches {
     responseText: "SUMMONING"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Summon"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 10
-  }
-  branches {
-    responseText: "STEALTH"
-    nextNodeIndex: 11
+    hideIfUnavailable: true
   }
   branches {
     responseText: "CONTROL"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Control"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 11
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "STEALTH"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "Magic_Stealth"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 12
+    hideIfUnavailable: true
   }
   branches {
     responseText: "You have all spells"
@@ -1350,6 +1545,7 @@ nodes {
       }
     }
     nextNodeIndex: 13
+    hideIfUnavailable: true
   }
   branches {
     responseText: "Ask something else"
@@ -1426,10 +1622,10 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5344fddc373630b40a0032e0"
+    id: "5344fde3373630b40a0032e4"
   }
   index: 11
-  text: "To learn stealth magic you need water of a clean and unclean source."
+  text: "To learn control magic you will need the residue of two sea creatures."
   branches {
     responseText: "Ask about other spells"
     nextNodeIndex: 7
@@ -1447,10 +1643,10 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5344fde3373630b40a0032e4"
+    id: "5344fddc373630b40a0032e0"
   }
   index: 12
-  text: "To learn control magic you will need the residue of two sea creatures."
+  text: "To learn stealth magic you need water of a clean and unclean source."
   branches {
     responseText: "Ask about other spells"
     nextNodeIndex: 7
