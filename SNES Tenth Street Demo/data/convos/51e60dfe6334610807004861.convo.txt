@@ -28,50 +28,6 @@ nodes {
   index: 1
   text: "Go now, my men hide you. No charge. Glutman owe you favor, ya! I fix everything! We hide you real good, you betcha!"
   branches {
-    responseText: "Ask..."
-    conditions {
-      ops {
-        functionName: "Evaluate If Actor Has Item"
-        args {
-          call_value {
-            functionName: "Specific Actor"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "HasOrHasNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Pi 1 Fichetti Security 500"
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 2
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Firearms?"
     conditions {
       ops {
@@ -141,7 +97,12 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 4
+    nextNodeIndex: 2
+    hideIfUnavailable: true
+  }
+  branches {
+    responseText: "Ask..."
+    nextNodeIndex: 3
     hideIfUnavailable: true
   }
   nodeType: ConversationNodeType_Simple
@@ -151,13 +112,68 @@ nodes {
 }
 nodes {
   idRef {
-    id: "51e60f686334610807004876"
+    id: "51e60f6a6334610807004878"
   }
   index: 2
+  text: "Here, take this... "
+  branches {
+    responseText: ""
+    nextNodeIndex: 4
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  sourceInSceneRef {
+    id: "51c64d95633461a80b0049ae"
+  }
+  actions {
+    ops {
+      functionName: "Add Item to Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "ZipGun"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "51e60f686334610807004876"
+  }
+  index: 3
   text: "No time, no time. You is dead $(l.man), come quickly."
   branches {
     responseText: ""
-    nextNodeIndex: 3
+    nextNodeIndex: 4
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -168,7 +184,7 @@ nodes {
   idRef {
     id: "51e6102e633461080700487b"
   }
-  index: 3
+  index: 4
   text: "No need to thank me, $(l.guy)! Now let\'s hurry!"
   branches {
     responseText: "Follow"
@@ -327,61 +343,6 @@ nodes {
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
     id: "51c64d95633461a80b0049ae"
-  }
-}
-nodes {
-  idRef {
-    id: "51e60f6a6334610807004878"
-  }
-  index: 4
-  text: "Here, take this... "
-  branches {
-    responseText: ""
-    nextNodeIndex: 3
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-  sourceInSceneRef {
-    id: "51c64d95633461a80b0049ae"
-  }
-  actions {
-    ops {
-      functionName: "Add Item to Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "ZipGun"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
   }
 }
 roots {
