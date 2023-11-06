@@ -14,54 +14,16 @@ nodes {
   }
   branches {
     responseText: "I WANT TO CHEAT!"
-    conditions {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
     nextNodeIndex: 2
     hideIfUnavailable: true
   }
   branches {
     responseText: "Begin Game"
-    nextNodeIndex: 5
+    nextNodeIndex: 4
   }
   branches {
     responseText: "Skip Intro Movie"
-    nextNodeIndex: 6
+    nextNodeIndex: 5
   }
   branches {
     responseText: "I\'m not ready yet"
@@ -80,12 +42,12 @@ nodes {
   text: "In order to recreate the SNES feel, this module does some things differently.\n* GRINDING: Grinding was an integral part of the original. You may find yourself needing to farm enemies.\n* KARMA: After karma is earned, it needs to be collected. You MUST find a bed before you can redeem and use it.\n* KEYWORD HUNT: You need to learn KEYWORDS before you can advance the plot and you may need to revisit scenes and talk to other people."
   branches {
     responseText: "Begin Game"
-    nextNodeIndex: 5
+    nextNodeIndex: 4
     auxiliaryLink: true
   }
   branches {
     responseText: "Skip Intro Movie"
-    nextNodeIndex: 6
+    nextNodeIndex: 5
     auxiliaryLink: true
   }
   branches {
@@ -106,18 +68,6 @@ nodes {
   branches {
     responseText: "Take me to the secret room!\n(This skips the intro scene)"
     nextNodeIndex: 3
-  }
-  branches {
-    responseText: "Just give me Nuyen! (Hired Runner Testing, skips intro)"
-    actions {
-      ops {
-        functionName: "Add Nuyen"
-        args {
-          int_value: 5000
-        }
-      }
-    }
-    nextNodeIndex: 4
   }
   branches {
     responseText: "Never Mind"
@@ -155,30 +105,9 @@ nodes {
 }
 nodes {
   idRef {
-    id: "5b4eae68616131681e006c6b"
-  }
-  index: 4
-  text: "Play!"
-  nodeType: ConversationNodeType_Simple
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "Morgue"
-          }
-        }
-      }
-    }
-  }
-}
-nodes {
-  idRef {
     id: "54336c803639355c270028c3"
   }
-  index: 5
+  index: 4
   text: "Have fun!"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -202,7 +131,7 @@ nodes {
   idRef {
     id: "5a542c256161319022000c05"
   }
-  index: 6
+  index: 5
   text: "Have fun!"
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
