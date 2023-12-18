@@ -109,41 +109,6 @@ nodes {
               string_value: "51a9844d633461e82400002a"
             }
             args {
-              string_value: "SR_OnCall_Norbert"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 9
-    hideIfUnavailable: true
-  }
-  branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
               string_value: "SR_Fights_Norbert"
             }
           }
@@ -164,7 +129,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 14
+    nextNodeIndex: 9
     hideIfUnavailable: true
   }
   branches {
@@ -199,7 +164,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 14
     hideIfUnavailable: true
   }
   branches {
@@ -270,7 +235,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 16
     hideIfUnavailable: true
   }
   branches {
@@ -313,7 +278,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -859,7 +824,7 @@ nodes {
     id: "6518f5f4616131542e002543"
   }
   index: 9
-  text: "{{GM}}You can buy Dances with Clams better armor{{/GM}}"
+  text: "{{GM}}You can buy Norbert better armor{{/GM}}"
   branches {
     responseText: "Secure Ninja Clothing: Armor 3 / Dodge +1 / 400 Nuyen\n(Adept Ninja)"
     conditions {
@@ -1024,7 +989,7 @@ nodes {
     nextNodeIndex: 10
   }
   branches {
-    responseText: "Alley Punk: Armor 4 / HP +3 / 750 Nuyen\n(Samurai Punk)"
+    responseText: "Victory Rapid Transit Light Jumpsuit: Armor 4 / Dodge +1 Move +1 / 750 Nuyen\n(Combat2Fast)"
     conditions {
       ops {
         functionName: "AND"
@@ -1108,7 +1073,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiPunk"
+              string_value: "Berlin_Player_Outfit_Combat2Fast"
             }
           }
         }
@@ -1154,7 +1119,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiPunk"
+              string_value: "Berlin_Player_Outfit_Combat2Fast"
             }
           }
         }
@@ -1187,7 +1152,7 @@ nodes {
     nextNodeIndex: 11
   }
   branches {
-    responseText: "Refurb UCAS Shock Gear: Armor 6 /  Str +1 HP +5 / 1000 Nuyen\n(Samurai Military)"
+    responseText: "Ganger Mask: Armor 6 /  Quick +1 HP +5 / 1000 Nuyen\n(Samurai Bunny)"
     conditions {
       ops {
         functionName: "AND"
@@ -1271,7 +1236,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiMilitary"
+              string_value: "Player_SamuraiBunny"
             }
           }
         }
@@ -1317,7 +1282,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiMilitary"
+              string_value: "Player_SamuraiBunny"
             }
           }
         }
@@ -1555,27 +1520,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 14
-  text: "You currently have $(story.SR_Fights_Norbert) fights before Norbert leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 15
   text: "Do you wish to fire Norbert?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 16
+    nextNodeIndex: 15
   }
   branches {
     responseText: "No"
@@ -1588,7 +1536,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 16
+  index: 15
   text: "So you wanna go it alone! You\'re almost as crazy as me!"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1732,7 +1680,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 17
+  index: 16
   text: "All waiting and no play makes Norbert go crazy!\n{{GM}}You can click on your character to tell Norbert to stop waiting{{/GM}}\n"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1851,7 +1799,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 18
+  index: 17
   text: "Tee hee ho har! Guns ready!"
   nodeType: ConversationNodeType_Simple
   actions {

@@ -277,41 +277,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Frogtongue"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 17
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -343,7 +308,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -414,7 +379,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 20
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -457,7 +422,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 21
+    nextNodeIndex: 20
     hideIfUnavailable: true
   }
   branches {
@@ -1039,172 +1004,9 @@ nodes {
     id: "6518f5f4616131542e002543"
   }
   index: 12
-  text: "{{GM}}You can buy Dances with Clams better armor{{/GM}}"
+  text: "{{GM}}You can buy Frogtongue better armor{{/GM}}"
   branches {
-    responseText: "Secure Ninja Clothing: Armor 3 / Dodge +1 / 400 Nuyen\n(Adept Ninja)"
-    conditions {
-      ops {
-        functionName: "AND"
-        args {
-          call_value {
-            functionName: "Compare Actor Attribute"
-            args {
-              call_value {
-                functionName: "Triggering Target Actor"
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "BaseOrCurrent"
-                }
-                args {
-                  int_value: 1
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "ActorAttributes"
-                }
-                args {
-                  int_value: 10
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
-                }
-                args {
-                  int_value: 4
-                }
-              }
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Evaluate Nuyen"
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
-                }
-                args {
-                  int_value: 3
-                }
-              }
-            }
-            args {
-              int_value: 400
-            }
-          }
-        }
-      }
-    }
-    actions {
-      ops {
-        functionName: "Remove Nuyen"
-        args {
-          int_value: 400
-        }
-      }
-      ops {
-        functionName: "Add Item to Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Player_AdeptNinja"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "All Actors With Tag"
-            args {
-              call_value {
-                functionName: "Get Map Item (SenseTagList)"
-                args {
-                  string_value: "Frogtongue"
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "AllOrAny"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "WithOrWithout"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Select Item on Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Player_AdeptNinja"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "All Actors With Tag"
-            args {
-              call_value {
-                functionName: "Get Map Item (SenseTagList)"
-                args {
-                  string_value: "Frogtongue"
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "AllOrAny"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 13
-  }
-  branches {
-    responseText: "Alley Punk: Armor 4 / HP +3 / 750 Nuyen\n(Samurai Punk)"
+    responseText: "Armor Jacket: Armor 4 / Strength +1 HP +5 / 1000 Nuyen\n(combat2Melee)"
     conditions {
       ops {
         functionName: "AND"
@@ -1269,7 +1071,7 @@ nodes {
               }
             }
             args {
-              int_value: 750
+              int_value: 1000
             }
           }
         }
@@ -1279,7 +1081,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 750
+          int_value: 1000
         }
       }
       ops {
@@ -1288,7 +1090,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiPunk"
+              string_value: "Berlin_Player_Outfit_Combat2Melee"
             }
           }
         }
@@ -1334,7 +1136,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiPunk"
+              string_value: "Berlin_Player_Outfit_Combat2Melee"
             }
           }
         }
@@ -1364,10 +1166,10 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 14
+    nextNodeIndex: 13
   }
   branches {
-    responseText: "Refurb UCAS Shock Gear: Armor 6 /  Str +1 HP +5 / 1000 Nuyen\n(Samurai Military)"
+    responseText: "Refurb UCAS Shock Gear: Armor 6 /  Str +1 HP +5 / 1250 Nuyen\n(Samurai Military)"
     conditions {
       ops {
         functionName: "AND"
@@ -1432,7 +1234,7 @@ nodes {
               }
             }
             args {
-              int_value: 1000
+              int_value: 1250
             }
           }
         }
@@ -1442,7 +1244,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1000
+          int_value: 1250
         }
       }
       ops {
@@ -1498,6 +1300,169 @@ nodes {
             functionName: "Get Map Item (Item)"
             args {
               string_value: "Player_SamuraiMilitary"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "All Actors With Tag"
+            args {
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "Frogtongue"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "AllOrAny"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 14
+  }
+  branches {
+    responseText: "Camouflaged Full Suit: Armor 8 / Close Combat +1 Ranged +1 Dodge +1 / 1500 Nuyen\n(Combat 3DPS)"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Compare Actor Attribute"
+            args {
+              call_value {
+                functionName: "Triggering Target Actor"
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorAttributes"
+                }
+                args {
+                  int_value: 10
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 4
+                }
+              }
+            }
+            args {
+              int_value: 8
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Evaluate Nuyen"
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 3
+                }
+              }
+            }
+            args {
+              int_value: 1500
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Remove Nuyen"
+        args {
+          int_value: 1500
+        }
+      }
+      ops {
+        functionName: "Add Item to Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "Berlin_Player_Outfit_Combat3DPS"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "All Actors With Tag"
+            args {
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "Frogtongue"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "AllOrAny"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Select Item on Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "Berlin_Player_Outfit_Combat3DPS"
             }
           }
         }
@@ -1735,27 +1700,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 17
-  text: "You currently have $(story.SR_Fights_Frogtongue) fights before Frogtongue leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 18
   text: "Do you wish to fire Frogtongue?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 19
+    nextNodeIndex: 18
   }
   branches {
     responseText: "No"
@@ -1768,7 +1716,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 19
+  index: 18
   text: "Well why are ya still in my face, bowb!"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1912,7 +1860,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 20
+  index: 19
   text: "Ya sure leaving yer muscle behind is the smart choice?\n{{GM}}You can click on your character to tell Frogtongue to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2031,7 +1979,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 21
+  index: 20
   text: "Lets start the run!"
   nodeType: ConversationNodeType_Simple
   actions {

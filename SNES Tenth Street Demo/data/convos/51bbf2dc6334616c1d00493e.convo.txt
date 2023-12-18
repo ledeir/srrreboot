@@ -317,41 +317,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Hamfist"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 18
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -383,7 +348,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 19
+    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   branches {
@@ -454,7 +419,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 21
+    nextNodeIndex: 20
     hideIfUnavailable: true
   }
   branches {
@@ -497,7 +462,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 22
+    nextNodeIndex: 21
     hideIfUnavailable: true
   }
   branches {
@@ -2001,27 +1966,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 18
-  text: "You currently have $(story.SR_Fights_Hamfist) fights before Hamfist leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 19
   text: "Do you wish to fire Hamfist?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 20
+    nextNodeIndex: 19
   }
   branches {
     responseText: "No"
@@ -2034,7 +1982,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 20
+  index: 19
   text: "Your guns are no match for mine. You\'ll regret it..."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2178,7 +2126,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 21
+  index: 20
   text: "Try not to die without me!\n{{GM}}You can click on your character to tell Hamfist to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2297,7 +2245,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 22
+  index: 21
   text: "Finally budster, lets hit it!"
   nodeType: ConversationNodeType_Simple
   actions {

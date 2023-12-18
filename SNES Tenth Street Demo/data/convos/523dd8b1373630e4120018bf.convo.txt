@@ -265,41 +265,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Jetboy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 16
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -331,7 +296,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 16
     hideIfUnavailable: true
   }
   branches {
@@ -402,7 +367,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 19
+    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   branches {
@@ -445,7 +410,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 20
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -1053,7 +1018,7 @@ nodes {
     id: "6518f5f4616131542e002543"
   }
   index: 11
-  text: "{{GM}}You can buy Hamfist better armor{{/GM}}"
+  text: "{{GM}}You can buy Jetboy better armor{{/GM}}"
   branches {
     responseText: "- Black Hat: Armor 2 /  Int+1 / 300"
     conditions {
@@ -1749,27 +1714,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 16
-  text: "You currently have $(story.SR_Fights_Jetboy) fights before Jetboy leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 6
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 17
   text: "Do you wish to fire Jetboy?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 18
+    nextNodeIndex: 17
   }
   branches {
     responseText: "No"
@@ -1782,7 +1730,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 18
+  index: 17
   text: "Good luck, chummer! Look me up if you hear of any other runs."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1926,7 +1874,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 19
+  index: 18
   text: "No problem, I\'m fine with leaving meatspace to you!\n{{GM}}You can click on your character to tell Jetboy to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2045,7 +1993,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 20
+  index: 19
   text: "Found a computer to crack? Lead the way!"
   nodeType: ConversationNodeType_Simple
   actions {

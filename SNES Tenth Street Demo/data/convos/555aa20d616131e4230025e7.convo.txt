@@ -80,7 +80,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 19
+    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   branches {
@@ -123,7 +123,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 20
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -271,41 +271,6 @@ nodes {
       }
     }
     nextNodeIndex: 13
-    hideIfUnavailable: true
-  }
-  branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Akimi"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   nodeType: ConversationNodeType_Simple
@@ -1387,26 +1352,9 @@ nodes {
 }
 nodes {
   idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 18
-  text: "You currently have $(story.SR_Fights_Akimi) fights before Akimi leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 19
+  index: 18
   text: "You are wasting my time. Make it quick.\n{{GM}}You can click on your character to tell Akimi to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1525,7 +1473,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 20
+  index: 19
   text: "Finally. Let us finish this."
   nodeType: ConversationNodeType_Simple
   actions {

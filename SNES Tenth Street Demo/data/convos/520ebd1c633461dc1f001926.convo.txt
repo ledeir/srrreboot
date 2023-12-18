@@ -130,41 +130,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Orifice"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 14
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -196,7 +161,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 14
     hideIfUnavailable: true
   }
   branches {
@@ -267,7 +232,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 16
     hideIfUnavailable: true
   }
   branches {
@@ -310,7 +275,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -358,7 +323,7 @@ nodes {
     id: "6518f5f4616131542e002543"
   }
   index: 4
-  text: "{{GM}}You can buy Dances with Clams better armor{{/GM}}"
+  text: "{{GM}}You can buy Orifice better armor{{/GM}}"
   branches {
     responseText: "Secure Ninja Clothing: Armor 3 / Dodge +1 / 400 Nuyen\n(Adept Ninja)"
     conditions {
@@ -1555,27 +1520,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 14
-  text: "You currently have $(story.SR_Fights_Orifice) fights before Orifice leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 15
   text: "Do you wish to fire Orifice?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 16
+    nextNodeIndex: 15
   }
   branches {
     responseText: "No"
@@ -1588,7 +1536,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 16
+  index: 15
   text: "So I guess I pound you into the ground for wasting my time!"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1732,7 +1680,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 17
+  index: 16
   text: "You take too long and I\'ll make big holes in ya!\n{{GM}}You can click on your character to tell Orifice to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1851,7 +1799,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 18
+  index: 17
   text: "Finally! Lets bash some skulls!"
   nodeType: ConversationNodeType_Simple
   actions {

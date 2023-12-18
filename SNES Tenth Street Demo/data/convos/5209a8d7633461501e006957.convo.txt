@@ -165,41 +165,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Jagadance"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 15
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -231,7 +196,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 16
+    nextNodeIndex: 15
     hideIfUnavailable: true
   }
   branches {
@@ -302,7 +267,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -345,7 +310,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 19
+    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   branches {
@@ -1572,27 +1537,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 15
-  text: "You currently have $(story.SR_Fights_Jagadance) fights before Jangadance leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 16
   text: "Do you wish to fire Jangadance?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 17
+    nextNodeIndex: 16
   }
   branches {
     responseText: "No"
@@ -1605,7 +1553,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 17
+  index: 16
   text: "Jangadance only trying to help ya, man!"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1749,7 +1697,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 18
+  index: 17
   text: "Jangadance\'s power swells with time!\n{{GM}}You can click on your character to tell Jangadance to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1868,7 +1816,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 19
+  index: 18
   text: "De power shall return to your side."
   nodeType: ConversationNodeType_Simple
   actions {

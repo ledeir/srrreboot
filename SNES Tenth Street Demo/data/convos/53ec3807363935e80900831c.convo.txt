@@ -25,60 +25,16 @@ nodes {
     nextNodeIndex: 4
   }
   branches {
-    responseText: "Character Selection"
-    conditions {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 5
-    hideIfUnavailable: true
-    comment: "Commented Out"
-  }
-  branches {
     responseText: "Are the enemies balanced? Can I play on hard mode?"
-    nextNodeIndex: 6
+    nextNodeIndex: 5
   }
   branches {
     responseText: "What future enhancements are planned?"
-    nextNodeIndex: 7
+    nextNodeIndex: 6
   }
   branches {
     responseText: "How do I report bugs?"
-    nextNodeIndex: 8
+    nextNodeIndex: 7
   }
   branches {
     responseText: "Exit"
@@ -108,7 +64,7 @@ nodes {
     id: "53ec39a1363935e809008343"
   }
   index: 2
-  text: "- You can click on your character to talk / manage your hired runners. \n- Hired runners persist, they will keep any gear you give them.\n\nHired Runners are under ACTIVE development\n- IN PROGRESS: The ability to upgrade armor\n- NEXT TASK: The ability to upgrade skills\n"
+  text: "- You can click on your character to talk / manage your hired runners. \n- Hired runners persist, they will keep any weapons or consumables you give them.\n- Armor must be upgraded through the conversation system, if you try and give them armor directly they will usually end up naked."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -159,29 +115,9 @@ nodes {
 }
 nodes {
   idRef {
-    id: "53ec399b363935e80900833d"
-  }
-  index: 5
-  text: "No issues currently known but you are advised to start as a combat focused character. There will be no matrix or magic access for the beginning of the game."
-  branches {
-    responseText: "Return to Menu"
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-  sourceInSceneRef {
-    id: "53ec3d46363935e809008392"
-  }
-}
-nodes {
-  idRef {
     id: "53ec39a0363935e809008341"
   }
-  index: 6
+  index: 5
   text: "The module has only been tested for balance on Normal mode. \nWe hope to properly configure Hard mode in the future. "
   branches {
     responseText: "Return to Menu"
@@ -201,8 +137,8 @@ nodes {
   idRef {
     id: "53ec39a6363935e809008347"
   }
-  index: 7
-  text: "Among those are:\n- Upgradeable Hired Runners (IN PROGRESS!)\n- Quest Tracking (which will be optional to display) to make the module MUCH more newbie friendly.\n"
+  index: 6
+  text: "Among those are:\n- Upgradeable Hired Runner Skills\n- Quest Tracking (which will be optional to display) to make the module MUCH more newbie friendly."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
@@ -221,8 +157,8 @@ nodes {
   idRef {
     id: "53ec39a8363935e809008349"
   }
-  index: 8
-  text: "If you encounter any major issues or bugs, please contact us through facebook or the steam forums. \nIt would be helpful if you include screenshots as well."
+  index: 7
+  text: "If you encounter any major issues or bugs, please contact us through facebook or the steam forums. \nIt would be helpful if you include screenshots or videos as well."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0

@@ -737,77 +737,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Kitsune"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (bool)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Kitsune_Loyal"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 24
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -839,7 +768,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 25
+    nextNodeIndex: 24
     hideIfUnavailable: true
   }
   branches {
@@ -910,7 +839,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 27
+    nextNodeIndex: 26
     hideIfUnavailable: true
   }
   branches {
@@ -953,7 +882,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 28
+    nextNodeIndex: 27
     hideIfUnavailable: true
   }
   branches {
@@ -1919,7 +1848,7 @@ nodes {
     id: "6518f5f4616131542e002543"
   }
   index: 18
-  text: "{{GM}}You can buy Dances with Clams better armor{{/GM}}"
+  text: "{{GM}}You can buy Kitsune better armor{{/GM}}"
   branches {
     responseText: "Salish Pendant: Armor 4 / Char +1 Summon +1 / 750 Nuyen"
     conditions {
@@ -2635,27 +2564,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 24
-  text: "You currently have $(story.SR_Fights_Kitsune) fights before Kitsune leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 25
   text: "Do you wish to fire Kitsune?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 26
+    nextNodeIndex: 25
   }
   branches {
     responseText: "No"
@@ -2668,7 +2580,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 26
+  index: 25
   text: "Oh well, you know where to find me if something good comes up!"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2812,7 +2724,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 27
+  index: 26
   text: "Aww, cutie, what about our quality time?\n{{GM}}You can click on your character to tell Kitsune to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2931,7 +2843,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 28
+  index: 27
   text: "Lets run. We can snuggle later to make up for lost time"
   nodeType: ConversationNodeType_Simple
   actions {

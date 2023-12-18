@@ -231,41 +231,6 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "Contract"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "SR_Fights_Anders"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          int_value: 0
-        }
-      }
-    }
-    nextNodeIndex: 16
-    hideIfUnavailable: true
-  }
-  branches {
     responseText: "Fire"
     conditions {
       ops {
@@ -297,7 +262,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 16
     hideIfUnavailable: true
   }
   branches {
@@ -368,7 +333,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 19
+    nextNodeIndex: 18
     hideIfUnavailable: true
   }
   branches {
@@ -411,7 +376,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 20
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -1042,9 +1007,9 @@ nodes {
     id: "6518f5f4616131542e002543"
   }
   index: 11
-  text: "{{GM}}You can buy Dances with Clams better armor{{/GM}}"
+  text: "{{GM}}You can buy Anders better armor{{/GM}}"
   branches {
-    responseText: "Secure Ninja Clothing: Armor 3 / Dodge +1 / 400 Nuyen\n(Adept Ninja)"
+    responseText: "SecureTech Ultra Vest: Armor 3 / Ranged + 1 Dodge +1 / 750 Nuyen\n(Combat2RangedDodge)"
     conditions {
       ops {
         functionName: "AND"
@@ -1109,7 +1074,7 @@ nodes {
               }
             }
             args {
-              int_value: 400
+              int_value: 750
             }
           }
         }
@@ -1119,7 +1084,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 400
+          int_value: 750
         }
       }
       ops {
@@ -1128,7 +1093,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_AdeptNinja"
+              string_value: "Berlin_Player_Outfit_Combat2RangedDodge"
             }
           }
         }
@@ -1174,7 +1139,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_AdeptNinja"
+              string_value: "Berlin_Player_Outfit_Combat2RangedDodge"
             }
           }
         }
@@ -1207,7 +1172,7 @@ nodes {
     nextNodeIndex: 12
   }
   branches {
-    responseText: "Alley Punk: Armor 4 / HP +3 / 750 Nuyen\n(Samurai Punk)"
+    responseText: "Secure Vest: Armor 4 / Quickness +1 HP +5  / 1000 Nuyen\n(Combat2Ranged)"
     conditions {
       ops {
         functionName: "AND"
@@ -1272,7 +1237,7 @@ nodes {
               }
             }
             args {
-              int_value: 750
+              int_value: 1000
             }
           }
         }
@@ -1282,7 +1247,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 750
+          int_value: 1000
         }
       }
       ops {
@@ -1291,7 +1256,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiPunk"
+              string_value: "Berlin_Player_Outfit_Combat2Ranged"
             }
           }
         }
@@ -1337,7 +1302,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiPunk"
+              string_value: "Berlin_Player_Outfit_Combat2Ranged"
             }
           }
         }
@@ -1370,7 +1335,7 @@ nodes {
     nextNodeIndex: 13
   }
   branches {
-    responseText: "Refurb UCAS Shock Gear: Armor 6 /  Str +1 HP +5 / 1000 Nuyen\n(Samurai Military)"
+    responseText: "Secure Long Coat: Armor 5 /  Ranged +1 HP +5 / 1500 Nuyen\n(Combat25Ranged)"
     conditions {
       ops {
         functionName: "AND"
@@ -1416,7 +1381,7 @@ nodes {
               }
             }
             args {
-              int_value: 6
+              int_value: 5
             }
           }
         }
@@ -1435,7 +1400,7 @@ nodes {
               }
             }
             args {
-              int_value: 1000
+              int_value: 1500
             }
           }
         }
@@ -1445,7 +1410,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1000
+          int_value: 1500
         }
       }
       ops {
@@ -1454,7 +1419,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiMilitary"
+              string_value: "Berlin_Player_Outfit_Combat25Ranged"
             }
           }
         }
@@ -1500,7 +1465,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_SamuraiMilitary"
+              string_value: "Berlin_Player_Outfit_Combat25Ranged"
             }
           }
         }
@@ -1738,27 +1703,10 @@ nodes {
     id: "591bb38c6161312c2a003224"
   }
   index: 16
-  text: "You currently have $(story.SR_Fights_Anders) fights before Anders leaves."
-  branches {
-    responseText: "Talk"
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Leave"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "591bb38c6161312c2a003224"
-  }
-  index: 17
   text: "Do you wish to fire Anders?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 18
+    nextNodeIndex: 17
   }
   branches {
     responseText: "No"
@@ -1771,7 +1719,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 18
+  index: 17
   text: "Well, maybe we\'ll do business again soon! If you\'re still alive..."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1915,7 +1863,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 19
+  index: 18
   text: "You hired me to wait? Its your business.\n{{GM}}You can click on your character to tell Anders to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2034,7 +1982,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 20
+  index: 19
   text: "Let\'s get down to business."
   nodeType: ConversationNodeType_Simple
   actions {
