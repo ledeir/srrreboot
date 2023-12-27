@@ -33,7 +33,7 @@ nodes {
     nextNodeIndex: 3
   }
   branches {
-    responseText: "{{GM}}UNDER DEVELOPMENT {{/GM}}\nUpgrade Armor"
+    responseText: "Upgrade Armor"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -325,7 +325,7 @@ nodes {
   index: 4
   text: "{{GM}}You can buy Orifice better armor{{/GM}}"
   branches {
-    responseText: "Secure Ninja Clothing: Armor 3 / Dodge +1 / 400 Nuyen\n(Adept Ninja)"
+    responseText: "Equip Secure Ninja Clothing - 500 Nuyen\nGrants Armor 3 and Dodge +1"
     conditions {
       ops {
         functionName: "AND"
@@ -390,7 +390,7 @@ nodes {
               }
             }
             args {
-              int_value: 400
+              int_value: 500
             }
           }
         }
@@ -400,7 +400,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 400
+          int_value: 500
         }
       }
       ops {
@@ -488,7 +488,7 @@ nodes {
     nextNodeIndex: 5
   }
   branches {
-    responseText: "Alley Punk: Armor 4 / HP +3 / 750 Nuyen\n(Samurai Punk)"
+    responseText: "Equip Alley Punk Outfit - 750 Nuyen\nGrants Armor 4 and HP +3"
     conditions {
       ops {
         functionName: "AND"
@@ -651,7 +651,7 @@ nodes {
     nextNodeIndex: 6
   }
   branches {
-    responseText: "Refurb UCAS Shock Gear: Armor 6 /  Str +1 HP +5 / 1000 Nuyen\n(Samurai Military)"
+    responseText: "Equip Refurbished UCAS Shock Gear - 1500 Nuyen\nGrants Armor 6, Strength +1 and HP +5"
     conditions {
       ops {
         functionName: "AND"
@@ -716,7 +716,7 @@ nodes {
               }
             }
             args {
-              int_value: 1000
+              int_value: 1500
             }
           }
         }
@@ -726,7 +726,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1000
+          int_value: 1500
         }
       }
       ops {
@@ -814,7 +814,7 @@ nodes {
     nextNodeIndex: 7
   }
   branches {
-    responseText: "High Grade Street Armorr: Armor 10 / 2000 Nuyen\n(Samurai Military)"
+    responseText: "Equip High Grade Street Armor - 2000 Nuyen\nGrants Armor 10"
     conditions {
       ops {
         functionName: "AND"

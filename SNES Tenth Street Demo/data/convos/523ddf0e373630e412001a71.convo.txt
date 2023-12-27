@@ -22,7 +22,91 @@ nodes {
   text: "You wanna start pushing daisies, just keep on annoyin\342\200\231 me, joker."
   branches {
     responseText: "Ice"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DTD-IceHint"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 2
+    hideIfUnavailable: true
+    comment: "TOO EARLY"
+  }
+  branches {
+    responseText: "Ice"
+    conditions {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51a9844d633461e82400002a"
+            }
+            args {
+              string_value: "DTD-IceHint"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 3
+    hideIfUnavailable: true
+    comment: "BUY ICE"
   }
   branches {
     responseText: "Mermaid"
@@ -64,7 +148,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 6
+    nextNodeIndex: 7
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -79,9 +163,17 @@ nodes {
 }
 nodes {
   idRef {
-    id: "523ddf5b373630e412001a7e"
+    id: "658b28bd616131a024006fdd"
   }
   index: 2
+  text: "Why the frag do you want ice? I ain\'t gonna\' fill your glass. \nCome back when you need it by the ton."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523ddf5b373630e412001a7e"
+  }
+  index: 3
   text: "Sure, I can get you ice. I only deal in it a ton at a time though. Cost you 100 nuyen. You interested?"
   branches {
     responseText: "{{GM}}100\302\245{{/GM}} Yes"
@@ -132,7 +224,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 3
+    nextNodeIndex: 4
     hideIfUnavailable: true
   }
   branches {
@@ -146,7 +238,7 @@ nodes {
   idRef {
     id: "523ddf9a373630e412001a82"
   }
-  index: 3
+  index: 4
   text: "Give me a place where you want it dumped."
   branches {
     responseText: "Docks"
@@ -169,11 +261,11 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 4
+    nextNodeIndex: 5
   }
   branches {
     responseText: "Bremerton"
-    nextNodeIndex: 5
+    nextNodeIndex: 6
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -186,7 +278,7 @@ nodes {
   idRef {
     id: "523de016373630e412001a9a"
   }
-  index: 4
+  index: 5
   text: "You got it! I\342\200\231ll do it as soon as the band finishes this song."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -202,11 +294,11 @@ nodes {
   idRef {
     id: "523de025373630e412001a9d"
   }
-  index: 5
+  index: 6
   text: "No way! You\342\200\231ll be lucky to find anyone delivering out there. Forget it!"
   branches {
     responseText: ""
-    nextNodeIndex: 3
+    nextNodeIndex: 4
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -215,7 +307,7 @@ nodes {
   idRef {
     id: "523ddfc2373630e412001a84"
   }
-  index: 6
+  index: 7
   text: "Mermaid? I suppose you\342\200\231d find them in the water!"
   branches {
     responseText: ""

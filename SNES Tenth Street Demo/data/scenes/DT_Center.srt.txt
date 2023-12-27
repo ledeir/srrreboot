@@ -11970,7 +11970,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "WASTE_EnterClub 0-1"
+  name: "WASTE_EnterClub - Prog<0 w/Else"
   events {
     ops {
       functionName: "On Item Interaction"
@@ -12476,7 +12476,167 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "WASTE_EnterClub 2"
+  name: "WASTE-OrkDead - SET Prog=1"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (Actor)"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "58abcb39616131d421006dc2"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DT_Wastelands_Progress"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Add Nuyen"
+      args {
+        call_value {
+          functionName: "Random (int)"
+          args {
+            int_value: 70
+          }
+          args {
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "unspentXP"
+          }
+        }
+      }
+      args {
+        int_value: 6
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "51ca814c633461a018004826"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "523da4bb3736306805003e58"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "523da4bb3736306805003e58"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "WASTE_EnterClub - Prog=2"
   events {
   }
   conditions {
@@ -12758,166 +12918,6 @@ triggers {
   isActive: true
   idRef {
     id: "58abcb87616131d421006ed0"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "WASTE-OrkDead"
-  events {
-    ops {
-      functionName: "On Actor Death"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (Actor)"
-      args {
-        call_value {
-          functionName: "Triggering Target Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "58abcb39616131d421006dc2"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "DT_Wastelands_Progress"
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Add Nuyen"
-      args {
-        call_value {
-          functionName: "Random (int)"
-          args {
-            int_value: 70
-          }
-          args {
-            int_value: 100
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Add To Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51a9844d633461e82400002a"
-          }
-          args {
-            string_value: "unspentXP"
-          }
-        }
-      }
-      args {
-        int_value: 6
-      }
-    }
-    ops {
-      functionName: "Trigger: Run Alternate Trigger"
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "51ca814c633461a018004826"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WaitOrNot"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "523da4bb3736306805003e58"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "523da4bb3736306805003e58"
   }
   elseActions {
   }

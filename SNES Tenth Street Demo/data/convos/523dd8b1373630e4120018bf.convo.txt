@@ -230,7 +230,7 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "{{GM}}UNDER DEVELOPMENT {{/GM}}\nUpgrade Armor"
+    responseText: "Upgrade Armor"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -296,7 +296,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 16
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -367,7 +367,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -410,7 +410,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 19
+    nextNodeIndex: 20
     hideIfUnavailable: true
   }
   branches {
@@ -1020,7 +1020,7 @@ nodes {
   index: 11
   text: "{{GM}}You can buy Jetboy better armor{{/GM}}"
   branches {
-    responseText: "- Black Hat: Armor 2 /  Int+1 / 300"
+    responseText: "Equip Black Hat Outfit - 300 Nuyen\nGrants Armor 2 and Intelligence +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1183,7 +1183,7 @@ nodes {
     nextNodeIndex: 12
   }
   branches {
-    responseText: "- The Tourist Look: Armor 3 / Int+1 / 400"
+    responseText: "Equip The Tourist Look - 400 Nuyen\nGrants Armor 3 and Intelligence +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1346,7 +1346,7 @@ nodes {
     nextNodeIndex: 13
   }
   branches {
-    responseText: "- Slick Decker Outfit: Armor 4 / INT+1 DECK+1 / 750"
+    responseText: "Equip Milspec Flight Suit - 1000 Nuyen\nGrants Armor 4, Intelligence +1 and Drone Control +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1411,7 +1411,7 @@ nodes {
               }
             }
             args {
-              int_value: 750
+              int_value: 1000
             }
           }
         }
@@ -1421,7 +1421,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 750
+          int_value: 1000
         }
       }
       ops {
@@ -1430,7 +1430,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_DeckerFab"
+              string_value: "Player_RiggerFlightsuit"
             }
           }
         }
@@ -1476,7 +1476,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_DeckerFab"
+              string_value: "Player_RiggerFlightsuit"
             }
           }
         }
@@ -1509,7 +1509,7 @@ nodes {
     nextNodeIndex: 14
   }
   branches {
-    responseText: "- Agent Provocateur: Armor 6 / INT+1 ESP+1* / 1000"
+    responseText: "Equip Stealth Rigger Outfit - 1500 Nuyen\nGrants Armor 6, Intelligence +2 and Drone Control +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1574,7 +1574,7 @@ nodes {
               }
             }
             args {
-              int_value: 1000
+              int_value: 1500
             }
           }
         }
@@ -1584,7 +1584,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1000
+          int_value: 1500
         }
       }
       ops {
@@ -1593,7 +1593,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Berlin_Player_Outfit_Tech3Deck"
+              string_value: "Player_RiggerTrenchcoat"
             }
           }
         }
@@ -1639,7 +1639,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Berlin_Player_Outfit_Tech3Deck"
+              string_value: "Player_RiggerTrenchcoat"
             }
           }
         }
@@ -1670,6 +1670,169 @@ nodes {
       }
     }
     nextNodeIndex: 15
+  }
+  branches {
+    responseText: "Equip The Mechanic Outfit - 2000 Nuyen\nGrants Armor 8, Drone Combat +1 and Drone Control +1"
+    conditions {
+      ops {
+        functionName: "AND"
+        args {
+          call_value {
+            functionName: "Compare Actor Attribute"
+            args {
+              call_value {
+                functionName: "Triggering Target Actor"
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorAttributes"
+                }
+                args {
+                  int_value: 10
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 4
+                }
+              }
+            }
+            args {
+              int_value: 8
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Evaluate Nuyen"
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 3
+                }
+              }
+            }
+            args {
+              int_value: 2000
+            }
+          }
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Remove Nuyen"
+        args {
+          int_value: 2000
+        }
+      }
+      ops {
+        functionName: "Add Item to Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "Player_RiggerToolbelt"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "All Actors With Tag"
+            args {
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "Jetboy"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "AllOrAny"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "WithOrWithout"
+            }
+            args {
+              int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Select Item on Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Item)"
+            args {
+              string_value: "Player_RiggerToolbelt"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "All Actors With Tag"
+            args {
+              call_value {
+                functionName: "Get Map Item (SenseTagList)"
+                args {
+                  string_value: "Jetboy"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "AllOrAny"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 16
   }
   branches {
     responseText: "Never mind, your gear is good for now."
@@ -1711,13 +1874,21 @@ nodes {
 }
 nodes {
   idRef {
-    id: "591bb38c6161312c2a003224"
+    id: "651a2df16161313c1f007efe"
   }
   index: 16
+  text: "New Armor Equipped."
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "591bb38c6161312c2a003224"
+  }
+  index: 17
   text: "Do you wish to fire Jetboy?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 17
+    nextNodeIndex: 18
   }
   branches {
     responseText: "No"
@@ -1730,7 +1901,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 17
+  index: 18
   text: "Good luck, chummer! Look me up if you hear of any other runs."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1874,7 +2045,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 18
+  index: 19
   text: "No problem, I\'m fine with leaving meatspace to you!\n{{GM}}You can click on your character to tell Jetboy to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -1993,7 +2164,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 19
+  index: 20
   text: "Found a computer to crack? Lead the way!"
   nodeType: ConversationNodeType_Simple
   actions {

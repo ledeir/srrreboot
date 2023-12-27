@@ -282,7 +282,7 @@ nodes {
     }
   }
   branches {
-    responseText: "{{GM}}UNDER DEVELOPMENT {{/GM}}\nUpgrade Armor"
+    responseText: "Upgrade Armor"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -348,7 +348,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -419,7 +419,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 20
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -462,7 +462,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 21
+    nextNodeIndex: 20
     hideIfUnavailable: true
   }
   branches {
@@ -1100,7 +1100,7 @@ nodes {
   index: 12
   text: "{{GM}}You can buy Hamfist better armor{{/GM}}"
   branches {
-    responseText: "- Black Hat: Armor 2 /  Int+1 / 300"
+    responseText: "Equip Black Hat Outfit - 300 Nuyen\nGrants Armor 2 and Intelligence +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1263,7 +1263,7 @@ nodes {
     nextNodeIndex: 13
   }
   branches {
-    responseText: "- The Tourist Look: Armor 3 / Int+1 / 400"
+    responseText: "Equip The Tourist Look - 500 Nuyen\nGrants Armor 3 and Intelligence +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1328,7 +1328,7 @@ nodes {
               }
             }
             args {
-              int_value: 400
+              int_value: 500
             }
           }
         }
@@ -1338,7 +1338,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 400
+          int_value: 500
         }
       }
       ops {
@@ -1426,7 +1426,7 @@ nodes {
     nextNodeIndex: 14
   }
   branches {
-    responseText: "- Slick Decker Outfit: Armor 4 / INT+1 DECK+1 / 750"
+    responseText: "Equip Slick Decker Outfit - 750 Nuyen\nGrants Armor 4, Intelligence +1 and Decking +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1589,7 +1589,7 @@ nodes {
     nextNodeIndex: 15
   }
   branches {
-    responseText: "- Agent Provocateur: Armor 6 / INT+1 ESP+1* / 1000"
+    responseText: "Equip Agent Provocateur Outfit - 1000 Nuyen\nGrants Armor 6, Intelligence +1 and ESP Control +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1752,170 +1752,6 @@ nodes {
     nextNodeIndex: 16
   }
   branches {
-    responseText: "- High Grade Street Armor: Armor 10 / 2000"
-    conditions {
-      ops {
-        functionName: "AND"
-        args {
-          call_value {
-            functionName: "Compare Actor Attribute"
-            args {
-              call_value {
-                functionName: "Triggering Target Actor"
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "BaseOrCurrent"
-                }
-                args {
-                  int_value: 1
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "ActorAttributes"
-                }
-                args {
-                  int_value: 10
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
-                }
-                args {
-                  int_value: 4
-                }
-              }
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Evaluate Nuyen"
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
-                }
-                args {
-                  int_value: 3
-                }
-              }
-            }
-            args {
-              int_value: 2000
-            }
-          }
-        }
-      }
-    }
-    actions {
-      ops {
-        functionName: "Remove Nuyen"
-        args {
-          int_value: 2000
-        }
-      }
-      ops {
-        functionName: "Add Item to Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Player_SamuraiTrenchcoat"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "All Actors With Tag"
-            args {
-              call_value {
-                functionName: "Get Map Item (SenseTagList)"
-                args {
-                  string_value: "Hamfist"
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "AllOrAny"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "WithOrWithout"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Select Item on Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Player_SamuraiTrenchcoat"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "All Actors With Tag"
-            args {
-              call_value {
-                functionName: "Get Map Item (SenseTagList)"
-                args {
-                  string_value: "Hamfist"
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "AllOrAny"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 17
-    comment: "COMMENTED OUT"
-  }
-  branches {
     responseText: "Never mind, your gear is good for now."
     nextNodeIndex: -1
   }
@@ -1955,21 +1791,13 @@ nodes {
 }
 nodes {
   idRef {
-    id: "651a2df16161313c1f007efe"
-  }
-  index: 17
-  text: "New Armor Equipped."
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
     id: "591bb38c6161312c2a003224"
   }
-  index: 18
+  index: 17
   text: "Do you wish to fire Hamfist?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 19
+    nextNodeIndex: 18
   }
   branches {
     responseText: "No"
@@ -1982,7 +1810,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 19
+  index: 18
   text: "Your guns are no match for mine. You\'ll regret it..."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2126,7 +1954,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 20
+  index: 19
   text: "Try not to die without me!\n{{GM}}You can click on your character to tell Hamfist to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2245,7 +2073,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 21
+  index: 20
   text: "Finally budster, lets hit it!"
   nodeType: ConversationNodeType_Simple
   actions {

@@ -79,41 +79,6 @@ nodes {
               string_value: "Comparison Ops"
             }
             args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 3
-        }
-      }
-    }
-    nextNodeIndex: 3
-    hideIfUnavailable: true
-  }
-  branches {
-    responseText: "Bremerton"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51a9844d633461e82400002a"
-            }
-            args {
-              string_value: "DT_Wastelands_Progress"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
               int_value: 4
             }
           }
@@ -159,7 +124,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 4
+    nextNodeIndex: 3
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -167,7 +132,7 @@ nodes {
     }
   }
   branches {
-    responseText: "Mermaids"
+    responseText: "Bremerton"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -198,12 +163,8 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 5
+    nextNodeIndex: 4
     hideIfUnavailable: true
-    onlyOnce: true
-    idRef {
-      id: "559c9cfd616131b41700645f"
-    }
   }
   branches {
     responseText: "Mermaids"
@@ -273,7 +234,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 6
+    nextNodeIndex: 5
     hideIfUnavailable: true
     onlyOnce: true
     idRef {
@@ -281,22 +242,18 @@ nodes {
     }
   }
   branches {
-    responseText: "{{GM}}Leave{{/GM}}"
-    nextNodeIndex: -1
-  }
-  branches {
-    responseText: "DEBUG CHEAT: THIS WILL LET YOU GO TO BREMERTON"
+    responseText: "Mermaids"
     conditions {
       ops {
-        functionName: "Comparison (bool)"
+        functionName: "Comparison (int)"
         args {
           call_value {
-            functionName: "Get Preset Value (int)"
+            functionName: "Get Story Variable (int)"
             args {
-              string_value: "bool"
+              string_value: "51a9844d633461e82400002a"
             }
             args {
-              int_value: 1
+              string_value: "DT_Wastelands_Progress"
             }
           }
         }
@@ -304,29 +261,28 @@ nodes {
           call_value {
             functionName: "Get Preset Value (int)"
             args {
-              string_value: "IsOrIsNot"
+              string_value: "Comparison Ops"
             }
             args {
-              int_value: 1
+              int_value: 3
             }
           }
         }
         args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
+          int_value: 3
         }
       }
     }
-    nextNodeIndex: 7
+    nextNodeIndex: 6
     hideIfUnavailable: true
-    comment: "CURRENTLY COMMENTED OUT"
+    onlyOnce: true
+    idRef {
+      id: "559c9cfd616131b41700645f"
+    }
+  }
+  branches {
+    responseText: "{{GM}}Leave{{/GM}}"
+    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -345,65 +301,9 @@ nodes {
 }
 nodes {
   idRef {
-    id: "523b2bbb373630b01200169e"
-  }
-  index: 3
-  text: "Bremerton. That\'s a fair way. There be dragons and other nasties around there. You can hire me boat for 1,000 nuyen upfront. If ye don\'t like ye can leave it. "
-  branches {
-    responseText: "Yes"
-    conditions {
-      ops {
-        functionName: "Evaluate Nuyen"
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 1000
-        }
-      }
-    }
-    actions {
-      ops {
-        functionName: "Remove Nuyen"
-        args {
-          int_value: 1000
-        }
-      }
-      ops {
-        functionName: "Open Scene"
-        args {
-          call_value {
-            functionName: "Get Map Item (Scene)"
-            args {
-              string_value: "bremerton"
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: -1
-    hideIfUnavailable: true
-  }
-  branches {
-    responseText: "No"
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
     id: "523df213373630e412001b90"
   }
-  index: 4
+  index: 3
   text: "Sorry, that be not possible. Mermaids are attackin\342\200\231 all who go near there."
   branches {
     responseText: ""
@@ -441,39 +341,48 @@ nodes {
 }
 nodes {
   idRef {
-    id: "54092a853639350825003c49"
+    id: "523b2bbb373630b01200169e"
   }
-  index: 5
-  text: "Someone dumped a load of ice in the water and drove them away!"
-  branches {
-    responseText: ""
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "523b2bf5373630b0120016a8"
-  }
-  index: 6
-  text: "Yep, they turned up a couple of years ago. They seem to like the warm run-off from the sewers. Can\'t say I don\'t mind it myself."
-  branches {
-    responseText: ""
-    nextNodeIndex: 1
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "53a9035c633461d028003c8b"
-  }
-  index: 7
-  text: "CHEAT: Go to Bremerton "
+  index: 4
+  text: "Bremerton. That\'s a fair way. There be dragons and other nasties around there. You can hire me boat for $(scene.BoatCost) nuyen upfront. If ye don\'t like ye can leave it. "
   branches {
     responseText: "Yes"
+    conditions {
+      ops {
+        functionName: "Evaluate Nuyen"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "BoatCost"
+            }
+          }
+        }
+      }
+    }
     actions {
+      ops {
+        functionName: "Remove Nuyen"
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "BoatCost"
+            }
+          }
+        }
+      }
       ops {
         functionName: "Open Scene"
         args {
@@ -487,9 +396,125 @@ nodes {
       }
     }
     nextNodeIndex: -1
+    hideIfUnavailable: true
   }
   branches {
     responseText: "No"
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "BoatCost"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            int_value: 1000
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                int_value: 50
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51a9844d633461e82400002a"
+                  }
+                  args {
+                    string_value: "Negotiation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "523b2bf5373630b0120016a8"
+  }
+  index: 5
+  text: "They turned up a while back and have been here ever since. They seem to like the warm run-off from the sewers. Keeps the waters warm. Can\'t say I don\'t like it myself, but it\'s been bad for business."
+  branches {
+    responseText: ""
+    nextNodeIndex: 1
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51a9844d633461e82400002a"
+          }
+          args {
+            string_value: "DTD-IceHint"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "54092a853639350825003c49"
+  }
+  index: 6
+  text: "Someone dumped a load of ice in the water and drove them away!"
+  branches {
+    responseText: ""
     nextNodeIndex: 1
     auxiliaryLink: true
   }

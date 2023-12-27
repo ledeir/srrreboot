@@ -130,7 +130,7 @@ nodes {
     hideIfUnavailable: true
   }
   branches {
-    responseText: "{{GM}}UNDER DEVELOPMENT {{/GM}}\nUpgrade Armor"
+    responseText: "Upgrade Armor"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -843,7 +843,7 @@ nodes {
   index: 10
   text: "{{GM}}You can buy Jangadance better armor{{/GM}}"
   branches {
-    responseText: "Thaumaturgic Armor: Armor 2 / Willpower +1 / 300 Nuyen\n(Traditional)"
+    responseText: "Equip Thaumaturgic Armor - 300 Nuyen\nGrants Armor 2 and Willpower +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1006,7 +1006,7 @@ nodes {
     nextNodeIndex: 11
   }
   branches {
-    responseText: "Alley Mage: Armor 4 / Wil +1 HP +5 / 750 Nuyen\n(Red Riding)"
+    responseText: "Equip Urban Mystic Outfit - 1000 Nuyen\nGrants Armor 4, Willpower +1 and Spellcasting +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1071,7 +1071,7 @@ nodes {
               }
             }
             args {
-              int_value: 750
+              int_value: 1000
             }
           }
         }
@@ -1081,7 +1081,7 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 750
+          int_value: 1000
         }
       }
       ops {
@@ -1090,7 +1090,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_MageRedRidingHood"
+              string_value: "Player_MageCasual"
             }
           }
         }
@@ -1136,7 +1136,7 @@ nodes {
           call_value {
             functionName: "Get Map Item (Item)"
             args {
-              string_value: "Player_MageRedRidingHood"
+              string_value: "Player_MageCasual"
             }
           }
         }
@@ -1169,7 +1169,7 @@ nodes {
     nextNodeIndex: 12
   }
   branches {
-    responseText: "Occult Robes: Armor 6 / Will +1 HP +10 / 1000 Nuyen\n(Dark)"
+    responseText: "Equip Occult Robes - 1000 Nuyen\nGrants Armor 6, Willpower +1 and HP +10"
     conditions {
       ops {
         functionName: "AND"
@@ -1332,7 +1332,7 @@ nodes {
     nextNodeIndex: 13
   }
   branches {
-    responseText: "Corp Magec: Armor 8 / Wil +1 Spell +1 / 1500 Nuyen\n(Slick)"
+    responseText: "Equip Corporate Mage Outfit - 1500 Nuyen\nGrants Armor 8, Willpower +1 and Spellcasting +1"
     conditions {
       ops {
         functionName: "AND"
@@ -1378,7 +1378,7 @@ nodes {
               }
             }
             args {
-              int_value: 6
+              int_value: 8
             }
           }
         }

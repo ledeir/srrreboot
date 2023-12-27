@@ -131,6 +131,188 @@ nodes {
         }
       }
     }
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_BottleBlack"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              int_value: 3000
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Arithmetic (int)"
+                args {
+                  int_value: 120
+                }
+                args {
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "Arithmetic Ops"
+                    }
+                    args {
+                      int_value: 2
+                    }
+                  }
+                }
+                args {
+                  call_value {
+                    functionName: "Get Story Variable (int)"
+                    args {
+                      string_value: "51a9844d633461e82400002a"
+                    }
+                    args {
+                      string_value: "Negotiation"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_BottlePair"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              int_value: 1500
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Arithmetic (int)"
+                args {
+                  int_value: 60
+                }
+                args {
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "Arithmetic Ops"
+                    }
+                    args {
+                      int_value: 2
+                    }
+                  }
+                }
+                args {
+                  call_value {
+                    functionName: "Get Story Variable (int)"
+                    args {
+                      string_value: "51a9844d633461e82400002a"
+                    }
+                    args {
+                      string_value: "Negotiation"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_Stake"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              int_value: 1250
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Arithmetic (int)"
+                args {
+                  int_value: 50
+                }
+                args {
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "Arithmetic Ops"
+                    }
+                    args {
+                      int_value: 2
+                    }
+                  }
+                }
+                args {
+                  call_value {
+                    functionName: "Get Story Variable (int)"
+                    args {
+                      string_value: "51a9844d633461e82400002a"
+                    }
+                    args {
+                      string_value: "Negotiation"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     nextNodeIndex: 6
     hideIfUnavailable: true
   }
@@ -359,7 +541,7 @@ nodes {
   index: 6
   text: "What would you like?"
   branches {
-    responseText: "A pair of blue and purple bottles - 1,500 nuyen."
+    responseText: "A pair of blue and purple bottles - $(scene.MagicCost_BottlePair) nuyen."
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -375,7 +557,12 @@ nodes {
           }
         }
         args {
-          int_value: 1500
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_BottlePair"
+            }
+          }
         }
       }
       ops {
@@ -419,7 +606,12 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1500
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_BottlePair"
+            }
+          }
         }
       }
       ops {
@@ -525,7 +717,7 @@ nodes {
     nextNodeIndex: 7
   }
   branches {
-    responseText: "Black potion bottle - 3,000 nuyen."
+    responseText: "Black potion bottle - $(scene.MagicCost_BottleBlack) nuyen."
     conditions {
       ops {
         functionName: "Comparison (bool)"
@@ -614,7 +806,12 @@ nodes {
           }
         }
         args {
-          int_value: 3000
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_BottleBlack"
+            }
+          }
         }
       }
     }
@@ -647,7 +844,12 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 3000
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_BottleBlack"
+            }
+          }
         }
       }
       ops {
@@ -691,7 +893,7 @@ nodes {
     nextNodeIndex: 8
   }
   branches {
-    responseText: "Sharp wooden stake. Looks new. - 1,250 nuyen."
+    responseText: "Sharp wooden stake. Looks new. - $(scene.MagicCost_Stake) nuyen."
     conditions {
       ops {
         functionName: "Evaluate If Actor Has Item"
@@ -744,7 +946,12 @@ nodes {
           }
         }
         args {
-          int_value: 1250
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_Stake"
+            }
+          }
         }
       }
     }
@@ -752,7 +959,12 @@ nodes {
       ops {
         functionName: "Remove Nuyen"
         args {
-          int_value: 1250
+          call_value {
+            functionName: "Get Variable (int)"
+            args {
+              string_value: "MagicCost_Stake"
+            }
+          }
         }
       }
       ops {
