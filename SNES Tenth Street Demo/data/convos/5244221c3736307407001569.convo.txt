@@ -264,7 +264,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 18
+    nextNodeIndex: 17
     hideIfUnavailable: true
   }
   branches {
@@ -335,7 +335,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 20
+    nextNodeIndex: 19
     hideIfUnavailable: true
   }
   branches {
@@ -378,7 +378,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 21
+    nextNodeIndex: 20
     hideIfUnavailable: true
   }
   branches {
@@ -657,8 +657,7 @@ nodes {
   text: "Lets go.\n{{GM}}You can click on your character to talk to hired runners.{{/GM}}"
   branches {
     responseText: ""
-    nextNodeIndex: 0
-    auxiliaryLink: true
+    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
   actions {
@@ -999,169 +998,6 @@ nodes {
   index: 12
   text: "{{GM}}You can buy Steelflight better armor{{/GM}}"
   branches {
-    responseText: "Equip Slick Decker Outfit - 750 Nuyen\nGrants Armor 4, Intelligence +1 and Decking +1"
-    conditions {
-      ops {
-        functionName: "AND"
-        args {
-          call_value {
-            functionName: "Compare Actor Attribute"
-            args {
-              call_value {
-                functionName: "Triggering Target Actor"
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "BaseOrCurrent"
-                }
-                args {
-                  int_value: 1
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "ActorAttributes"
-                }
-                args {
-                  int_value: 10
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
-                }
-                args {
-                  int_value: 4
-                }
-              }
-            }
-            args {
-              int_value: 4
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Evaluate Nuyen"
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
-                }
-                args {
-                  int_value: 3
-                }
-              }
-            }
-            args {
-              int_value: 750
-            }
-          }
-        }
-      }
-    }
-    actions {
-      ops {
-        functionName: "Remove Nuyen"
-        args {
-          int_value: 750
-        }
-      }
-      ops {
-        functionName: "Add Item to Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Player_DeckerFab"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "All Actors With Tag"
-            args {
-              call_value {
-                functionName: "Get Map Item (SenseTagList)"
-                args {
-                  string_value: "Steelflight"
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "AllOrAny"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "WithOrWithout"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Select Item on Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Player_DeckerFab"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "All Actors With Tag"
-            args {
-              call_value {
-                functionName: "Get Map Item (SenseTagList)"
-                args {
-                  string_value: "Steelflight"
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "AllOrAny"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    nextNodeIndex: 13
-  }
-  branches {
     responseText: "Equip Fuchi Tech Savvy Outfit - 1000  Nuyen\nGrants Armor 5, Intelligence +1 and Decking +1"
     conditions {
       ops {
@@ -1322,7 +1158,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 14
+    nextNodeIndex: 13
   }
   branches {
     responseText: "Equip Agent Provocateur Outfit - 1500 Nuyen\nGrants Armor 6, Intelligence +1 and ESP Control +1"
@@ -1485,7 +1321,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 14
   }
   branches {
     responseText: "Equip Matrix Echo Outfit - 2000 Nuyen\nGrants Armor 8, Intelligence +1, Decking +1 and ESP Control +1"
@@ -1648,7 +1484,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 16
+    nextNodeIndex: 15
   }
   branches {
     responseText: "Equip Prototype Combat Suit - 2500 Nuyen\nGrants Armor 8, All attributes +1"
@@ -1811,7 +1647,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 16
   }
   branches {
     responseText: "Never mind, your gear is good for now."
@@ -1853,21 +1689,13 @@ nodes {
 }
 nodes {
   idRef {
-    id: "651a2df16161313c1f007efe"
-  }
-  index: 17
-  text: "New Armor Equipped."
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
     id: "591bb38c6161312c2a003224"
   }
-  index: 18
+  index: 17
   text: "Do you wish to fire Steelflight?"
   branches {
     responseText: "Yes"
-    nextNodeIndex: 19
+    nextNodeIndex: 18
   }
   branches {
     responseText: "No"
@@ -1880,7 +1708,7 @@ nodes {
   idRef {
     id: "591bb3d46161312c2a003253"
   }
-  index: 19
+  index: 18
   text: "You obviously can\342\200\231t afford me, skinflint. Try looking down market. The Wastelands may be more your style."
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2024,7 +1852,7 @@ nodes {
   idRef {
     id: "59b0e257616131b427003fd1"
   }
-  index: 20
+  index: 19
   text: "If you wish to waste your nuyen to have me stand around, so be it.\n{{GM}}You can click on your character to tell Steelflight to stop waiting{{/GM}}"
   nodeType: ConversationNodeType_Simple
   actions {
@@ -2143,7 +1971,7 @@ nodes {
   idRef {
     id: "59b0e295616131b427003fd3"
   }
-  index: 21
+  index: 20
   text: "Let\'s go, the Matrix awaits!"
   nodeType: ConversationNodeType_Simple
   actions {

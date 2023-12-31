@@ -9,32 +9,36 @@ nodes {
   index: 0
   text: "COMMON QUESTIONS AND KNOWN ISSUES"
   branches {
-    responseText: "Is the module fully playable?"
+    responseText: "Known Lag and Performance Issues"
     nextNodeIndex: 1
   }
   branches {
-    responseText: "What do I need to know about Hired Runners?"
+    responseText: "Some enemies are too lazy to attack."
     nextNodeIndex: 2
   }
   branches {
-    responseText: "Known Lag and Performance Issues"
+    responseText: "Ending Movie Sometimes freezes"
     nextNodeIndex: 3
   }
   branches {
-    responseText: "What scenes have major differences from the original game?"
+    responseText: "What do I need to know about Hired Runners?"
     nextNodeIndex: 4
   }
   branches {
-    responseText: "Are the enemies balanced? Can I play on hard mode?"
+    responseText: "What scenes have major differences from the original game?"
     nextNodeIndex: 5
   }
   branches {
-    responseText: "What future enhancements are planned?"
+    responseText: "Are the enemies balanced? Can I play on hard mode?"
     nextNodeIndex: 6
   }
   branches {
-    responseText: "How do I report bugs?"
+    responseText: "What future enhancements are planned?"
     nextNodeIndex: 7
+  }
+  branches {
+    responseText: "How do I report bugs?"
+    nextNodeIndex: 8
   }
   branches {
     responseText: "Exit"
@@ -44,18 +48,40 @@ nodes {
 }
 nodes {
   idRef {
-    id: "572849e16161317037000273"
+    id: "590d5d56616131a436001f48"
   }
   index: 1
-  text: "The module should be playable end to end with minimal/minor bugs.\nWe do have a list of issues (and enhancements), but nothing should prevent you from completing the mod provided you save regularly."
+  text: "A lot of our maps are VERY large and have lots of spawners. This can cause lag and other performance issues. \nMake sure you save regularly so your progress is not lost. \nThis is especially important in the following locations:\n- Downtown \n- Drake Tower and Volcano\n- Aneki Tower"
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
     auxiliaryLink: true
   }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "6590d3cf616131c42d001476"
+  }
+  index: 2
+  text: "This issue has plagued us for a very long time.\nDue to the number of spawners and different ways enemies can be triggered, some enemies spawn and then stand without acting. At least its free karma!"
   branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
+    responseText: "Return to Menu"
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "6590e57f616131c42d001990"
+  }
+  index: 3
+  text: "Unfortunately our ending movies sometimes freeze. \nIf the building keeps exploding for over a minute, you are one of the unlucky ones. \nThe most likely explanation is that it is matrix OR summoned unit related. "
+  branches {
+    responseText: "Return to Menu"
+    nextNodeIndex: 0
+    auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -63,16 +89,12 @@ nodes {
   idRef {
     id: "53ec39a1363935e809008343"
   }
-  index: 2
-  text: "- You can click on your character to talk / manage your hired runners. \n- Hired runners persist, they will keep any weapons or consumables you give them.\n- Armor must be upgraded through the conversation system, if you try and give them armor directly they will usually end up naked."
+  index: 4
+  text: "- You can click on YOUR character to talk / manage your hired runners. \n- Hired runners persist, they will keep any weapons or consumables you give them UNTIL they die or are fired.\n- Armor must be upgraded through the conversation system, if you try and give them armor directly they will usually end up naked.\n- Sometimes armor upgrades or other changes don\'t fully register until you transition scenes. "
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
     auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -81,35 +103,14 @@ nodes {
 }
 nodes {
   idRef {
-    id: "590d5d56616131a436001f48"
-  }
-  index: 3
-  text: "A lot of our maps are VERY large and have lots of spawners. This can cause lag and other performance issues. "
-  branches {
-    responseText: "Return to Menu"
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
     id: "54e2d44e363935ac06004660"
   }
-  index: 4
-  text: "Drake Tower, Drake Volcano, and Aneki Tower are VERY different from the original game.\nThey are no longer strictly hack and slash and have various social or stealth options."
+  index: 5
+  text: "Drake Tower, Drake Volcano, and Aneki Tower are VERY different from the original game.\nThey are no longer strictly hack and slash and have various social or stealth options.\n\nAdditionally there are multiple ending movies which can play depending on your behavior. \nTwo out of three of them are happy endings."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
     auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
 }
@@ -117,16 +118,12 @@ nodes {
   idRef {
     id: "53ec39a0363935e809008341"
   }
-  index: 5
-  text: "The module has only been tested for balance on Normal mode. \nWe hope to properly configure Hard mode in the future. "
+  index: 6
+  text: "The module is intended to be played on normal mode. We do not have any plans to rebalance it in the future."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
     auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -137,16 +134,12 @@ nodes {
   idRef {
     id: "53ec39a6363935e809008347"
   }
-  index: 6
-  text: "Among those are:\n- Upgradeable Hired Runner Skills\n- Quest Tracking (which will be optional to display) to make the module MUCH more newbie friendly."
+  index: 7
+  text: "At this point we are unlikely to make any future enhancements. \nThough unlikely, we still have a feature wish list should the opportunity arise. \nAmong those are:\n- Upgradeable Hired Runner Skills\n- Quest Tracking (which will be optional to display) to make the module MUCH more newbie friendly.\n- Increased Difficulty options"
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
     auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
@@ -157,16 +150,12 @@ nodes {
   idRef {
     id: "53ec39a8363935e809008349"
   }
-  index: 7
+  index: 8
   text: "If you encounter any major issues or bugs, please contact us through facebook or the steam forums. \nIt would be helpful if you include screenshots or videos as well."
   branches {
     responseText: "Return to Menu"
     nextNodeIndex: 0
     auxiliaryLink: true
-  }
-  branches {
-    responseText: "Exit"
-    nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
   sourceInSceneRef {
